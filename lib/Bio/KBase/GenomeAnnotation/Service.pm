@@ -59,7 +59,6 @@ our %return_counts = (
         'call_features_repeat_region_SEED' => 1,
         'call_features_prophage_phispy' => 1,
         'call_features_scan_for_matches' => 1,
-        'call_features_assembly_gap' => 1,
         'annotate_proteins_similarity' => 1,
         'annotate_proteins_phage' => 1,
         'annotate_proteins_kmer_v1' => 1,
@@ -92,7 +91,6 @@ our %return_counts = (
         'classify_into_bins' => 1,
         'classify_full' => 3,
         'default_workflow' => 1,
-        'enumerate_workflows' => 1,
         'complete_workflow_template' => 1,
         'run_pipeline' => 1,
         'pipeline_batch_start' => 1,
@@ -133,7 +131,6 @@ our %method_authentication = (
         'call_features_repeat_region_SEED' => 'none',
         'call_features_prophage_phispy' => 'none',
         'call_features_scan_for_matches' => 'none',
-        'call_features_assembly_gap' => 'none',
         'annotate_proteins_similarity' => 'none',
         'annotate_proteins_phage' => 'none',
         'annotate_proteins_kmer_v1' => 'none',
@@ -166,7 +163,6 @@ our %method_authentication = (
         'classify_into_bins' => 'none',
         'classify_full' => 'none',
         'default_workflow' => 'none',
-        'enumerate_workflows' => 'none',
         'complete_workflow_template' => 'none',
         'run_pipeline' => 'none',
         'pipeline_batch_start' => 'required',
@@ -210,7 +206,6 @@ sub _build_valid_methods
         'call_features_repeat_region_SEED' => 1,
         'call_features_prophage_phispy' => 1,
         'call_features_scan_for_matches' => 1,
-        'call_features_assembly_gap' => 1,
         'annotate_proteins_similarity' => 1,
         'annotate_proteins_phage' => 1,
         'annotate_proteins_kmer_v1' => 1,
@@ -243,7 +238,6 @@ sub _build_valid_methods
         'classify_into_bins' => 1,
         'classify_full' => 1,
         'default_workflow' => 1,
-        'enumerate_workflows' => 1,
         'complete_workflow_template' => 1,
         'run_pipeline' => 1,
         'pipeline_batch_start' => 1,
@@ -395,6 +389,22 @@ sub encode_output_from_exception {
     return $self->encode_output_from_object($json_error);
 }
 
+#
+# another override.
+#
+sub get_package_isa {
+    my ($self, $module) = @_;
+    my $original_isa;
+    { no strict 'refs'; $original_isa = \@{"${module}::ISA"}; }
+    my @new_isa = @$original_isa;
+
+    my $base = $self->package_base;
+    if (not $module->isa($base)) {
+        Class::Load::load_class($base);
+        push(@new_isa, $base);
+    }
+    return \@new_isa;
+}
 sub trim {
     my ($str) = @_;
     if (!(defined $str)) {
@@ -517,6 +527,11 @@ sub call_method {
 	my $tag = $self->_plack_req->header("Kbrpc-Tag");
 	if (!$tag)
 	{
+	    if (!$self->{hostname}) {
+		chomp($self->{hostname} = `hostname`);
+                $self->{hostname} ||= 'unknown-host';
+	    }
+
 	    my ($t, $us) = &$get_time();
 	    $us = sprintf("%06d", $us);
 	    my $ts = strftime("%Y-%m-%dT%H:%M:%S.${us}Z", gmtime $t);

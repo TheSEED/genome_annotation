@@ -455,6 +455,7 @@ module GenomeAnnotation
     typedef structure
     {
 	int annotate_hypothetical_only;
+	int annotate_null_only;
     } similarity_parameters;
     /*
      * Annotate based on similarity to annotation databases.
@@ -464,6 +465,7 @@ module GenomeAnnotation
     typedef structure
     {
 	int annotate_hypothetical_only;
+	int annotate_null_only;
     } phage_parameters;
     /*
      * Annotate based on similarity to the phage annotation daatabase.
@@ -483,6 +485,7 @@ module GenomeAnnotation
 	int min_size;
 	int max_gap;
 	int annotate_hypothetical_only;
+	int annotate_null_only;
     } kmer_v1_parameters;
 
     funcdef annotate_proteins_kmer_v1(genomeTO, kmer_v1_parameters params) returns (genomeTO);
@@ -491,6 +494,7 @@ module GenomeAnnotation
 	int min_hits;
 	int max_gap;
 	int annotate_hypothetical_only;
+	int annotate_null_only;
     } kmer_v2_parameters;
     
     funcdef annotate_proteins_kmer_v2(genomeTO genome_in, kmer_v2_parameters params) returns (genomeTO genome_out);

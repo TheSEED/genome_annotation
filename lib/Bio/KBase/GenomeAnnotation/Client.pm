@@ -1,6 +1,6 @@
 package Bio::KBase::GenomeAnnotation::Client;
 
-use JSON::RPC::Client;
+use JSON::RPC::Legacy::Client;
 use POSIX;
 use strict;
 use Data::Dumper;
@@ -12272,418 +12272,6 @@ sub call_features_scan_for_matches
 
 
 
-=head2 call_features_assembly_gap
-
-  $genome_out = $obj->call_features_assembly_gap($genome_in, $params)
-
-=over 4
-
-=item Parameter and return types
-
-=begin html
-
-<pre>
-$genome_in is a genomeTO
-$params is an assembly_gap_parameters
-$genome_out is a genomeTO
-genomeTO is a reference to a hash where the following keys are defined:
-	id has a value which is a genome_id
-	scientific_name has a value which is a string
-	domain has a value which is a string
-	genetic_code has a value which is an int
-	source has a value which is a string
-	source_id has a value which is a string
-	taxonomy has a value which is a string
-	ncbi_taxonomy_id has a value which is an int
-	owner has a value which is a string
-	quality has a value which is a genome_quality_measure
-	contigs has a value which is a reference to a list where each element is a contig
-	contigs_handle has a value which is a Handle
-	features has a value which is a reference to a list where each element is a feature
-	close_genomes has a value which is a reference to a list where each element is a close_genome
-	analysis_events has a value which is a reference to a list where each element is an analysis_event
-	typing has a value which is a reference to a list where each element is a strain_type
-	classifications has a value which is a reference to a list where each element is a classifier
-genome_id is a string
-genome_quality_measure is a reference to a hash where the following keys are defined:
-	frameshift_error_rate has a value which is a float
-	sequence_error_rate has a value which is a float
-contig is a reference to a hash where the following keys are defined:
-	id has a value which is a contig_id
-	dna has a value which is a string
-	genetic_code has a value which is an int
-	cell_compartment has a value which is a string
-	replicon_type has a value which is a string
-	replicon_geometry has a value which is a string
-	complete has a value which is a bool
-	genbank_locus has a value which is a genbank_locus
-contig_id is a string
-bool is an int
-genbank_locus is a reference to a hash where the following keys are defined:
-	accession has a value which is a reference to a list where each element is a string
-	comment has a value which is a reference to a list where each element is a string
-	date has a value which is a string
-	dblink has a value which is a reference to a list where each element is a string
-	dbsource has a value which is a reference to a list where each element is a string
-	definition has a value which is a string
-	division has a value which is a string
-	geometry has a value which is a string
-	gi has a value which is an int
-	keywords has a value which is a reference to a list where each element is a string
-	locus has a value which is a string
-	organism has a value which is a string
-	origin has a value which is a string
-	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
-	source has a value which is a string
-	taxonomy has a value which is a reference to a list where each element is a string
-	version has a value which is a reference to a list where each element is a string
-Handle is a reference to a hash where the following keys are defined:
-	file_name has a value which is a string
-	id has a value which is a string
-	type has a value which is a string
-	url has a value which is a string
-	remote_md5 has a value which is a string
-	remote_sha1 has a value which is a string
-feature is a reference to a hash where the following keys are defined:
-	id has a value which is a feature_id
-	location has a value which is a location
-	type has a value which is a feature_type
-	function has a value which is a string
-	function_id has a value which is a string
-	protein_translation has a value which is a string
-	aliases has a value which is a reference to a list where each element is a string
-	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
-	0: (source) a string
-	1: (alias) a string
-
-	annotations has a value which is a reference to a list where each element is an annotation
-	quality has a value which is a feature_quality_measure
-	feature_creation_event has a value which is an analysis_event_id
-	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
-	similarity_associations has a value which is a reference to a list where each element is a similarity_association
-	proposed_functions has a value which is a reference to a list where each element is a proposed_function
-	genbank_type has a value which is a string
-	genbank_feature has a value which is a genbank_feature
-feature_id is a string
-location is a reference to a list where each element is a region_of_dna
-region_of_dna is a reference to a list containing 4 items:
-	0: a contig_id
-	1: (begin) an int
-	2: (strand) a string
-	3: (length) an int
-feature_type is a string
-annotation is a reference to a list containing 4 items:
-	0: (comment) a string
-	1: (annotator) a string
-	2: (annotation_time) a float
-	3: an analysis_event_id
-analysis_event_id is a string
-feature_quality_measure is a reference to a hash where the following keys are defined:
-	truncated_begin has a value which is a bool
-	truncated_end has a value which is a bool
-	existence_confidence has a value which is a float
-	frameshifted has a value which is a bool
-	selenoprotein has a value which is a bool
-	pyrrolysylprotein has a value which is a bool
-	overlap_rules has a value which is a reference to a list where each element is a string
-	existence_priority has a value which is a float
-	hit_count has a value which is a float
-	weighted_hit_count has a value which is a float
-	genemark_score has a value which is a float
-protein_family_assignment is a reference to a list containing 4 items:
-	0: (db) a string
-	1: (id) a string
-	2: (function) a string
-	3: (db_version) a string
-similarity_association is a reference to a list containing 6 items:
-	0: (source) a string
-	1: (source_id) a string
-	2: (query_coverage) a float
-	3: (subject_coverage) a float
-	4: (identity) a float
-	5: (e_value) a float
-proposed_function is a reference to a hash where the following keys are defined:
-	id has a value which is a string
-	function has a value which is a string
-	user has a value which is a string
-	score has a value which is a float
-	event_id has a value which is an analysis_event_id
-	timestamp has a value which is an int
-genbank_feature is a reference to a hash where the following keys are defined:
-	genbank_type has a value which is a string
-	genbank_location has a value which is a string
-	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-close_genome is a reference to a hash where the following keys are defined:
-	genome has a value which is a genome_id
-	genome_name has a value which is a string
-	closeness_measure has a value which is a float
-	analysis_method has a value which is a string
-analysis_event is a reference to a hash where the following keys are defined:
-	id has a value which is an analysis_event_id
-	tool_name has a value which is a string
-	execution_time has a value which is a float
-	parameters has a value which is a reference to a list where each element is a string
-	hostname has a value which is a string
-strain_type is a reference to a hash where the following keys are defined:
-	typing_method has a value which is a string
-	database has a value which is a string
-	tag has a value which is a string
-	event_id has a value which is an analysis_event_id
-classifier is a reference to a hash where the following keys are defined:
-	name has a value which is a string
-	version has a value which is a string
-	description has a value which is a string
-	comment has a value which is a string
-	antibiotics has a value which is a reference to a list where each element is a string
-	accuracy has a value which is a float
-	area_under_roc_curve has a value which is a float
-	f1_score has a value which is a float
-	sources has a value which is a string
-	cumulative_adaboost_value has a value which is a float
-	sensitivity has a value which is a string
-	event_id has a value which is an analysis_event_id
-	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
-	0: (id) a feature_id
-	1: (alpha) a float
-	2: (round) an int
-	3: (function) a string
-
-assembly_gap_parameters is a reference to a hash where the following keys are defined:
-	min_gap_length has a value which is an int
-
-</pre>
-
-=end html
-
-=begin text
-
-$genome_in is a genomeTO
-$params is an assembly_gap_parameters
-$genome_out is a genomeTO
-genomeTO is a reference to a hash where the following keys are defined:
-	id has a value which is a genome_id
-	scientific_name has a value which is a string
-	domain has a value which is a string
-	genetic_code has a value which is an int
-	source has a value which is a string
-	source_id has a value which is a string
-	taxonomy has a value which is a string
-	ncbi_taxonomy_id has a value which is an int
-	owner has a value which is a string
-	quality has a value which is a genome_quality_measure
-	contigs has a value which is a reference to a list where each element is a contig
-	contigs_handle has a value which is a Handle
-	features has a value which is a reference to a list where each element is a feature
-	close_genomes has a value which is a reference to a list where each element is a close_genome
-	analysis_events has a value which is a reference to a list where each element is an analysis_event
-	typing has a value which is a reference to a list where each element is a strain_type
-	classifications has a value which is a reference to a list where each element is a classifier
-genome_id is a string
-genome_quality_measure is a reference to a hash where the following keys are defined:
-	frameshift_error_rate has a value which is a float
-	sequence_error_rate has a value which is a float
-contig is a reference to a hash where the following keys are defined:
-	id has a value which is a contig_id
-	dna has a value which is a string
-	genetic_code has a value which is an int
-	cell_compartment has a value which is a string
-	replicon_type has a value which is a string
-	replicon_geometry has a value which is a string
-	complete has a value which is a bool
-	genbank_locus has a value which is a genbank_locus
-contig_id is a string
-bool is an int
-genbank_locus is a reference to a hash where the following keys are defined:
-	accession has a value which is a reference to a list where each element is a string
-	comment has a value which is a reference to a list where each element is a string
-	date has a value which is a string
-	dblink has a value which is a reference to a list where each element is a string
-	dbsource has a value which is a reference to a list where each element is a string
-	definition has a value which is a string
-	division has a value which is a string
-	geometry has a value which is a string
-	gi has a value which is an int
-	keywords has a value which is a reference to a list where each element is a string
-	locus has a value which is a string
-	organism has a value which is a string
-	origin has a value which is a string
-	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
-	source has a value which is a string
-	taxonomy has a value which is a reference to a list where each element is a string
-	version has a value which is a reference to a list where each element is a string
-Handle is a reference to a hash where the following keys are defined:
-	file_name has a value which is a string
-	id has a value which is a string
-	type has a value which is a string
-	url has a value which is a string
-	remote_md5 has a value which is a string
-	remote_sha1 has a value which is a string
-feature is a reference to a hash where the following keys are defined:
-	id has a value which is a feature_id
-	location has a value which is a location
-	type has a value which is a feature_type
-	function has a value which is a string
-	function_id has a value which is a string
-	protein_translation has a value which is a string
-	aliases has a value which is a reference to a list where each element is a string
-	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
-	0: (source) a string
-	1: (alias) a string
-
-	annotations has a value which is a reference to a list where each element is an annotation
-	quality has a value which is a feature_quality_measure
-	feature_creation_event has a value which is an analysis_event_id
-	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
-	similarity_associations has a value which is a reference to a list where each element is a similarity_association
-	proposed_functions has a value which is a reference to a list where each element is a proposed_function
-	genbank_type has a value which is a string
-	genbank_feature has a value which is a genbank_feature
-feature_id is a string
-location is a reference to a list where each element is a region_of_dna
-region_of_dna is a reference to a list containing 4 items:
-	0: a contig_id
-	1: (begin) an int
-	2: (strand) a string
-	3: (length) an int
-feature_type is a string
-annotation is a reference to a list containing 4 items:
-	0: (comment) a string
-	1: (annotator) a string
-	2: (annotation_time) a float
-	3: an analysis_event_id
-analysis_event_id is a string
-feature_quality_measure is a reference to a hash where the following keys are defined:
-	truncated_begin has a value which is a bool
-	truncated_end has a value which is a bool
-	existence_confidence has a value which is a float
-	frameshifted has a value which is a bool
-	selenoprotein has a value which is a bool
-	pyrrolysylprotein has a value which is a bool
-	overlap_rules has a value which is a reference to a list where each element is a string
-	existence_priority has a value which is a float
-	hit_count has a value which is a float
-	weighted_hit_count has a value which is a float
-	genemark_score has a value which is a float
-protein_family_assignment is a reference to a list containing 4 items:
-	0: (db) a string
-	1: (id) a string
-	2: (function) a string
-	3: (db_version) a string
-similarity_association is a reference to a list containing 6 items:
-	0: (source) a string
-	1: (source_id) a string
-	2: (query_coverage) a float
-	3: (subject_coverage) a float
-	4: (identity) a float
-	5: (e_value) a float
-proposed_function is a reference to a hash where the following keys are defined:
-	id has a value which is a string
-	function has a value which is a string
-	user has a value which is a string
-	score has a value which is a float
-	event_id has a value which is an analysis_event_id
-	timestamp has a value which is an int
-genbank_feature is a reference to a hash where the following keys are defined:
-	genbank_type has a value which is a string
-	genbank_location has a value which is a string
-	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-close_genome is a reference to a hash where the following keys are defined:
-	genome has a value which is a genome_id
-	genome_name has a value which is a string
-	closeness_measure has a value which is a float
-	analysis_method has a value which is a string
-analysis_event is a reference to a hash where the following keys are defined:
-	id has a value which is an analysis_event_id
-	tool_name has a value which is a string
-	execution_time has a value which is a float
-	parameters has a value which is a reference to a list where each element is a string
-	hostname has a value which is a string
-strain_type is a reference to a hash where the following keys are defined:
-	typing_method has a value which is a string
-	database has a value which is a string
-	tag has a value which is a string
-	event_id has a value which is an analysis_event_id
-classifier is a reference to a hash where the following keys are defined:
-	name has a value which is a string
-	version has a value which is a string
-	description has a value which is a string
-	comment has a value which is a string
-	antibiotics has a value which is a reference to a list where each element is a string
-	accuracy has a value which is a float
-	area_under_roc_curve has a value which is a float
-	f1_score has a value which is a float
-	sources has a value which is a string
-	cumulative_adaboost_value has a value which is a float
-	sensitivity has a value which is a string
-	event_id has a value which is an analysis_event_id
-	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
-	0: (id) a feature_id
-	1: (alpha) a float
-	2: (round) an int
-	3: (function) a string
-
-assembly_gap_parameters is a reference to a hash where the following keys are defined:
-	min_gap_length has a value which is an int
-
-
-=end text
-
-=item Description
-
-
-
-=back
-
-=cut
-
-sub call_features_assembly_gap
-{
-    my($self, @args) = @_;
-
-# Authentication: none
-
-    if ((my $n = @args) != 2)
-    {
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error =>
-							       "Invalid argument count for function call_features_assembly_gap (received $n, expecting 2)");
-    }
-    {
-	my($genome_in, $params) = @args;
-
-	my @_bad_arguments;
-        (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 1 \"genome_in\" (value was \"$genome_in\")");
-        (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 2 \"params\" (value was \"$params\")");
-        if (@_bad_arguments) {
-	    my $msg = "Invalid arguments passed to call_features_assembly_gap:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	    Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-								   method_name => 'call_features_assembly_gap');
-	}
-    }
-
-    my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "GenomeAnnotation.call_features_assembly_gap",
-	params => \@args,
-    });
-    if ($result) {
-	if ($result->is_error) {
-	    Bio::KBase::Exceptions::JSONRPC->throw(error => $result->error_message,
-					       code => $result->content->{error}->{code},
-					       method_name => 'call_features_assembly_gap',
-					       data => $result->content->{error}->{error} # JSON::RPC::ReturnObject only supports JSONRPC 1.1 or 1.O
-					      );
-	} else {
-	    return wantarray ? @{$result->result} : $result->result->[0];
-	}
-    } else {
-        Bio::KBase::Exceptions::HTTP->throw(error => "Error invoking method call_features_assembly_gap",
-					    status_line => $self->{client}->status_line,
-					    method_name => 'call_features_assembly_gap',
-				       );
-    }
-}
-
-
-
 =head2 annotate_proteins_similarity
 
   $return = $obj->annotate_proteins_similarity($genomeTO, $params)
@@ -12862,6 +12450,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -13036,6 +12625,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -13274,6 +12864,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 phage_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -13448,6 +13039,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 phage_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -13696,6 +13288,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -13880,6 +13473,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -14120,6 +13714,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -14296,6 +13891,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -15368,6 +14964,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -15552,6 +15149,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -15792,6 +15390,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -15968,6 +15567,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -23513,12 +23113,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -23555,12 +23158,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -23609,147 +23215,6 @@ sub default_workflow
 
 
 
-=head2 enumerate_workflows
-
-  $workflows = $obj->enumerate_workflows()
-
-=over 4
-
-=item Parameter and return types
-
-=begin html
-
-<pre>
-$workflows is a reference to a list where each element is a reference to a list containing 2 items:
-	0: (workflow_id) a string
-	1: (wf) a workflow
-workflow is a reference to a hash where the following keys are defined:
-	stages has a value which is a reference to a list where each element is a pipeline_stage
-pipeline_stage is a reference to a hash where the following keys are defined:
-	name has a value which is a string
-	condition has a value which is a string
-	failure_is_not_fatal has a value which is an int
-	repeat_region_SEED_parameters has a value which is a repeat_region_SEED_parameters
-	glimmer3_parameters has a value which is a glimmer3_parameters
-	kmer_v1_parameters has a value which is a kmer_v1_parameters
-	kmer_v2_parameters has a value which is a kmer_v2_parameters
-	similarity_parameters has a value which is a similarity_parameters
-repeat_region_SEED_parameters is a reference to a hash where the following keys are defined:
-	min_identity has a value which is a float
-	min_length has a value which is an int
-glimmer3_parameters is a reference to a hash where the following keys are defined:
-	min_training_len has a value which is an int
-kmer_v1_parameters is a reference to a hash where the following keys are defined:
-	kmer_size has a value which is an int
-	dataset_name has a value which is a string
-	return_scores_for_all_proteins has a value which is an int
-	score_threshold has a value which is an int
-	hit_threshold has a value which is an int
-	sequential_hit_threshold has a value which is an int
-	detailed has a value which is an int
-	min_hits has a value which is an int
-	min_size has a value which is an int
-	max_gap has a value which is an int
-	annotate_hypothetical_only has a value which is an int
-kmer_v2_parameters is a reference to a hash where the following keys are defined:
-	min_hits has a value which is an int
-	max_gap has a value which is an int
-	annotate_hypothetical_only has a value which is an int
-similarity_parameters is a reference to a hash where the following keys are defined:
-	annotate_hypothetical_only has a value which is an int
-
-</pre>
-
-=end html
-
-=begin text
-
-$workflows is a reference to a list where each element is a reference to a list containing 2 items:
-	0: (workflow_id) a string
-	1: (wf) a workflow
-workflow is a reference to a hash where the following keys are defined:
-	stages has a value which is a reference to a list where each element is a pipeline_stage
-pipeline_stage is a reference to a hash where the following keys are defined:
-	name has a value which is a string
-	condition has a value which is a string
-	failure_is_not_fatal has a value which is an int
-	repeat_region_SEED_parameters has a value which is a repeat_region_SEED_parameters
-	glimmer3_parameters has a value which is a glimmer3_parameters
-	kmer_v1_parameters has a value which is a kmer_v1_parameters
-	kmer_v2_parameters has a value which is a kmer_v2_parameters
-	similarity_parameters has a value which is a similarity_parameters
-repeat_region_SEED_parameters is a reference to a hash where the following keys are defined:
-	min_identity has a value which is a float
-	min_length has a value which is an int
-glimmer3_parameters is a reference to a hash where the following keys are defined:
-	min_training_len has a value which is an int
-kmer_v1_parameters is a reference to a hash where the following keys are defined:
-	kmer_size has a value which is an int
-	dataset_name has a value which is a string
-	return_scores_for_all_proteins has a value which is an int
-	score_threshold has a value which is an int
-	hit_threshold has a value which is an int
-	sequential_hit_threshold has a value which is an int
-	detailed has a value which is an int
-	min_hits has a value which is an int
-	min_size has a value which is an int
-	max_gap has a value which is an int
-	annotate_hypothetical_only has a value which is an int
-kmer_v2_parameters is a reference to a hash where the following keys are defined:
-	min_hits has a value which is an int
-	max_gap has a value which is an int
-	annotate_hypothetical_only has a value which is an int
-similarity_parameters is a reference to a hash where the following keys are defined:
-	annotate_hypothetical_only has a value which is an int
-
-
-=end text
-
-=item Description
-
-Enumerate the loaded workflows. We always have a workflow named "default"; a
-particular deployment of the genome annotation service may include additional workflows.
-
-=back
-
-=cut
-
-sub enumerate_workflows
-{
-    my($self, @args) = @_;
-
-# Authentication: none
-
-    if ((my $n = @args) != 0)
-    {
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error =>
-							       "Invalid argument count for function enumerate_workflows (received $n, expecting 0)");
-    }
-
-    my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "GenomeAnnotation.enumerate_workflows",
-	params => \@args,
-    });
-    if ($result) {
-	if ($result->is_error) {
-	    Bio::KBase::Exceptions::JSONRPC->throw(error => $result->error_message,
-					       code => $result->content->{error}->{code},
-					       method_name => 'enumerate_workflows',
-					       data => $result->content->{error}->{error} # JSON::RPC::ReturnObject only supports JSONRPC 1.1 or 1.O
-					      );
-	} else {
-	    return wantarray ? @{$result->result} : $result->result->[0];
-	}
-    } else {
-        Bio::KBase::Exceptions::HTTP->throw(error => "Error invoking method enumerate_workflows",
-					    status_line => $self->{client}->status_line,
-					    method_name => 'enumerate_workflows',
-				       );
-    }
-}
-
-
-
 =head2 complete_workflow_template
 
   $return = $obj->complete_workflow_template()
@@ -23790,12 +23255,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -23832,12 +23300,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -24092,12 +23563,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -24298,12 +23772,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -24417,12 +23894,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -24472,12 +23952,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -26487,48 +25970,6 @@ min_length has a value which is an int
 
 
 
-=head2 assembly_gap_parameters
-
-=over 4
-
-
-
-=item Description
-
-* Given a genome typed object, call gap features.
-* Gaps are known regions in the contig where the nucleotide sequence is not known
-* but where there is evidence that a run of DNA does exist joining the sequenced
-* data on either side of the gap.
-*
-* Gaps are currently called using one of two methods. Genomes that originated as
-* genbank files may have a CONTIGS entry that defines the contig and gap regions.
-* Genomes that do not have a CONTIGS entry are scanned for runs of "n" characters.
-
-
-=item Definition
-
-=begin html
-
-<pre>
-a reference to a hash where the following keys are defined:
-min_gap_length has a value which is an int
-
-</pre>
-
-=end html
-
-=begin text
-
-a reference to a hash where the following keys are defined:
-min_gap_length has a value which is an int
-
-
-=end text
-
-=back
-
-
-
 =head2 similarity_parameters
 
 =over 4
@@ -26542,6 +25983,7 @@ min_gap_length has a value which is an int
 <pre>
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -26551,6 +25993,7 @@ annotate_hypothetical_only has a value which is an int
 
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text
@@ -26572,6 +26015,7 @@ annotate_hypothetical_only has a value which is an int
 <pre>
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -26581,6 +26025,7 @@ annotate_hypothetical_only has a value which is an int
 
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text
@@ -26612,6 +26057,7 @@ min_hits has a value which is an int
 min_size has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -26631,6 +26077,7 @@ min_hits has a value which is an int
 min_size has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text
@@ -26654,6 +26101,7 @@ a reference to a hash where the following keys are defined:
 min_hits has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -26665,6 +26113,7 @@ a reference to a hash where the following keys are defined:
 min_hits has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text
@@ -27030,7 +26479,7 @@ details has a value which is a reference to a list where each element is a pipel
 =cut
 
 package Bio::KBase::GenomeAnnotation::Client::RpcClient;
-use base 'JSON::RPC::Client';
+use base 'JSON::RPC::Legacy::Client';
 use POSIX;
 use strict;
 
@@ -27043,6 +26492,12 @@ sub call {
     my $result;
 
 
+    my @retries = (1, 2, 5, 10, 20, 60, 60, 60, 60, 60, 60);
+    my %codes_to_retry =  map { $_ => 1 } qw(110 408 502 503 504 200) ;
+    my $n_retries;
+
+    while (1)
+
     {
 	if ($uri =~ /\?/) {
 	    $result = $self->_get($uri);
@@ -27051,6 +26506,59 @@ sub call {
 	    Carp::croak "not hashref." unless (ref $obj eq 'HASH');
 	    $result = $self->_post($uri, $headers, $obj);
 	}
+
+	#
+	# Bail early on success.
+	#
+	if ($result->is_success)
+	{
+	    if ($n_retries)
+	    {
+		print STDERR strftime("%F %T", localtime), ": Request succeeded after $n_retries retries\n";
+	    }
+	    last;
+	}
+	$n_retries++;
+
+	#
+	# Failure. See if we need to retry and loop, or bail with
+	# a permanent failure.
+	#
+	
+        my $code = $result->code;
+	my $msg = $result->message;
+	my $want_retry = 0;
+	if ($codes_to_retry{$code})
+	{
+	    $want_retry = 1;
+	}
+	elsif ($code eq 500 && defined( $result->header('client-warning') )
+	       && $result->header('client-warning') eq 'Internal response')
+	{
+	    #
+	    # Handle errors that were not thrown by the web
+	    # server but rather picked up by the client library.
+	    #
+	    # If we got a client timeout or connection refused, let us retry.
+	    #
+	    
+	    if ($msg =~ /timeout|connection refused/i)
+	    {
+		$want_retry = 1;
+	    }
+	    
+	}
+	
+        if (!$want_retry || @retries == 0) {
+	    last;
+        }
+	
+        #
+        # otherwise, sleep & loop.
+        #
+        my $retry_time = shift(@retries);
+        print STDERR strftime("%F %T", localtime), ": Request failed with code=$code msg=$msg, sleeping $retry_time and retrying\n";
+        sleep($retry_time);
 
     }
 
@@ -27066,11 +26574,11 @@ sub call {
             return JSON::RPC::ServiceObject->new($result, $self->json);
         }
 
-        return JSON::RPC::ReturnObject->new($result, $self->json);
+        return JSON::RPC::Legacy::ReturnObject->new($result, $self->json);
     }
     elsif ($result->content_type eq 'application/json')
     {
-        return JSON::RPC::ReturnObject->new($result, $self->json);
+        return JSON::RPC::Legacy::ReturnObject->new($result, $self->json);
     }
     else {
         return;
@@ -27090,7 +26598,7 @@ sub _post {
             $self->id($obj->{id}) if ($obj->{id}); # if undef, it is notification.
         }
         else {
-            $obj->{id} = $self->id || ($self->id('JSON::RPC::Client'));
+            $obj->{id} = $self->id || ($self->id('JSON::RPC::Legacy::Client'));
         }
     }
     else {
