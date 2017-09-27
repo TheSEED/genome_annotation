@@ -1,6 +1,6 @@
 package Bio::KBase::GenomeAnnotation::Client;
 
-use JSON::RPC::Client;
+use JSON::RPC::Legacy::Client;
 use POSIX;
 use strict;
 use Data::Dumper;
@@ -12630,7 +12630,14 @@ assembly_gap_parameters is a reference to a hash where the following keys are de
 
 =item Description
 
-
+Given a genome typed object, call gap features.                
+Gaps are known regions in the contig where the nucleotide sequence is not known                
+but where there is evidence that a run of DNA does exist joining the sequenced                        
+data on either side of the gap.    
+        
+Gaps are currently called using one of two methods. Genomes that originated as                
+genbank files may have a CONTIGS entry that defines the contig and gap regions.                        
+Genomes that do not have a CONTIGS entry are scanned for runs of "n" characters.
 
 =back
 
@@ -12862,6 +12869,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -13036,6 +13044,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -13274,6 +13283,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 phage_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -13448,6 +13458,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 phage_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -13696,6 +13707,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -13880,6 +13892,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -14120,6 +14133,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -14296,6 +14310,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -15368,6 +15383,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -15552,6 +15568,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -15792,6 +15809,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -15968,6 +15986,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -23513,12 +23532,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -23555,12 +23577,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -23651,12 +23676,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -23695,12 +23723,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -23790,12 +23821,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -23832,12 +23866,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -24092,12 +24129,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -24298,12 +24338,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -24417,12 +24460,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -24472,12 +24518,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -26493,18 +26542,6 @@ min_length has a value which is an int
 
 
 
-=item Description
-
-* Given a genome typed object, call gap features.
-* Gaps are known regions in the contig where the nucleotide sequence is not known
-* but where there is evidence that a run of DNA does exist joining the sequenced
-* data on either side of the gap.
-*
-* Gaps are currently called using one of two methods. Genomes that originated as
-* genbank files may have a CONTIGS entry that defines the contig and gap regions.
-* Genomes that do not have a CONTIGS entry are scanned for runs of "n" characters.
-
-
 =item Definition
 
 =begin html
@@ -26542,6 +26579,7 @@ min_gap_length has a value which is an int
 <pre>
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -26551,6 +26589,7 @@ annotate_hypothetical_only has a value which is an int
 
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text
@@ -26572,6 +26611,7 @@ annotate_hypothetical_only has a value which is an int
 <pre>
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -26581,6 +26621,7 @@ annotate_hypothetical_only has a value which is an int
 
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text
@@ -26612,6 +26653,7 @@ min_hits has a value which is an int
 min_size has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -26631,6 +26673,7 @@ min_hits has a value which is an int
 min_size has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text
@@ -26654,6 +26697,7 @@ a reference to a hash where the following keys are defined:
 min_hits has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -26665,6 +26709,7 @@ a reference to a hash where the following keys are defined:
 min_hits has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text
@@ -27030,7 +27075,7 @@ details has a value which is a reference to a list where each element is a pipel
 =cut
 
 package Bio::KBase::GenomeAnnotation::Client::RpcClient;
-use base 'JSON::RPC::Client';
+use base 'JSON::RPC::Legacy::Client';
 use POSIX;
 use strict;
 
@@ -27043,6 +27088,12 @@ sub call {
     my $result;
 
 
+    my @retries = (1, 2, 5, 10, 20, 60, 60, 60, 60, 60, 60);
+    my %codes_to_retry =  map { $_ => 1 } qw(110 408 502 503 504 200) ;
+    my $n_retries;
+
+    while (1)
+
     {
 	if ($uri =~ /\?/) {
 	    $result = $self->_get($uri);
@@ -27051,6 +27102,59 @@ sub call {
 	    Carp::croak "not hashref." unless (ref $obj eq 'HASH');
 	    $result = $self->_post($uri, $headers, $obj);
 	}
+
+	#
+	# Bail early on success.
+	#
+	if ($result->is_success)
+	{
+	    if ($n_retries)
+	    {
+		print STDERR strftime("%F %T", localtime), ": Request succeeded after $n_retries retries\n";
+	    }
+	    last;
+	}
+	$n_retries++;
+
+	#
+	# Failure. See if we need to retry and loop, or bail with
+	# a permanent failure.
+	#
+	
+        my $code = $result->code;
+	my $msg = $result->message;
+	my $want_retry = 0;
+	if ($codes_to_retry{$code})
+	{
+	    $want_retry = 1;
+	}
+	elsif ($code eq 500 && defined( $result->header('client-warning') )
+	       && $result->header('client-warning') eq 'Internal response')
+	{
+	    #
+	    # Handle errors that were not thrown by the web
+	    # server but rather picked up by the client library.
+	    #
+	    # If we got a client timeout or connection refused, let us retry.
+	    #
+	    
+	    if ($msg =~ /timeout|connection refused/i)
+	    {
+		$want_retry = 1;
+	    }
+	    
+	}
+	
+        if (!$want_retry || @retries == 0) {
+	    last;
+        }
+	
+        #
+        # otherwise, sleep & loop.
+        #
+        my $retry_time = shift(@retries);
+        print STDERR strftime("%F %T", localtime), ": Request failed with code=$code msg=$msg, sleeping $retry_time and retrying\n";
+        sleep($retry_time);
 
     }
 
@@ -27066,11 +27170,11 @@ sub call {
             return JSON::RPC::ServiceObject->new($result, $self->json);
         }
 
-        return JSON::RPC::ReturnObject->new($result, $self->json);
+        return JSON::RPC::Legacy::ReturnObject->new($result, $self->json);
     }
     elsif ($result->content_type eq 'application/json')
     {
-        return JSON::RPC::ReturnObject->new($result, $self->json);
+        return JSON::RPC::Legacy::ReturnObject->new($result, $self->json);
     }
     else {
         return;
@@ -27090,7 +27194,7 @@ sub _post {
             $self->id($obj->{id}) if ($obj->{id}); # if undef, it is notification.
         }
         else {
-            $obj->{id} = $self->id || ($self->id('JSON::RPC::Client'));
+            $obj->{id} = $self->id || ($self->id('JSON::RPC::Legacy::Client'));
         }
     }
     else {

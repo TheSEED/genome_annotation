@@ -29,7 +29,12 @@ use Time::HiRes 'gettimeofday';
 use POSIX;
 use SOAP::Lite;
 
-use Bio::KBase::IDServer::Client;
+our $have_kbase_idserver;
+eval {
+    require Bio::KBase::IDServer::Client;
+    $have_kbase_idserver = 1;
+};
+
 use Bio::KBase::KmerAnnotationByFigfam::Client;
 use KmerClassifier;
 #use Bio::KBase::KIDL::Helpers qw(json_to_tempfile tempfile_to_json);
@@ -308,6 +313,7 @@ sub new
     }
     elsif ($iurl)
     {
+	$have_kbase_idserver or die "Using KBase id allocation but KBase ID server code not available";
 	print STDERR "Using KBase id allocation from $iurl\n";
 	$self->{allocate_genome_id} = sub { my($taxon_id) = @_;
 					    $self->_allocate_kb_genome_id($taxon_id, $iurl);
@@ -6729,8 +6735,16 @@ sub call_selenoproteins
     print $tmp $genomeTO_json;
     close($tmp);
 
+    my $id_prefix = $genomeTO->{id};
+    if ($id_prefix =~ /^\d+\.\d+$/)
+    {
+	$id_prefix = "fig|$id_prefix";
+    }
+
     my @cmd = ('rast_call_special_proteins',
 	       '--seleno',
+	       "--id-type", $self->{cds_id_type},
+	       '--id-prefix', $id_prefix,
 	       '--input', $tmp);
     $ctx->stderr->log_cmd(@cmd);
     my $ok = run(\@cmd,
@@ -7150,8 +7164,16 @@ sub call_pyrrolysoproteins
     print $tmp $genomeTO_json;
     close($tmp);
 
+    my $id_prefix = $genomeTO->{id};
+    if ($id_prefix =~ /^\d+\.\d+$/)
+    {
+	$id_prefix = "fig|$id_prefix";
+    }
+
     my @cmd = ('rast_call_special_proteins',
 	       '--pyrro',
+	       "--id-type", $self->{cds_id_type},
+	       '--id-prefix', $id_prefix,
 	       '--input', $tmp);
     $ctx->stderr->log_cmd(@cmd);
 			  
@@ -13757,7 +13779,14 @@ assembly_gap_parameters is a reference to a hash where the following keys are de
 
 =item Description
 
-
+Given a genome typed object, call gap features.                
+Gaps are known regions in the contig where the nucleotide sequence is not known                
+but where there is evidence that a run of DNA does exist joining the sequenced                        
+data on either side of the gap.    
+        
+Gaps are currently called using one of two methods. Genomes that originated as                
+genbank files may have a CONTIGS entry that defines the contig and gap regions.                        
+Genomes that do not have a CONTIGS entry are scanned for runs of "n" characters.
 
 =back
 
@@ -13972,6 +14001,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -14146,6 +14176,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -14198,10 +14229,19 @@ sub annotate_proteins_similarity
 	close($tmp);
 
 	print STDERR "Starting $dir $tmp\n";
-	my @cmd = ('rast_annotate_proteins_similarity',
-		   "--nr-dir", $dir,
-		   ($params->{annotate_hypothetical_only} ? ("-H") : ()),
-		   '--input', $tmp);
+	my @params = ("--nr-dir", $dir,
+		      "--input", $tmp);
+
+	if ($params->{annotate_null_only})
+	{
+	    push(@params, "-N");
+	}
+	elsif ($params->{annotate_hypothetical_only})
+	{
+	    push(@params, "-H");
+	}
+	
+	my @cmd = ('rast_annotate_proteins_similarity', @params);
 	my $ok = run(\@cmd,
 		     '>', \$genomeOut_json,
 		     $stderr->redirect);
@@ -14408,6 +14448,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 phage_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -14582,6 +14623,7 @@ classifier is a reference to a hash where the following keys are defined:
 
 phage_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -14637,11 +14679,22 @@ sub annotate_proteins_phage
 	    close($tmpout);
 		
 	    print STDERR "Starting phage annotation $pfile < $tmpcur > $tmpout\n";
-	    my @cmd = ('rast_annotate_proteins_similarity',
-		       "--nr-file", $pfile,
-		       ($params->{annotate_hypothetical_only} ? ("-H") : ()),
-		       '--input', $tmpcur,
-		       '--output', $tmpout);
+
+	    my @params = ("--nr-file", $pfile, 
+			  '--input', $tmpcur,
+			  '--output', $tmpout);
+	    
+	    if ($params->{annotate_null_only})
+	    {
+		push(@params, "-N");
+	    }
+	    elsif ($params->{annotate_hypothetical_only})
+	    {
+		push(@params, "-H");
+	    }
+
+
+	    my @cmd = ('rast_annotate_proteins_similarity', @params);
 	    
 	    my $ok = run(\@cmd,
 			 $stderr->redirect);
@@ -14860,6 +14913,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -15044,6 +15098,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -15128,7 +15183,15 @@ sub annotate_proteins_kmer_v1
 	my $trans = $feature->{protein_translation};
 	next unless $trans;
 
-	if ($params->{annotate_hypothetical_only})
+	if ($params->{annotate_null_only})
+	{
+	    my $f = $feature->{function};
+	    if ($f ne '')
+	    {
+		next;
+	    }
+	}
+	elsif ($params->{annotate_hypothetical_only})
 	{
 	    my $f = $feature->{function};
 	    if ($f ne '' && $f !~ /^\s*hypothetical\s+protein\s*$/i)
@@ -15342,6 +15405,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -15518,6 +15582,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -15553,7 +15618,22 @@ sub annotate_proteins_kmer_v2
     $genome_in = GenomeTypeObject->initialize($genome_in);
 
     my $filter;
-    if ($params->{annotate_hypothetical_only})
+    if ($params->{annotate_null_only})
+    {
+	$filter = sub {
+	    my($feature) = @_;
+	    my $f = $feature->{function};
+	    if ($f eq '')
+	    {
+		return 1;
+	    }
+	    else
+	    {
+		return 0;
+	    }
+	};
+    }
+    elsif ($params->{annotate_hypothetical_only})
     {
 	$filter = sub {
 	    my($feature) = @_;
@@ -16669,6 +16749,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -16853,6 +16934,7 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -17169,6 +17251,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -17345,6 +17428,7 @@ kmer_v2_parameters is a reference to a hash where the following keys are defined
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -17544,9 +17628,9 @@ sub enumerate_special_protein_databases
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($database_names);
     #BEGIN enumerate_special_protein_databases
-
+    
     $database_names = [];
-
+    
     my $dir = $self->{special_protein_dbdir};
     if ($dir && opendir(my $dh, $dir))
     {
@@ -17554,7 +17638,7 @@ sub enumerate_special_protein_databases
 	push(@$database_names, @list);
 	closedir($dh);
     }
-
+    
     #END enumerate_special_protein_databases
     my @_bad_returns;
     (ref($database_names) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"database_names\" (value was \"$database_names\")");
@@ -17964,24 +18048,24 @@ sub compute_special_proteins
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($results);
     #BEGIN compute_special_proteins
-
+    
     $genome_in = GenomeTypeObject->initialize($genome_in);
-
+    
     my $dir = $self->{special_protein_dbdir};
     
     my $prots = File::Temp->new();
     close($prots);
     $genome_in->write_protein_translations_to_file($prots);
-
+    
     my $out = File::Temp->new();
-
+    
     my @dbargs = map { ("--db", $_) } @$database_names;
-
+    
     if (!$self->{special_protein_cache_db})
     {
 	push(@dbargs, "--no-cache");
     }
-
+    
     my @cmd = ('rast_compute_specialty_genes',
 	       "--in", $prots,
 	       "--db-dir", $dir,
@@ -17990,7 +18074,7 @@ sub compute_special_proteins
 	       $self->{special_protein_cache_dbhost} ? ("--cache-host", $self->{special_protein_cache_dbhost}) : (),
 	       $self->{special_protein_cache_dbuser} ? ("--cache-user", $self->{special_protein_cache_dbuser}) : (),
 	       $self->{special_protein_cache_dbpass} ? ("--cache-pass", $self->{special_protein_cache_dbpass}) : ());
-
+    
     $ctx->stderr->log_cmd(@cmd);
     my $ok = run(\@cmd, '>', $out, $ctx->stderr->redirect);
     close($out);
@@ -18004,7 +18088,7 @@ sub compute_special_proteins
 	    {
 		chomp $l;
 		push(@$results, [ split(/\t/, $l) ])
-	    }
+		}
 	    close($fh);
 	}
     }
@@ -18012,7 +18096,7 @@ sub compute_special_proteins
     {
 	die "Error running rast_compute_specialty_genes ($?): @cmd\n" . $ctx->stderr->text_value;
     }
-
+    
     #END compute_special_proteins
     my @_bad_returns;
     (ref($results) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"results\" (value was \"$results\")");
@@ -18403,17 +18487,17 @@ sub annotate_special_proteins
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($genome_out);
     #BEGIN annotate_special_proteins
-
+    
     $genome_in = GenomeTypeObject->initialize($genome_in);
-
+    
     my $dir = $self->{special_protein_dbdir};
     
     my $prots = File::Temp->new();
     close($prots);
     $genome_in->write_protein_translations_to_file($prots);
-
+    
     my $out = File::Temp->new();
-
+    
     my @opts;
     push(@opts, "--parallel", $self->{special_protein_threads});
     if ($self->{special_protein_cache_db})
@@ -18428,7 +18512,7 @@ sub annotate_special_proteins
     {
 	push(@opts, "--no-cache");
     }
-
+    
     my @cmd = ('rast_compute_specialty_genes',
 	       "--in", $prots,
 	       "--db-dir", $dir,
@@ -18446,7 +18530,7 @@ sub annotate_special_proteins
 	    {
 		chomp $l;
 		my($qid, $db, $sid, $qcov, $scov, $iden, $pvalue) = split(/\t/, $l);
-
+		
 		my $f = $genome_in->find_feature($qid);
 		if (ref($f))
 		{
@@ -18460,10 +18544,10 @@ sub annotate_special_proteins
     {
 	die "Error running rast_compute_specialty_genes ($?): @cmd\n" . $ctx->stderr->text_value;
     }
-
+    
     $genome_out = $genome_in;
     $genome_out = $genome_out->prepare_for_return();
-
+    
     #END annotate_special_proteins
     my @_bad_returns;
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
@@ -18854,41 +18938,41 @@ sub annotate_families_figfam_v1
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($genome_out);
     #BEGIN annotate_families_figfam_v1
-
+    
     #
     # Use the patric_call_proteins code from SEED to call figfamv1 families.
     # The path to this tool needs to be configured in the deployment configuration using
     # key patric_call_proteins_path.
     #
-
+    
     my $remote = $self->{patric_call_proteins_remote_host};
     my $remote_user = $self->{patric_call_proteins_remote_user};
     my $exe = $self->{patric_call_proteins_path};
-
+    
     if (!$remote && ($exe eq '' || ! -x $exe))
     {
 	warn "PATRIC protein caller path not defined or invalid";
 	$genome_out = $genome_in;
 	goto do_return;
     }
-
+    
     my $ff = $self->{patric_call_proteins_ff_path};
     my $md5_to_fam = $self->{patric_call_proteins_md5_to_fam_path};
-
+    
     if (!$remote)
     {
 	-d $ff or die "PATRIC protein caller figfam path not found";
 	-f $md5_to_fam or die "PATRIC protein caller md5_to_fam path not found";
     }
-
+    
     $genome_in = GenomeTypeObject->initialize($genome_in);
-
+    
     my $prots = File::Temp->new();
     close($prots);
     $genome_in->write_protein_translations_to_file($prots);
-
+    
     my $out = File::Temp->new();
-
+    
     my(@cmd, $ok);
     if ($remote)
     {
@@ -18911,9 +18995,9 @@ sub annotate_families_figfam_v1
     {
 	die "Error $? running @cmd\n" . $ctx->stderr->text_value;
     }
-
+    
     open(my $fh, "<", $out) or die "Cannot open output temp $out: $!";
-
+    
     while (<$fh>)
     {
 	chomp;
@@ -18925,13 +19009,13 @@ sub annotate_families_figfam_v1
 	    push(@{$f->{family_assignments}}, [ 'FIGFAM', $kfam, $kfun ]);
 	}
     }
-
+    
     close($fh);
-
+    
     $genome_out = $genome_in;
     $genome_out = $genome_out->prepare_for_return();
-
-do_return:
+    
+    do_return:
     #END annotate_families_figfam_v1
     my @_bad_returns;
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
@@ -19322,15 +19406,15 @@ sub annotate_families_patric
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($genome_out);
     #BEGIN annotate_families_patric
-
+    
     my $coder = _get_coder();
     my $tmp_in = File::Temp->new();
     write_file($tmp_in, $coder->encode($genome_in));
-
+    
     close($tmp_in);
     my $tmp_out = File::Temp->new();
     close($tmp_out);
-
+    
     my @cmd = ("place_proteins_into_pattyfams", "--output", $tmp_out,
 	       $self->{patric_annotate_families_kmers},
 	       $self->{patric_annotate_families_url},
@@ -19341,9 +19425,9 @@ sub annotate_families_patric
     {
 	die "error calling patric families: $rc\non command @cmd";
     }
-
+    
     $genome_out = $coder->decode(scalar read_file("" . $tmp_out));
-
+    
     #END annotate_families_patric
     my @_bad_returns;
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
@@ -19734,16 +19818,16 @@ sub annotate_null_to_hypothetical
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($genome_out);
     #BEGIN annotate_null_to_hypothetical
-
+    
     $genome_in = GenomeTypeObject->initialize($genome_in);
-
+    
     my $event = {
 	tool_name => "annotate_null_to_hypothetical",
 	execution_time => scalar gettimeofday,
 	hostname => $self->{hostname},
     };
     my $event_id = $genome_in->add_analysis_event($event);
-
+    
     for my $feature ($genome_in->features)
     {
 	if ($feature->{function} eq '')
@@ -19751,10 +19835,10 @@ sub annotate_null_to_hypothetical
 	    $genome_in->update_function($ctx->user_id, $feature->{id}, "hypothetical protein", $event_id);
 	}
     }
-
+    
     $genome_out = $genome_in;
     $genome_out = $genome_out->prepare_for_return();
-
+    
     #END annotate_null_to_hypothetical
     my @_bad_returns;
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
@@ -20145,9 +20229,9 @@ sub annotate_strain_type_MLST
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($genome_out);
     #BEGIN annotate_strain_type_MLST
-
+    
     $genome_in = GenomeTypeObject->initialize($genome_in);
-
+    
     if (!defined($genome_in->{scientific_name}))
     {
 	warn "No scientific name defined in annotate_strain_type_MLST";
@@ -25182,12 +25266,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -25224,12 +25311,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -25267,9 +25357,9 @@ sub default_workflow
 	      { name => 'call_features_CDS_prodigal' },
 	      { name => 'call_features_CDS_glimmer3', failure_is_not_fatal => 1, glimmer3_parameters => {} },
 	      { name => 'annotate_proteins_kmer_v2', kmer_v2_parameters => {} },
-	      { name => 'annotate_proteins_kmer_v1', kmer_v1_parameters => { annotate_hypothetical_only => 1 } },
-	      { name => 'annotate_proteins_phage', phage_parameters => { annotate_hypothetical_only => 1 } },
-	      { name => 'annotate_proteins_similarity', similarity_parameters => { annotate_hypothetical_only => 1 } },
+	      { name => 'annotate_proteins_kmer_v1', kmer_v1_parameters => { annotate_null_only => 1 } },
+	      { name => 'annotate_proteins_phage', phage_parameters => { annotate_null_only => 1 } },
+	      { name => 'annotate_proteins_similarity', similarity_parameters => { annotate_null_only => 1 } },
 	      { name => 'propagate_genbank_feature_metadata', propagate_genbank_feature_metadata_parameters => {} },
 	      { name => 'resolve_overlapping_features', resolve_overlapping_features_parameters => {} },
 	      { name => 'classify_amr', failure_is_not_fatal => 1 },
@@ -25340,12 +25430,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -25384,12 +25477,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -25414,10 +25510,10 @@ sub enumerate_workflows
     #BEGIN enumerate_workflows
 
     $workflows = [];
-    
+
     my $def = $self->default_workflow();
     push(@$workflows, ["default", $def]);
-
+    
     #
     # If we have a workflow directory configured, read from that.
     #
@@ -25425,7 +25521,7 @@ sub enumerate_workflows
     if ($dir && opendir(my $dh, $dir))
     {
 	my $coder = _get_coder();
-
+	
 	for my $name (sort { $a cmp $b } grep { -f "$dir/$_" && $_ ne 'default' } readdir($dh))
 	{
 	    my $data;
@@ -25444,6 +25540,9 @@ sub enumerate_workflows
 	}
 	closedir($dh);
     }
+    
+    
+    
     
     #END enumerate_workflows
     my @_bad_returns;
@@ -25499,12 +25598,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -25541,12 +25643,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -25816,12 +25921,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -26022,12 +26130,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -26208,12 +26319,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 </pre>
 
@@ -26263,12 +26377,15 @@ kmer_v1_parameters is a reference to a hash where the following keys are defined
 	min_size has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 kmer_v2_parameters is a reference to a hash where the following keys are defined:
 	min_hits has a value which is an int
 	max_gap has a value which is an int
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 similarity_parameters is a reference to a hash where the following keys are defined:
 	annotate_hypothetical_only has a value which is an int
+	annotate_null_only has a value which is an int
 
 
 =end text
@@ -28370,18 +28487,6 @@ min_length has a value which is an int
 
 
 
-=item Description
-
-* Given a genome typed object, call gap features.
-* Gaps are known regions in the contig where the nucleotide sequence is not known
-* but where there is evidence that a run of DNA does exist joining the sequenced
-* data on either side of the gap.
-*
-* Gaps are currently called using one of two methods. Genomes that originated as
-* genbank files may have a CONTIGS entry that defines the contig and gap regions.
-* Genomes that do not have a CONTIGS entry are scanned for runs of "n" characters.
-
-
 =item Definition
 
 =begin html
@@ -28419,6 +28524,7 @@ min_gap_length has a value which is an int
 <pre>
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -28428,6 +28534,7 @@ annotate_hypothetical_only has a value which is an int
 
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text
@@ -28449,6 +28556,7 @@ annotate_hypothetical_only has a value which is an int
 <pre>
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -28458,6 +28566,7 @@ annotate_hypothetical_only has a value which is an int
 
 a reference to a hash where the following keys are defined:
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text
@@ -28489,6 +28598,7 @@ min_hits has a value which is an int
 min_size has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -28508,6 +28618,7 @@ min_hits has a value which is an int
 min_size has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text
@@ -28531,6 +28642,7 @@ a reference to a hash where the following keys are defined:
 min_hits has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 </pre>
 
@@ -28542,6 +28654,7 @@ a reference to a hash where the following keys are defined:
 min_hits has a value which is an int
 max_gap has a value which is an int
 annotate_hypothetical_only has a value which is an int
+annotate_null_only has a value which is an int
 
 
 =end text

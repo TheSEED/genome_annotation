@@ -450,11 +450,28 @@ module GenomeAnnotation
     funcdef call_features_prophage_phispy(genomeTO genome_in) returns (genomeTO genome_out);
 
     funcdef call_features_scan_for_matches(genomeTO genome_in, string pattern, string feature_type) returns (genomeTO genome_out);
+    
+    typedef structure
+    {
+	int min_gap_length;
+    } assembly_gap_parameters;
 
+    /*
+    * Given a genome typed object, call gap features.		
+    * Gaps are known regions in the contig where the nucleotide sequence is not known		
+    * but where there is evidence that a run of DNA does exist joining the sequenced			
+    * data on either side of the gap.    
+    * 	
+    * Gaps are currently called using one of two methods. Genomes that originated as		
+    * genbank files may have a CONTIGS entry that defines the contig and gap regions.			
+    * Genomes that do not have a CONTIGS entry are scanned for runs of "n" characters.
+    */
+    funcdef call_features_assembly_gap(genomeTO genome_in, assembly_gap_parameters params) returns (genomeTO genome_out);
     
     typedef structure
     {
 	int annotate_hypothetical_only;
+	int annotate_null_only;
     } similarity_parameters;
     /*
      * Annotate based on similarity to annotation databases.
@@ -464,6 +481,7 @@ module GenomeAnnotation
     typedef structure
     {
 	int annotate_hypothetical_only;
+	int annotate_null_only;
     } phage_parameters;
     /*
      * Annotate based on similarity to the phage annotation daatabase.
@@ -483,6 +501,7 @@ module GenomeAnnotation
 	int min_size;
 	int max_gap;
 	int annotate_hypothetical_only;
+	int annotate_null_only;
     } kmer_v1_parameters;
 
     funcdef annotate_proteins_kmer_v1(genomeTO, kmer_v1_parameters params) returns (genomeTO);
@@ -491,6 +510,7 @@ module GenomeAnnotation
 	int min_hits;
 	int max_gap;
 	int annotate_hypothetical_only;
+	int annotate_null_only;
     } kmer_v2_parameters;
     
     funcdef annotate_proteins_kmer_v2(genomeTO genome_in, kmer_v2_parameters params) returns (genomeTO genome_out);
@@ -637,6 +657,12 @@ module GenomeAnnotation
     } workflow;
 
     funcdef default_workflow() returns (workflow);
+
+    /*
+     * Enumerate the loaded workflows. We always have a workflow named "default"; a
+     * particular deployment of the genome annotation service may include additional workflows.
+     */
+    funcdef enumerate_workflows() returns (list<tuple<string workflow_id, workflow wf>> workflows);
 
     /*
      * Return a workflow that includes all available stages. Not meant

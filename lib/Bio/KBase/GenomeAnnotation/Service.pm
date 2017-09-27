@@ -395,6 +395,22 @@ sub encode_output_from_exception {
     return $self->encode_output_from_object($json_error);
 }
 
+#
+# another override.
+#
+sub get_package_isa {
+    my ($self, $module) = @_;
+    my $original_isa;
+    { no strict 'refs'; $original_isa = \@{"${module}::ISA"}; }
+    my @new_isa = @$original_isa;
+
+    my $base = $self->package_base;
+    if (not $module->isa($base)) {
+        Class::Load::load_class($base);
+        push(@new_isa, $base);
+    }
+    return \@new_isa;
+}
 sub trim {
     my ($str) = @_;
     if (!(defined $str)) {
@@ -517,6 +533,11 @@ sub call_method {
 	my $tag = $self->_plack_req->header("Kbrpc-Tag");
 	if (!$tag)
 	{
+	    if (!$self->{hostname}) {
+		chomp($self->{hostname} = `hostname`);
+                $self->{hostname} ||= 'unknown-host';
+	    }
+
 	    my ($t, $us) = &$get_time();
 	    $us = sprintf("%06d", $us);
 	    my $ts = strftime("%Y-%m-%dT%H:%M:%S.${us}Z", gmtime $t);
