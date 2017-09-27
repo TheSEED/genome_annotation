@@ -12630,7 +12630,14 @@ assembly_gap_parameters is a reference to a hash where the following keys are de
 
 =item Description
 
-
+Given a genome typed object, call gap features.                
+Gaps are known regions in the contig where the nucleotide sequence is not known                
+but where there is evidence that a run of DNA does exist joining the sequenced                        
+data on either side of the gap.    
+        
+Gaps are currently called using one of two methods. Genomes that originated as                
+genbank files may have a CONTIGS entry that defines the contig and gap regions.                        
+Genomes that do not have a CONTIGS entry are scanned for runs of "n" characters.
 
 =back
 
@@ -23731,7 +23738,8 @@ similarity_parameters is a reference to a hash where the following keys are defi
 
 =item Description
 
-
+Enumerate the loaded workflows. We always have a workflow named "default"; a
+particular deployment of the genome annotation service may include additional workflows.
 
 =back
 
