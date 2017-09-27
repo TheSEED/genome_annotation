@@ -450,7 +450,12 @@ module GenomeAnnotation
     funcdef call_features_prophage_phispy(genomeTO genome_in) returns (genomeTO genome_out);
 
     funcdef call_features_scan_for_matches(genomeTO genome_in, string pattern, string feature_type) returns (genomeTO genome_out);
-
+    
+    typedef structure
+    {
+	int min_gap_length;
+    } assembly_gap_parameters;
+    funcdef call_features_assembly_gap(genomeTO genome_in, assembly_gap_parameters params) returns (genomeTO genome_out);
     
     typedef structure
     {
@@ -641,6 +646,8 @@ module GenomeAnnotation
     } workflow;
 
     funcdef default_workflow() returns (workflow);
+
+    funcdef enumerate_workflows() returns (list<tuple<string workflow_id, workflow wf>> workflows);
 
     /*
      * Return a workflow that includes all available stages. Not meant
