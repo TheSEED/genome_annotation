@@ -5130,7 +5130,7 @@ sub genomeTO_to_feature_data
 	my $func = $feature->{function};
 	my $md5 = "";
 	$md5 = md5_hex(uc($feature->{protein_translation})) if $feature->{protein_translation};
-	my $aliases = join(",",@{$feature->{aliases}});
+	my $aliases = join(",",@{$feature->{aliases} // []});
 	push(@$feature_data,[$fid,$loc,$type,$func,$aliases,$md5]);
     }
     $return = $feature_data;
