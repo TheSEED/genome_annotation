@@ -11,7 +11,7 @@ SERVICE = genome_annotation
 SERVICE_PORT = 7050
 # SERVICE_ALT_PORT = 7136
 
-SERVICE_URL = https://kbase.us/services/$(SERVICE)
+SERVICE_URL = https://p3.theseed.org/services/$(SERVICE)
 
 SERVICE_NAME = GenomeAnnotation
 SERVICE_NAME_PY = $(SERVICE_NAME)
@@ -83,6 +83,7 @@ compile-typespec: Makefile
 	touch lib/biokbase/$(SERVICE_NAME_PY)/__init__.py 
 	mkdir -p lib/javascript/$(SERVICE_NAME)
 	compile_typespec \
+		--patric \
 		--psgi $(SERVICE_PSGI_FILE) \
 		--impl Bio::KBase::$(SERVICE_NAME)::%sImpl \
 		--service Bio::KBase::$(SERVICE_NAME)::Service \
