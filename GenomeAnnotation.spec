@@ -207,6 +207,22 @@ module GenomeAnnotation
     {
 	float frameshift_error_rate;
 	float sequence_error_rate;
+	mapping<string, string> checkm_data;
+	structure {
+	    mapping<string, string> role_map;
+	    mapping<string, list<string>> role_fids;
+	    mapping<string, tuple<int predicted, int actual>> role_ok;
+	    mapping<string, tuple<int predicted, int actual>> role_problematic;
+	} problematic_roles_report;
+	float coarse_consistency;
+	float fine_consistency;
+	structure {
+	    int N50;
+	    int N70;
+	    int N90;
+	    int totlen;
+	    int complete;
+	} genome_metrics;
     } genome_quality_measure;
 
     typedef structure

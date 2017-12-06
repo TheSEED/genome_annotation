@@ -1,6 +1,7 @@
 package Bio::KBase::GenomeAnnotation::Service;
 
 
+use strict;
 use Data::Dumper;
 use Moose;
 use POSIX;
@@ -10,7 +11,7 @@ use Config::Simple;
 my $get_time = sub { time, 0 };
 eval {
     require Time::HiRes;
-    $get_time = sub { Time::HiRes::gettimeofday };
+    $get_time = sub { Time::HiRes::gettimeofday(); };
 };
 
 use P3AuthToken;
@@ -355,7 +356,8 @@ sub getIPAddress {
     my ($self) = @_;
     my $xFF = trim($self->_plack_req->header("X-Forwarded-For"));
     my $realIP = trim($self->_plack_req->header("X-Real-IP"));
-    my $nh = $self->config->{"dont_trust_x_ip_headers"};
+    # my $nh = $self->config->{"dont_trust_x_ip_headers"};
+    my $nh;
     my $trustXHeaders = !(defined $nh) || $nh ne "true";
 
     if ($trustXHeaders) {
@@ -510,7 +512,6 @@ sub call_method {
                             data => $str,
                             context => $ctx
                             };
-            }
             die $nicerr;
         }
 	$ctx->stderr(undef);
@@ -601,10 +602,17 @@ __PACKAGE__->mk_accessors(qw(user_id client_ip authenticated token
 
 sub new
 {
-    my($class, %opts) = @_;
+    my($class, @opts) = @_;
+
+    if (!defined($opts[0]) || ref($opts[0]))
+    {
+        # We were invoked by old code that stuffed a logger in here.
+	# Strip that option.
+	shift @opts;
+    }
     
     my $self = {
-        %opts,
+        @opts,
     };
     chomp($self->{hostname} = `hostname`);
     $self->{hostname} ||= 'unknown-host';

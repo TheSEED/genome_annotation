@@ -1,6 +1,5 @@
 package Bio::KBase::GenomeAnnotation::GenomeAnnotationImpl;
 use strict;
-use Bio::KBase::Exceptions;
 # Use Semantic Versioning (2.0.0-rc.1)
 # http://semver.org 
 our $VERSION = "0.1.0";
@@ -720,8 +719,7 @@ sub genome_ids_to_genomes
     (ref($ids) eq 'ARRAY') or push(@_bad_arguments, "Invalid type for argument \"ids\" (value was \"$ids\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to genome_ids_to_genomes:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'genome_ids_to_genomes');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -735,8 +733,7 @@ sub genome_ids_to_genomes
     (ref($genomes) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"genomes\" (value was \"$genomes\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to genome_ids_to_genomes:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'genome_ids_to_genomes');
+	die $msg;
     }
     return($genomes);
 }
@@ -1133,8 +1130,7 @@ sub create_genome
     (ref($metadata) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"metadata\" (value was \"$metadata\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to create_genome:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'create_genome');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -1165,8 +1161,7 @@ sub create_genome
     (ref($genome) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome\" (value was \"$genome\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to create_genome:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'create_genome');
+	die $msg;
     }
     return($genome);
 }
@@ -1543,8 +1538,7 @@ sub create_genome_from_genbank
     (!ref($gb_data)) or push(@_bad_arguments, "Invalid type for argument \"gb_data\" (value was \"$gb_data\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to create_genome_from_genbank:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'create_genome_from_genbank');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -1601,8 +1595,7 @@ sub create_genome_from_genbank
     (ref($genome) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome\" (value was \"$genome\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to create_genome_from_genbank:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'create_genome_from_genbank');
+	die $msg;
     }
     return($genome);
 }
@@ -1979,8 +1972,7 @@ sub create_genome_from_SEED
     (!ref($genome_id)) or push(@_bad_arguments, "Invalid type for argument \"genome_id\" (value was \"$genome_id\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to create_genome_from_SEED:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'create_genome_from_SEED');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -1991,8 +1983,7 @@ sub create_genome_from_SEED
     (ref($genome) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome\" (value was \"$genome\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to create_genome_from_SEED:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'create_genome_from_SEED');
+	die $msg;
     }
     return($genome);
 }
@@ -2369,8 +2360,7 @@ sub create_genome_from_RAST
     (!ref($genome_or_job_id)) or push(@_bad_arguments, "Invalid type for argument \"genome_or_job_id\" (value was \"$genome_or_job_id\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to create_genome_from_RAST:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'create_genome_from_RAST');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -2384,8 +2374,7 @@ sub create_genome_from_RAST
     (ref($genome) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome\" (value was \"$genome\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to create_genome_from_RAST:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'create_genome_from_RAST');
+	die $msg;
     }
     return($genome);
 }
@@ -2785,8 +2774,7 @@ sub set_metadata
     (ref($metadata) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"metadata\" (value was \"$metadata\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to set_metadata:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'set_metadata');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -3026,8 +3014,7 @@ sub add_contigs
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to set_metadata:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'set_metadata');
+	die $msg;
     }
     return($genome_out);
 }
@@ -3407,8 +3394,7 @@ sub add_contigs
     (ref($contigs) eq 'ARRAY') or push(@_bad_arguments, "Invalid type for argument \"contigs\" (value was \"$contigs\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to add_contigs:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'add_contigs');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -3424,8 +3410,7 @@ sub add_contigs
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to add_contigs:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'add_contigs');
+	die $msg;
     }
     return($genome_out);
 }
@@ -3806,8 +3791,7 @@ sub add_contigs_from_handle
     (ref($contigs) eq 'ARRAY') or push(@_bad_arguments, "Invalid type for argument \"contigs\" (value was \"$contigs\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to add_contigs_from_handle:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'add_contigs_from_handle');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -3818,8 +3802,7 @@ sub add_contigs_from_handle
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to add_contigs_from_handle:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'add_contigs_from_handle');
+	die $msg;
     }
     return($genome_out);
 }
@@ -4211,8 +4194,7 @@ sub add_features
     (ref($features) eq 'ARRAY') or push(@_bad_arguments, "Invalid type for argument \"features\" (value was \"$features\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to add_features:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'add_features');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -4228,8 +4210,7 @@ sub add_features
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to add_features:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'add_features');
+	die $msg;
     }
     return($genome_out);
 }
@@ -4648,8 +4629,7 @@ sub genomeTO_to_reconstructionTO
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to genomeTO_to_reconstructionTO:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'genomeTO_to_reconstructionTO');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -4714,8 +4694,7 @@ sub genomeTO_to_reconstructionTO
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to genomeTO_to_reconstructionTO:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'genomeTO_to_reconstructionTO');
+	die $msg;
     }
     return($return);
 }
@@ -5110,8 +5089,7 @@ sub genomeTO_to_feature_data
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to genomeTO_to_feature_data:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'genomeTO_to_feature_data');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -5139,8 +5117,7 @@ sub genomeTO_to_feature_data
     (ref($return) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to genomeTO_to_feature_data:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'genomeTO_to_feature_data');
+	die $msg;
     }
     return($return);
 }
@@ -5235,8 +5212,7 @@ sub reconstructionTO_to_roles
     (ref($reconstructionTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"reconstructionTO\" (value was \"$reconstructionTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to reconstructionTO_to_roles:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'reconstructionTO_to_roles');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -5252,8 +5228,7 @@ sub reconstructionTO_to_roles
     (ref($return) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to reconstructionTO_to_roles:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'reconstructionTO_to_roles');
+	die $msg;
     }
     return($return);
 }
@@ -5348,8 +5323,7 @@ sub reconstructionTO_to_subsystems
     (ref($reconstructionTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"reconstructionTO\" (value was \"$reconstructionTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to reconstructionTO_to_subsystems:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'reconstructionTO_to_subsystems');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -5364,8 +5338,7 @@ sub reconstructionTO_to_subsystems
     (ref($return) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to reconstructionTO_to_subsystems:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'reconstructionTO_to_subsystems');
+	die $msg;
     }
     return($return);
 }
@@ -5743,8 +5716,7 @@ sub assign_functions_to_CDSs
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to assign_functions_to_CDSs:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'assign_functions_to_CDSs');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -5786,8 +5758,7 @@ sub assign_functions_to_CDSs
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to assign_functions_to_CDSs:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'assign_functions_to_CDSs');
+	die $msg;
     }
     return($return);
 }
@@ -6164,8 +6135,7 @@ sub annotate_genome
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to annotate_genome:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_genome');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -6337,8 +6307,7 @@ sub annotate_genome
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_genome:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_genome');
+	die $msg;
     }
     return($return);
 }
@@ -6715,8 +6684,7 @@ sub call_selenoproteins
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_selenoproteins:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_selenoproteins');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -6768,8 +6736,7 @@ sub call_selenoproteins
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_selenoproteins:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_selenoproteins');
+	die $msg;
     }
     return($return);
 }
@@ -7146,8 +7113,7 @@ sub call_pyrrolysoproteins
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_pyrrolysoproteins:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_pyrrolysoproteins');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -7198,8 +7164,7 @@ sub call_pyrrolysoproteins
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_pyrrolysoproteins:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_pyrrolysoproteins');
+	die $msg;
     }
     return($return);
 }
@@ -7576,8 +7541,7 @@ sub call_features_selenoprotein
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_selenoprotein:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_selenoprotein');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -7591,8 +7555,7 @@ sub call_features_selenoprotein
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_selenoprotein:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_selenoprotein');
+	die $msg;
     }
     return($return);
 }
@@ -7969,8 +7932,7 @@ sub call_features_pyrrolysoprotein
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_pyrrolysoprotein:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_pyrrolysoprotein');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -7984,8 +7946,7 @@ sub call_features_pyrrolysoprotein
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_pyrrolysoprotein:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_pyrrolysoprotein');
+	die $msg;
     }
     return($return);
 }
@@ -8362,8 +8323,7 @@ sub call_features_insertion_sequences
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_insertion_sequences:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_insertion_sequences');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -8440,8 +8400,7 @@ sub call_features_insertion_sequences
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_insertion_sequences:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_insertion_sequences');
+	die $msg;
     }
     return($return);
 }
@@ -8830,8 +8789,7 @@ sub call_features_rRNA_SEED
     (ref($types) eq 'ARRAY') or push(@_bad_arguments, "Invalid type for argument \"types\" (value was \"$types\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_rRNA_SEED:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_rRNA_SEED');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -8879,8 +8837,7 @@ sub call_features_rRNA_SEED
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_rRNA_SEED:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_rRNA_SEED');
+	die $msg;
     }
     return($genome_out);
 }
@@ -9258,8 +9215,7 @@ sub call_features_tRNA_trnascan
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_tRNA_trnascan:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_tRNA_trnascan');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -9291,8 +9247,7 @@ sub call_features_tRNA_trnascan
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_tRNA_trnascan:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_tRNA_trnascan');
+	die $msg;
     }
     return($genome_out);
 }
@@ -9670,8 +9625,7 @@ sub call_RNAs
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_RNAs:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_RNAs');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -9763,8 +9717,7 @@ sub call_RNAs
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_RNAs:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_RNAs');
+	die $msg;
     }
     return($genome_out);
 }
@@ -10148,8 +10101,7 @@ sub call_features_CDS_glimmer3
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_CDS_glimmer3:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_CDS_glimmer3');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -10250,8 +10202,7 @@ sub call_features_CDS_glimmer3
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_CDS_glimmer3:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_CDS_glimmer3');
+	die $msg;
     }
     return($return);
 }
@@ -10628,8 +10579,7 @@ sub call_features_CDS_prodigal
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_CDS_prodigal:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_CDS_prodigal');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -10673,8 +10623,7 @@ sub call_features_CDS_prodigal
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_CDS_prodigal:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_CDS_prodigal');
+	die $msg;
     }
     return($return);
 }
@@ -11051,8 +11000,7 @@ sub call_features_CDS_genemark
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_CDS_genemark:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_CDS_genemark');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -11272,8 +11220,7 @@ sub call_features_CDS_genemark
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_CDS_genemark:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_CDS_genemark');
+	die $msg;
     }
     return($return);
 }
@@ -11661,8 +11608,7 @@ sub call_features_CDS_SEED_projection
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_CDS_SEED_projection:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_CDS_SEED_projection');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -11728,8 +11674,7 @@ sub call_features_CDS_SEED_projection
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_CDS_SEED_projection:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_CDS_SEED_projection');
+	die $msg;
     }
     return($return);
 }
@@ -12106,8 +12051,7 @@ sub call_features_CDS_FragGeneScan
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_CDS_FragGeneScan:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_CDS_FragGeneScan');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -12119,8 +12063,7 @@ sub call_features_CDS_FragGeneScan
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_CDS_FragGeneScan:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_CDS_FragGeneScan');
+	die $msg;
     }
     return($return);
 }
@@ -12506,8 +12449,7 @@ sub call_features_repeat_region_SEED
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_repeat_region_SEED:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_repeat_region_SEED');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -12601,8 +12543,7 @@ sub call_features_repeat_region_SEED
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_repeat_region_SEED:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_repeat_region_SEED');
+	die $msg;
     }
     return($genome_out);
 }
@@ -12979,8 +12920,7 @@ sub call_features_prophage_phispy
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_prophage_phispy:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_prophage_phispy');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -13013,8 +12953,7 @@ sub call_features_prophage_phispy
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_prophage_phispy:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_prophage_phispy');
+	die $msg;
     }
     return($genome_out);
 }
@@ -13397,8 +13336,7 @@ sub call_features_scan_for_matches
     (!ref($feature_type)) or push(@_bad_arguments, "Invalid type for argument \"feature_type\" (value was \"$feature_type\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_scan_for_matches:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_scan_for_matches');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -13410,8 +13348,7 @@ sub call_features_scan_for_matches
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_scan_for_matches:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_scan_for_matches');
+	die $msg;
     }
     return($genome_out);
 }
@@ -13802,8 +13739,7 @@ sub call_features_assembly_gap
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_assembly_gap:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_assembly_gap');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -13814,8 +13750,7 @@ sub call_features_assembly_gap
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_assembly_gap:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_assembly_gap');
+	die $msg;
     }
     return($genome_out);
 }
@@ -14201,8 +14136,7 @@ sub annotate_proteins_similarity
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to annotate_proteins_similarity:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_proteins_similarity');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -14261,8 +14195,7 @@ sub annotate_proteins_similarity
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_proteins_similarity:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_proteins_similarity');
+	die $msg;
     }
     return($return);
 }
@@ -14648,8 +14581,7 @@ sub annotate_proteins_phage
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to annotate_proteins_phage:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_proteins_phage');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -14716,8 +14648,7 @@ sub annotate_proteins_phage
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_proteins_phage:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_proteins_phage');
+	die $msg;
     }
     return($return);
 }
@@ -15123,8 +15054,7 @@ sub annotate_proteins_kmer_v1
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to annotate_proteins_kmer_v1:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_proteins_kmer_v1');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -15216,8 +15146,7 @@ sub annotate_proteins_kmer_v1
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_proteins_kmer_v1:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_proteins_kmer_v1');
+	die $msg;
     }
     return($return);
 }
@@ -15607,8 +15536,7 @@ sub annotate_proteins_kmer_v2
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to annotate_proteins_kmer_v2:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_proteins_kmer_v2');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -15725,8 +15653,7 @@ sub annotate_proteins_kmer_v2
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_proteins_kmer_v2:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_proteins_kmer_v2');
+	die $msg;
     }
     return($genome_out);
 }
@@ -16110,8 +16037,7 @@ sub resolve_overlapping_features
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to resolve_overlapping_features:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'resolve_overlapping_features');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -16138,8 +16064,7 @@ sub resolve_overlapping_features
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to resolve_overlapping_features:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'resolve_overlapping_features');
+	die $msg;
     }
     return($genome_out);
 }
@@ -16523,8 +16448,7 @@ sub propagate_genbank_feature_metadata
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to propagate_genbank_feature_metadata:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'propagate_genbank_feature_metadata');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -16552,8 +16476,7 @@ sub propagate_genbank_feature_metadata
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to propagate_genbank_feature_metadata:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'propagate_genbank_feature_metadata');
+	die $msg;
     }
     return($genome_out);
 }
@@ -16959,8 +16882,7 @@ sub call_features_ProtoCDS_kmer_v1
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_ProtoCDS_kmer_v1:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_ProtoCDS_kmer_v1');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -17062,8 +16984,7 @@ sub call_features_ProtoCDS_kmer_v1
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_ProtoCDS_kmer_v1:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_ProtoCDS_kmer_v1');
+	die $msg;
     }
     return($return);
 }
@@ -17453,8 +17374,7 @@ sub call_features_ProtoCDS_kmer_v2
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_ProtoCDS_kmer_v2:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_ProtoCDS_kmer_v2');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -17578,8 +17498,7 @@ sub call_features_ProtoCDS_kmer_v2
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_ProtoCDS_kmer_v2:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_ProtoCDS_kmer_v2');
+	die $msg;
     }
     return($genome_out);
 }
@@ -17644,8 +17563,7 @@ sub enumerate_special_protein_databases
     (ref($database_names) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"database_names\" (value was \"$database_names\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to enumerate_special_protein_databases:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'enumerate_special_protein_databases');
+	die $msg;
     }
     return($database_names);
 }
@@ -18041,8 +17959,7 @@ sub compute_special_proteins
     (ref($database_names) eq 'ARRAY') or push(@_bad_arguments, "Invalid type for argument \"database_names\" (value was \"$database_names\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to compute_special_proteins:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'compute_special_proteins');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -18102,8 +18019,7 @@ sub compute_special_proteins
     (ref($results) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"results\" (value was \"$results\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to compute_special_proteins:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'compute_special_proteins');
+	die $msg;
     }
     return($results);
 }
@@ -18480,8 +18396,7 @@ sub annotate_special_proteins
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to annotate_special_proteins:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_special_proteins');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -18553,8 +18468,7 @@ sub annotate_special_proteins
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_special_proteins:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_special_proteins');
+	die $msg;
     }
     return($genome_out);
 }
@@ -18931,8 +18845,7 @@ sub annotate_families_figfam_v1
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to annotate_families_figfam_v1:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_families_figfam_v1');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -19021,8 +18934,7 @@ sub annotate_families_figfam_v1
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_families_figfam_v1:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_families_figfam_v1');
+	die $msg;
     }
     return($genome_out);
 }
@@ -19399,8 +19311,7 @@ sub annotate_families_patric
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to annotate_families_patric:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_families_patric');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -19433,8 +19344,7 @@ sub annotate_families_patric
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_families_patric:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_families_patric');
+	die $msg;
     }
     return($genome_out);
 }
@@ -19811,8 +19721,7 @@ sub annotate_null_to_hypothetical
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to annotate_null_to_hypothetical:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_null_to_hypothetical');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -19844,8 +19753,7 @@ sub annotate_null_to_hypothetical
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_null_to_hypothetical:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_null_to_hypothetical');
+	die $msg;
     }
     return($genome_out);
 }
@@ -20222,8 +20130,7 @@ sub annotate_strain_type_MLST
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to annotate_strain_type_MLST:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_strain_type_MLST');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -20284,8 +20191,7 @@ sub annotate_strain_type_MLST
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_strain_type_MLST:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_strain_type_MLST');
+	die $msg;
     }
     return($genome_out);
 }
@@ -20696,8 +20602,7 @@ sub compute_cdd
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to compute_cdd:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'compute_cdd');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -20708,8 +20613,7 @@ sub compute_cdd
     (ref($return) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to compute_cdd:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'compute_cdd');
+	die $msg;
     }
     return($return);
 }
@@ -21086,8 +20990,7 @@ sub annotate_proteins
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to annotate_proteins:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_proteins');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -21099,8 +21002,7 @@ sub annotate_proteins
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_proteins:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'annotate_proteins');
+	die $msg;
     }
     return($return);
 }
@@ -21477,8 +21379,7 @@ sub estimate_crude_phylogenetic_position_kmer
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to estimate_crude_phylogenetic_position_kmer:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'estimate_crude_phylogenetic_position_kmer');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -21490,8 +21391,7 @@ sub estimate_crude_phylogenetic_position_kmer
     (!ref($position_estimate)) or push(@_bad_returns, "Invalid type for return variable \"position_estimate\" (value was \"$position_estimate\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to estimate_crude_phylogenetic_position_kmer:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'estimate_crude_phylogenetic_position_kmer');
+	die $msg;
     }
     return($position_estimate);
 }
@@ -21868,8 +21768,7 @@ sub find_close_neighbors
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to find_close_neighbors:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'find_close_neighbors');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -21909,8 +21808,7 @@ sub find_close_neighbors
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to find_close_neighbors:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'find_close_neighbors');
+	die $msg;
     }
     return($return);
 }
@@ -22287,8 +22185,7 @@ sub call_features_strep_suis_repeat
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_strep_suis_repeat:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_strep_suis_repeat');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -22302,8 +22199,7 @@ sub call_features_strep_suis_repeat
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_strep_suis_repeat:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_strep_suis_repeat');
+	die $msg;
     }
     return($return);
 }
@@ -22680,8 +22576,7 @@ sub call_features_strep_pneumo_repeat
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_strep_pneumo_repeat:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_strep_pneumo_repeat');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -22695,8 +22590,7 @@ sub call_features_strep_pneumo_repeat
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_strep_pneumo_repeat:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_strep_pneumo_repeat');
+	die $msg;
     }
     return($return);
 }
@@ -23073,8 +22967,7 @@ sub call_features_crispr
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to call_features_crispr:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_crispr');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -23104,8 +22997,7 @@ sub call_features_crispr
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_crispr:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'call_features_crispr');
+	die $msg;
     }
     return($genome_out);
 }
@@ -23492,8 +23384,7 @@ sub update_functions
     (ref($event) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"event\" (value was \"$event\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to update_functions:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'update_functions');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -23530,8 +23421,7 @@ sub update_functions
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to update_functions:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'update_functions');
+	die $msg;
     }
     return($genome_out);
 }
@@ -23909,8 +23799,7 @@ sub renumber_features
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to renumber_features:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'renumber_features');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -23938,8 +23827,7 @@ sub renumber_features
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to renumber_features:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'renumber_features');
+	die $msg;
     }
     return($genome_out);
 }
@@ -24316,8 +24204,7 @@ sub classify_amr
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to classify_amr:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'classify_amr');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -24396,8 +24283,7 @@ sub classify_amr
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to classify_amr:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'classify_amr');
+	die $msg;
     }
     return($return);
 }
@@ -24783,8 +24669,7 @@ sub export_genome
     (ref($feature_types) eq 'ARRAY') or push(@_bad_arguments, "Invalid type for argument \"feature_types\" (value was \"$feature_types\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to export_genome:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'export_genome');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -24821,8 +24706,7 @@ sub export_genome
     (!ref($exported_data)) or push(@_bad_returns, "Invalid type for return variable \"exported_data\" (value was \"$exported_data\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to export_genome:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'export_genome');
+	die $msg;
     }
     return($exported_data);
 }
@@ -24886,8 +24770,7 @@ sub enumerate_classifiers
     (ref($return) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to enumerate_classifiers:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'enumerate_classifiers');
+	die $msg;
     }
     return($return);
 }
@@ -24947,8 +24830,7 @@ sub query_classifier_groups
     (!ref($classifier)) or push(@_bad_arguments, "Invalid type for argument \"classifier\" (value was \"$classifier\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to query_classifier_groups:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'query_classifier_groups');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -24963,8 +24845,7 @@ sub query_classifier_groups
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to query_classifier_groups:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'query_classifier_groups');
+	die $msg;
     }
     return($return);
 }
@@ -25017,8 +24898,7 @@ sub query_classifier_taxonomies
     (!ref($classifier)) or push(@_bad_arguments, "Invalid type for argument \"classifier\" (value was \"$classifier\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to query_classifier_taxonomies:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'query_classifier_taxonomies');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -25029,8 +24909,7 @@ sub query_classifier_taxonomies
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to query_classifier_taxonomies:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'query_classifier_taxonomies');
+	die $msg;
     }
     return($return);
 }
@@ -25090,8 +24969,7 @@ sub classify_into_bins
     (ref($dna_input) eq 'ARRAY') or push(@_bad_arguments, "Invalid type for argument \"dna_input\" (value was \"$dna_input\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to classify_into_bins:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'classify_into_bins');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -25117,8 +24995,7 @@ sub classify_into_bins
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to classify_into_bins:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'classify_into_bins');
+	die $msg;
     }
     return($return);
 }
@@ -25183,8 +25060,7 @@ sub classify_full
     (ref($dna_input) eq 'ARRAY') or push(@_bad_arguments, "Invalid type for argument \"dna_input\" (value was \"$dna_input\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to classify_full:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'classify_full');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -25217,8 +25093,7 @@ sub classify_full
     (ref($unassigned) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"unassigned\" (value was \"$unassigned\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to classify_full:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'classify_full');
+	die $msg;
     }
     return($return_1, $raw_output, $unassigned);
 }
@@ -25379,8 +25254,7 @@ sub default_workflow
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to default_workflow:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'default_workflow');
+	die $msg;
     }
     return($return);
 }
@@ -25549,8 +25423,7 @@ sub enumerate_workflows
     (ref($workflows) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"workflows\" (value was \"$workflows\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to enumerate_workflows:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'enumerate_workflows');
+	die $msg;
     }
     return($workflows);
 }
@@ -25708,8 +25581,7 @@ sub complete_workflow_template
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to complete_workflow_template:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'complete_workflow_template');
+	die $msg;
     }
     return($return);
 }
@@ -26163,8 +26035,7 @@ sub run_pipeline
     (ref($workflow) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"workflow\" (value was \"$workflow\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to run_pipeline:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'run_pipeline');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -26257,8 +26128,7 @@ sub run_pipeline
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to run_pipeline:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'run_pipeline');
+	die $msg;
     }
     return($genome_out);
 }
@@ -26410,8 +26280,7 @@ sub pipeline_batch_start
     (ref($workflow) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"workflow\" (value was \"$workflow\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to pipeline_batch_start:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'pipeline_batch_start');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -26475,8 +26344,7 @@ sub pipeline_batch_start
     (!ref($batch_id)) or push(@_bad_returns, "Invalid type for return variable \"batch_id\" (value was \"$batch_id\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to pipeline_batch_start:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'pipeline_batch_start');
+	die $msg;
     }
     return($batch_id);
 }
@@ -26575,8 +26443,7 @@ sub pipeline_batch_status
     (!ref($batch_id)) or push(@_bad_arguments, "Invalid type for argument \"batch_id\" (value was \"$batch_id\")");
     if (@_bad_arguments) {
 	my $msg = "Invalid arguments passed to pipeline_batch_status:\n" . join("", map { "\t$_\n" } @_bad_arguments);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'pipeline_batch_status');
+	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
@@ -26664,8 +26531,7 @@ sub pipeline_batch_status
     (ref($status) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"status\" (value was \"$status\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to pipeline_batch_status:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'pipeline_batch_status');
+	die $msg;
     }
     return($status);
 }
@@ -26741,11 +26607,11 @@ sub pipeline_batch_enumerate_batches
     (ref($batches) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"batches\" (value was \"$batches\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to pipeline_batch_enumerate_batches:\n" . join("", map { "\t$_\n" } @_bad_returns);
-	Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,
-							       method_name => 'pipeline_batch_enumerate_batches');
+	die $msg;
     }
     return($batches);
 }
+
 
 
 
@@ -26783,6 +26649,7 @@ Return the module version. This is a Semantic Versioning number.
 sub version {
     return $VERSION;
 }
+
 
 =head1 TYPES
 
