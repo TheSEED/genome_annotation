@@ -27,6 +27,11 @@ ifdef TEMPDIR
 TPAGE_TEMPDIR = --define kb_tempdir=$(TEMPDIR)
 endif
 
+ifdef DEPLOYMENT_VAR_DIR
+SERVICE_LOGDIR = $(DEPLOYMENT_VAR_DIR)/services/$(SERVICE)
+TPAGE_SERVICE_LOGDIR = --define kb_service_log_dir=$(SERVICE_LOGDIR)
+endif
+
 ifdef SERVICE_ALT_PORT
 TPAGE_SERVICE_ALT_PORT = --define kb_service_alt_port=$(SERVICE_ALT_PORT) 
 endif
@@ -49,6 +54,7 @@ TPAGE_ARGS = --define kb_top=$(TARGET) \
 	--define kb_starman_max_requests$(ANNO_MAX_REQUESTS) \
 	$(TPAGE_SERVICE_ALT_PORT) \
 	$(TPAGE_TEMPDIR) \
+	$(TPAGE_SERVICE_LOGDIR) \
 	--define kser_port=$(KSER_PORT) \
 	--define kser_data=$(KSER_DATA) \
 	--define kser_load_threads=$(KSER_LOAD_THREADS) \
