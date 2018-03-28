@@ -181,6 +181,10 @@ module GenomeAnnotation
 
 	string genbank_type;
 	genbank_feature genbank_feature;
+
+	list<tuple<string id, string description>> ec_numbers;
+	list<tuple<string id, string description>> go_terms;
+	list<tuple<string id, string description>> pathways;
     } feature;
 
     /* Data for DNA contig */
@@ -220,9 +224,55 @@ module GenomeAnnotation
 	    int N50;
 	    int N70;
 	    int N90;
+	    int L50;
+	    int L70;
+	    int L90;
 	    int totlen;
 	    int complete;
 	} genome_metrics;
+
+	int genome_length;
+	float gc_content;
+	int chromosomes;
+	int plasmids;
+	int contigs;
+
+	string genome_status;
+
+	structure {
+	    int cds;
+	    int partial_cds;
+	    int rRNA;
+	    int tRNA;
+	    int miscRNA;
+	    int repeat_region;
+	} feature_summary;
+
+	structure {
+	    int hypothetical;
+	    int function_assignment;
+	    int plfam_assignment;
+	    int pgfam_assignment;
+	    int ec_assignment;
+	    int go_assignment;
+	    int pathway_assignment;
+	} protein_summary;
+
+	mapping<string, int> specialty_gene_summary;
+
+	list<tuple<feature_id id, string function>> amr_genes;
+	
+	mapping<string superclass, int count> subsystem_summary;
+
+	float cds_ratio;
+	float hypothetical_cds_ratio;
+	float partial_cds_ratio;
+	float plfam_cds_ratio;
+	float pgfam_cds_ratio;
+
+	list<string> genome_quality_flags;
+	string genome_quality;
+	
     } genome_quality_measure;
 
     typedef structure
@@ -249,7 +299,19 @@ module GenomeAnnotation
 	analysis_event_id event_id;
 	list<tuple<feature_id id, float alpha, int round, string function>> features;
     } classifier;
-    
+
+    typedef structure {
+	string role_id;
+	list<feature_id> features;
+    } role_binding;
+
+    typedef structure {
+	string name;
+	tuple<string superclass, string class, string subclass> classification;
+	string variant_code;
+	list<role_binding> role_bindings;
+	analysis_event_id event_id;
+    } subsystem_data;
 
     /* All of the information about particular genome */
     typedef structure {
@@ -261,6 +323,9 @@ module GenomeAnnotation
 	string source_id;
 	string taxonomy;
 	int ncbi_taxonomy_id;
+	list<tuple<string taxon_name, int taxon_id, string taxon_rank>> ncbi_lineage;
+	string ncbi_genus;
+	string ncbi_species;
 	string owner;
 
 	genome_quality_measure quality;
@@ -276,6 +341,8 @@ module GenomeAnnotation
 
 	list<strain_type> typing;
 	list<classifier> classifications;
+
+	list<subsystem_data> subsystems;
     } genomeTO;
 
 
@@ -655,6 +722,11 @@ module GenomeAnnotation
     funcdef classify_full(string classifier, list<tuple<string id, string dna_data>> dna_input)
 	returns(mapping<string group_id, int count>, string raw_output, list<string> unassigned);
 
+
+    /*
+     * Project subsystems.
+     */
+    funcdef project_subsystems(genomeTO genome_in) returns (genomeTO genome_out);
 
     typedef structure {
 	string name;
