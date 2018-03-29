@@ -738,6 +738,11 @@ module GenomeAnnotation
 	kmer_v2_parameters kmer_v2_parameters;
 	similarity_parameters similarity_parameters;
     } pipeline_stage;
+
+    /*
+     * Compute genome Quality Control scoring.
+     */
+    funcdef compute_genome_quality_control(genomeTO genome_in) returns (genomeTO genome_out);
     
     typedef structure
     {
