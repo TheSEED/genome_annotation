@@ -17341,12 +17341,10 @@ sub call_features_CDS_phanotate
 
 	my $fix_start = 1;
 	
-	my($left, $right) = $strand eq '+' ? ($start, $stop) : ($stop, $start);
+	$start = '1' if $start eq '<2';
+	$stop = '1' if $stop eq '<2';
 
-	if ($left eq '<2')
-	{
-	    $left = 1;
-	}
+	my($left, $right) = $strand eq '+' ? ($start, $stop) : ($stop, $start);
 
 	my $len = $right - $left + 1;
 	
