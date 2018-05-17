@@ -58,6 +58,16 @@ module GenomeAnnotation
 	string hostname;
     } analysis_event;
 
+    typedef structure {
+	string job_id;
+	string start_time;
+	string completion_time;
+	float elapsed_time;
+	string app_name;
+	mapping<string, string> parameters;
+	mapping<string, string> attributes;
+    } job_statistics;
+
     typedef tuple<string comment, string annotator, float annotation_time, analysis_event_id> annotation;
 
     typedef structure {
@@ -244,7 +254,7 @@ module GenomeAnnotation
 	    int partial_cds;
 	    int rRNA;
 	    int tRNA;
-	    int miscRNA;
+	    int misc_RNA;
 	    int repeat_region;
 	} feature_summary;
 
@@ -260,7 +270,8 @@ module GenomeAnnotation
 
 	mapping<string, int> specialty_gene_summary;
 
-	list<tuple<feature_id id, string function>> amr_genes;
+	list<tuple<feature_id id, string gene_name, string function, string amr_classification>> amr_genes;
+	list<tuple<string amr_classification, list<string> gene_names>> amr_gene_summary;
 	
 	mapping<string superclass, int count> subsystem_summary;
 
@@ -343,6 +354,13 @@ module GenomeAnnotation
 	list<classifier> classifications;
 
 	list<subsystem_data> subsystems;
+
+	structure {
+	    job_statistics assembly;
+	    job_statistics annotation;
+	} job_data;
+
+
     } genomeTO;
 
 
@@ -512,6 +530,7 @@ module GenomeAnnotation
     
     funcdef call_features_CDS_prodigal(genomeTO) returns (genomeTO);
     funcdef call_features_CDS_genemark(genomeTO) returns (genomeTO);
+    funcdef call_features_CDS_phanotate(genomeTO) returns (genomeTO);
 
     typedef structure
     {
@@ -756,6 +775,11 @@ module GenomeAnnotation
      * particular deployment of the genome annotation service may include additional workflows.
      */
     funcdef enumerate_workflows() returns (list<tuple<string workflow_id, workflow wf>> workflows);
+
+    /*
+     * Look up and return a particular named workflow.
+     */
+    funcdef retrieve_workflow(string workflow_id) returns (workflow);
 
     /*
      * Return a workflow that includes all available stages. Not meant
