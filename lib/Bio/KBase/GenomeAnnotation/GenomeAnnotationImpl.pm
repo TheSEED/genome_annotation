@@ -39663,9 +39663,9 @@ sub default_workflow
 
 
 
-=head2 enumerate_workflows
+=head2 enumerate_recipes
 
-  $workflows = $obj->enumerate_workflows()
+  $recipes = $obj->enumerate_recipes()
 
 =over 4
 
@@ -39674,9 +39674,12 @@ sub default_workflow
 =begin html
 
 <pre>
-$workflows is a reference to a list where each element is a reference to a list containing 2 items:
-	0: (workflow_id) a string
-	1: (wf) a workflow
+$recipes is a reference to a list where each element is a recipe
+recipe is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	name has a value which is a string
+	description has a value which is a string
+	workflow has a value which is a workflow
 workflow is a reference to a hash where the following keys are defined:
 	stages has a value which is a reference to a list where each element is a pipeline_stage
 pipeline_stage is a reference to a hash where the following keys are defined:
@@ -39721,9 +39724,12 @@ similarity_parameters is a reference to a hash where the following keys are defi
 
 =begin text
 
-$workflows is a reference to a list where each element is a reference to a list containing 2 items:
-	0: (workflow_id) a string
-	1: (wf) a workflow
+$recipes is a reference to a list where each element is a recipe
+recipe is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	name has a value which is a string
+	description has a value which is a string
+	workflow has a value which is a workflow
 workflow is a reference to a hash where the following keys are defined:
 	stages has a value which is a reference to a list where each element is a pipeline_stage
 pipeline_stage is a reference to a hash where the following keys are defined:
@@ -39776,18 +39782,23 @@ particular deployment of the genome annotation service may include additional wo
 
 =cut
 
-sub enumerate_workflows
+sub enumerate_recipes
 {
     my $self = shift;
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
-    my($workflows);
-    #BEGIN enumerate_workflows
+    my($recipes);
+    #BEGIN enumerate_recipes
 
-    $workflows = [];
+    $recipes = [];
 
     my $def = $self->default_workflow();
-    push(@$workflows, ["default", $def]);
+    push(@$recipes, {
+	id => 'default',
+	name => 'Default annotation',
+	description => "Standard PATRIC annotation",
+	workflow => $def,
+    });
     
     #
     # If we have a workflow directory configured, read from that.
@@ -39798,44 +39809,49 @@ sub enumerate_workflows
     {
 	my $coder = _get_coder();
 	
-	for my $name (sort { $a cmp $b } grep { -f "$dir/$_/workflow.wf" && $_ ne 'default' } readdir($dh))
+	for my $id (sort { $a cmp $b } grep { -f "$dir/$_/workflow.wf" && $_ ne 'default' } readdir($dh))
 	{
 	    my $data;
 	    eval {
-		my $txt = read_file("$dir/$name/workflow.wf");
+		my $txt = read_file("$dir/$id/workflow.wf");
 		$data = $coder->decode($txt);
 	    };
 	    if ($@)
 	    {
-		warn "error reading $dir/$name: $@";
+		warn "error reading $dir/$id: $@";
 	    }
 	    else
 	    {
-		push(@$workflows, [$name, $data]);
+		my $name = read_file("$dir/$id/name.txt");
+		chomp $name;
+		my $description = read_file("$dir/$id/description.txt");
+		push(@$recipes, {
+		    id => $id,
+		    name => $name,
+		    description => $description,
+		    workflow => $data,
+		});
 	    }
 	}
 	closedir($dh);
     }
     
-    
-    
-    
-    #END enumerate_workflows
+    #END enumerate_recipes
     my @_bad_returns;
-    (ref($workflows) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"workflows\" (value was \"$workflows\")");
+    (ref($recipes) eq 'ARRAY') or push(@_bad_returns, "Invalid type for return variable \"recipes\" (value was \"$recipes\")");
     if (@_bad_returns) {
-	my $msg = "Invalid returns passed to enumerate_workflows:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	my $msg = "Invalid returns passed to enumerate_recipes:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
-    return($workflows);
+    return($recipes);
 }
 
 
 
 
-=head2 retrieve_workflow
+=head2 find_recipe
 
-  $return = $obj->retrieve_workflow($workflow_id)
+  $return = $obj->find_recipe($id)
 
 =over 4
 
@@ -39844,8 +39860,13 @@ sub enumerate_workflows
 =begin html
 
 <pre>
-$workflow_id is a string
-$return is a workflow
+$id is a string
+$return is a recipe
+recipe is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	name has a value which is a string
+	description has a value which is a string
+	workflow has a value which is a workflow
 workflow is a reference to a hash where the following keys are defined:
 	stages has a value which is a reference to a list where each element is a pipeline_stage
 pipeline_stage is a reference to a hash where the following keys are defined:
@@ -39890,8 +39911,13 @@ similarity_parameters is a reference to a hash where the following keys are defi
 
 =begin text
 
-$workflow_id is a string
-$return is a workflow
+$id is a string
+$return is a recipe
+recipe is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	name has a value which is a string
+	description has a value which is a string
+	workflow has a value which is a workflow
 workflow is a reference to a hash where the following keys are defined:
 	stages has a value which is a reference to a list where each element is a pipeline_stage
 pipeline_stage is a reference to a hash where the following keys are defined:
@@ -39943,28 +39969,34 @@ Look up and return a particular named workflow.
 
 =cut
 
-sub retrieve_workflow
+sub find_recipe
 {
     my $self = shift;
-    my($workflow_id) = @_;
+    my($id) = @_;
 
     my @_bad_arguments;
-    (!ref($workflow_id)) or push(@_bad_arguments, "Invalid type for argument \"workflow_id\" (value was \"$workflow_id\")");
+    (!ref($id)) or push(@_bad_arguments, "Invalid type for argument \"id\" (value was \"$id\")");
     if (@_bad_arguments) {
-	my $msg = "Invalid arguments passed to retrieve_workflow:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	my $msg = "Invalid arguments passed to find_recipe:\n" . join("", map { "\t$_\n" } @_bad_arguments);
 	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($return);
-    #BEGIN retrieve_workflow
+    #BEGIN find_recipe
 
     #
     # Support default workflow.
     #
-    if ($workflow_id eq 'default')
+    if ($id eq 'default')
     {
-	$return = $self->default_workflow();
+	my $def = $self->default_workflow();
+	$return = {
+	    id => 'default',
+	    name => 'Default annotation',
+	    description => "Standard PATRIC annotation",
+	    workflow => $def,
+	}
     }
     else
     {
@@ -39976,36 +40008,44 @@ sub retrieve_workflow
 	# Santize given workflow id to disallow loading from a path outside
 	# the workflow directory
 	#
-	$workflow_id =~ s,/,,g;
+	$id =~ s,/,,g;
 	
 	$return = {};
 	
-	if (open(my $fh, "<", "$dir/$workflow_id/workflow.wf"))
+	if (open(my $fh, "<", "$dir/$id/workflow.wf"))
 	{
 	    my $coder = _get_coder();
 	    
 	    my $data;
 	    eval {
-		my $txt = read_file($fh);
+		my $txt = read_file($fh, err_mode => 'quiet');
 		$data = $coder->decode($txt);
 	    };
 	    if ($@)
 	    {
-		warn "error reading $dir/$workflow_id: $@";
+		warn "error reading $dir/$id: $@";
 	    }
 	    else
 	    {
-		$return = $data;
+		my $name = read_file("$dir/$id/name.txt", err_mode => 'quiet');
+		chomp $name;
+		my $description = read_file("$dir/$id/description.txt", err_mode => 'quiet');
+		$return = {
+		    id => $id,
+		    name => $name,
+		    description => $description,
+		    workflow => $data,
+		};
 	    }
 	    close($fh);
 	}
     }
-    
-    #END retrieve_workflow
+
+    #END find_recipe
     my @_bad_returns;
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
-	my $msg = "Invalid returns passed to retrieve_workflow:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	my $msg = "Invalid returns passed to find_recipe:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
     return($return);
@@ -43867,6 +43907,42 @@ stages has a value which is a reference to a list where each element is a pipeli
 
 a reference to a hash where the following keys are defined:
 stages has a value which is a reference to a list where each element is a pipeline_stage
+
+
+=end text
+
+=back
+
+
+
+=head2 recipe
+
+=over 4
+
+
+
+=item Definition
+
+=begin html
+
+<pre>
+a reference to a hash where the following keys are defined:
+id has a value which is a string
+name has a value which is a string
+description has a value which is a string
+workflow has a value which is a workflow
+
+</pre>
+
+=end html
+
+=begin text
+
+a reference to a hash where the following keys are defined:
+id has a value which is a string
+name has a value which is a string
+description has a value which is a string
+workflow has a value which is a workflow
 
 
 =end text

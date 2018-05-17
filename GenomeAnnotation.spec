@@ -768,18 +768,26 @@ module GenomeAnnotation
 	list<pipeline_stage> stages;
     } workflow;
 
+    typedef structure
+    {
+	string id;
+	string name;
+	string description;
+	workflow workflow;
+    } recipe;
+
     funcdef default_workflow() returns (workflow);
 
     /*
      * Enumerate the loaded workflows. We always have a workflow named "default"; a
      * particular deployment of the genome annotation service may include additional workflows.
      */
-    funcdef enumerate_workflows() returns (list<tuple<string workflow_id, workflow wf>> workflows);
+    funcdef enumerate_recipes() returns (list<recipe> recipes);
 
     /*
      * Look up and return a particular named workflow.
      */
-    funcdef retrieve_workflow(string workflow_id) returns (workflow);
+    funcdef find_recipe(string id) returns (recipe);
 
     /*
      * Return a workflow that includes all available stages. Not meant

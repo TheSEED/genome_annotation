@@ -37371,9 +37371,9 @@ sub default_workflow
 
 
 
-=head2 enumerate_workflows
+=head2 enumerate_recipes
 
-  $workflows = $obj->enumerate_workflows()
+  $recipes = $obj->enumerate_recipes()
 
 =over 4
 
@@ -37382,9 +37382,12 @@ sub default_workflow
 =begin html
 
 <pre>
-$workflows is a reference to a list where each element is a reference to a list containing 2 items:
-	0: (workflow_id) a string
-	1: (wf) a workflow
+$recipes is a reference to a list where each element is a recipe
+recipe is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	name has a value which is a string
+	description has a value which is a string
+	workflow has a value which is a workflow
 workflow is a reference to a hash where the following keys are defined:
 	stages has a value which is a reference to a list where each element is a pipeline_stage
 pipeline_stage is a reference to a hash where the following keys are defined:
@@ -37429,9 +37432,12 @@ similarity_parameters is a reference to a hash where the following keys are defi
 
 =begin text
 
-$workflows is a reference to a list where each element is a reference to a list containing 2 items:
-	0: (workflow_id) a string
-	1: (wf) a workflow
+$recipes is a reference to a list where each element is a recipe
+recipe is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	name has a value which is a string
+	description has a value which is a string
+	workflow has a value which is a workflow
 workflow is a reference to a hash where the following keys are defined:
 	stages has a value which is a reference to a list where each element is a pipeline_stage
 pipeline_stage is a reference to a hash where the following keys are defined:
@@ -37482,7 +37488,7 @@ particular deployment of the genome annotation service may include additional wo
 
 =cut
 
-sub enumerate_workflows
+sub enumerate_recipes
 {
     my($self, @args) = @_;
 
@@ -37490,31 +37496,31 @@ sub enumerate_workflows
 
     if ((my $n = @args) != 0)
     {
-        die "Invalid argument count for function enumerate_workflows (received $n, expecting 0)";
+        die "Invalid argument count for function enumerate_recipes (received $n, expecting 0)";
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "GenomeAnnotation.enumerate_workflows",
+	method => "GenomeAnnotation.enumerate_recipes",
 	params => \@args,
     });
     if ($result) {
 	if ($result->{error}) {
 	    my $msg = $result->{error}->{error} || $result->{error}->{message};
 	    $msg =  $self->{client}->json->encode($msg) if ref($msg);
-	    die "Error $result->{error}->{code} invoking enumerate_workflows:\n$msg\n";
+	    die "Error $result->{error}->{code} invoking enumerate_recipes:\n$msg\n";
 	} else {
 	    return wantarray ? @{$result->{result}} : $result->{result}->[0];
 	}
     } else {
-	die "Error invoking method enumerate_workflows: " .  $self->{client}->status_line;
+	die "Error invoking method enumerate_recipes: " .  $self->{client}->status_line;
     }
 }
 
 
 
-=head2 retrieve_workflow
+=head2 find_recipe
 
-  $return = $obj->retrieve_workflow($workflow_id)
+  $return = $obj->find_recipe($id)
 
 =over 4
 
@@ -37523,8 +37529,13 @@ sub enumerate_workflows
 =begin html
 
 <pre>
-$workflow_id is a string
-$return is a workflow
+$id is a string
+$return is a recipe
+recipe is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	name has a value which is a string
+	description has a value which is a string
+	workflow has a value which is a workflow
 workflow is a reference to a hash where the following keys are defined:
 	stages has a value which is a reference to a list where each element is a pipeline_stage
 pipeline_stage is a reference to a hash where the following keys are defined:
@@ -37569,8 +37580,13 @@ similarity_parameters is a reference to a hash where the following keys are defi
 
 =begin text
 
-$workflow_id is a string
-$return is a workflow
+$id is a string
+$return is a recipe
+recipe is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	name has a value which is a string
+	description has a value which is a string
+	workflow has a value which is a workflow
 workflow is a reference to a hash where the following keys are defined:
 	stages has a value which is a reference to a list where each element is a pipeline_stage
 pipeline_stage is a reference to a hash where the following keys are defined:
@@ -37620,7 +37636,7 @@ Look up and return a particular named workflow.
 
 =cut
 
-sub retrieve_workflow
+sub find_recipe
 {
     my($self, @args) = @_;
 
@@ -37628,33 +37644,33 @@ sub retrieve_workflow
 
     if ((my $n = @args) != 1)
     {
-        die "Invalid argument count for function retrieve_workflow (received $n, expecting 1)";
+        die "Invalid argument count for function find_recipe (received $n, expecting 1)";
     }
     {
-	my($workflow_id) = @args;
+	my($id) = @args;
 
 	my @_bad_arguments;
-        (!ref($workflow_id)) or push(@_bad_arguments, "Invalid type for argument 1 \"workflow_id\" (value was \"$workflow_id\")");
+        (!ref($id)) or push(@_bad_arguments, "Invalid type for argument 1 \"id\" (value was \"$id\")");
         if (@_bad_arguments) {
-	    my $msg = "Invalid arguments passed to retrieve_workflow:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	    my $msg = "Invalid arguments passed to find_recipe:\n" . join("", map { "\t$_\n" } @_bad_arguments);
 	    die $msg;
 	}
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "GenomeAnnotation.retrieve_workflow",
+	method => "GenomeAnnotation.find_recipe",
 	params => \@args,
     });
     if ($result) {
 	if ($result->{error}) {
 	    my $msg = $result->{error}->{error} || $result->{error}->{message};
 	    $msg =  $self->{client}->json->encode($msg) if ref($msg);
-	    die "Error $result->{error}->{code} invoking retrieve_workflow:\n$msg\n";
+	    die "Error $result->{error}->{code} invoking find_recipe:\n$msg\n";
 	} else {
 	    return wantarray ? @{$result->{result}} : $result->{result}->[0];
 	}
     } else {
-	die "Error invoking method retrieve_workflow: " .  $self->{client}->status_line;
+	die "Error invoking method find_recipe: " .  $self->{client}->status_line;
     }
 }
 
@@ -41267,6 +41283,42 @@ stages has a value which is a reference to a list where each element is a pipeli
 
 a reference to a hash where the following keys are defined:
 stages has a value which is a reference to a list where each element is a pipeline_stage
+
+
+=end text
+
+=back
+
+
+
+=head2 recipe
+
+=over 4
+
+
+
+=item Definition
+
+=begin html
+
+<pre>
+a reference to a hash where the following keys are defined:
+id has a value which is a string
+name has a value which is a string
+description has a value which is a string
+workflow has a value which is a workflow
+
+</pre>
+
+=end html
+
+=begin text
+
+a reference to a hash where the following keys are defined:
+id has a value which is a string
+name has a value which is a string
+description has a value which is a string
+workflow has a value which is a workflow
 
 
 =end text
