@@ -218,6 +218,23 @@ sub _subsystem_projector
     return $proj;
 }
 
+#
+# Some gene callers (phanotate) may return coordinates of the form "<N". For now
+# patch these by replacing with N-1 (if N>1) or 1.
+#
+sub _fix_fuzzy_coordinate
+{
+    my($n) = @_;
+
+    if ($n =~ /<(\d+)/)
+    {
+	$n = $1 - 1;
+	$n = 1 if $n < 1;
+    }
+
+    return $n;
+}
+
 #END_HEADER
 
 sub new
@@ -17340,9 +17357,9 @@ sub call_features_CDS_phanotate
 	my($start, $stop, $strand, $contig, $score) = @$call;
 
 	my $fix_start = 1;
-	
-	$start = '1' if $start eq '<2';
-	$stop = '1' if $stop eq '<2';
+
+	$start = _fix_fuzzy_coordinate($start);
+	$stop = _fix_fuzzy_coordinate($stop);
 
 	my($left, $right) = $strand eq '+' ? ($start, $stop) : ($stop, $start);
 
@@ -39472,7 +39489,7 @@ sub compute_genome_quality_control
 
     if (!$ok)
     {
-	die "error calling tRNAs: $?\non command @cmd\n" . $ctx->stderr->text_value;
+	die "error running rast2QC: $?\non command @cmd\n" . $ctx->stderr->text_value;
     }
 
     $genome_out = GenomeTypeObject->new({file => "$tmp_out"});
