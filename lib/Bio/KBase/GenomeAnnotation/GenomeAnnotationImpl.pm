@@ -224,12 +224,17 @@ sub _subsystem_projector
 #
 sub _fix_fuzzy_coordinate
 {
-    my($n) = @_;
+    my($n, $contig_length) = @_;
 
     if ($n =~ /<(\d+)/)
     {
 	$n = $1 - 1;
 	$n = 1 if $n < 1;
+    }
+    elsif ($n =~ />(\d+)/)
+    {
+	$n = $1 + 1;
+	$n = $contig_length if $contig_length && $n > $contig_length;
     }
 
     return $n;
@@ -17349,6 +17354,15 @@ sub call_features_CDS_phanotate
 	die "Error starting phanotate $sequences_file: $!";
     }
 
+    #
+    # Determine contig lengths for fixing fuzzy coordinates.
+    #
+    my %contig_length;
+    for my $contig ($genome_in->contigs)
+    {
+	$contig_length{$contig->{id}} = length($contig->{dna});
+    }
+
     my $count = @calls;
     my $cur_id_suffix = $idc->allocate_id_range($typed_prefix, $count);
 
@@ -17358,8 +17372,8 @@ sub call_features_CDS_phanotate
 
 	my $fix_start = 1;
 
-	$start = _fix_fuzzy_coordinate($start);
-	$stop = _fix_fuzzy_coordinate($stop);
+	$start = _fix_fuzzy_coordinate($start, $contig_length{$contig});
+	$stop = _fix_fuzzy_coordinate($stop, $contig_length{$contig});
 
 	my($left, $right) = $strand eq '+' ? ($start, $stop) : ($stop, $start);
 
