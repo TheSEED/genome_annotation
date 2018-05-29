@@ -19322,84 +19322,94 @@ sub call_features_repeat_region_SEED
     #BEGIN call_features_repeat_region_SEED
 
     $genome_in = GenomeTypeObject->initialize($genome_in);
-    
-    my $sequences_file = $genome_in->extract_contig_sequences_to_temp_file();
-    my $output_file = File::Temp->new();
 
-    my @opts;
-    push(@opts, "-i", $params->{min_identity}) if defined($params->{min_identity});
-    push(@opts, "-l", $params->{min_length}) if defined($params->{min_length});
-
-    my $stderr = $ctx->stderr;
-
-    my @cmd = ("svr_big_repeats", @opts);
-
-    $stderr->log_cmd(@cmd);
-
-    my $tmpdir = File::Temp->newdir(undef, CLEANUP => 1);
-
-    print STDERR "seq file $sequences_file\n";
-    my $ok = run(\@cmd,
-		 init => sub { print STDERR "init chdir to $tmpdir\n"; chdir($tmpdir) or die $!; },
-		 "<", $sequences_file,
-		 "|",
-		 ["svr_condense_repeats"],
-		 ">", $output_file,
-		 $stderr->redirect,
-		);
-
-    unlink($sequences_file);
-
-    if (!$ok)
+    #
+    # We skip this step if we have too many contigs.
+    #
+    if ($genome_in->n_contigs > 10)
     {
-	die "Error running svr_big_repeats: @cmd\n" . $stderr->text_value . "\n";
+	print STDERR "Skipping call_features_repeat_region_SEED because contig count " . $genome_in->n_contigs . " is too large\n";
     }
-
-    close($output_file);
-    my($res_fh);
-    open($res_fh, "<", $output_file) or die "Cannot open svr_big_repeats file $output_file: $!";
-
-    my $event = {
-	tool_name => "svr_big_repeats | svr_condense_repeats",
-	execution_time => scalar gettimeofday,
-	parameters => \@opts,
-	hostname => $self->{hostname},
-    };
-
-    my $event_id = $genome_in->add_analysis_event($event);
-
-    # olson@bio-data-1:~/FIGdisk/dist/releases/dev2$ svr_condense_repeats < r
-    #    NC_000913       15377   16741   99.71
-    #    NC_000913       19796   20564   98.83
-
-    my $type = 'repeat';
-    my $function = 'repeat region';
-
-    while(<$res_fh>)
+    else
     {
-	chomp;
-	my($contig, $left, $right, $iden) = split(/\t/);
-
-	next unless $left =~ /^\d+$/ && $right =~ /^\d+$/;
-
-	my $confidence = $iden / 100.0;
-
-	my $quality = {
-	    existence_confidence => $confidence,
+	my $sequences_file = $genome_in->extract_contig_sequences_to_temp_file();
+	my $output_file = File::Temp->new();
+	
+	my @opts;
+	push(@opts, "-i", $params->{min_identity}) if defined($params->{min_identity});
+	push(@opts, "-l", $params->{min_length}) if defined($params->{min_length});
+	
+	my $stderr = $ctx->stderr;
+	
+	my @cmd = ("svr_big_repeats", @opts);
+	
+	$stderr->log_cmd(@cmd);
+	
+	my $tmpdir = File::Temp->newdir(undef, CLEANUP => 1);
+	
+	print STDERR "seq file $sequences_file\n";
+	my $ok = run(\@cmd,
+		     init => sub { print STDERR "init chdir to $tmpdir\n"; chdir($tmpdir) or die $!; },
+		     "<", $sequences_file,
+		     "|",
+		     ["svr_condense_repeats"],
+		     ">", $output_file,
+		     $stderr->redirect,
+		    );
+	
+	unlink($sequences_file);
+	
+	if (!$ok)
+	{
+	    die "Error running svr_big_repeats: @cmd\n" . $stderr->text_value . "\n";
+	}
+	
+	close($output_file);
+	my($res_fh);
+	open($res_fh, "<", $output_file) or die "Cannot open svr_big_repeats file $output_file: $!";
+	
+	my $event = {
+	    tool_name => "svr_big_repeats | svr_condense_repeats",
+	    execution_time => scalar gettimeofday,
+	    parameters => \@opts,
+	    hostname => $self->{hostname},
 	};
-
-	my $len = 1 + $right - $left;
-	my $loc = [[$contig, $left, '+', $len]];
-	$genome_in->add_feature({
-	    -id_prefix 	     => $genome_in->{id},
-	    -type 	     => $type,
-	    -location 	     => $loc,
-	    -function 	     => $function,
-	    -analysis_event_id 	     => $event_id,
-	    -quality_measure => $quality,
-	});
+	
+	my $event_id = $genome_in->add_analysis_event($event);
+	
+	# olson@bio-data-1:~/FIGdisk/dist/releases/dev2$ svr_condense_repeats < r
+	#    NC_000913       15377   16741   99.71
+	#    NC_000913       19796   20564   98.83
+	
+	my $type = 'repeat';
+	my $function = 'repeat region';
+	
+	while(<$res_fh>)
+	{
+	    chomp;
+	    my($contig, $left, $right, $iden) = split(/\t/);
+	    
+	    next unless $left =~ /^\d+$/ && $right =~ /^\d+$/;
+	    
+	    my $confidence = $iden / 100.0;
+	    
+	    my $quality = {
+		existence_confidence => $confidence,
+	    };
+	    
+	    my $len = 1 + $right - $left;
+	    my $loc = [[$contig, $left, '+', $len]];
+	    $genome_in->add_feature({
+		-id_prefix 	     => $genome_in->{id},
+		-type 	     => $type,
+		-location 	     => $loc,
+		-function 	     => $function,
+		-analysis_event_id 	     => $event_id,
+		-quality_measure => $quality,
+	    });
+	}
     }
-
+    
     $genome_out = $genome_in;
     $genome_out = $genome_out->prepare_for_return();
 
