@@ -613,6 +613,8 @@ module GenomeAnnotation
 	int max_gap;
 	int annotate_hypothetical_only;
 	int annotate_null_only;
+	string kmer_data_directory;
+	string kmer_service_url;
     } kmer_v2_parameters;
     
     funcdef annotate_proteins_kmer_v2(genomeTO genome_in, kmer_v2_parameters params) returns (genomeTO genome_out);
@@ -648,6 +650,8 @@ module GenomeAnnotation
     funcdef annotate_families_figfam_v1(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_families_patric(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_null_to_hypothetical(genomeTO genome_in) returns (genomeTO genome_out);
+
+    funcdef remove_genbank_features(genomeTO genome_in) returns (genomeTO genome_out);
 
     funcdef annotate_strain_type_MLST(genomeTO genome_in) returns (genomeTO genome_out);
 
