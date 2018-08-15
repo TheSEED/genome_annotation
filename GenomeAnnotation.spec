@@ -703,6 +703,11 @@ module GenomeAnnotation
     funcdef classify_amr(genomeTO) returns (genomeTO);
 
     /*
+     * Perform genome evaluation.
+     */
+    funcdef evaluate_genome(genomeTO genome_in) returns (genomeTO genome_out);
+
+    /*
      * Export genome typed object to one of the supported output formats:
      * genbank, embl, or gff.
      * If feature_types is a non-empty list, limit the output to the given
