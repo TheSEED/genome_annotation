@@ -35607,7 +35607,7 @@ sub classify_amr
 
 =head2 evaluate_genome
 
-  $genome_out = $obj->evaluate_genome($genome_in)
+  $genome_out = $obj->evaluate_genome($genome_in, $params)
 
 =over 4
 
@@ -35617,6 +35617,7 @@ sub classify_amr
 
 <pre>
 $genome_in is a genomeTO
+$params is an evaluate_genome_parameters
 $genome_out is a genomeTO
 genomeTO is a reference to a hash where the following keys are defined:
 	id has a value which is a genome_id
@@ -35892,6 +35893,8 @@ job_statistics is a reference to a hash where the following keys are defined:
 	app_name has a value which is a string
 	parameters has a value which is a reference to a hash where the key is a string and the value is a string
 	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+evaluate_genome_parameters is a reference to a hash where the following keys are defined:
+	reference_genome_id has a value which is a string
 
 </pre>
 
@@ -35900,6 +35903,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 =begin text
 
 $genome_in is a genomeTO
+$params is an evaluate_genome_parameters
 $genome_out is a genomeTO
 genomeTO is a reference to a hash where the following keys are defined:
 	id has a value which is a genome_id
@@ -36175,6 +36179,8 @@ job_statistics is a reference to a hash where the following keys are defined:
 	app_name has a value which is a string
 	parameters has a value which is a reference to a hash where the key is a string and the value is a string
 	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+evaluate_genome_parameters is a reference to a hash where the following keys are defined:
+	reference_genome_id has a value which is a string
 
 
 =end text
@@ -36193,15 +36199,16 @@ sub evaluate_genome
 
 # Authentication: none
 
-    if ((my $n = @args) != 1)
+    if ((my $n = @args) != 2)
     {
-        die "Invalid argument count for function evaluate_genome (received $n, expecting 1)";
+        die "Invalid argument count for function evaluate_genome (received $n, expecting 2)";
     }
     {
-	my($genome_in) = @args;
+	my($genome_in, $params) = @args;
 
 	my @_bad_arguments;
         (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 1 \"genome_in\" (value was \"$genome_in\")");
+        (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 2 \"params\" (value was \"$params\")");
         if (@_bad_arguments) {
 	    my $msg = "Invalid arguments passed to evaluate_genome:\n" . join("", map { "\t$_\n" } @_bad_arguments);
 	    die $msg;
@@ -42489,6 +42496,36 @@ a reference to a list containing 16 items:
 13: (short_name) a string
 14: (description) a string
 15: (pssm_length) an int
+
+
+=end text
+
+=back
+
+
+
+=head2 evaluate_genome_parameters
+
+=over 4
+
+
+
+=item Definition
+
+=begin html
+
+<pre>
+a reference to a hash where the following keys are defined:
+reference_genome_id has a value which is a string
+
+</pre>
+
+=end html
+
+=begin text
+
+a reference to a hash where the following keys are defined:
+reference_genome_id has a value which is a string
 
 
 =end text

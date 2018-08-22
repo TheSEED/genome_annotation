@@ -702,10 +702,13 @@ module GenomeAnnotation
      */
     funcdef classify_amr(genomeTO) returns (genomeTO);
 
+    typedef structure {
+	string reference_genome_id;
+    } evaluate_genome_parameters;
     /*
      * Perform genome evaluation.
      */
-    funcdef evaluate_genome(genomeTO genome_in) returns (genomeTO genome_out);
+    funcdef evaluate_genome(genomeTO genome_in, evaluate_genome_parameters params) returns (genomeTO genome_out);
 
     /*
      * Export genome typed object to one of the supported output formats:
