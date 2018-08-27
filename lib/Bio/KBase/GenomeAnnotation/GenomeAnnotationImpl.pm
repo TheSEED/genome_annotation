@@ -36,7 +36,7 @@ eval {
 };
 
 use Bio::KBase::KmerAnnotationByFigfam::Client;
-use KmerClassifier;
+# disable # use KmerClassifier;
 #use Bio::KBase::KIDL::Helpers qw(json_to_tempfile tempfile_to_json);
 use IPC::Run qw(run);
 use JSON::XS;
@@ -40014,8 +40014,10 @@ sub query_classifier_groups
     my($return);
     #BEGIN query_classifier_groups
 
-    my $cobj = KmerClassifier->new("$self->{kmer_classifier_data_directory}/$classifier");
-    $return = $cobj->group_membership_hash();
+    die "unimplemented";
+
+    # disable # my $cobj = KmerClassifier->new("$self->{kmer_classifier_data_directory}/$classifier");
+    # disable # $return = $cobj->group_membership_hash();
 
     #END query_classifier_groups
     my @_bad_returns;
@@ -40153,20 +40155,22 @@ sub classify_into_bins
     my($return);
     #BEGIN classify_into_bins
 
-    my $cobj = KmerClassifier->new("$self->{kmer_classifier_data_directory}/$classifier");
+    return "unimplemented";
+    
+    # disable # my $cobj = KmerClassifier->new("$self->{kmer_classifier_data_directory}/$classifier");
 
-    my $tmp = File::Temp->new;
-    close($tmp);
-    open(TMP, ">", $tmp) or die "cannot write tempfile $tmp: $!";
-    for my $ent (@$dna_input)
-    {
-	gjoseqlib::print_alignment_as_fasta(\*TMP, [$ent->[0], undef, $ent->[1]]);
-    }
-    close(TMP);
-    my($bins, $missed) = $cobj->classify("" . $tmp);
-
-    $return = $bins;
-
+    # disable # my $tmp = File::Temp->new;
+    # disable # close($tmp);
+    # disable # open(TMP, ">", $tmp) or die "cannot write tempfile $tmp: $!";
+    # disable # for my $ent (@$dna_input)
+# disable # {
+    # disable # gjoseqlib::print_alignment_as_fasta(\*TMP, [$ent->[0], undef, $ent->[1]]);
+# disable # }
+    # disable # close(TMP);
+    # disable # my($bins, $missed) = $cobj->classify("" . $tmp);
+    # disable # 
+    # disable # $return = $bins;
+    
     #END classify_into_bins
     my @_bad_returns;
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
@@ -40244,25 +40248,27 @@ sub classify_full
     my($return_1, $raw_output, $unassigned);
     #BEGIN classify_full
 
-    my $cobj = KmerClassifier->new("$self->{kmer_classifier_data_directory}/$classifier");
 
-    my $tmp = File::Temp->new;
-    close($tmp);
-    open(TMP, ">", $tmp) or die "cannot write tempfile $tmp: $!";
+    die "unimplemented";
+    # disable # my $cobj = KmerClassifier->new("$self->{kmer_classifier_data_directory}/$classifier");
 
-    my $raw_tmp = File::Temp->new();
-    for my $ent (@$dna_input)
-    {
-	gjoseqlib::print_alignment_as_fasta(\*TMP, [$ent->[0], undef, $ent->[1]]);
-    }
-    close(TMP);
-    my($bins, $missed) = $cobj->classify("" . $tmp, $raw_tmp);
-    close($raw_tmp);
-
-    $return_1 = $bins;
-    $unassigned = $missed;
-    $raw_output = read_file("" . $raw_tmp);
-
+    # disable # my $tmp = File::Temp->new;
+    # disable # close($tmp);
+    # disable # open(TMP, ">", $tmp) or die "cannot write tempfile $tmp: $!";
+    
+    # disable # my $raw_tmp = File::Temp->new();
+    # disable # for my $ent (@$dna_input)
+# disable # {
+    # disable # gjoseqlib::print_alignment_as_fasta(\*TMP, [$ent->[0], undef, $ent->[1]]);
+# disable # }
+    # disable # close(TMP);
+    # disable # my($bins, $missed) = $cobj->classify("" . $tmp, $raw_tmp);
+    # disable # close($raw_tmp);
+    
+    # disable # $return_1 = $bins;
+    # disable # $unassigned = $missed;
+    # disable # $raw_output = read_file("" . $raw_tmp);
+    
     #END classify_full
     my @_bad_returns;
     (ref($return_1) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return_1\" (value was \"$return_1\")");
