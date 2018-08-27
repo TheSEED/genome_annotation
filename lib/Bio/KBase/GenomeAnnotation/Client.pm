@@ -155,17 +155,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -210,7 +213,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -438,17 +444,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -493,7 +502,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -787,17 +799,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -842,7 +857,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -1080,17 +1098,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -1135,7 +1156,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -1419,17 +1443,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -1474,7 +1501,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -1702,17 +1732,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -1757,7 +1790,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -2041,17 +2077,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -2096,7 +2135,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -2324,17 +2366,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -2379,7 +2424,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -2663,17 +2711,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -2718,7 +2769,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -2946,17 +3000,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -3001,7 +3058,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -3286,17 +3346,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -3341,7 +3404,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -3580,17 +3646,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -3635,7 +3704,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -3931,17 +4003,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -3986,7 +4061,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -4215,17 +4293,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -4270,7 +4351,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -4556,17 +4640,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -4611,7 +4698,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -4840,17 +4930,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -4895,7 +4988,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -5182,17 +5278,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -5237,7 +5336,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -5472,17 +5574,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -5527,7 +5632,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -5818,17 +5926,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -5873,7 +5984,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -6122,17 +6236,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -6177,7 +6294,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -6482,17 +6602,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -6537,7 +6660,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -6774,17 +6900,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -6829,7 +6958,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -7354,17 +7486,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -7409,7 +7544,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -7637,17 +7775,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -7692,7 +7833,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -7977,17 +8121,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -8032,7 +8179,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -8260,17 +8410,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -8315,7 +8468,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -8599,17 +8755,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -8654,7 +8813,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -8882,17 +9044,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -8937,7 +9102,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -9221,17 +9389,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -9276,7 +9447,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -9504,17 +9678,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -9559,7 +9736,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -9843,17 +10023,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -9898,7 +10081,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -10126,17 +10312,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -10181,7 +10370,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -10465,17 +10657,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -10520,7 +10715,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -10748,17 +10946,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -10803,7 +11004,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -11087,17 +11291,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -11142,7 +11349,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -11370,17 +11580,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -11425,7 +11638,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -11710,17 +11926,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -11765,7 +11984,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -11995,17 +12217,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -12050,7 +12275,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -12343,17 +12571,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -12398,7 +12629,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -12626,17 +12860,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -12681,7 +12918,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -12966,17 +13206,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -13021,7 +13264,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -13249,17 +13495,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -13304,7 +13553,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -13590,17 +13842,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -13645,7 +13900,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -13876,17 +14134,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -13931,7 +14192,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -14218,17 +14482,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -14273,7 +14540,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -14501,17 +14771,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -14556,7 +14829,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -14840,17 +15116,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -14895,7 +15174,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -15123,17 +15405,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -15178,7 +15463,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -15462,17 +15750,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -15517,7 +15808,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -15745,17 +16039,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -15800,7 +16097,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -16085,17 +16385,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -16140,7 +16443,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -16373,17 +16679,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -16428,7 +16737,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -16717,17 +17029,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -16772,7 +17087,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -17000,17 +17318,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -17055,7 +17376,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -17340,17 +17664,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -17395,7 +17722,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -17627,17 +17957,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -17682,7 +18015,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -17970,17 +18306,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -18025,7 +18364,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -18253,17 +18595,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -18308,7 +18653,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -18594,17 +18942,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -18649,7 +19000,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -18879,17 +19233,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -18934,7 +19291,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -19221,17 +19581,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -19276,7 +19639,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -19507,17 +19873,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -19562,7 +19931,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -19857,17 +20229,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -19912,7 +20287,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -20144,17 +20522,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -20199,7 +20580,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -20488,17 +20872,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -20543,7 +20930,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -20775,17 +21165,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -20830,7 +21223,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -21119,17 +21515,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -21174,7 +21573,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -21416,17 +21818,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -21471,7 +21876,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -21770,17 +22178,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -21825,7 +22236,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -22061,17 +22475,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -22116,7 +22533,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -22409,17 +22829,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -22464,7 +22887,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -22695,17 +23121,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -22750,7 +23179,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -23038,17 +23470,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -23093,7 +23528,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -23324,17 +23762,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -23379,7 +23820,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -23667,17 +24111,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -23722,7 +24169,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -23964,17 +24414,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -24019,7 +24472,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -24318,17 +24774,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -24373,7 +24832,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -24609,17 +25071,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -24664,7 +25129,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -25019,17 +25487,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -25074,7 +25545,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -25311,17 +25785,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -25366,7 +25843,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -25659,17 +26139,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -25714,7 +26197,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -25942,17 +26428,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -25997,7 +26486,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -26281,17 +26773,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -26336,7 +26831,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -26564,17 +27062,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -26619,7 +27120,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -26903,17 +27407,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -26958,7 +27465,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -27186,17 +27696,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -27241,7 +27754,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -27525,17 +28041,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -27580,7 +28099,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -27808,17 +28330,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -27863,7 +28388,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -28147,17 +28675,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -28202,7 +28733,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -28430,17 +28964,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -28485,7 +29022,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -28769,17 +29309,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -28824,7 +29367,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -29052,17 +29598,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -29107,7 +29656,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -29391,17 +29943,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -29446,7 +30001,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -29691,17 +30249,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -29746,7 +30307,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -30047,17 +30611,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -30102,7 +30669,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -30330,17 +30900,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -30385,7 +30958,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -30669,17 +31245,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -30724,7 +31303,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -30952,17 +31534,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -31007,7 +31592,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -31291,17 +31879,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -31346,7 +31937,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -31574,17 +32168,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -31629,7 +32226,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -31913,17 +32513,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -31968,7 +32571,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -32196,17 +32802,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -32251,7 +32860,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -32535,17 +33147,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -32590,7 +33205,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -32818,17 +33436,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -32873,7 +33494,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -33157,17 +33781,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -33212,7 +33839,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -33440,17 +34070,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -33495,7 +34128,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -33783,17 +34419,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -33838,7 +34477,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -34070,17 +34712,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -34125,7 +34770,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -34411,17 +35059,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -34466,7 +35117,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -34694,17 +35348,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -34749,7 +35406,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -35034,17 +35694,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -35089,7 +35752,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -35317,17 +35983,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -35372,7 +36041,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -35607,7 +36279,7 @@ sub classify_amr
 
 =head2 evaluate_genome
 
-  $genome_out = $obj->evaluate_genome($genome_in)
+  $genome_out = $obj->evaluate_genome($genome_in, $params)
 
 =over 4
 
@@ -35617,6 +36289,7 @@ sub classify_amr
 
 <pre>
 $genome_in is a genomeTO
+$params is an evaluate_genome_parameters
 $genome_out is a genomeTO
 genomeTO is a reference to a hash where the following keys are defined:
 	id has a value which is a genome_id
@@ -35656,17 +36329,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -35711,7 +36387,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -35892,6 +36571,8 @@ job_statistics is a reference to a hash where the following keys are defined:
 	app_name has a value which is a string
 	parameters has a value which is a reference to a hash where the key is a string and the value is a string
 	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+evaluate_genome_parameters is a reference to a hash where the following keys are defined:
+	reference_genome_id has a value which is a string
 
 </pre>
 
@@ -35900,6 +36581,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 =begin text
 
 $genome_in is a genomeTO
+$params is an evaluate_genome_parameters
 $genome_out is a genomeTO
 genomeTO is a reference to a hash where the following keys are defined:
 	id has a value which is a genome_id
@@ -35939,17 +36621,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -35994,7 +36679,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -36175,6 +36863,8 @@ job_statistics is a reference to a hash where the following keys are defined:
 	app_name has a value which is a string
 	parameters has a value which is a reference to a hash where the key is a string and the value is a string
 	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+evaluate_genome_parameters is a reference to a hash where the following keys are defined:
+	reference_genome_id has a value which is a string
 
 
 =end text
@@ -36193,15 +36883,16 @@ sub evaluate_genome
 
 # Authentication: none
 
-    if ((my $n = @args) != 1)
+    if ((my $n = @args) != 2)
     {
-        die "Invalid argument count for function evaluate_genome (received $n, expecting 1)";
+        die "Invalid argument count for function evaluate_genome (received $n, expecting 2)";
     }
     {
-	my($genome_in) = @args;
+	my($genome_in, $params) = @args;
 
 	my @_bad_arguments;
         (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 1 \"genome_in\" (value was \"$genome_in\")");
+        (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 2 \"params\" (value was \"$params\")");
         if (@_bad_arguments) {
 	    my $msg = "Invalid arguments passed to evaluate_genome:\n" . join("", map { "\t$_\n" } @_bad_arguments);
 	    die $msg;
@@ -36280,17 +36971,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -36335,7 +37029,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -36565,17 +37262,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -36620,7 +37320,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -37294,17 +37997,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -37349,7 +38055,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -37577,17 +38286,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -37632,7 +38344,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -37916,17 +38631,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -37971,7 +38689,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -38199,17 +38920,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -38254,7 +38978,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -39134,17 +39861,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -39189,7 +39919,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -39457,17 +40190,20 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 	role_map has a value which is a reference to a hash where the key is a string and the value is a string
 	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-	role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
-	role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 	0: (predicted) an int
 	1: (actual) an int
 
 
 	coarse_consistency has a value which is a float
 	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
 	genome_metrics has a value which is a reference to a hash where the following keys are defined:
 	N50 has a value which is an int
 	N70 has a value which is an int
@@ -39512,7 +40248,10 @@ genome_quality_measure is a reference to a hash where the following keys are def
 	0: (amr_classification) a string
 	1: (gene_names) a reference to a list where each element is a string
 
-	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
 	cds_ratio has a value which is a float
 	hypothetical_cds_ratio has a value which is a float
 	partial_cds_ratio has a value which is a float
@@ -41100,17 +41839,20 @@ checkm_data has a value which is a reference to a hash where the key is a string
 problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 role_map has a value which is a reference to a hash where the key is a string and the value is a string
 role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 0: (predicted) an int
 1: (actual) an int
 
-role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 0: (predicted) an int
 1: (actual) an int
 
 
 coarse_consistency has a value which is a float
 fine_consistency has a value which is a float
+completeness has a value which is a float
+contamination has a value which is a float
+completeness_group has a value which is a string
 genome_metrics has a value which is a reference to a hash where the following keys are defined:
 N50 has a value which is an int
 N70 has a value which is an int
@@ -41155,7 +41897,10 @@ amr_gene_summary has a value which is a reference to a list where each element i
 0: (amr_classification) a string
 1: (gene_names) a reference to a list where each element is a string
 
-subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+genes has a value which is an int
+subsystems has a value which is an int
+
 cds_ratio has a value which is a float
 hypothetical_cds_ratio has a value which is a float
 partial_cds_ratio has a value which is a float
@@ -41177,17 +41922,20 @@ checkm_data has a value which is a reference to a hash where the key is a string
 problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
 role_map has a value which is a reference to a hash where the key is a string and the value is a string
 role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
-role_ok has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 0: (predicted) an int
 1: (actual) an int
 
-role_problematic has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
 0: (predicted) an int
 1: (actual) an int
 
 
 coarse_consistency has a value which is a float
 fine_consistency has a value which is a float
+completeness has a value which is a float
+contamination has a value which is a float
+completeness_group has a value which is a string
 genome_metrics has a value which is a reference to a hash where the following keys are defined:
 N50 has a value which is an int
 N70 has a value which is an int
@@ -41232,7 +41980,10 @@ amr_gene_summary has a value which is a reference to a list where each element i
 0: (amr_classification) a string
 1: (gene_names) a reference to a list where each element is a string
 
-subsystem_summary has a value which is a reference to a hash where the key is a string and the value is an int
+subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+genes has a value which is an int
+subsystems has a value which is an int
+
 cds_ratio has a value which is a float
 hypothetical_cds_ratio has a value which is a float
 partial_cds_ratio has a value which is a float
@@ -42489,6 +43240,36 @@ a reference to a list containing 16 items:
 13: (short_name) a string
 14: (description) a string
 15: (pssm_length) an int
+
+
+=end text
+
+=back
+
+
+
+=head2 evaluate_genome_parameters
+
+=over 4
+
+
+
+=item Definition
+
+=begin html
+
+<pre>
+a reference to a hash where the following keys are defined:
+reference_genome_id has a value which is a string
+
+</pre>
+
+=end html
+
+=begin text
+
+a reference to a hash where the following keys are defined:
+reference_genome_id has a value which is a string
 
 
 =end text
