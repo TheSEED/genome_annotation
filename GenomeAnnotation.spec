@@ -225,11 +225,14 @@ module GenomeAnnotation
 	structure {
 	    mapping<string, string> role_map;
 	    mapping<string, list<string>> role_fids;
-	    mapping<string, tuple<int predicted, int actual>> role_ok;
-	    mapping<string, tuple<int predicted, int actual>> role_problematic;
+	    mapping<string, tuple<int predicted, int actual>> consistency_roles;
+	    mapping<string, tuple<int predicted, int actual>> completeness_roles;
 	} problematic_roles_report;
 	float coarse_consistency;
 	float fine_consistency;
+	float completeness;
+	float contamination;
+	string completeness_group;
 	structure {
 	    int N50;
 	    int N70;
@@ -273,7 +276,7 @@ module GenomeAnnotation
 	list<tuple<feature_id id, string gene_name, string function, string amr_classification>> amr_genes;
 	list<tuple<string amr_classification, list<string> gene_names>> amr_gene_summary;
 	
-	mapping<string superclass, int count> subsystem_summary;
+	mapping<string superclass, structure { int genes; int subsystems; } > subsystem_summary;
 
 	float cds_ratio;
 	float hypothetical_cds_ratio;
