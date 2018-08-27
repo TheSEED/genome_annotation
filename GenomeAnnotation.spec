@@ -58,6 +58,16 @@ module GenomeAnnotation
 	string hostname;
     } analysis_event;
 
+    typedef structure {
+	string job_id;
+	string start_time;
+	string completion_time;
+	float elapsed_time;
+	string app_name;
+	mapping<string, string> parameters;
+	mapping<string, string> attributes;
+    } job_statistics;
+
     typedef tuple<string comment, string annotator, float annotation_time, analysis_event_id> annotation;
 
     typedef structure {
@@ -181,6 +191,10 @@ module GenomeAnnotation
 
 	string genbank_type;
 	genbank_feature genbank_feature;
+
+	list<tuple<string id, string description>> ec_numbers;
+	list<tuple<string id, string description>> go_terms;
+	list<tuple<string id, string description>> pathways;
     } feature;
 
     /* Data for DNA contig */
@@ -207,6 +221,72 @@ module GenomeAnnotation
     {
 	float frameshift_error_rate;
 	float sequence_error_rate;
+	mapping<string, string> checkm_data;
+	structure {
+	    mapping<string, string> role_map;
+	    mapping<string, list<string>> role_fids;
+	    mapping<string, tuple<int predicted, int actual>> consistency_roles;
+	    mapping<string, tuple<int predicted, int actual>> completeness_roles;
+	} problematic_roles_report;
+	float coarse_consistency;
+	float fine_consistency;
+	float completeness;
+	float contamination;
+	string completeness_group;
+	structure {
+	    int N50;
+	    int N70;
+	    int N90;
+	    int L50;
+	    int L70;
+	    int L90;
+	    int totlen;
+	    int complete;
+	} genome_metrics;
+
+	int genome_length;
+	float gc_content;
+	int chromosomes;
+	int plasmids;
+	int contigs;
+
+	string genome_status;
+
+	structure {
+	    int cds;
+	    int partial_cds;
+	    int rRNA;
+	    int tRNA;
+	    int misc_RNA;
+	    int repeat_region;
+	} feature_summary;
+
+	structure {
+	    int hypothetical;
+	    int function_assignment;
+	    int plfam_assignment;
+	    int pgfam_assignment;
+	    int ec_assignment;
+	    int go_assignment;
+	    int pathway_assignment;
+	} protein_summary;
+
+	mapping<string, int> specialty_gene_summary;
+
+	list<tuple<feature_id id, string gene_name, string function, string amr_classification>> amr_genes;
+	list<tuple<string amr_classification, list<string> gene_names>> amr_gene_summary;
+	
+	mapping<string superclass, structure { int genes; int subsystems; } > subsystem_summary;
+
+	float cds_ratio;
+	float hypothetical_cds_ratio;
+	float partial_cds_ratio;
+	float plfam_cds_ratio;
+	float pgfam_cds_ratio;
+
+	list<string> genome_quality_flags;
+	string genome_quality;
+	
     } genome_quality_measure;
 
     typedef structure
@@ -233,7 +313,19 @@ module GenomeAnnotation
 	analysis_event_id event_id;
 	list<tuple<feature_id id, float alpha, int round, string function>> features;
     } classifier;
-    
+
+    typedef structure {
+	string role_id;
+	list<feature_id> features;
+    } role_binding;
+
+    typedef structure {
+	string name;
+	tuple<string superclass, string class, string subclass> classification;
+	string variant_code;
+	list<role_binding> role_bindings;
+	analysis_event_id event_id;
+    } subsystem_data;
 
     /* All of the information about particular genome */
     typedef structure {
@@ -245,6 +337,9 @@ module GenomeAnnotation
 	string source_id;
 	string taxonomy;
 	int ncbi_taxonomy_id;
+	list<tuple<string taxon_name, int taxon_id, string taxon_rank>> ncbi_lineage;
+	string ncbi_genus;
+	string ncbi_species;
 	string owner;
 
 	genome_quality_measure quality;
@@ -260,6 +355,15 @@ module GenomeAnnotation
 
 	list<strain_type> typing;
 	list<classifier> classifications;
+
+	list<subsystem_data> subsystems;
+
+	structure {
+	    job_statistics assembly;
+	    job_statistics annotation;
+	} job_data;
+
+
     } genomeTO;
 
 
@@ -429,6 +533,7 @@ module GenomeAnnotation
     
     funcdef call_features_CDS_prodigal(genomeTO) returns (genomeTO);
     funcdef call_features_CDS_genemark(genomeTO) returns (genomeTO);
+    funcdef call_features_CDS_phanotate(genomeTO) returns (genomeTO);
 
     typedef structure
     {
@@ -511,6 +616,8 @@ module GenomeAnnotation
 	int max_gap;
 	int annotate_hypothetical_only;
 	int annotate_null_only;
+	string kmer_data_directory;
+	string kmer_service_url;
     } kmer_v2_parameters;
     
     funcdef annotate_proteins_kmer_v2(genomeTO genome_in, kmer_v2_parameters params) returns (genomeTO genome_out);
@@ -546,6 +653,8 @@ module GenomeAnnotation
     funcdef annotate_families_figfam_v1(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_families_patric(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_null_to_hypothetical(genomeTO genome_in) returns (genomeTO genome_out);
+
+    funcdef remove_genbank_features(genomeTO genome_in) returns (genomeTO genome_out);
 
     funcdef annotate_strain_type_MLST(genomeTO genome_in) returns (genomeTO genome_out);
 
@@ -596,6 +705,14 @@ module GenomeAnnotation
      */
     funcdef classify_amr(genomeTO) returns (genomeTO);
 
+    typedef structure {
+	string reference_genome_id;
+    } evaluate_genome_parameters;
+    /*
+     * Perform genome evaluation.
+     */
+    funcdef evaluate_genome(genomeTO genome_in, evaluate_genome_parameters params) returns (genomeTO genome_out);
+
     /*
      * Export genome typed object to one of the supported output formats:
      * genbank, embl, or gff.
@@ -640,6 +757,11 @@ module GenomeAnnotation
 	returns(mapping<string group_id, int count>, string raw_output, list<string> unassigned);
 
 
+    /*
+     * Project subsystems.
+     */
+    funcdef project_subsystems(genomeTO genome_in) returns (genomeTO genome_out);
+
     typedef structure {
 	string name;
 	string condition;
@@ -650,11 +772,24 @@ module GenomeAnnotation
 	kmer_v2_parameters kmer_v2_parameters;
 	similarity_parameters similarity_parameters;
     } pipeline_stage;
+
+    /*
+     * Compute genome Quality Control scoring.
+     */
+    funcdef compute_genome_quality_control(genomeTO genome_in) returns (genomeTO genome_out);
     
     typedef structure
     {
 	list<pipeline_stage> stages;
     } workflow;
+
+    typedef structure
+    {
+	string id;
+	string name;
+	string description;
+	workflow workflow;
+    } recipe;
 
     funcdef default_workflow() returns (workflow);
 
@@ -662,7 +797,12 @@ module GenomeAnnotation
      * Enumerate the loaded workflows. We always have a workflow named "default"; a
      * particular deployment of the genome annotation service may include additional workflows.
      */
-    funcdef enumerate_workflows() returns (list<tuple<string workflow_id, workflow wf>> workflows);
+    funcdef enumerate_recipes() returns (list<recipe> recipes);
+
+    /*
+     * Look up and return a particular named workflow.
+     */
+    funcdef find_recipe(string id) returns (recipe);
 
     /*
      * Return a workflow that includes all available stages. Not meant

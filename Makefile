@@ -11,7 +11,7 @@ SERVICE = genome_annotation
 SERVICE_PORT = 7050
 # SERVICE_ALT_PORT = 7136
 
-SERVICE_URL = https://kbase.us/services/$(SERVICE)
+SERVICE_URL = https://p3.theseed.org/services/$(SERVICE)
 
 SERVICE_NAME = GenomeAnnotation
 SERVICE_NAME_PY = $(SERVICE_NAME)
@@ -25,6 +25,11 @@ DEPLOY_SERVICE_PERL = $(addprefix $(SERVICE_DIR)/bin/,$(basename $(notdir $(SRC_
 
 ifdef TEMPDIR
 TPAGE_TEMPDIR = --define kb_tempdir=$(TEMPDIR)
+endif
+
+ifdef DEPLOYMENT_VAR_DIR
+SERVICE_LOGDIR = $(DEPLOYMENT_VAR_DIR)/services/$(SERVICE)
+TPAGE_SERVICE_LOGDIR = --define kb_service_log_dir=$(SERVICE_LOGDIR)
 endif
 
 ifdef SERVICE_ALT_PORT
@@ -49,6 +54,7 @@ TPAGE_ARGS = --define kb_top=$(TARGET) \
 	--define kb_starman_max_requests$(ANNO_MAX_REQUESTS) \
 	$(TPAGE_SERVICE_ALT_PORT) \
 	$(TPAGE_TEMPDIR) \
+	$(TPAGE_SERVICE_LOGDIR) \
 	--define kser_port=$(KSER_PORT) \
 	--define kser_data=$(KSER_DATA) \
 	--define kser_load_threads=$(KSER_LOAD_THREADS) \
@@ -83,6 +89,7 @@ compile-typespec: Makefile
 	touch lib/biokbase/$(SERVICE_NAME_PY)/__init__.py 
 	mkdir -p lib/javascript/$(SERVICE_NAME)
 	compile_typespec \
+		--patric \
 		--psgi $(SERVICE_PSGI_FILE) \
 		--impl Bio::KBase::$(SERVICE_NAME)::%sImpl \
 		--service Bio::KBase::$(SERVICE_NAME)::Service \
