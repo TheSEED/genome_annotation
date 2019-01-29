@@ -15406,93 +15406,106 @@ sub call_features_CDS_glimmer3
     #BEGIN call_features_CDS_glimmer3
 
     my $genome_in = GenomeTypeObject->initialize($genomeTO);
-    my $sequences_file = $genome_in->extract_contig_sequences_to_temp_file();
 
-    my $gparams = { %$params };
-    $gparams->{genetic_code} = $genome_in->{genetic_code};
-    my $calls;
+    #
+    # Glimmer does not handle code 25.
+    #
 
-    my $stderr = capture_stderr {
-	$calls = Bio::KBase::GenomeAnnotation::Glimmer::call_genes_with_glimmer($sequences_file, $gparams, $ctx);
-    };
-    if (!$ctx->stderr->log($stderr))
+    if ($genome_in->{genetic_code} != 11 && $genome_in->{genetic_code} != 4)
     {
-	print STDERR $stderr;
+	print STDERR "Skipping glimmer for genetic code that is neither 11 nor 4\n";
     }
-
-    unlink($sequences_file);
-
-    my $trans_table = SeedUtils::genetic_code($genome_in->{genetic_code});
-    
-    my $event = {
-	tool_name => "glimmer3",
-	execution_time => scalar gettimeofday,
-	parameters => [ map { join("=", $_, $gparams->{$_}) } sort keys %$gparams ],
-	hostname => $self->{hostname},
-    };
-
-    my $idc = IDclient->new($genome_in);
-    
-    my $event_id = $genome_in->add_analysis_event($event);
-    my $type = 'CDS';
-    my $id_type = $self->{cds_id_type};
-
-    my $id_prefix = $genome_in->{id};
-    if ($id_prefix =~ /^\d+\.\d+$/)
+    else
     {
-	$id_prefix = "fig|$id_prefix";
-    }
-    my $typed_prefix = join(".", $id_prefix, $id_type);
-
-    my $count = @$calls;
-    my $cur_id_suffix = $idc->allocate_id_range($typed_prefix, $count);
-
-    for my $call (@$calls)
-    {
-	my($fid, $contig, $begin, $end, $dna) = @$call;
-
-	my($strand, $len);
-	my $fix_start = 1;
-	if ($begin < $end)
-	{
-	    $fix_start = 0 if $begin <= 3;
-
-	    $strand = '+';
-	    $len = $end - $begin + 1;
-	}
-	else
-	{
-	    my $cobj = $genome_in->find_contig($contig);
-	    if (ref $cobj)
-	    {
-		my $clen = length($cobj->{dna});
-		$fix_start = 0 if $begin > ($clen - 3);
-	    }
-
-	    $strand = '-';
-	    $len = $begin - $end + 1;
-	}
-
-	my $loc = [[$contig, $begin, $strand, $len]];
-
-	my $trans = SeedUtils::translate($dna, $trans_table, $fix_start);
-	$trans =~ s/\*$//;
-
-	my $id = join(".", $typed_prefix, $cur_id_suffix);
-	$cur_id_suffix++;
+	my $sequences_file = $genome_in->extract_contig_sequences_to_temp_file();
 	
-	$genome_in->add_feature({
-	    -id		     => $id,
-	    -type 	     => $type,
-	    -location 	     => $loc,
-	    -analysis_event_id 	     => $event_id,
-	    -annotator => 'glimmer3',
-	    -protein_translation => $trans,
-	});
+	my $gparams = { %$params };
+	$gparams->{genetic_code} = $genome_in->{genetic_code};
+	my $calls;
+	
+	my $stderr = capture_stderr {
+	    $calls = Bio::KBase::GenomeAnnotation::Glimmer::call_genes_with_glimmer($sequences_file, $gparams, $ctx);
+	};
+	if (!$ctx->stderr->log($stderr))
+	{
+	    print STDERR $stderr;
+	}
+	
+	unlink($sequences_file);
+	
+	my $trans_table = SeedUtils::genetic_code($genome_in->{genetic_code});
+	
+	my $event = {
+	    tool_name => "glimmer3",
+	    execution_time => scalar gettimeofday,
+	    parameters => [ map { join("=", $_, $gparams->{$_}) } sort keys %$gparams ],
+	    hostname => $self->{hostname},
+	};
+	
+	my $idc = IDclient->new($genome_in);
+	
+	my $event_id = $genome_in->add_analysis_event($event);
+	my $type = 'CDS';
+	my $id_type = $self->{cds_id_type};
+	
+	my $id_prefix = $genome_in->{id};
+	if ($id_prefix =~ /^\d+\.\d+$/)
+	{
+	    $id_prefix = "fig|$id_prefix";
+	}
+	my $typed_prefix = join(".", $id_prefix, $id_type);
+	
+	my $count = @$calls;
+	my $cur_id_suffix = $idc->allocate_id_range($typed_prefix, $count);
+	
+	for my $call (@$calls)
+	{
+	    my($fid, $contig, $begin, $end, $dna) = @$call;
+	    
+	    my($strand, $len);
+	    my $fix_start = 1;
+	    if ($begin < $end)
+	    {
+		$fix_start = 0 if $begin <= 3;
+		
+		$strand = '+';
+		$len = $end - $begin + 1;
+	    }
+	    else
+	    {
+		my $cobj = $genome_in->find_contig($contig);
+		if (ref $cobj)
+		{
+		    my $clen = length($cobj->{dna});
+		    $fix_start = 0 if $begin > ($clen - 3);
+		}
+		
+		$strand = '-';
+		$len = $begin - $end + 1;
+	    }
+	    
+	    my $loc = [[$contig, $begin, $strand, $len]];
+	    
+	    my $trans = SeedUtils::translate($dna, $trans_table, $fix_start);
+	    $trans =~ s/\*$//;
+	    
+	    my $id = join(".", $typed_prefix, $cur_id_suffix);
+	    $cur_id_suffix++;
+	    
+	    $genome_in->add_feature({
+		-id		     => $id,
+		-type 	     => $type,
+		-location 	     => $loc,
+		-analysis_event_id 	     => $event_id,
+		-annotator => 'glimmer3',
+		-protein_translation => $trans,
+	    });
+	}
     }
 				
     $return = $genome_in;
     $return = $return->prepare_for_return();
+
     
     #END call_features_CDS_glimmer3
     my @_bad_returns;
@@ -16138,8 +16151,11 @@ sub call_features_CDS_prodigal
     }
     print "3 '$id_prefix'\n";
 
-    my @cmd = ("rast_call_CDSs_using_prodigal", "--input", $tmp_in, "--output", $tmp_out,
-	       "--id-prefix", $id_prefix, "--id-type", $self->{cds_id_type});
+    my @cmd = ("rast_call_CDSs_using_prodigal",
+	       "--input", $tmp_in,
+	       "--output", $tmp_out,
+	       "--id-prefix", $id_prefix,
+	       "--id-type", $self->{cds_id_type});
     $stderr->log(join(" ", @cmd));
 
     my $ok = run(\@cmd, $stderr->redirect);

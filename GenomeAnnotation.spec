@@ -534,6 +534,12 @@ module GenomeAnnotation
     funcdef call_features_CDS_prodigal(genomeTO) returns (genomeTO);
     funcdef call_features_CDS_genemark(genomeTO) returns (genomeTO);
     funcdef call_features_CDS_phanotate(genomeTO) returns (genomeTO);
+    
+    typedef structure 
+    {
+	int minimum_contig_length;
+    } prune_invalid_CDS_features_parameters;
+    funcdef prune_invalid_CDS_features(genomeTO genome_in, prune_invalid_CDS_features_parameters params) returns (genomeTO genome_out);
 
     typedef structure
     {
