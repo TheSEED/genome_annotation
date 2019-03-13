@@ -43768,6 +43768,7 @@ sub run_pipeline
 	    else
 	    {
 		print STDERR "Finished\n";
+		# print Dumper($out);
 		$cur = $out;
 	    }
 	}
