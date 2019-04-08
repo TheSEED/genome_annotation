@@ -208,6 +208,7 @@ module GenomeAnnotation
 	string replicon_geometry;
 	bool complete;
 	genbank_locus genbank_locus;
+	string original_id;
     } contig;
 
     typedef structure {
