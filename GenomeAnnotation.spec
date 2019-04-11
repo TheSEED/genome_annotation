@@ -539,6 +539,7 @@ module GenomeAnnotation
     typedef structure 
     {
 	int minimum_contig_length;
+	float max_homopolymer_frequency;
     } prune_invalid_CDS_features_parameters;
     funcdef prune_invalid_CDS_features(genomeTO genome_in, prune_invalid_CDS_features_parameters params) returns (genomeTO genome_out);
 
@@ -566,6 +567,7 @@ module GenomeAnnotation
     typedef structure
     {
 	int min_gap_length;
+	int monopolymer_repeat_length;
     } assembly_gap_parameters;
 
     /*
@@ -582,9 +584,20 @@ module GenomeAnnotation
     
     typedef structure
     {
+	int tmp;
+    } split_gap_spanning_features_params;
+
+    funcdef split_gap_spanning_features(genomeTO genome_in, split_gap_spanning_features_params)
+    	    returns (genomeTO genome_out);
+
+    funcdef translate_untranslated_proteins(genomeTO genome_in) returns (genomeTO genome_out);
+
+    typedef structure
+    {
 	int annotate_hypothetical_only;
 	int annotate_null_only;
     } similarity_parameters;
+
     /*
      * Annotate based on similarity to annotation databases.
      */

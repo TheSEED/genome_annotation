@@ -89,6 +89,7 @@ compile-typespec: Makefile
 	touch lib/biokbase/$(SERVICE_NAME_PY)/__init__.py 
 	mkdir -p lib/javascript/$(SERVICE_NAME)
 	compile_typespec \
+		--no-typedocs \
 		--patric \
 		--psgi $(SERVICE_PSGI_FILE) \
 		--impl Bio::KBase::$(SERVICE_NAME)::%sImpl \

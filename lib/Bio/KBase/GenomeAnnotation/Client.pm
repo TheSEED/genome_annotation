@@ -36,7 +36,7 @@ sub new
     
     if (!defined($url))
     {
-	$url = 'http://redwood.mcs.anl.gov:7050';
+	$url = 'https://p3.theseed.org/services/genome_annotation';
     }
 
     my $self = {
@@ -234,6 +234,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -523,6 +524,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -878,6 +880,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -1177,6 +1180,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -1522,6 +1526,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -1811,6 +1816,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -2156,6 +2162,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -2445,6 +2452,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -2790,6 +2798,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -3079,6 +3088,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -3425,6 +3435,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -3725,6 +3736,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -4082,6 +4094,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -4372,6 +4385,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -4719,6 +4733,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -5009,6 +5024,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -5357,6 +5373,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -5653,6 +5670,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -6005,6 +6023,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -6315,6 +6334,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -6681,6 +6701,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -6979,6 +7000,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -7565,6 +7587,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -7854,6 +7877,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -8200,6 +8224,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -8489,6 +8514,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -8834,6 +8860,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -9123,6 +9150,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -9468,6 +9496,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -9757,6 +9786,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -10102,6 +10132,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -10391,6 +10422,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -10736,6 +10768,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -11025,6 +11058,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -11370,6 +11404,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -11659,6 +11694,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -12005,6 +12041,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -12296,6 +12333,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -12650,6 +12688,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -12939,6 +12978,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -13285,6 +13325,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -13574,6 +13615,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -13921,6 +13963,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -14213,6 +14256,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -14561,6 +14605,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -14850,6 +14895,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -15195,6 +15241,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -15484,6 +15531,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -15829,6 +15877,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -16118,6 +16167,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -16464,6 +16514,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -16629,6 +16680,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 	attributes has a value which is a reference to a hash where the key is a string and the value is a string
 prune_invalid_CDS_features_parameters is a reference to a hash where the following keys are defined:
 	minimum_contig_length has a value which is an int
+	max_homopolymer_frequency has a value which is a float
 
 </pre>
 
@@ -16756,6 +16808,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -16921,6 +16974,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 	attributes has a value which is a reference to a hash where the key is a string and the value is a string
 prune_invalid_CDS_features_parameters is a reference to a hash where the following keys are defined:
 	minimum_contig_length has a value which is an int
+	max_homopolymer_frequency has a value which is a float
 
 
 =end text
@@ -17105,6 +17159,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -17399,6 +17454,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -17749,6 +17805,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -18038,6 +18095,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -18384,6 +18442,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -18677,6 +18736,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -19026,6 +19086,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -19315,6 +19376,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -19662,6 +19724,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -19953,6 +20016,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -20301,6 +20365,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -20466,6 +20531,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 	attributes has a value which is a reference to a hash where the key is a string and the value is a string
 assembly_gap_parameters is a reference to a hash where the following keys are defined:
 	min_gap_length has a value which is an int
+	monopolymer_repeat_length has a value which is an int
 
 </pre>
 
@@ -20593,6 +20659,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -20758,6 +20825,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 	attributes has a value which is a reference to a hash where the key is a string and the value is a string
 assembly_gap_parameters is a reference to a hash where the following keys are defined:
 	min_gap_length has a value which is an int
+	monopolymer_repeat_length has a value which is an int
 
 
 =end text
@@ -20813,6 +20881,1285 @@ sub call_features_assembly_gap
 	}
     } else {
 	die "Error invoking method call_features_assembly_gap: " .  $self->{client}->status_line;
+    }
+}
+
+
+
+=head2 split_gap_spanning_features
+
+  $genome_out = $obj->split_gap_spanning_features($genome_in, $split_gap_spanning_features_params)
+
+=over 4
+
+=item Parameter and return types
+
+=begin html
+
+<pre>
+$genome_in is a genomeTO
+$split_gap_spanning_features_params is a split_gap_spanning_features_params
+$genome_out is a genomeTO
+genomeTO is a reference to a hash where the following keys are defined:
+	id has a value which is a genome_id
+	scientific_name has a value which is a string
+	domain has a value which is a string
+	genetic_code has a value which is an int
+	source has a value which is a string
+	source_id has a value which is a string
+	taxonomy has a value which is a string
+	ncbi_taxonomy_id has a value which is an int
+	ncbi_lineage has a value which is a reference to a list where each element is a reference to a list containing 3 items:
+	0: (taxon_name) a string
+	1: (taxon_id) an int
+	2: (taxon_rank) a string
+
+	ncbi_genus has a value which is a string
+	ncbi_species has a value which is a string
+	owner has a value which is a string
+	quality has a value which is a genome_quality_measure
+	contigs has a value which is a reference to a list where each element is a contig
+	contigs_handle has a value which is a Handle
+	features has a value which is a reference to a list where each element is a feature
+	close_genomes has a value which is a reference to a list where each element is a close_genome
+	analysis_events has a value which is a reference to a list where each element is an analysis_event
+	typing has a value which is a reference to a list where each element is a strain_type
+	classifications has a value which is a reference to a list where each element is a classifier
+	subsystems has a value which is a reference to a list where each element is a subsystem_data
+	job_data has a value which is a reference to a hash where the following keys are defined:
+	assembly has a value which is a job_statistics
+	annotation has a value which is a job_statistics
+
+genome_id is a string
+genome_quality_measure is a reference to a hash where the following keys are defined:
+	frameshift_error_rate has a value which is a float
+	sequence_error_rate has a value which is a float
+	checkm_data has a value which is a reference to a hash where the key is a string and the value is a string
+	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
+	role_map has a value which is a reference to a hash where the key is a string and the value is a string
+	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+
+	coarse_consistency has a value which is a float
+	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
+	genome_metrics has a value which is a reference to a hash where the following keys are defined:
+	N50 has a value which is an int
+	N70 has a value which is an int
+	N90 has a value which is an int
+	L50 has a value which is an int
+	L70 has a value which is an int
+	L90 has a value which is an int
+	totlen has a value which is an int
+	complete has a value which is an int
+
+	genome_length has a value which is an int
+	gc_content has a value which is a float
+	chromosomes has a value which is an int
+	plasmids has a value which is an int
+	contigs has a value which is an int
+	genome_status has a value which is a string
+	feature_summary has a value which is a reference to a hash where the following keys are defined:
+	cds has a value which is an int
+	partial_cds has a value which is an int
+	rRNA has a value which is an int
+	tRNA has a value which is an int
+	misc_RNA has a value which is an int
+	repeat_region has a value which is an int
+
+	protein_summary has a value which is a reference to a hash where the following keys are defined:
+	hypothetical has a value which is an int
+	function_assignment has a value which is an int
+	plfam_assignment has a value which is an int
+	pgfam_assignment has a value which is an int
+	ec_assignment has a value which is an int
+	go_assignment has a value which is an int
+	pathway_assignment has a value which is an int
+
+	specialty_gene_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	amr_genes has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (gene_name) a string
+	2: (function) a string
+	3: (amr_classification) a string
+
+	amr_gene_summary has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (amr_classification) a string
+	1: (gene_names) a reference to a list where each element is a string
+
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
+	cds_ratio has a value which is a float
+	hypothetical_cds_ratio has a value which is a float
+	partial_cds_ratio has a value which is a float
+	plfam_cds_ratio has a value which is a float
+	pgfam_cds_ratio has a value which is a float
+	genome_quality_flags has a value which is a reference to a list where each element is a string
+	genome_quality has a value which is a string
+feature_id is a string
+contig is a reference to a hash where the following keys are defined:
+	id has a value which is a contig_id
+	dna has a value which is a string
+	genetic_code has a value which is an int
+	cell_compartment has a value which is a string
+	replicon_type has a value which is a string
+	replicon_geometry has a value which is a string
+	complete has a value which is a bool
+	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
+contig_id is a string
+bool is an int
+genbank_locus is a reference to a hash where the following keys are defined:
+	accession has a value which is a reference to a list where each element is a string
+	comment has a value which is a reference to a list where each element is a string
+	date has a value which is a string
+	dblink has a value which is a reference to a list where each element is a string
+	dbsource has a value which is a reference to a list where each element is a string
+	definition has a value which is a string
+	division has a value which is a string
+	geometry has a value which is a string
+	gi has a value which is an int
+	keywords has a value which is a reference to a list where each element is a string
+	locus has a value which is a string
+	organism has a value which is a string
+	origin has a value which is a string
+	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	source has a value which is a string
+	taxonomy has a value which is a reference to a list where each element is a string
+	version has a value which is a reference to a list where each element is a string
+Handle is a reference to a hash where the following keys are defined:
+	file_name has a value which is a string
+	id has a value which is a string
+	type has a value which is a string
+	url has a value which is a string
+	remote_md5 has a value which is a string
+	remote_sha1 has a value which is a string
+feature is a reference to a hash where the following keys are defined:
+	id has a value which is a feature_id
+	location has a value which is a location
+	type has a value which is a feature_type
+	function has a value which is a string
+	function_id has a value which is a string
+	protein_translation has a value which is a string
+	aliases has a value which is a reference to a list where each element is a string
+	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (source) a string
+	1: (alias) a string
+
+	annotations has a value which is a reference to a list where each element is an annotation
+	quality has a value which is a feature_quality_measure
+	feature_creation_event has a value which is an analysis_event_id
+	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
+	similarity_associations has a value which is a reference to a list where each element is a similarity_association
+	proposed_functions has a value which is a reference to a list where each element is a proposed_function
+	genbank_type has a value which is a string
+	genbank_feature has a value which is a genbank_feature
+	ec_numbers has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	go_terms has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	pathways has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+location is a reference to a list where each element is a region_of_dna
+region_of_dna is a reference to a list containing 4 items:
+	0: a contig_id
+	1: (begin) an int
+	2: (strand) a string
+	3: (length) an int
+feature_type is a string
+annotation is a reference to a list containing 4 items:
+	0: (comment) a string
+	1: (annotator) a string
+	2: (annotation_time) a float
+	3: an analysis_event_id
+analysis_event_id is a string
+feature_quality_measure is a reference to a hash where the following keys are defined:
+	truncated_begin has a value which is a bool
+	truncated_end has a value which is a bool
+	existence_confidence has a value which is a float
+	frameshifted has a value which is a bool
+	selenoprotein has a value which is a bool
+	pyrrolysylprotein has a value which is a bool
+	overlap_rules has a value which is a reference to a list where each element is a string
+	existence_priority has a value which is a float
+	hit_count has a value which is a float
+	weighted_hit_count has a value which is a float
+	genemark_score has a value which is a float
+protein_family_assignment is a reference to a list containing 4 items:
+	0: (db) a string
+	1: (id) a string
+	2: (function) a string
+	3: (db_version) a string
+similarity_association is a reference to a list containing 6 items:
+	0: (source) a string
+	1: (source_id) a string
+	2: (query_coverage) a float
+	3: (subject_coverage) a float
+	4: (identity) a float
+	5: (e_value) a float
+proposed_function is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	function has a value which is a string
+	user has a value which is a string
+	score has a value which is a float
+	event_id has a value which is an analysis_event_id
+	timestamp has a value which is an int
+genbank_feature is a reference to a hash where the following keys are defined:
+	genbank_type has a value which is a string
+	genbank_location has a value which is a string
+	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+close_genome is a reference to a hash where the following keys are defined:
+	genome has a value which is a genome_id
+	genome_name has a value which is a string
+	closeness_measure has a value which is a float
+	analysis_method has a value which is a string
+analysis_event is a reference to a hash where the following keys are defined:
+	id has a value which is an analysis_event_id
+	tool_name has a value which is a string
+	execution_time has a value which is a float
+	parameters has a value which is a reference to a list where each element is a string
+	hostname has a value which is a string
+strain_type is a reference to a hash where the following keys are defined:
+	typing_method has a value which is a string
+	database has a value which is a string
+	tag has a value which is a string
+	event_id has a value which is an analysis_event_id
+classifier is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	version has a value which is a string
+	description has a value which is a string
+	comment has a value which is a string
+	antibiotics has a value which is a reference to a list where each element is a string
+	accuracy has a value which is a float
+	area_under_roc_curve has a value which is a float
+	f1_score has a value which is a float
+	sources has a value which is a string
+	cumulative_adaboost_value has a value which is a float
+	sensitivity has a value which is a string
+	event_id has a value which is an analysis_event_id
+	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (alpha) a float
+	2: (round) an int
+	3: (function) a string
+
+subsystem_data is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	classification has a value which is a reference to a list containing 3 items:
+	0: (superclass) a string
+	1: (class) a string
+	2: (subclass) a string
+
+	variant_code has a value which is a string
+	role_bindings has a value which is a reference to a list where each element is a role_binding
+	event_id has a value which is an analysis_event_id
+role_binding is a reference to a hash where the following keys are defined:
+	role_id has a value which is a string
+	features has a value which is a reference to a list where each element is a feature_id
+job_statistics is a reference to a hash where the following keys are defined:
+	job_id has a value which is a string
+	start_time has a value which is a string
+	completion_time has a value which is a string
+	elapsed_time has a value which is a float
+	app_name has a value which is a string
+	parameters has a value which is a reference to a hash where the key is a string and the value is a string
+	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+split_gap_spanning_features_params is a reference to a hash where the following keys are defined:
+	tmp has a value which is an int
+
+</pre>
+
+=end html
+
+=begin text
+
+$genome_in is a genomeTO
+$split_gap_spanning_features_params is a split_gap_spanning_features_params
+$genome_out is a genomeTO
+genomeTO is a reference to a hash where the following keys are defined:
+	id has a value which is a genome_id
+	scientific_name has a value which is a string
+	domain has a value which is a string
+	genetic_code has a value which is an int
+	source has a value which is a string
+	source_id has a value which is a string
+	taxonomy has a value which is a string
+	ncbi_taxonomy_id has a value which is an int
+	ncbi_lineage has a value which is a reference to a list where each element is a reference to a list containing 3 items:
+	0: (taxon_name) a string
+	1: (taxon_id) an int
+	2: (taxon_rank) a string
+
+	ncbi_genus has a value which is a string
+	ncbi_species has a value which is a string
+	owner has a value which is a string
+	quality has a value which is a genome_quality_measure
+	contigs has a value which is a reference to a list where each element is a contig
+	contigs_handle has a value which is a Handle
+	features has a value which is a reference to a list where each element is a feature
+	close_genomes has a value which is a reference to a list where each element is a close_genome
+	analysis_events has a value which is a reference to a list where each element is an analysis_event
+	typing has a value which is a reference to a list where each element is a strain_type
+	classifications has a value which is a reference to a list where each element is a classifier
+	subsystems has a value which is a reference to a list where each element is a subsystem_data
+	job_data has a value which is a reference to a hash where the following keys are defined:
+	assembly has a value which is a job_statistics
+	annotation has a value which is a job_statistics
+
+genome_id is a string
+genome_quality_measure is a reference to a hash where the following keys are defined:
+	frameshift_error_rate has a value which is a float
+	sequence_error_rate has a value which is a float
+	checkm_data has a value which is a reference to a hash where the key is a string and the value is a string
+	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
+	role_map has a value which is a reference to a hash where the key is a string and the value is a string
+	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+
+	coarse_consistency has a value which is a float
+	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
+	genome_metrics has a value which is a reference to a hash where the following keys are defined:
+	N50 has a value which is an int
+	N70 has a value which is an int
+	N90 has a value which is an int
+	L50 has a value which is an int
+	L70 has a value which is an int
+	L90 has a value which is an int
+	totlen has a value which is an int
+	complete has a value which is an int
+
+	genome_length has a value which is an int
+	gc_content has a value which is a float
+	chromosomes has a value which is an int
+	plasmids has a value which is an int
+	contigs has a value which is an int
+	genome_status has a value which is a string
+	feature_summary has a value which is a reference to a hash where the following keys are defined:
+	cds has a value which is an int
+	partial_cds has a value which is an int
+	rRNA has a value which is an int
+	tRNA has a value which is an int
+	misc_RNA has a value which is an int
+	repeat_region has a value which is an int
+
+	protein_summary has a value which is a reference to a hash where the following keys are defined:
+	hypothetical has a value which is an int
+	function_assignment has a value which is an int
+	plfam_assignment has a value which is an int
+	pgfam_assignment has a value which is an int
+	ec_assignment has a value which is an int
+	go_assignment has a value which is an int
+	pathway_assignment has a value which is an int
+
+	specialty_gene_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	amr_genes has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (gene_name) a string
+	2: (function) a string
+	3: (amr_classification) a string
+
+	amr_gene_summary has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (amr_classification) a string
+	1: (gene_names) a reference to a list where each element is a string
+
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
+	cds_ratio has a value which is a float
+	hypothetical_cds_ratio has a value which is a float
+	partial_cds_ratio has a value which is a float
+	plfam_cds_ratio has a value which is a float
+	pgfam_cds_ratio has a value which is a float
+	genome_quality_flags has a value which is a reference to a list where each element is a string
+	genome_quality has a value which is a string
+feature_id is a string
+contig is a reference to a hash where the following keys are defined:
+	id has a value which is a contig_id
+	dna has a value which is a string
+	genetic_code has a value which is an int
+	cell_compartment has a value which is a string
+	replicon_type has a value which is a string
+	replicon_geometry has a value which is a string
+	complete has a value which is a bool
+	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
+contig_id is a string
+bool is an int
+genbank_locus is a reference to a hash where the following keys are defined:
+	accession has a value which is a reference to a list where each element is a string
+	comment has a value which is a reference to a list where each element is a string
+	date has a value which is a string
+	dblink has a value which is a reference to a list where each element is a string
+	dbsource has a value which is a reference to a list where each element is a string
+	definition has a value which is a string
+	division has a value which is a string
+	geometry has a value which is a string
+	gi has a value which is an int
+	keywords has a value which is a reference to a list where each element is a string
+	locus has a value which is a string
+	organism has a value which is a string
+	origin has a value which is a string
+	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	source has a value which is a string
+	taxonomy has a value which is a reference to a list where each element is a string
+	version has a value which is a reference to a list where each element is a string
+Handle is a reference to a hash where the following keys are defined:
+	file_name has a value which is a string
+	id has a value which is a string
+	type has a value which is a string
+	url has a value which is a string
+	remote_md5 has a value which is a string
+	remote_sha1 has a value which is a string
+feature is a reference to a hash where the following keys are defined:
+	id has a value which is a feature_id
+	location has a value which is a location
+	type has a value which is a feature_type
+	function has a value which is a string
+	function_id has a value which is a string
+	protein_translation has a value which is a string
+	aliases has a value which is a reference to a list where each element is a string
+	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (source) a string
+	1: (alias) a string
+
+	annotations has a value which is a reference to a list where each element is an annotation
+	quality has a value which is a feature_quality_measure
+	feature_creation_event has a value which is an analysis_event_id
+	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
+	similarity_associations has a value which is a reference to a list where each element is a similarity_association
+	proposed_functions has a value which is a reference to a list where each element is a proposed_function
+	genbank_type has a value which is a string
+	genbank_feature has a value which is a genbank_feature
+	ec_numbers has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	go_terms has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	pathways has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+location is a reference to a list where each element is a region_of_dna
+region_of_dna is a reference to a list containing 4 items:
+	0: a contig_id
+	1: (begin) an int
+	2: (strand) a string
+	3: (length) an int
+feature_type is a string
+annotation is a reference to a list containing 4 items:
+	0: (comment) a string
+	1: (annotator) a string
+	2: (annotation_time) a float
+	3: an analysis_event_id
+analysis_event_id is a string
+feature_quality_measure is a reference to a hash where the following keys are defined:
+	truncated_begin has a value which is a bool
+	truncated_end has a value which is a bool
+	existence_confidence has a value which is a float
+	frameshifted has a value which is a bool
+	selenoprotein has a value which is a bool
+	pyrrolysylprotein has a value which is a bool
+	overlap_rules has a value which is a reference to a list where each element is a string
+	existence_priority has a value which is a float
+	hit_count has a value which is a float
+	weighted_hit_count has a value which is a float
+	genemark_score has a value which is a float
+protein_family_assignment is a reference to a list containing 4 items:
+	0: (db) a string
+	1: (id) a string
+	2: (function) a string
+	3: (db_version) a string
+similarity_association is a reference to a list containing 6 items:
+	0: (source) a string
+	1: (source_id) a string
+	2: (query_coverage) a float
+	3: (subject_coverage) a float
+	4: (identity) a float
+	5: (e_value) a float
+proposed_function is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	function has a value which is a string
+	user has a value which is a string
+	score has a value which is a float
+	event_id has a value which is an analysis_event_id
+	timestamp has a value which is an int
+genbank_feature is a reference to a hash where the following keys are defined:
+	genbank_type has a value which is a string
+	genbank_location has a value which is a string
+	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+close_genome is a reference to a hash where the following keys are defined:
+	genome has a value which is a genome_id
+	genome_name has a value which is a string
+	closeness_measure has a value which is a float
+	analysis_method has a value which is a string
+analysis_event is a reference to a hash where the following keys are defined:
+	id has a value which is an analysis_event_id
+	tool_name has a value which is a string
+	execution_time has a value which is a float
+	parameters has a value which is a reference to a list where each element is a string
+	hostname has a value which is a string
+strain_type is a reference to a hash where the following keys are defined:
+	typing_method has a value which is a string
+	database has a value which is a string
+	tag has a value which is a string
+	event_id has a value which is an analysis_event_id
+classifier is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	version has a value which is a string
+	description has a value which is a string
+	comment has a value which is a string
+	antibiotics has a value which is a reference to a list where each element is a string
+	accuracy has a value which is a float
+	area_under_roc_curve has a value which is a float
+	f1_score has a value which is a float
+	sources has a value which is a string
+	cumulative_adaboost_value has a value which is a float
+	sensitivity has a value which is a string
+	event_id has a value which is an analysis_event_id
+	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (alpha) a float
+	2: (round) an int
+	3: (function) a string
+
+subsystem_data is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	classification has a value which is a reference to a list containing 3 items:
+	0: (superclass) a string
+	1: (class) a string
+	2: (subclass) a string
+
+	variant_code has a value which is a string
+	role_bindings has a value which is a reference to a list where each element is a role_binding
+	event_id has a value which is an analysis_event_id
+role_binding is a reference to a hash where the following keys are defined:
+	role_id has a value which is a string
+	features has a value which is a reference to a list where each element is a feature_id
+job_statistics is a reference to a hash where the following keys are defined:
+	job_id has a value which is a string
+	start_time has a value which is a string
+	completion_time has a value which is a string
+	elapsed_time has a value which is a float
+	app_name has a value which is a string
+	parameters has a value which is a reference to a hash where the key is a string and the value is a string
+	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+split_gap_spanning_features_params is a reference to a hash where the following keys are defined:
+	tmp has a value which is an int
+
+
+=end text
+
+=item Description
+
+
+
+=back
+
+=cut
+
+sub split_gap_spanning_features
+{
+    my($self, @args) = @_;
+
+# Authentication: none
+
+    if ((my $n = @args) != 2)
+    {
+        die "Invalid argument count for function split_gap_spanning_features (received $n, expecting 2)";
+    }
+    {
+	my($genome_in, $split_gap_spanning_features_params) = @args;
+
+	my @_bad_arguments;
+        (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 1 \"genome_in\" (value was \"$genome_in\")");
+        (ref($split_gap_spanning_features_params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 2 \"split_gap_spanning_features_params\" (value was \"$split_gap_spanning_features_params\")");
+        if (@_bad_arguments) {
+	    my $msg = "Invalid arguments passed to split_gap_spanning_features:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	    die $msg;
+	}
+    }
+
+    my $result = $self->{client}->call($self->{url}, $self->{headers}, {
+	method => "GenomeAnnotation.split_gap_spanning_features",
+	params => \@args,
+    });
+    if ($result) {
+	if ($result->{error}) {
+	    my $msg = $result->{error}->{error} || $result->{error}->{message};
+	    $msg =  $self->{client}->json->encode($msg) if ref($msg);
+	    die "Error $result->{error}->{code} invoking split_gap_spanning_features:\n$msg\n";
+	} else {
+	    return wantarray ? @{$result->{result}} : $result->{result}->[0];
+	}
+    } else {
+	die "Error invoking method split_gap_spanning_features: " .  $self->{client}->status_line;
+    }
+}
+
+
+
+=head2 translate_untranslated_proteins
+
+  $genome_out = $obj->translate_untranslated_proteins($genome_in)
+
+=over 4
+
+=item Parameter and return types
+
+=begin html
+
+<pre>
+$genome_in is a genomeTO
+$genome_out is a genomeTO
+genomeTO is a reference to a hash where the following keys are defined:
+	id has a value which is a genome_id
+	scientific_name has a value which is a string
+	domain has a value which is a string
+	genetic_code has a value which is an int
+	source has a value which is a string
+	source_id has a value which is a string
+	taxonomy has a value which is a string
+	ncbi_taxonomy_id has a value which is an int
+	ncbi_lineage has a value which is a reference to a list where each element is a reference to a list containing 3 items:
+	0: (taxon_name) a string
+	1: (taxon_id) an int
+	2: (taxon_rank) a string
+
+	ncbi_genus has a value which is a string
+	ncbi_species has a value which is a string
+	owner has a value which is a string
+	quality has a value which is a genome_quality_measure
+	contigs has a value which is a reference to a list where each element is a contig
+	contigs_handle has a value which is a Handle
+	features has a value which is a reference to a list where each element is a feature
+	close_genomes has a value which is a reference to a list where each element is a close_genome
+	analysis_events has a value which is a reference to a list where each element is an analysis_event
+	typing has a value which is a reference to a list where each element is a strain_type
+	classifications has a value which is a reference to a list where each element is a classifier
+	subsystems has a value which is a reference to a list where each element is a subsystem_data
+	job_data has a value which is a reference to a hash where the following keys are defined:
+	assembly has a value which is a job_statistics
+	annotation has a value which is a job_statistics
+
+genome_id is a string
+genome_quality_measure is a reference to a hash where the following keys are defined:
+	frameshift_error_rate has a value which is a float
+	sequence_error_rate has a value which is a float
+	checkm_data has a value which is a reference to a hash where the key is a string and the value is a string
+	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
+	role_map has a value which is a reference to a hash where the key is a string and the value is a string
+	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+
+	coarse_consistency has a value which is a float
+	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
+	genome_metrics has a value which is a reference to a hash where the following keys are defined:
+	N50 has a value which is an int
+	N70 has a value which is an int
+	N90 has a value which is an int
+	L50 has a value which is an int
+	L70 has a value which is an int
+	L90 has a value which is an int
+	totlen has a value which is an int
+	complete has a value which is an int
+
+	genome_length has a value which is an int
+	gc_content has a value which is a float
+	chromosomes has a value which is an int
+	plasmids has a value which is an int
+	contigs has a value which is an int
+	genome_status has a value which is a string
+	feature_summary has a value which is a reference to a hash where the following keys are defined:
+	cds has a value which is an int
+	partial_cds has a value which is an int
+	rRNA has a value which is an int
+	tRNA has a value which is an int
+	misc_RNA has a value which is an int
+	repeat_region has a value which is an int
+
+	protein_summary has a value which is a reference to a hash where the following keys are defined:
+	hypothetical has a value which is an int
+	function_assignment has a value which is an int
+	plfam_assignment has a value which is an int
+	pgfam_assignment has a value which is an int
+	ec_assignment has a value which is an int
+	go_assignment has a value which is an int
+	pathway_assignment has a value which is an int
+
+	specialty_gene_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	amr_genes has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (gene_name) a string
+	2: (function) a string
+	3: (amr_classification) a string
+
+	amr_gene_summary has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (amr_classification) a string
+	1: (gene_names) a reference to a list where each element is a string
+
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
+	cds_ratio has a value which is a float
+	hypothetical_cds_ratio has a value which is a float
+	partial_cds_ratio has a value which is a float
+	plfam_cds_ratio has a value which is a float
+	pgfam_cds_ratio has a value which is a float
+	genome_quality_flags has a value which is a reference to a list where each element is a string
+	genome_quality has a value which is a string
+feature_id is a string
+contig is a reference to a hash where the following keys are defined:
+	id has a value which is a contig_id
+	dna has a value which is a string
+	genetic_code has a value which is an int
+	cell_compartment has a value which is a string
+	replicon_type has a value which is a string
+	replicon_geometry has a value which is a string
+	complete has a value which is a bool
+	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
+contig_id is a string
+bool is an int
+genbank_locus is a reference to a hash where the following keys are defined:
+	accession has a value which is a reference to a list where each element is a string
+	comment has a value which is a reference to a list where each element is a string
+	date has a value which is a string
+	dblink has a value which is a reference to a list where each element is a string
+	dbsource has a value which is a reference to a list where each element is a string
+	definition has a value which is a string
+	division has a value which is a string
+	geometry has a value which is a string
+	gi has a value which is an int
+	keywords has a value which is a reference to a list where each element is a string
+	locus has a value which is a string
+	organism has a value which is a string
+	origin has a value which is a string
+	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	source has a value which is a string
+	taxonomy has a value which is a reference to a list where each element is a string
+	version has a value which is a reference to a list where each element is a string
+Handle is a reference to a hash where the following keys are defined:
+	file_name has a value which is a string
+	id has a value which is a string
+	type has a value which is a string
+	url has a value which is a string
+	remote_md5 has a value which is a string
+	remote_sha1 has a value which is a string
+feature is a reference to a hash where the following keys are defined:
+	id has a value which is a feature_id
+	location has a value which is a location
+	type has a value which is a feature_type
+	function has a value which is a string
+	function_id has a value which is a string
+	protein_translation has a value which is a string
+	aliases has a value which is a reference to a list where each element is a string
+	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (source) a string
+	1: (alias) a string
+
+	annotations has a value which is a reference to a list where each element is an annotation
+	quality has a value which is a feature_quality_measure
+	feature_creation_event has a value which is an analysis_event_id
+	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
+	similarity_associations has a value which is a reference to a list where each element is a similarity_association
+	proposed_functions has a value which is a reference to a list where each element is a proposed_function
+	genbank_type has a value which is a string
+	genbank_feature has a value which is a genbank_feature
+	ec_numbers has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	go_terms has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	pathways has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+location is a reference to a list where each element is a region_of_dna
+region_of_dna is a reference to a list containing 4 items:
+	0: a contig_id
+	1: (begin) an int
+	2: (strand) a string
+	3: (length) an int
+feature_type is a string
+annotation is a reference to a list containing 4 items:
+	0: (comment) a string
+	1: (annotator) a string
+	2: (annotation_time) a float
+	3: an analysis_event_id
+analysis_event_id is a string
+feature_quality_measure is a reference to a hash where the following keys are defined:
+	truncated_begin has a value which is a bool
+	truncated_end has a value which is a bool
+	existence_confidence has a value which is a float
+	frameshifted has a value which is a bool
+	selenoprotein has a value which is a bool
+	pyrrolysylprotein has a value which is a bool
+	overlap_rules has a value which is a reference to a list where each element is a string
+	existence_priority has a value which is a float
+	hit_count has a value which is a float
+	weighted_hit_count has a value which is a float
+	genemark_score has a value which is a float
+protein_family_assignment is a reference to a list containing 4 items:
+	0: (db) a string
+	1: (id) a string
+	2: (function) a string
+	3: (db_version) a string
+similarity_association is a reference to a list containing 6 items:
+	0: (source) a string
+	1: (source_id) a string
+	2: (query_coverage) a float
+	3: (subject_coverage) a float
+	4: (identity) a float
+	5: (e_value) a float
+proposed_function is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	function has a value which is a string
+	user has a value which is a string
+	score has a value which is a float
+	event_id has a value which is an analysis_event_id
+	timestamp has a value which is an int
+genbank_feature is a reference to a hash where the following keys are defined:
+	genbank_type has a value which is a string
+	genbank_location has a value which is a string
+	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+close_genome is a reference to a hash where the following keys are defined:
+	genome has a value which is a genome_id
+	genome_name has a value which is a string
+	closeness_measure has a value which is a float
+	analysis_method has a value which is a string
+analysis_event is a reference to a hash where the following keys are defined:
+	id has a value which is an analysis_event_id
+	tool_name has a value which is a string
+	execution_time has a value which is a float
+	parameters has a value which is a reference to a list where each element is a string
+	hostname has a value which is a string
+strain_type is a reference to a hash where the following keys are defined:
+	typing_method has a value which is a string
+	database has a value which is a string
+	tag has a value which is a string
+	event_id has a value which is an analysis_event_id
+classifier is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	version has a value which is a string
+	description has a value which is a string
+	comment has a value which is a string
+	antibiotics has a value which is a reference to a list where each element is a string
+	accuracy has a value which is a float
+	area_under_roc_curve has a value which is a float
+	f1_score has a value which is a float
+	sources has a value which is a string
+	cumulative_adaboost_value has a value which is a float
+	sensitivity has a value which is a string
+	event_id has a value which is an analysis_event_id
+	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (alpha) a float
+	2: (round) an int
+	3: (function) a string
+
+subsystem_data is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	classification has a value which is a reference to a list containing 3 items:
+	0: (superclass) a string
+	1: (class) a string
+	2: (subclass) a string
+
+	variant_code has a value which is a string
+	role_bindings has a value which is a reference to a list where each element is a role_binding
+	event_id has a value which is an analysis_event_id
+role_binding is a reference to a hash where the following keys are defined:
+	role_id has a value which is a string
+	features has a value which is a reference to a list where each element is a feature_id
+job_statistics is a reference to a hash where the following keys are defined:
+	job_id has a value which is a string
+	start_time has a value which is a string
+	completion_time has a value which is a string
+	elapsed_time has a value which is a float
+	app_name has a value which is a string
+	parameters has a value which is a reference to a hash where the key is a string and the value is a string
+	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+
+</pre>
+
+=end html
+
+=begin text
+
+$genome_in is a genomeTO
+$genome_out is a genomeTO
+genomeTO is a reference to a hash where the following keys are defined:
+	id has a value which is a genome_id
+	scientific_name has a value which is a string
+	domain has a value which is a string
+	genetic_code has a value which is an int
+	source has a value which is a string
+	source_id has a value which is a string
+	taxonomy has a value which is a string
+	ncbi_taxonomy_id has a value which is an int
+	ncbi_lineage has a value which is a reference to a list where each element is a reference to a list containing 3 items:
+	0: (taxon_name) a string
+	1: (taxon_id) an int
+	2: (taxon_rank) a string
+
+	ncbi_genus has a value which is a string
+	ncbi_species has a value which is a string
+	owner has a value which is a string
+	quality has a value which is a genome_quality_measure
+	contigs has a value which is a reference to a list where each element is a contig
+	contigs_handle has a value which is a Handle
+	features has a value which is a reference to a list where each element is a feature
+	close_genomes has a value which is a reference to a list where each element is a close_genome
+	analysis_events has a value which is a reference to a list where each element is an analysis_event
+	typing has a value which is a reference to a list where each element is a strain_type
+	classifications has a value which is a reference to a list where each element is a classifier
+	subsystems has a value which is a reference to a list where each element is a subsystem_data
+	job_data has a value which is a reference to a hash where the following keys are defined:
+	assembly has a value which is a job_statistics
+	annotation has a value which is a job_statistics
+
+genome_id is a string
+genome_quality_measure is a reference to a hash where the following keys are defined:
+	frameshift_error_rate has a value which is a float
+	sequence_error_rate has a value which is a float
+	checkm_data has a value which is a reference to a hash where the key is a string and the value is a string
+	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
+	role_map has a value which is a reference to a hash where the key is a string and the value is a string
+	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+
+	coarse_consistency has a value which is a float
+	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
+	genome_metrics has a value which is a reference to a hash where the following keys are defined:
+	N50 has a value which is an int
+	N70 has a value which is an int
+	N90 has a value which is an int
+	L50 has a value which is an int
+	L70 has a value which is an int
+	L90 has a value which is an int
+	totlen has a value which is an int
+	complete has a value which is an int
+
+	genome_length has a value which is an int
+	gc_content has a value which is a float
+	chromosomes has a value which is an int
+	plasmids has a value which is an int
+	contigs has a value which is an int
+	genome_status has a value which is a string
+	feature_summary has a value which is a reference to a hash where the following keys are defined:
+	cds has a value which is an int
+	partial_cds has a value which is an int
+	rRNA has a value which is an int
+	tRNA has a value which is an int
+	misc_RNA has a value which is an int
+	repeat_region has a value which is an int
+
+	protein_summary has a value which is a reference to a hash where the following keys are defined:
+	hypothetical has a value which is an int
+	function_assignment has a value which is an int
+	plfam_assignment has a value which is an int
+	pgfam_assignment has a value which is an int
+	ec_assignment has a value which is an int
+	go_assignment has a value which is an int
+	pathway_assignment has a value which is an int
+
+	specialty_gene_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	amr_genes has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (gene_name) a string
+	2: (function) a string
+	3: (amr_classification) a string
+
+	amr_gene_summary has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (amr_classification) a string
+	1: (gene_names) a reference to a list where each element is a string
+
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
+	cds_ratio has a value which is a float
+	hypothetical_cds_ratio has a value which is a float
+	partial_cds_ratio has a value which is a float
+	plfam_cds_ratio has a value which is a float
+	pgfam_cds_ratio has a value which is a float
+	genome_quality_flags has a value which is a reference to a list where each element is a string
+	genome_quality has a value which is a string
+feature_id is a string
+contig is a reference to a hash where the following keys are defined:
+	id has a value which is a contig_id
+	dna has a value which is a string
+	genetic_code has a value which is an int
+	cell_compartment has a value which is a string
+	replicon_type has a value which is a string
+	replicon_geometry has a value which is a string
+	complete has a value which is a bool
+	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
+contig_id is a string
+bool is an int
+genbank_locus is a reference to a hash where the following keys are defined:
+	accession has a value which is a reference to a list where each element is a string
+	comment has a value which is a reference to a list where each element is a string
+	date has a value which is a string
+	dblink has a value which is a reference to a list where each element is a string
+	dbsource has a value which is a reference to a list where each element is a string
+	definition has a value which is a string
+	division has a value which is a string
+	geometry has a value which is a string
+	gi has a value which is an int
+	keywords has a value which is a reference to a list where each element is a string
+	locus has a value which is a string
+	organism has a value which is a string
+	origin has a value which is a string
+	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	source has a value which is a string
+	taxonomy has a value which is a reference to a list where each element is a string
+	version has a value which is a reference to a list where each element is a string
+Handle is a reference to a hash where the following keys are defined:
+	file_name has a value which is a string
+	id has a value which is a string
+	type has a value which is a string
+	url has a value which is a string
+	remote_md5 has a value which is a string
+	remote_sha1 has a value which is a string
+feature is a reference to a hash where the following keys are defined:
+	id has a value which is a feature_id
+	location has a value which is a location
+	type has a value which is a feature_type
+	function has a value which is a string
+	function_id has a value which is a string
+	protein_translation has a value which is a string
+	aliases has a value which is a reference to a list where each element is a string
+	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (source) a string
+	1: (alias) a string
+
+	annotations has a value which is a reference to a list where each element is an annotation
+	quality has a value which is a feature_quality_measure
+	feature_creation_event has a value which is an analysis_event_id
+	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
+	similarity_associations has a value which is a reference to a list where each element is a similarity_association
+	proposed_functions has a value which is a reference to a list where each element is a proposed_function
+	genbank_type has a value which is a string
+	genbank_feature has a value which is a genbank_feature
+	ec_numbers has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	go_terms has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	pathways has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+location is a reference to a list where each element is a region_of_dna
+region_of_dna is a reference to a list containing 4 items:
+	0: a contig_id
+	1: (begin) an int
+	2: (strand) a string
+	3: (length) an int
+feature_type is a string
+annotation is a reference to a list containing 4 items:
+	0: (comment) a string
+	1: (annotator) a string
+	2: (annotation_time) a float
+	3: an analysis_event_id
+analysis_event_id is a string
+feature_quality_measure is a reference to a hash where the following keys are defined:
+	truncated_begin has a value which is a bool
+	truncated_end has a value which is a bool
+	existence_confidence has a value which is a float
+	frameshifted has a value which is a bool
+	selenoprotein has a value which is a bool
+	pyrrolysylprotein has a value which is a bool
+	overlap_rules has a value which is a reference to a list where each element is a string
+	existence_priority has a value which is a float
+	hit_count has a value which is a float
+	weighted_hit_count has a value which is a float
+	genemark_score has a value which is a float
+protein_family_assignment is a reference to a list containing 4 items:
+	0: (db) a string
+	1: (id) a string
+	2: (function) a string
+	3: (db_version) a string
+similarity_association is a reference to a list containing 6 items:
+	0: (source) a string
+	1: (source_id) a string
+	2: (query_coverage) a float
+	3: (subject_coverage) a float
+	4: (identity) a float
+	5: (e_value) a float
+proposed_function is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	function has a value which is a string
+	user has a value which is a string
+	score has a value which is a float
+	event_id has a value which is an analysis_event_id
+	timestamp has a value which is an int
+genbank_feature is a reference to a hash where the following keys are defined:
+	genbank_type has a value which is a string
+	genbank_location has a value which is a string
+	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+close_genome is a reference to a hash where the following keys are defined:
+	genome has a value which is a genome_id
+	genome_name has a value which is a string
+	closeness_measure has a value which is a float
+	analysis_method has a value which is a string
+analysis_event is a reference to a hash where the following keys are defined:
+	id has a value which is an analysis_event_id
+	tool_name has a value which is a string
+	execution_time has a value which is a float
+	parameters has a value which is a reference to a list where each element is a string
+	hostname has a value which is a string
+strain_type is a reference to a hash where the following keys are defined:
+	typing_method has a value which is a string
+	database has a value which is a string
+	tag has a value which is a string
+	event_id has a value which is an analysis_event_id
+classifier is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	version has a value which is a string
+	description has a value which is a string
+	comment has a value which is a string
+	antibiotics has a value which is a reference to a list where each element is a string
+	accuracy has a value which is a float
+	area_under_roc_curve has a value which is a float
+	f1_score has a value which is a float
+	sources has a value which is a string
+	cumulative_adaboost_value has a value which is a float
+	sensitivity has a value which is a string
+	event_id has a value which is an analysis_event_id
+	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (alpha) a float
+	2: (round) an int
+	3: (function) a string
+
+subsystem_data is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	classification has a value which is a reference to a list containing 3 items:
+	0: (superclass) a string
+	1: (class) a string
+	2: (subclass) a string
+
+	variant_code has a value which is a string
+	role_bindings has a value which is a reference to a list where each element is a role_binding
+	event_id has a value which is an analysis_event_id
+role_binding is a reference to a hash where the following keys are defined:
+	role_id has a value which is a string
+	features has a value which is a reference to a list where each element is a feature_id
+job_statistics is a reference to a hash where the following keys are defined:
+	job_id has a value which is a string
+	start_time has a value which is a string
+	completion_time has a value which is a string
+	elapsed_time has a value which is a float
+	app_name has a value which is a string
+	parameters has a value which is a reference to a hash where the key is a string and the value is a string
+	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+
+
+=end text
+
+=item Description
+
+
+
+=back
+
+=cut
+
+sub translate_untranslated_proteins
+{
+    my($self, @args) = @_;
+
+# Authentication: none
+
+    if ((my $n = @args) != 1)
+    {
+        die "Invalid argument count for function translate_untranslated_proteins (received $n, expecting 1)";
+    }
+    {
+	my($genome_in) = @args;
+
+	my @_bad_arguments;
+        (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 1 \"genome_in\" (value was \"$genome_in\")");
+        if (@_bad_arguments) {
+	    my $msg = "Invalid arguments passed to translate_untranslated_proteins:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	    die $msg;
+	}
+    }
+
+    my $result = $self->{client}->call($self->{url}, $self->{headers}, {
+	method => "GenomeAnnotation.translate_untranslated_proteins",
+	params => \@args,
+    });
+    if ($result) {
+	if ($result->{error}) {
+	    my $msg = $result->{error}->{error} || $result->{error}->{message};
+	    $msg =  $self->{client}->json->encode($msg) if ref($msg);
+	    die "Error $result->{error}->{code} invoking translate_untranslated_proteins:\n$msg\n";
+	} else {
+	    return wantarray ? @{$result->{result}} : $result->{result}->[0];
+	}
+    } else {
+	die "Error invoking method translate_untranslated_proteins: " .  $self->{client}->status_line;
     }
 }
 
@@ -20949,6 +22296,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -21242,6 +22590,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -21592,6 +22941,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -21885,6 +23235,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -22235,6 +23586,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -22538,6 +23890,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -22898,6 +24251,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -23195,6 +24549,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -23549,6 +24904,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -23841,6 +25197,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -24190,6 +25547,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -24482,6 +25840,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -24831,6 +26190,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -25134,6 +26494,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -25494,6 +26855,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -25791,6 +27153,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -26207,6 +27570,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -26505,6 +27869,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -26859,6 +28224,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -27148,6 +28514,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -27493,6 +28860,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -27782,6 +29150,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -28127,6 +29496,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -28416,6 +29786,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -28761,6 +30132,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -29050,6 +30422,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -29395,6 +30768,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -29684,6 +31058,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -30029,6 +31404,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -30318,6 +31694,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -30663,6 +32040,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -30969,6 +32347,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -31331,6 +32710,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -31620,6 +33000,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -31965,6 +33346,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -32254,6 +33636,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -32599,6 +33982,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -32888,6 +34272,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -33233,6 +34618,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -33522,6 +34908,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -33867,6 +35254,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -34156,6 +35544,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -34501,6 +35890,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -34790,6 +36180,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -35139,6 +36530,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -35432,6 +36824,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -35779,6 +37172,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -36068,6 +37462,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -36414,6 +37809,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -36703,6 +38099,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -37049,6 +38446,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -37341,6 +38739,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -37691,6 +39090,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -37982,6 +39382,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -38717,6 +40118,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -39006,6 +40408,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -39351,6 +40754,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -39640,6 +41044,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -40581,6 +41986,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -40910,6 +42316,7 @@ contig is a reference to a hash where the following keys are defined:
 	replicon_geometry has a value which is a string
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -42402,6 +43809,7 @@ replicon_type has a value which is a string
 replicon_geometry has a value which is a string
 complete has a value which is a bool
 genbank_locus has a value which is a genbank_locus
+original_id has a value which is a string
 
 </pre>
 
@@ -42418,6 +43826,7 @@ replicon_type has a value which is a string
 replicon_geometry has a value which is a string
 complete has a value which is a bool
 genbank_locus has a value which is a genbank_locus
+original_id has a value which is a string
 
 
 =end text
@@ -43488,6 +44897,7 @@ min_training_len has a value which is an int
 <pre>
 a reference to a hash where the following keys are defined:
 minimum_contig_length has a value which is an int
+max_homopolymer_frequency has a value which is a float
 
 </pre>
 
@@ -43497,6 +44907,7 @@ minimum_contig_length has a value which is an int
 
 a reference to a hash where the following keys are defined:
 minimum_contig_length has a value which is an int
+max_homopolymer_frequency has a value which is a float
 
 
 =end text
@@ -43584,6 +44995,7 @@ min_length has a value which is an int
 <pre>
 a reference to a hash where the following keys are defined:
 min_gap_length has a value which is an int
+monopolymer_repeat_length has a value which is an int
 
 </pre>
 
@@ -43593,6 +45005,37 @@ min_gap_length has a value which is an int
 
 a reference to a hash where the following keys are defined:
 min_gap_length has a value which is an int
+monopolymer_repeat_length has a value which is an int
+
+
+=end text
+
+=back
+
+
+
+=head2 split_gap_spanning_features_params
+
+=over 4
+
+
+
+=item Definition
+
+=begin html
+
+<pre>
+a reference to a hash where the following keys are defined:
+tmp has a value which is an int
+
+</pre>
+
+=end html
+
+=begin text
+
+a reference to a hash where the following keys are defined:
+tmp has a value which is an int
 
 
 =end text
