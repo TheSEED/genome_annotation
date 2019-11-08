@@ -5715,18 +5715,17 @@ sub evaluate_genome
 	       "--deep",
 	       "--predictors", $self->{genome_evaluation_predictors},
 	       "--checkDir", $self->{genome_evaluation_checkg},
-	       "--template", $detail_tempalte,
+	       "--template", $detail_template,
 	       $file, $details, $html);
 
-	print Dumper(\@cmd);
-
-	my $ok = run(\@cmd, '>', \$stdout);
-
-	if (!$ok)
-	{
-	    die "Error $? running @cmd\n";
-	}
-    };
+    print Dumper(\@cmd);
+    
+    my $ok = run(\@cmd, '>', \$stdout);
+    
+    if (!$ok)
+    {
+	die "Error $? running @cmd\n";
+    }
 
     $genome_out = decode_json(scalar read_file("$file"));
 
