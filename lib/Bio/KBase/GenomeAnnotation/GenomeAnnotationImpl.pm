@@ -20,6 +20,7 @@ formation about an existing genome, or to create new annotations.
 #BEGIN_HEADER
 
 use Safe;
+use File::Basename;
 use File::Temp;
 use File::Which;
 use File::Slurp;
@@ -46,6 +47,7 @@ use Bio::KBase::GenomeAnnotation::Awe;
 use Bio::KBase::GenomeAnnotation::Shock;
 
 use Bio::KBase::GenomeAnnotation::Glimmer;
+use BinningReports;
 use GenomeTypeObject;
 use gjogenbank;
 use GenBankToGTO;
@@ -5697,25 +5699,24 @@ sub evaluate_genome
     my $details = "genome_quality_details.txt";
     SeedUtils::write_encoded_object($genome_in, $file);
 
+    my @ref;
+    if (my $r = $params->{reference_genome_id})
+    {
+	@ref = ("--ref", $r);
+    }
     #
-    # Put SEEDtk in the path to run this.
+    # Use our included path to BinningReports to find the webdetails file
     #
-    do {
-	local $ENV{PATH} = "$self->{seedtk_path}/bin:$ENV{PATH}";
-
-	my @ref;
-	if (my $r = $params->{reference_genome_id})
-	{
-	    @ref = ("--ref", $r);
-	}
-
-	my @cmd = ("p3x-eval-gto",
-		   @ref,
-		   "--deep",
-		   "--predictors", $self->{genome_evaluation_predictors},
-		   "--checkDir", $self->{genome_evaluation_checkg},
-		   "--template", "$self->{seedtk_path}/modules/RASTtk/lib/BinningReports/webdetails.tt",
-		   $file, $details, $html);
+    my $rpt = $INC{'BinningReports.pm'};
+    my $detail_template = dirname($rpt) . "/BinningReports/webdetails.tt";
+    
+    my @cmd = ("p3x-eval-gto",
+	       @ref,
+	       "--deep",
+	       "--predictors", $self->{genome_evaluation_predictors},
+	       "--checkDir", $self->{genome_evaluation_checkg},
+	       "--template", $detail_tempalte,
+	       $file, $details, $html);
 
 	print Dumper(\@cmd);
 
