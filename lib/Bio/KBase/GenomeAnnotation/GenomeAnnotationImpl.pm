@@ -36,7 +36,7 @@ eval {
     $have_kbase_idserver = 1;
 };
 
-use Bio::KBase::KmerAnnotationByFigfam::Client;
+# disable # use Bio::KBase::KmerAnnotationByFigfam::Client;
 # disable # use KmerClassifier;
 #use Bio::KBase::KIDL::Helpers qw(json_to_tempfile tempfile_to_json);
 use IPC::Run qw(run);
@@ -50,7 +50,7 @@ use GenomeTypeObject;
 use gjogenbank;
 use GenBankToGTO;
 use IDclient;
-use ANNOserver;
+# disabled # use ANNOserver;
 use SeedUtils;
 use SeedURLs;
 use gjoseqlib;
@@ -1206,6 +1206,7 @@ sub genomeTO_to_reconstructionTO
     my($return);
     #BEGIN genomeTO_to_reconstructionTO
 
+    die "method genomeTO_to_reconstructionTO is disabled";
     use ANNOserver;
     my $annoO = ANNOserver->new;
     my %in_models = map { chop; ($_ => 1) } `all_roles_used_in_models`;
@@ -1454,37 +1455,8 @@ sub assign_functions_to_CDSs
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($return);
     #BEGIN assign_functions_to_CDSs
-    my $features = $genomeTO->{features};
-    my %to;
-    my $i;
-    my @prots;
-    for ($i=0; ($i < @$features); $i++)
-    {
-	$to{$features->[$i]->{id}} = $i;
-	my $fid = $features->[$i];
-	my $translation;
-	if (defined($translation = $fid->{protein_translation}))
-	{
-	    my $id = $fid->{id};
-	    push(@prots,[$id,'',$translation]);
-	}
-    }
-    my $anno = ANNOserver->new();
-    my $handle = $anno->assign_function_to_prot(-input => \@prots,
-						-kmer => 8,
-						-scoreThreshold => 3,
-						-seqHitThreshold => 3);
-    while (my $res = $handle->get_next())
-    {
-	my($id, $function, $otu, $score, $nonoverlap_hits, $overlap_hits, $details, $fam) = @$res;
-	$features->[$to{$id}]->{function} = $function;
-	push(@{$features->[$to{$id}]->{annotations}},
-	     ["Set function to\n$function\nby assign_function_to_CDSs with otu=$otu score=$score nonoverlap=$nonoverlap_hits hits=$overlap_hits figfam=$fam",
-	      'genome annotation service',
-	      time
-	     ]);
-    }
-    $return = $genomeTO;
+
+    die "method assign_functions_to_CDSs is disabled";
     #END assign_functions_to_CDSs
     my @_bad_returns;
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
@@ -1527,166 +1499,8 @@ sub annotate_genome
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($return);
     #BEGIN annotate_genome
-    my $genome = $genomeTO;
-    my $anno = ANNOserver->new();
 
-    if ($genome->{genetic_code} !~ /^\d+$/)
-    {
-	die "Genome has invalid genetic code $genome->{genetic_code}";
-    }
-    if ($genome->{scientific_name} eq '')
-    {
-	die "Genome does not have a scientific name defined";
-    }
-    if ($genome->{domain} eq '')
-    {
-	die "Genome does not have a domain defined";
-    }
-
-    #
-    # Reformat the contigs for use with the ANNOserver.
-    #
-    my @contigs;
-    foreach my $gctg (@{$genome->{contigs}})
-    {
-	push(@contigs, [$gctg->{id}, undef, $gctg->{dna}]);
-    }
-
-    #
-    # Call genes.
-    #
-    print STDERR "Call genes...\n";
-    my $peg_calls = $anno->call_genes(-input => \@contigs, -geneticCode => $genome->{genetic_code});
-    print STDERR "Call genes...done\n";
-
-
-    #
-    # Call RNAs
-    #
-    my($genus, $species, $strain) = split(/\s+/, $genome->{scientific_name}, 3);
-    $species = "sp" if $species eq '';
-    print STDERR "Call rnas '$genus' '$species' '$strain' '$genome->{domain}'...\n";
-    my $rna_calls = $anno->find_rnas(-input => \@contigs, -genus => $genus, -species => $species,
-				     -domain => $genome->{domain});
-    print STDERR "Call rnas...done\n";
-
-    my($fasta_rna, $rna_locations) = @$rna_calls;
-
-    my %feature_loc;
-    my %feature_func;
-    my %feature_anno;
-    
-    for my $ent (@$rna_locations)
-    {
-	my($loc_id, $contig, $start, $stop, $func) = @$ent;
-	my $len = abs($stop - $start) + 1;
-	my $strand = ($stop > $start) ? '+' : '-';
-	$feature_loc{$loc_id} = [$contig, $start, $strand, $len];
-	$feature_func{$loc_id} = $func if $func;
-    }
-
-    my($fasta_proteins, $protein_locations) = @$peg_calls;
-
-    my $features = $genome->{features};
-    if (!$features)
-    {
-	$features = [];
-	$genome->{features} = $features;
-    }
-
-    #
-    # Assign functions for proteins.
-    #
-
-    my $prot_fh;
-    open($prot_fh, "<", \$fasta_proteins) or die "Cannot open the fasta string as a filehandle: $!";
-    my $handle = $anno->assign_function_to_prot(-input => $prot_fh,
-						-kmer => 8,
-						-scoreThreshold => 3,
-						-seqHitThreshold => 3);
-    while (my $res = $handle->get_next())
-    {
-	my($id, $function, $otu, $score, $nonoverlap_hits, $overlap_hits, $details, $fam) = @$res;
-	$feature_func{$id} = $function;
-	$feature_anno{$id} = "Set function to\n$function\nby assign_function_to_prot with otu=$otu score=$score nonoverlap=$nonoverlap_hits hits=$overlap_hits figfam=$fam";
-    }
-    close($prot_fh);
-    
-    for my $ent (@$protein_locations)
-    {
-	my($loc_id, $contig, $start, $stop) = @$ent;
-	my $len = abs($stop - $start) + 1;
-	my $strand = ($stop > $start) ? '+' : '-';
-	$feature_loc{$loc_id} = [$contig, $start, $strand, $len];
-    }
-
-    my $id_server = IDclient->new($genome);
-
-    #
-    # Create features for PEGs
-    #
-    my $n_pegs = @$protein_locations;
-    my $protein_prefix = "$genome->{id}.CDS";
-    my $peg_id_start = $id_server->allocate_id_range($protein_prefix, $n_pegs) + 0;
-    print STDERR "allocated CDS id start $peg_id_start for $n_pegs CDSs\n";
-
-    open($prot_fh, "<", \$fasta_proteins) or die "Cannot open the fasta string as a filehandle: $!";
-    my $next_id = $peg_id_start;
-    while (my($id, $def, $seq) = read_next_fasta_seq($prot_fh))
-    {
-	my $loc = $feature_loc{$id};
-	my $kb_id = "$protein_prefix.$next_id";
-	$next_id++;
-	my $annos = [];
-	push(@$annos, ['Initial gene call performed by call_genes',
-		       'genome annotation service',
-		       time
-		       ]);
-	if ($feature_anno{$id})
-	{
-	    push(@$annos, [$feature_anno{$id}, 'genome annotation service', time]);
-	}
-	my $feature = {
-	    id => $kb_id,
-	    location => [$loc],
-	    type => 'CDS',
-	    protein_translation => $seq,
-	    aliases => [],
-	    $feature_func{$id} ? (function => $feature_func{$id}) : (),
-	    annotations => $annos,
-	};
-	push(@$features, $feature);
-    }
-    close($prot_fh);
-
-    #
-    # Create features for RNAs
-    #
-    my $n_rnas = @$rna_locations;
-    my $rna_prefix = "$genome->{id}.rna";
-    my $rna_id_start = $id_server->allocate_id_range($rna_prefix, $n_rnas) + 0;
-    print STDERR "allocated id start $rna_id_start for $n_rnas nras\n";
-
-    my $rna_fh;
-    open($rna_fh, "<", \$fasta_rna) or die "Cannot open the fasta string as a filehandle: $!";
-    $next_id = $rna_id_start;
-    while (my($id, $def, $seq) = read_next_fasta_seq($rna_fh))
-    {
-	my $loc = $feature_loc{$id};
-	my $kb_id = "$rna_prefix.$next_id";
-	$next_id++;
-	my $feature = {
-	    id => $kb_id,
-	    location => [$loc],
-	    type => 'rna',
-	    $feature_func{$id} ? (function => $feature_func{$id}) : (),
-	    aliases => [],
-	    annotations => [ ['Initial RNA call performed by find_rnas', 'genome annotation service', time] ],
-	};
-	push(@$features, $feature);
-    }
-
-    $return = $genome;
+    $return = $self->run_pipeline($genomeTO, $self->default_workflow());
     
     #END annotate_genome
     my @_bad_returns;
@@ -2245,86 +2059,9 @@ sub call_RNAs
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($genome_out);
     #BEGIN call_RNAs
-    ##################################################
-    use ANNOserver;
-    my $anno = ANNOserver->new();
-    #
-    # Reformat the contigs for use with the ANNOserver.
-    #
-    my @contigs;
-    foreach my $gctg (@{$genome_in->{contigs}})
-    {
-	push(@contigs, [$gctg->{id}, undef, $gctg->{dna}]);
-    }
 
-    if ($genome_in->{scientific_name} eq '')
-    {
-	die "Genome does not have a scientific name defined";
-    }
-    if ($genome_in->{domain} eq '')
-    {
-	die "Genome does not have a domain defined";
-    }
-
-    #
-    # Call RNAs
-    #
-    my($genus, $species, $strain) = split(/\s+/, $genome_in->{scientific_name}, 3);
-    $species = "sp" if $species eq '';
-    print STDERR "Call rnas '$genus' '$species' '$strain' '$genome_in->{domain}'...\n";
-    my $rna_calls = $anno->find_rnas(-input => \@contigs, -genus => $genus, -species => $species,
-				     -domain => $genome_in->{domain});
-    print STDERR "Call rnas...done\n";
-    my($fasta_rna, $rna_locations) = @$rna_calls;
-
-    my %feature_loc;
-    my %feature_func;
-    my %feature_anno;
-    
-    for my $ent (@$rna_locations)
-    {
-	my($loc_id, $contig, $start, $stop, $func) = @$ent;
-	my $len = abs($stop - $start) + 1;
-	my $strand = ($stop > $start) ? '+' : '-';
-	$feature_loc{$loc_id} = [$contig, $start, $strand, $len];
-	$feature_func{$loc_id} = $func if $func;
-    }
-    my $features = $genome_in->{features};
-    if (!$features)
-    {
-	$features = [];
-	$genome_in->{features} = $features;
-    }
-
-    my $id_server = IDclient->new($genome_in);
-    
-    #
-    # Create features for RNAs
-    #
-    my $n_rnas = @$rna_locations;
-    my $rna_prefix = "$genome_in->{id}.rna";
-    my $rna_id_start = $id_server->allocate_id_range($rna_prefix, $n_rnas) + 0;
-    print STDERR "allocated id start $rna_id_start for $n_rnas nras\n";
-
-    my $rna_fh;
-    open($rna_fh, "<", \$fasta_rna) or die "Cannot open the fasta string as a filehandle: $!";
-    my $next_id = $rna_id_start;
-    while (my($id, $def, $seq) = read_next_fasta_seq($rna_fh))
-    {
-	my $loc = $feature_loc{$id};
-	my $kb_id = "$rna_prefix.$next_id";
-	$next_id++;
-	my $feature = {
-	    id => $kb_id,
-	    location => [$loc],
-	    type => 'rna',
-	    $feature_func{$id} ? (function => $feature_func{$id}) : (),
-	    aliases => [],
-	    annotations => [ ['Initial RNA call performed by find_rnas', 'genome annotation service', time] ],
-	};
-	push(@$features, $feature);
-    }
-    $genome_out = $genome_in;
+    $genome_out = $self->call_features_rRNA_SEED($genome_in, 'ALL');
+    $genome_out = $self->call_features_tRNA_trnascan($genome_out);
 
     #END call_RNAs
     my @_bad_returns;
