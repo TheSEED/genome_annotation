@@ -8,6 +8,7 @@ use POSIX;
 use JSON;
 use Class::Load qw();
 use Config::Simple;
+
 my $get_time = sub { time, 0 };
 eval {
     require Time::HiRes;
@@ -16,6 +17,10 @@ eval {
 
 use P3AuthToken;
 use P3TokenValidator;
+
+my $g_hostname = `hostname`;
+chomp $g_hostname;
+$g_hostname ||= 'unknown-host';
 
 extends 'RPC::Any::Server::JSONRPC::PSGI';
 
@@ -493,10 +498,7 @@ sub call_method {
 	my $tag = $self->_plack_req->header("Kbrpc-Tag");
 	if (!$tag)
 	{
-	    if (!$self->{hostname}) {
-		chomp($self->{hostname} = `hostname`);
-                $self->{hostname} ||= 'unknown-host';
-	    }
+	    $self->{hostname} ||= $g_hostname;
 
 	    my ($t, $us) = &$get_time();
 	    $us = sprintf("%06d", $us);
@@ -639,10 +641,10 @@ sub new
     }
     
     my $self = {
+        hostname => $g_hostname,
         @opts,
     };
-    chomp($self->{hostname} = `hostname`);
-    $self->{hostname} ||= 'unknown-host';
+
     return bless $self, $class;
 }
 

@@ -2005,7 +2005,7 @@ sub call_features_tRNA_trnascan
     my $tmp_out = File::Temp->new();
     close($tmp_out);
 
-    my @cmd = ("rast_call_tRNAs", "--input", $tmp_in, "--output", $tmp_out,
+    my @cmd = ("rast_call_tRNAs_trnascan", "--input", $tmp_in, "--output", $tmp_out,
 	       "--id-prefix", $genome_in->{id});
 
     $ctx->stderr->log_cmd(@cmd);
