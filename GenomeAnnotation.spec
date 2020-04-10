@@ -527,6 +527,13 @@ module GenomeAnnotation
 
     typedef structure
     {
+	string reference_name;
+    } vigor4_parameters;
+    
+    funcdef call_features_vigor4(genomeTO, vigor4_parameters params) returns (genomeTO);
+    
+    typedef structure
+    {
 	int min_training_len;
     } glimmer3_parameters;
     
