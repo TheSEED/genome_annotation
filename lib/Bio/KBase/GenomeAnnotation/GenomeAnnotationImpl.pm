@@ -2294,7 +2294,7 @@ sub call_features_vigor4
 
     $return = $genome_in;
     $return = $return->prepare_for_return();
-print STDERR Dumper($return);
+
     #END call_features_vigor4
     my @_bad_returns;
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
