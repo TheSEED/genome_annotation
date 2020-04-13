@@ -327,6 +327,32 @@ sub new
 
     $self->{vigor_reference_db_directory} = $cfg->setting("vigor-reference-db-directory");
 
+    #
+    # This is stand-in code; read the viral family data into memory.
+    #
+    my $vfam = $cfg->setting("viral-family-db");
+    $self->{viral_plfam} = {};
+    $self->{viral_pgfam} = {};
+    if ($vfam && open(my $vf, "<", $vfam))
+    {
+	$_ = <$vf>;
+	while (<$vf>)
+	{
+	    chomp;
+	    my($type, $id, $product) = split(/\t/);
+	    if ($type eq 'plfam')
+	    {
+		my($genus) = $id =~ /^PLF_(\d+)_/;
+		$self->{viral_plfam}->{$genus}->{$product} = [$type, $id, $product];
+	    }
+	    elsif ($type eq 'pgfam')
+	    {
+		$self->{viral_pgfam}->{$product} = [$type, $id, $product];
+	    }
+	}
+	close($vf);
+    }
+
     my $phage_files = $cfg->setting("phage-annotation-files");
     if (!$phage_files)
     {
@@ -5041,6 +5067,105 @@ sub annotate_families_patric
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_families_patric:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	die $msg;
+    }
+    return($genome_out);
+}
+
+
+=head2 annotate_families_patric_viral
+
+  $genome_out = $obj->annotate_families_patric_viral($genome_in)
+
+=over 4
+
+
+
+
+=item Description
+
+
+=back
+
+=cut
+
+sub annotate_families_patric_viral
+{
+    my $self = shift;
+    my($genome_in) = @_;
+
+    my @_bad_arguments;
+    (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
+    if (@_bad_arguments) {
+	my $msg = "Invalid arguments passed to annotate_families_patric_viral:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	die $msg;
+    }
+
+    my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
+    my($genome_out);
+    #BEGIN annotate_families_patric_viral
+
+    $genome_in = GenomeTypeObject->initialize($genome_in);
+
+    #
+    # Determine the genus for the given genome. We use that to find the appropriate PLF.
+    #
+
+    my $api = P3DataAPI->new();
+    my $taxon_id = $genome_in->taxonomy_id();
+    my @res = $api->query('taxonomy', ['eq', 'taxon_id', $taxon_id], ['select', 'lineage_ids', 'lineage_ranks']);
+
+    my $genus;
+    if (@res != 1)
+    {
+	warn "Could not find genus for $taxon_id\n";
+    }
+    else
+    {
+	my $ids = $res[0]->{lineage_ids};
+	my $ranks = $res[0]->{lineage_ranks};
+	while (@$ids)
+	{
+	    if ($ranks->[0] eq 'genus')
+	    {
+		$genus = $ids->[0];
+		last;
+	    }
+	    shift @$ids;
+	    shift @$ranks;
+	}
+    }
+    
+    #
+    # Iterate over features and determine family IDs if present
+    #
+    my $plfam = $self->{viral_plfam}->{$genus};
+    if ($genus && $plfam)
+    {
+	for my $f ($genome_in->features())
+	{
+	    if (my $ent = $plfam->{$f->{function}})
+	    {
+		my($type, $id, $product) = @$ent;
+		push(@{$f->{family_assignments}}, [uc($type), $id, $product]);
+	    }
+	    elsif (my $ent = $self->{viral_pgfam}->{$f->{function}})
+	    {
+		my($type, $id, $product) = @$ent;
+		push(@{$f->{family_assignments}}, [uc($type), $id, $product]);
+	    }
+	}
+    }
+
+    $genome_out = $genome_in;
+    $genome_out = $genome_out->prepare_for_return();
+    
+	    
+    #END annotate_families_patric_viral
+    my @_bad_returns;
+    (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
+    if (@_bad_returns) {
+	my $msg = "Invalid returns passed to annotate_families_patric_viral:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
     return($genome_out);

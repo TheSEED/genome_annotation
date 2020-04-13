@@ -679,6 +679,7 @@ module GenomeAnnotation
     funcdef annotate_special_proteins(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_families_figfam_v1(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_families_patric(genomeTO genome_in) returns (genomeTO genome_out);
+    funcdef annotate_families_patric_viral(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_null_to_hypothetical(genomeTO genome_in) returns (genomeTO genome_out);
 
     funcdef remove_genbank_features(genomeTO genome_in) returns (genomeTO genome_out);
