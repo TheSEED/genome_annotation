@@ -2824,11 +2824,21 @@ sub call_features_CDS_phanotate
 	die "Could not find phanotate in path\n";
     }
 
-    my $version;
-    if (open(my $fh, "-|", $phanotate, "-v"))
+    my $version = "Unknown";
+
+    #
+    # New phanotate is in pip so we need to use pip to get the version.
+    #
+    if (open(my $fh, "-|", "pip3", "show", "phanotate"))
     {
-	$version = <$fh>;
-	chomp $version;
+	while (<$fh>)
+	{
+	    if (/^Version:\s+(\S+)/)
+	    {
+		$version = $1;
+		last;
+	    }
+	}
 	close($fh);
     }
 
