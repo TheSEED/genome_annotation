@@ -36,7 +36,7 @@ sub new
     
     if (!defined($url))
     {
-	$url = 'https://p3.theseed.org/services/genome_annotation';
+	$url = 'http://redwood.mcs.anl.gov:7050';
     }
 
     my $self = {

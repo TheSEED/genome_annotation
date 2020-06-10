@@ -2198,13 +2198,19 @@ sub call_features_vigor4
 	my $ctg;
 	if ($def =~ s/^mat_peptide\s+//)
 	{
-	    ($ctg) = $id =~ /^(.*)\.\d+\.\d+$/;
+	    ($ctg) = $id =~ /^(.*)\.[^.]+\.[^.]$/;
 	    $type = 'mat_peptide';
 	}
 	else
 	{
-	    ($ctg) = $id =~ /^(.*)\.\d+$/;
+	    ($ctg) = $id =~ /^(.*)\.[^.]+$/;
 	    $type = 'CDS';
+	}
+
+	if (!$ctg)
+	{
+	    print STDERR "Falling back to prefix of id for contig name from $id\n";
+	    ($ctg) = $id =~ /^(.*?)\./;
 	}
 	
 	my $feature = {
@@ -2836,7 +2842,6 @@ sub call_features_CDS_phanotate
 	    if (/^Version:\s+(\S+)/)
 	    {
 		$version = $1;
-		last;
 	    }
 	}
 	close($fh);
