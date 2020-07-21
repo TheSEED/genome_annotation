@@ -163,6 +163,8 @@ module GenomeAnnotation
     list<string> version;
     } genbank_locus;
 
+    typedef tuple <string, int, double> feature_coupling;
+
     /* A feature object represents a feature on the genome. It contains
        the location on the contig with a type, the translation if it
        represents a protein, associated aliases, etc. It also contains
@@ -195,6 +197,7 @@ module GenomeAnnotation
     list<tuple<string id, string description>> ec_numbers;
     list<tuple<string id, string description>> go_terms;
     list<tuple<string id, string description>> pathways;
+    list<feature_coupling> couplings;
     } feature;
 
     /* Data for DNA contig */
