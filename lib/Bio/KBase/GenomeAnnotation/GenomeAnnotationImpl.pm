@@ -6064,8 +6064,7 @@ sub evaluate_genome
     my $file = "$tmpdir/genome.gto";
     my $html = "GenomeReport.html";
     my $stdout;
-    # write details to tmp space since we don't need to retain.
-    my $details = "$tmpdir/genome_quality_details.txt";
+    my $details = "genome_quality_details.txt";
     SeedUtils::write_encoded_object($genome_in, $file);
 
     my @ref;
