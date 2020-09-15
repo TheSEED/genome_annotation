@@ -6083,9 +6083,17 @@ sub evaluate_genome
     # Check for new-style data
     #
     my @eval;
+    my $eval_version;
     if (-d $self->{genome_evaluation_data})
     {
 	@eval = ("--eval", $self->{genome_evaluation_data});
+	if (open(my $fh, "<", "$self->{genome_evaluation_data}/VERSION"))
+	{
+	    $eval_version = <$fh>;
+	    chomp $eval_version;
+	    close($fh);
+	    print "Evaluating genome with evaluation data version $eval_version\n";
+	}
     }
     else
     {
