@@ -392,6 +392,7 @@ sub new
     # Evaluation data files.
     #
 
+    $self->{genome_evaluation_data} = $cfg->setting('genome-evaluation-data');
     $self->{genome_evaluation_predictors} = $cfg->setting('genome-evaluation-predictors');
     $self->{genome_evaluation_checkg} = $cfg->setting('genome-evaluation-checkg');
     $self->{seedtk_path} = $cfg->setting('seedtk-path');
@@ -6077,12 +6078,26 @@ sub evaluate_genome
     #
     my $rpt = $INC{'BinningReports.pm'};
     my $detail_template = dirname($rpt) . "/BinningReports/webdetails.tt";
+
+    #
+    # Check for new-style data
+    #
+    my @eval;
+    if (-d $self->{genome_evaluation_data})
+    {
+	@eval = ("--eval", $self->{genome_evaluation_data});
+    }
+    else
+    {
+	@eval = ("--predictors", $self->{genome_evaluation_predictors},
+		 "--checkDir", $self->{genome_evaluation_checkg},
+		 );
+    }
     
     my @cmd = ("p3x-eval-gto",
 	       @ref,
+	       @eval,
 	       "--deep",
-	       "--predictors", $self->{genome_evaluation_predictors},
-	       "--checkDir", $self->{genome_evaluation_checkg},
 	       "--template", $detail_template,
 	       $file, $details, $html);
 
