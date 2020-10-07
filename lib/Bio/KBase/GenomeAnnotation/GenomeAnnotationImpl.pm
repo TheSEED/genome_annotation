@@ -6664,7 +6664,7 @@ sub default_workflow
 	      { name => 'call_features_CDS_glimmer3', failure_is_not_fatal => 1, glimmer3_parameters => {} },
 	      { name => 'prune_invalid_CDS_features', prune_invalid_CDS_features_parameters => {} },
 	      { name => 'annotate_proteins_kmer_v2', kmer_v2_parameters => {} },
-	      { name => 'annotate_proteins_kmer_v1', kmer_v1_parameters => { annotate_null_only => 1 } },
+	      { name => 'annotate_proteins_kmer_v1', kmer_v1_parameters => { annotate_null_only => 1 }, failure_is_not_fatal => 1 },
 	      { name => 'annotate_proteins_phage', phage_parameters => { annotate_null_only => 1 } },
 	      { name => 'annotate_proteins_similarity', similarity_parameters => { annotate_null_only => 1 } },
 	      { name => 'propagate_genbank_feature_metadata', propagate_genbank_feature_metadata_parameters => {} },
