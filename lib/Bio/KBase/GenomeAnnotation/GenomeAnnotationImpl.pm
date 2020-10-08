@@ -37,7 +37,9 @@ eval {
     $have_kbase_idserver = 1;
 };
 
-# disable # use Bio::KBase::KmerAnnotationByFigfam::Client;
+eval {
+    require Bio::KBase::KmerAnnotationByFigfam::Client;
+};
 # disable # use KmerClassifier;
 #use Bio::KBase::KIDL::Helpers qw(json_to_tempfile tempfile_to_json);
 use IPC::Run qw(run);
@@ -6669,7 +6671,10 @@ sub default_workflow
 	      { name => 'annotate_proteins_similarity', similarity_parameters => { annotate_null_only => 1 } },
 	      { name => 'propagate_genbank_feature_metadata', propagate_genbank_feature_metadata_parameters => {} },
 	      { name => 'resolve_overlapping_features', resolve_overlapping_features_parameters => {} },
-	      { name => 'classify_amr', failure_is_not_fatal => 1 },
+	      { name => 'classify_amr',
+		    failure_is_not_fatal => 1,
+		    condition => 'scalar @{$genome->{contigs}} != grep { $_->{replicon_type} eq "plasmid" } @{$genome->{contigs}}'
+		},
 	      { name => 'renumber_features' },
               { name => 'annotate_special_proteins', failure_is_not_fatal => 1 },
 	      { name => 'annotate_families_figfam_v1', failure_is_not_fatal => 1 },
@@ -6678,6 +6683,11 @@ sub default_workflow
 	      { name => 'find_close_neighbors', failure_is_not_fatal => 1 },
               { name => 'annotate_strain_type_MLST', failure_is_not_fatal => 1  },
 	      # { name => 'call_features_prophage_phispy' },
+	      { name => 'compute_genome_quality_control' , failure_is_not_fatal => 1 },
+	      { name => 'evaluate_genome',
+		    failure_is_not_fatal => 1,
+		    evaluate_genome_parameters => {},
+		},
 		 );
     $return = { stages => \@stages };
     
