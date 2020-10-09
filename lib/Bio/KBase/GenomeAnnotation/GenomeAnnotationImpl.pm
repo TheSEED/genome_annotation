@@ -19,6 +19,7 @@ formation about an existing genome, or to create new annotations.
 
 #BEGIN_HEADER
 
+use Cwd;
 use Safe;
 use File::Basename;
 use File::Temp;
@@ -6980,6 +6981,17 @@ sub run_pipeline
     my($genome_out);
     #BEGIN run_pipeline
 
+    #
+    # If our current directory is not writable, create a temp dir and work there.
+    #
+    my $tmp_here;
+    my $here = getcwd();
+    if (! -w $here)
+    {
+	$tmp_here = File::Temp->newdir(CLEANUP => 1);
+	chdir $tmp_here;
+    }
+
     my %param_defs = (annotate_proteins_kmer_v1 => 'kmer_v1_parameters',
 		      annotate_proteins_kmer_v2 => 'kmer_v2_parameters',
 		      annotate_proteins_similarity => 'similarity_parameters',
@@ -7049,6 +7061,7 @@ sub run_pipeline
 		}
 		else
 		{
+		    chdir $here;
 		    die "Error invoking method $method: $@";
 		}
 	    }
@@ -7061,10 +7074,12 @@ sub run_pipeline
 	}
 	else
 	{
+	    chdir $here;
 	    die "Trying to call invalid method $method";
 	}
     }
 
+    chdir $here;
     $genome_out = $cur;
 
     #END run_pipeline
