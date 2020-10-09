@@ -6109,6 +6109,7 @@ sub evaluate_genome
 	       @ref,
 	       @eval,
 	       "--deep",
+	       "--parallel", "1",
 	       "--template", $detail_template,
 	       $file, $details, $html);
 
