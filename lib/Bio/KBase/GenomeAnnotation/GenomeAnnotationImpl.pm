@@ -3019,11 +3019,20 @@ sub prune_invalid_CDS_features
 
     $genome_in = GenomeTypeObject->initialize($genome_in);
 
+    my $event = {
+	tool_name => "prune_invalid_CDS_features",
+	execution_time => scalar gettimeofday,
+	parameters => [ %$params ],
+	hostname => $self->{hostname},
+    };
+    my $event_id = $genome_in->add_analysis_event($event);
+
     #
     # Compute contig lengths to prune based on that.
     #
     my $min_contig_length = $params->{minimum_contig_length} // 0;
     my $max_homopolymer_frequency = $params->{max_homopolymer_frequency} // 0.9;
+    my $max_dna_in_translation = $params->{max_dna_in_translation} // 0.9;
     my %contig_length;
     for my $contig ($genome_in->contigs)
     {
@@ -3059,6 +3068,20 @@ sub prune_invalid_CDS_features
 	    printf STDERR "Rejecting $f->{id} due to freqs A=%.2f C=%2.f G=%.2f T=%.2f\n",
 	    $fa, $fc, $fg, $ft;
 	    push(@delete, $f->{id});
+	    next;
+	}
+
+	if (my $prot = $f->{protein_translation})
+	{
+	    my $fdna_in_prot = ($prot =~ tr/acgtACGT//) / length($prot);
+
+	    if ($fdna_in_prot > $max_dna_in_translation)
+	    {
+		printf STDERR "Rejecting $f->{id} due to fdna_in_prot=%.2f freqs A=%.2f C=%2.f G=%.2f T=%.2f\n",
+		$fdna_in_prot,  $fa, $fc, $fg, $ft;
+		push(@delete, $f->{id});
+		next;
+	    }
 	}
     }
 

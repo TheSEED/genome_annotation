@@ -547,6 +547,7 @@ module GenomeAnnotation
     {
 	int minimum_contig_length;
 	float max_homopolymer_frequency;
+	float max_dna_in_translation;
     } prune_invalid_CDS_features_parameters;
     funcdef prune_invalid_CDS_features(genomeTO genome_in, prune_invalid_CDS_features_parameters params) returns (genomeTO genome_out);
 
