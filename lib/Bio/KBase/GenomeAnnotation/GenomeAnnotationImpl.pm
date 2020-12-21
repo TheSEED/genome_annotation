@@ -2142,198 +2142,108 @@ sub call_features_vigor4
     #BEGIN call_features_vigor4
 
     #
-    # Invoke vigor4 to annotate viral genome.
+    # Invoke p3x-annotate-vigor4 to annotate viral genome.
     #
-    # Write contigs as fasta file.
-    # Invoke vigor4, using the reference that was passed in as the reference_name parameter;
-    # We parse the .pep file that is generated. It contains two feature types.
-    # This is a CDS:
-    # >NC_045512.1 location=266..13468,13471..21555 codon_start=1 gene="orf1ab" ref_db="covid19" ref_id="YP_009724389.1"
-    # This is a mature peptide:
-    # >NC_045512.1.1 mat_peptide location=266..805 gene="orf1ab" product="leader protein" ref_db="covid19_orf1ab_mp" ref_id="YP_009725297.1"
+    # If we were given a reference, pass that through. Otherwise the annotator will attempt
+    # to use the taxon information in the GTO to choose a reference.
     #
-    # We create features of type CDS and mat_peptide.
-    #
+    my $coder = _get_coder();
+    my $tmp_in = File::Temp->new();
+    write_file($tmp_in, $coder->encode($genomeTO));
+    close($tmp_in);
 
-    my $genome_in = GenomeTypeObject->initialize($genomeTO);
-    
-    my $sequences_file = $genome_in->extract_contig_sequences_to_temp_file();
+    my $tmp_out = File::Temp->new();
+    close($tmp_out);
 
-    my $ref_dir = $self->{vigor_reference_db_directory};
-    $ref_dir ne '' or die "Vigor reference directory not configured";
-    -d $ref_dir or die "Vigor reference directory '$ref_dir' not found on $self->{hostname}";
-
-    my @vigor_params = ("-i", $sequences_file,
-			"--reference-database-path", $ref_dir,
-			"-d", $params->{reference_name},
-			"-o", "vigor_out");
-
-    print STDERR Dumper(\@vigor_params);
-    # system("cp", "/home/olson/P3/ncov.pep", "vigor_out.pep");
-    my $ok = run(["vigor4", @vigor_params],
-		 ">", "vigor4.stdout.txt",
-		"2>", "vigor4.stderr.txt");
-    if (!$ok)
+    my @cmd = ("p3x-annotate-vigor4",
+	       "--input", $tmp_in,
+	       "--output", $tmp_out,
+	       ($params->{reference_name} ? ("--reference", $params->{reference_name}) : ()),
+	       ($params->{remove_existing} ? "--remove-existing" : ()),
+	       );
+    my $rc = system(@cmd);
+    if ($rc != 0)
     {
-	print STDERR "Vigor run failed with rc=$?. Stdout:\n";
-	if (open(V, "<", "vigor4.stdout.txt"))
-	{
-	    while (<V>)
-	    {
-		print $_;
-	    }
-	}
-	close(V);
-	print STDERR "Stderr:\n";
-	if (open(V, "<", "vigor4.stderr.txt"))
-	{
-	    while (<V>)
-	    {
-		print $_;
-	    }
-	}
-	close(V);
+	die "error calling p3x-annotate-vigor4: $rc\non command @cmd";
     }
-    
-    my $event = {
-	tool_name => "vigor4",
-	execution_time => scalar gettimeofday,
-	parameters => \@vigor_params,
-	hostname => $self->{hostname},
-    };
-    
-    my $idc = IDclient->new($genome_in);
-    
-    my $event_id = $genome_in->add_analysis_event($event);
 
-    #
-    # Parse the generated peptide file. We collect the CDS and mature_peptides, then
-    # add features so that we can register the counts.
-    #
-    if (open(my $pep_fh, "<", "vigor_out.pep"))
-    {
-	my %features;
-	while (my($id, $def, $seq) = read_next_fasta_seq($pep_fh))
-	{
-	    my $fq = { truncated_begin => 0, truncated_end => 0 };
-	    
-	    my $type;
-	    my $ctg;
-	    if ($def =~ s/^mat_peptide\s+//)
-	    {
-		($ctg) = $id =~ /^(.*)\.[^.]+\.[^.]$/;
-		$type = 'mat_peptide';
-	    }
-	    else
-	    {
-		($ctg) = $id =~ /^(.*)\.[^.]+$/;
-		$type = 'CDS';
-	    }
-	    
-	    if (!$ctg)
-	    {
-		print STDERR "Falling back to prefix of id for contig name from $id\n";
-		($ctg) = $id =~ /^(.*?)\./;
-	    }
-	    
-	    my $feature = {
-		quality => $fq,
-		type => $type,
-		contig => $ctg,
-		aa_sequence => $seq,
-	    };
-	    push(@{$features{$type}}, $feature);
-	    
-	    while ($def =~ /([^=]+)=((\"([^\"]+)\")|([^\"\s]+))\s*/mg) 
-	    {
-		my $key = $1;
-		my $val = $4 ? $4 : $5;
-		
-		my @loc;
-		
-		if ($key eq 'location')
-		{
-		    $feature->{genbank_feature} = { genbank_type => $type, genbank_location  => $val, values => {}};
-		    
-		    # location=266..13468,13471..21555
-		    for my $ent (split(/,/, $val))
-		    {
-			if (my($s_frag, $s, $e_frag, $e) = $ent =~ /^(<?)(\d+)\.\.(>?)(\d+)$/)
-			{
-			    $fq->{truncated_begin} = 1 if $s_frag;
-			    $fq->{truncated_end} = 1 if $e_frag;
-			    
-			    my $len = abs($s - $e) + 1;
-			    my $strand = $s < $e ? '+' : '-';
-			    push(@loc, [$ctg, $s, $strand, $len]);
-			}
-			else
-			{
-			    die "error parsing location '$ent'\n";
-			}
-		    }
-		    $feature->{location} = \@loc;
-		}
-		else
-		{
-		    $feature->{$key} = $val;
-		}
-	    }
-            $feature->{product} //= $feature->{gene};
-	}
-	#print Dumper(\%features);
-	
-	for my $type (keys %features)
-	{
-	    my $feats = $features{$type};
-	    my $n = @$feats;
-	    my $id_type = $type;
-	    
-	    my $id_prefix = $genome_in->{id};
-	    if ($id_prefix =~ /^\d+\.\d+$/)
-	    {
-		$id_prefix = "fig|$id_prefix";
-	    }
-	    my $typed_prefix = join(".", $id_prefix, $id_type);
-	    
-	    my $cur_id_suffix = $idc->allocate_id_range($typed_prefix, $n);
-	    
-	    for my $feature (@$feats)
-	    {
-		my $id = join(".", $typed_prefix, $cur_id_suffix);
-		$cur_id_suffix++;
-		
-		my $p = {
-		    -id		     => $id,
-		    -type 	     => $type,
-		    -location 	     => $feature->{location},
-		    -analysis_event_id 	     => $event_id,
-		    -annotator => 'vigor4',
-		    -protein_translation => $feature->{aa_sequence},
-		    -alias_pairs => [[gene => $feature->{gene}]],
-		    -function => $feature->{product},
-		    -quality_measure => $feature->{quality},
-		    -genbank_feature => $feature->{genbank_feature},
-		};
-		#die Dumper($p);
-		
-		$genome_in->add_feature($p);
-	    }
-	}
-
-    }
-    else
-    {
-	warn "Could not read vigor_out.pep\n";
-    }
-    $return = $genome_in;
-    $return = $return->prepare_for_return();
-
+    $return = $coder->decode(scalar read_file("" . $tmp_out));
     #END call_features_vigor4
     my @_bad_returns;
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to call_features_vigor4:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	die $msg;
+    }
+    return($return);
+}
+
+
+=head2 call_features_vipr_mat_peptide
+
+  $return = $obj->call_features_vipr_mat_peptide($genomeTO, $params)
+
+=over 4
+
+
+
+
+=item Description
+
+
+=back
+
+=cut
+
+sub call_features_vipr_mat_peptide
+{
+    my $self = shift;
+    my($genomeTO, $params) = @_;
+
+    my @_bad_arguments;
+    (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
+    (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
+    if (@_bad_arguments) {
+	my $msg = "Invalid arguments passed to call_features_vipr_mat_peptide:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	die $msg;
+    }
+
+    my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
+    my($return);
+    #BEGIN call_features_vipr_mat_peptide
+
+    #
+    # Invoke p3x-annotate-mat-peptide to annotate viral genome.
+    #
+
+    my $coder = _get_coder();
+    my $tmp_in = File::Temp->new();
+    write_file($tmp_in, $coder->encode($genomeTO));
+    close($tmp_in);
+
+    my $tmp_out = File::Temp->new();
+    close($tmp_out);
+
+    my @cmd = ("p3x-annotate-mat-peptide",
+	       "--input", $tmp_in,
+	       "--output", $tmp_out,
+	       ($params->{remove_existing} ? "--remove-existing" : ()),
+	       );
+    my $rc = system(@cmd);
+    if ($rc != 0)
+    {
+	die "error calling p3x-annotate-vigor4: $rc\non command @cmd";
+    }
+
+    $return = $coder->decode(scalar read_file("" . $tmp_out));
+
+
+
+    #END call_features_vipr_mat_peptide
+    my @_bad_returns;
+    (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
+    if (@_bad_returns) {
+	my $msg = "Invalid returns passed to call_features_vipr_mat_peptide:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
     return($return);
@@ -7021,6 +6931,7 @@ sub run_pipeline
 		      annotate_proteins_similarity => 'similarity_parameters',
 		      annotate_proteins_phage => 'phage_parameters',
 		      call_features_vigor4 => 'vigor4_parameters',
+		      call_features_vipr_mat_peptide => 'vipr_mat_peptide_parameters',
 		      call_features_assembly_gap => 'assembly_gap_parameters',
 		      call_features_repeat_region_SEED => 'repeat_regions_SEED_parameters',
 		      call_features_CDS_glimmer3 => 'glimmer3_parameters',

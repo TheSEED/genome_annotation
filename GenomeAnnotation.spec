@@ -528,9 +528,17 @@ module GenomeAnnotation
     typedef structure
     {
 	string reference_name;
+	bool remove_existing_features;
     } vigor4_parameters;
     
     funcdef call_features_vigor4(genomeTO, vigor4_parameters params) returns (genomeTO);
+    
+    typedef structure
+    {
+	bool remove_existing_features;
+    } vipr_mat_peptide_parameters;
+    
+    funcdef call_features_vipr_mat_peptide(genomeTO, vipr_mat_peptide_parameters params) returns (genomeTO);
     
     typedef structure
     {

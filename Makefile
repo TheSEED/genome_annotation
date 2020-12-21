@@ -60,7 +60,7 @@ TPAGE_ARGS = --define kb_top=$(TARGET) \
 	--define kser_load_threads=$(KSER_LOAD_THREADS) \
 	--define kser_kmer_threads=$(KSER_KMER_THREADS) \
 	--define kser_family_threads=$(KSER_FAMILY_THREADS) \
-	--define kser_inserter_threads=$(KSER_INSERTER_THREADS) 
+	--define kser_inserter_threads=$(KSER_INSERTER_THREADS)
 
 TESTS = $(wildcard t/client-tests/*.t)
 
