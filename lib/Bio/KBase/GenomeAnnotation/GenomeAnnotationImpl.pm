@@ -2232,7 +2232,7 @@ sub call_features_vipr_mat_peptide
     my $rc = system(@cmd);
     if ($rc != 0)
     {
-	die "error calling p3x-annotate-vigor4: $rc\non command @cmd";
+	die "error calling p3x-annotate-map-peptide: $rc\non command @cmd";
     }
 
     $return = $coder->decode(scalar read_file("" . $tmp_out));
