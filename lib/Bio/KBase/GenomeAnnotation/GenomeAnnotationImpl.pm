@@ -46,6 +46,7 @@ eval {
 use IPC::Run qw(run);
 use JSON::XS;
 use File::Slurp;
+use Bio::P3::Workspace::WorkspaceClientExt;
 use Bio::KBase::GenomeAnnotation::Awe;
 use Bio::KBase::GenomeAnnotation::Shock;
 
@@ -1154,6 +1155,177 @@ sub add_contigs_from_handle
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to add_contigs_from_handle:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	die $msg;
+    }
+    return($genome_out);
+}
+
+
+=head2 import_sra_metadata
+
+  $genome_out = $obj->import_sra_metadata($genome_in)
+
+=over 4
+
+
+
+
+=item Description
+
+Import SRA metadata from initial assembly, if present.
+=back
+
+=cut
+
+sub import_sra_metadata
+{
+    my $self = shift;
+    my($genome_in) = @_;
+
+    my @_bad_arguments;
+    (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
+    if (@_bad_arguments) {
+	my $msg = "Invalid arguments passed to import_sra_metadata:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	die $msg;
+    }
+
+    my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
+    my($genome_out);
+    #BEGIN import_sra_metadata
+
+    #
+    # If our context has parameters with an assembly_output field, try to load 
+    # SRA metadata from there.
+    #
+
+    my $params = $ctx->{params};
+    if ($params && (my $assembly_output = $params->{assembly_output}))
+    {
+	#
+	# Find any saved SRA metadata
+	#
+	my $ws = Bio::P3::Workspace::WorkspaceClientExt->new;
+	
+	my $dh = eval { $ws->opendir("$assembly_output/sra-metadata"); };
+	$genome_in->{sra_metadata} = [] unless $genome_in->{sra_metadata};
+	
+	if ($dh)
+	{
+	    while (my $f = $ws->readdir($dh))
+	    {
+		if ($f =~ /\.json$/)
+		{
+		    my $md = eval { $ws->download_json("$assembly_output/sra-metadata/$f"); };
+		    next unless $md;
+		    $md = [$md] if ref($md) eq 'HASH';
+		    push(@{$genome_in->{sra_metadata}}, @$md);
+		}
+	    }
+	}
+    }
+
+    $genome_out = $genome_in;
+
+    #END import_sra_metadata
+    my @_bad_returns;
+    (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
+    if (@_bad_returns) {
+	my $msg = "Invalid returns passed to import_sra_metadata:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	die $msg;
+    }
+    return($genome_out);
+}
+
+
+=head2 compute_sars2_variation
+
+  $genome_out = $obj->compute_sars2_variation($genome_in)
+
+=over 4
+
+
+
+
+=item Description
+
+Compute SARS2 variation data.
+=back
+
+=cut
+
+sub compute_sars2_variation
+{
+    my $self = shift;
+    my($genome_in) = @_;
+
+    my @_bad_arguments;
+    (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
+    if (@_bad_arguments) {
+	my $msg = "Invalid arguments passed to compute_sars2_variation:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	die $msg;
+    }
+
+    my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
+    my($genome_out);
+    #BEGIN compute_sars2_variation
+
+    #
+    # Read in onecodex variant data if present.
+    #
+
+    
+    my $coder = _get_coder();
+    
+    my $json = $coder->encode($genome_in);
+
+    my $tmp = File::Temp->new();
+    print $tmp $json;
+    close($tmp);
+
+    my @var;
+    my $var_fh;
+
+    my $params = $ctx->{params};
+    if ($params && (my $assembly_output = $params->{assembly_output}))
+    {
+	my $ws = Bio::P3::Workspace::WorkspaceClientExt->new;
+	my $f = File::Temp->new();
+	eval { $ws->copy_files_to_handles(1, undef, [["$assembly_output/assembly.variants.tsv", $f]]); };
+	close($f);
+	if (-s $f)
+	{
+	    @var = ("--variants", "$f");
+	    $var_fh = $f;
+	}
+    }
+    my $out = File::Temp->new;
+    close($out);
+    my @cmd = ("sars2-compute-variation",
+	       @var,
+	       "--input", "$tmp",
+	       "--output", "$out");
+    print STDERR "@cmd\n";
+    my $ok = run(\@cmd,
+		 $ctx->stderr->redirect);
+
+    undef $var_fh;
+    undef $tmp;
+    undef $genome_in;
+
+    if ($ok)
+    {
+	$genome_out = $coder->decode(scalar read_file("$out"));
+    }
+    else
+    {
+	die "sars2-compute-variation failed: ", $ctx->stderr->text_value;
+    }
+
+    #END compute_sars2_variation
+    my @_bad_returns;
+    (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
+    if (@_bad_returns) {
+	my $msg = "Invalid returns passed to compute_sars2_variation:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
     return($genome_out);

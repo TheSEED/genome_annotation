@@ -251,6 +251,10 @@ module GenomeAnnotation
 	int plasmids;
 	int contigs;
 
+	int contig_ambig_count;
+	float contig_ambig_fraction;
+	int contig_longest_ambig_run;
+
 	string genome_status;
 
 	structure {
@@ -328,6 +332,37 @@ module GenomeAnnotation
 	analysis_event_id event_id;
     } subsystem_data;
 
+    /* Variant support */
+    
+	typedef structure {
+	    int pos;
+	    string ref;
+	    string alt;
+	    float freq;
+	    string feature_pos;
+	    string ref_aa;
+	    string ref_codon;
+	    string alt_aa;
+	    string alt_codon;
+	} snp;
+	typedef structure {
+	    string reference;
+	    string gene;
+	    int frame;
+	    list<snp> snps;
+	} variant;
+	typedef structure { 
+	    string tool;
+	    mapping<string, string> tool_metadata;
+	    list<variant> variants;
+	    string lineage;
+	    float probability;
+	    string status;
+	    string notes;
+	} computed_variant;
+
+
+
     /* All of the information about particular genome */
     typedef structure {
 	genome_id id;
@@ -364,6 +399,12 @@ module GenomeAnnotation
 	    job_statistics annotation;
 	} job_data;
 
+	list<mapping<string key, string value>> sra_metadata;
+
+	list<computed_variant> computed_variants;
+
+
+	    
 
     } genomeTO;
 
@@ -453,6 +494,16 @@ module GenomeAnnotation
      * from the given handle service handle.
      */
     funcdef add_contigs_from_handle(genomeTO genome_in, list<contig> contigs) returns (genomeTO genome_out);
+
+    /*
+     * Import SRA metadata from initial assembly, if present.
+     */
+    funcdef import_sra_metadata(genomeTO genome_in) returns (genomeTO genome_out);
+
+    /*
+     * Compute SARS2 variation data.
+     */
+    funcdef compute_sars2_variation(genomeTO genome_in) returns ( genomeTO genome_out);
 
     /*
      * This tuple defines a compact form for defining features to be batch-loaded
