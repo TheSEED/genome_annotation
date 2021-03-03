@@ -1290,9 +1290,14 @@ sub compute_sars2_variation
     {
 	my $ws = Bio::P3::Workspace::WorkspaceClientExt->new;
 	my $f = File::Temp->new();
-	eval { $ws->copy_files_to_handles(1, undef, [["$assembly_output/assembly.variants.tsv", $f]]); };
+	my $tsv = "$assembly_output/assembly.variants.tsv";
+	eval { $ws->copy_files_to_handles(1, undef, [[$tsv, $f]]); };
+	if ($@)
+	{
+	    warn "Copy of $tsv failed: $@";
+	}
 	close($f);
-	if (-s $f)
+	if (-s "$f")
 	{
 	    @var = ("--variants", "$f");
 	    $var_fh = $f;
