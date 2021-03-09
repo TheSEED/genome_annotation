@@ -2332,9 +2332,18 @@ sub call_features_vigor4
     my $tmp_out = File::Temp->new();
     close($tmp_out);
 
+    my @threads;
+    my $cpu = $ENV{P3_ALLOCATED_CPU};
+    
+    if ($cpu =~ /^\d+$/)
+    {
+	@threads = ("--threads", $cpu);
+    }
+
     my @cmd = ("p3x-annotate-vigor4",
 	       "--input", $tmp_in,
 	       "--output", $tmp_out,
+	       @threads,
 	       ($params->{reference_name} ? ("--reference", $params->{reference_name}) : ()),
 	       ($params->{remove_existing} ? "--remove-existing" : ()),
 	       );
