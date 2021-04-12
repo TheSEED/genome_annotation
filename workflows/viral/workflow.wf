@@ -1,0 +1,51 @@
+{
+   "stages" : [
+      {
+         "name" : "call_features_vigor4",
+         "vigor4_parameters" : {
+  	     "reference_name": "",
+	     "remove_existing_features": 1
+	    }	    
+       },
+      {
+         "name" : "call_features_vipr_mat_peptide",
+         "failure_is_not_fatal" : 1,
+         "vipr_mat_peptide_parameters": {
+	     "remove_existing_features": 1
+	    }	    
+       },
+      {
+         "phage_parameters" : {
+            "annotate_null_only" : 1
+         },
+         "name" : "annotate_proteins_phage"
+      },
+      {
+         "similarity_parameters" : {
+            "annotate_null_only" : 1
+         },
+         "name" : "annotate_proteins_similarity"
+      },
+      {
+         "propagate_genbank_feature_metadata_parameters" : {},
+         "name" : "propagate_genbank_feature_metadata",
+	 "failure_is_not_fatal" : 1
+      },
+      {
+         "name" : "remove_genbank_features"
+      },
+      {
+         "name" : "renumber_features"
+      },
+      {
+         "failure_is_not_fatal" : 1,
+         "name" : "annotate_families_patric_viral"
+      },
+      {
+         "name" : "annotate_null_to_hypothetical"
+      },
+      {
+         "name" : "compute_genome_quality_control"
+      }
+   ]
+}

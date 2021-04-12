@@ -393,6 +393,25 @@ sub new
     $self->{workflow_dir} = $cfg->setting("workflow-dir");
 
     #
+    # If we don't have workflow_dir set, use the workflows that
+    # are deployed with the service. This is the new default mechanism.
+    #
+
+    if (!$self->{workflow_dir} || ! -d $self->{workflow_dir})
+    {
+	my $top = $ENV{KB_TOP};
+	for my $p ("$top/lib/GenomeAnnotation/workflows", "$top/modules/genome_annotation/workflows")
+	{
+	    if (-d $p)
+	    {
+		$self->{workflow_dir} = $p;
+		last;
+	    }
+	}
+    }
+    print STDERR "Set workflow_dir to $self->{workflow_dir}\n";
+
+    #
     # Evaluation data files.
     #
 

@@ -136,12 +136,20 @@ deploy-guts: deploy-dir
 	rm -f $(TARGET)/services/$(SERVICE)/bin/kmer_guts
 	cp $(BIN_DIR)/kmer_guts $(TARGET)/services/$(SERVICE)/bin/kmer_guts
 
-deploy-service: deploy-dir deploy-monit deploy-libs deploy-guts deploy-service-scripts
+deploy-service: deploy-dir deploy-monit deploy-libs deploy-guts deploy-service-scripts deploy-workflows
 	for templ in service/*.tt ; do \
 		base=`basename $$templ .tt` ; \
 		$(TPAGE) $(TPAGE_ARGS) $$templ > $(TARGET)/services/$(SERVICE)/$$base ; \
 		chmod +x $(TARGET)/services/$(SERVICE)/$$base ; \
 	done
+
+#
+# Workflows deploy into the lib/GenomeAnnotation/workflows directory
+#
+deploy-workflows:
+	rm -fr $(TARGET)/lib/GenomeAnnotation/workflows
+	mkdir -p $(TARGET)/lib/GenomeAnnotation
+	rsync -arv workflows $(TARGET)/lib/GenomeAnnotation
 
 deploy-service-scripts:
 	export KB_TOP=$(TARGET); \

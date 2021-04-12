@@ -1,0 +1,3 @@
+The phage annotation recipe uses Phanotate for gene calling plus the
+kmers and the similarity-based protein annatation mechanism to propagate phage annotations.
+
