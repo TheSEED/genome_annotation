@@ -32,9 +32,6 @@
 	 "failure_is_not_fatal" : 1
       },
       {
-         "name" : "remove_genbank_features"
-      },
-      {
          "name" : "renumber_features"
       },
       {
