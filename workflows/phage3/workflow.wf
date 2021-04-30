@@ -1,0 +1,68 @@
+{
+   "stages" : [
+      {
+         "name" : "call_features_CDS_phanotate"
+      },
+      { "name": "call_features_tRNA_trnascan" },	
+      { "name": "call_features_crispr", "failure_is_not_fatal" : 1 },	
+      { "name": "call_features_repeat_region_SEED", "repeat_region_SEED_parameters": {} },
+      {
+         "name" : "annotate_proteins_kmer_v2",
+         "kmer_v2_parameters" : {
+	    "kmer_data_directory" : "/vol/core-seed/kmers/core.2018-0531/Data.2"
+	    }	    
+      },
+      {
+         "phage_parameters" : {
+            "annotate_null_only" : 1
+         },
+         "name" : "annotate_proteins_phage"
+      },
+      {
+         "kmer_v1_parameters" : {
+            "annotate_null_only" : 1
+         },
+         "name" : "annotate_proteins_kmer_v1"
+      },
+      {
+         "similarity_parameters" : {
+            "annotate_null_only" : 1
+         },
+         "name" : "annotate_proteins_similarity"
+      },
+      {
+         "propagate_genbank_feature_metadata_parameters" : {},
+         "name" : "propagate_genbank_feature_metadata",
+  "failure_is_not_fatal" : 1
+      },
+      {
+         "name" : "remove_genbank_features"
+      },
+      {
+         "name" : "renumber_features"
+      },
+      {
+         "failure_is_not_fatal" : 1,
+         "name" : "annotate_special_proteins"
+      },
+      {
+         "name" : "annotate_families_figfam_v1",
+         "failure_is_not_fatal" : 1
+      },
+      {
+         "failure_is_not_fatal" : 1,
+         "name" : "annotate_families_patric"
+      },
+      {
+         "name" : "annotate_null_to_hypothetical"
+      },
+      {
+         "name" : "find_close_neighbors",
+         "failure_is_not_fatal" : 1
+      },
+      {
+         "failure_is_not_fatal" : 1,
+         "name" : "annotate_strain_type_MLST"
+      }
+   ]
+}

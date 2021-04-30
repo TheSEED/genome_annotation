@@ -1,0 +1,74 @@
+{
+   "stages" : [
+      {
+         "name" : "call_features_assembly_gap",
+ 	 "assembly_gap_parameters": {}
+      },
+      {
+         "name" : "call_features_rRNA_SEED"
+      },
+      {
+         "name" : "call_features_tRNA_trnascan"
+      },
+      {
+         "name" : "call_features_CDS_prodigal"
+      },
+      {
+         "name" : "split_gap_spanning_features",
+	 "split_gap_spanning_features_params": {}
+      },
+      { 
+          "name": "prune_invalid_CDS_features", 
+	  "prune_invalid_CDS_features_parameters": {}
+      },
+      {
+         "name" : "translate_untranslated_proteins"
+      },
+      {
+         "name" : "annotate_proteins_kmer_v2",
+         "kmer_v2_parameters" : {}
+      },
+      {
+         "phage_parameters" : {
+            "annotate_null_only" : 1
+         },
+         "name" : "annotate_proteins_phage"
+      },
+      {
+         "name" : "annotate_proteins_similarity",
+         "similarity_parameters" : {
+            "annotate_null_only" : 1
+         }
+      },
+      {
+         "propagate_genbank_feature_metadata_parameters" : {},
+         "name" : "propagate_genbank_feature_metadata"
+      },
+      {
+         "name" : "resolve_overlapping_features",
+         "resolve_overlapping_features_parameters" : {}
+      },
+      {
+         "name" : "renumber_features"
+      },
+      {
+         "name" : "annotate_families_patric"
+      },
+      {
+         "name" : "annotate_null_to_hypothetical"
+      },
+      {
+         "failure_is_not_fatal" : 1,
+         "name" : "project_subsystems"
+      },
+      {
+         "name" : "find_close_neighbors",
+         "failure_is_not_fatal" : 1
+      },
+      {
+         "failure_is_not_fatal" : 1,
+         "name" : "evaluate_genome",
+	 "evaluate_genome_parameters": {}
+      }
+   ]
+}

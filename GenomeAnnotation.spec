@@ -208,6 +208,7 @@ module GenomeAnnotation
 	string replicon_geometry;
 	bool complete;
 	genbank_locus genbank_locus;
+	string original_id;
     } contig;
 
     typedef structure {
@@ -249,6 +250,10 @@ module GenomeAnnotation
 	int chromosomes;
 	int plasmids;
 	int contigs;
+
+	int contig_ambig_count;
+	float contig_ambig_fraction;
+	int contig_longest_ambig_run;
 
 	string genome_status;
 
@@ -327,6 +332,37 @@ module GenomeAnnotation
 	analysis_event_id event_id;
     } subsystem_data;
 
+    /* Variant support */
+    
+	typedef structure {
+	    int pos;
+	    string ref;
+	    string alt;
+	    float freq;
+	    string feature_pos;
+	    string ref_aa;
+	    string ref_codon;
+	    string alt_aa;
+	    string alt_codon;
+	} snp;
+	typedef structure {
+	    string reference;
+	    string gene;
+	    int frame;
+	    list<snp> snps;
+	} variant;
+	typedef structure { 
+	    string tool;
+	    mapping<string, string> tool_metadata;
+	    list<variant> variants;
+	    string lineage;
+	    float probability;
+	    string status;
+	    string notes;
+	} computed_variant;
+
+
+
     /* All of the information about particular genome */
     typedef structure {
 	genome_id id;
@@ -363,6 +399,12 @@ module GenomeAnnotation
 	    job_statistics annotation;
 	} job_data;
 
+	list<mapping<string key, string value>> sra_metadata;
+
+	list<computed_variant> computed_variants;
+
+
+	    
 
     } genomeTO;
 
@@ -454,6 +496,16 @@ module GenomeAnnotation
     funcdef add_contigs_from_handle(genomeTO genome_in, list<contig> contigs) returns (genomeTO genome_out);
 
     /*
+     * Import SRA metadata from initial assembly, if present.
+     */
+    funcdef import_sra_metadata(genomeTO genome_in) returns (genomeTO genome_out);
+
+    /*
+     * Compute SARS2 variation data.
+     */
+    funcdef compute_sars2_variation(genomeTO genome_in) returns ( genomeTO genome_out);
+
+    /*
      * This tuple defines a compact form for defining features to be batch-loaded
      * into a genome object.
      */
@@ -526,6 +578,21 @@ module GenomeAnnotation
 
     typedef structure
     {
+	string reference_name;
+	bool remove_existing_features;
+    } vigor4_parameters;
+    
+    funcdef call_features_vigor4(genomeTO, vigor4_parameters params) returns (genomeTO);
+    
+    typedef structure
+    {
+	bool remove_existing_features;
+    } vipr_mat_peptide_parameters;
+    
+    funcdef call_features_vipr_mat_peptide(genomeTO, vipr_mat_peptide_parameters params) returns (genomeTO);
+    
+    typedef structure
+    {
 	int min_training_len;
     } glimmer3_parameters;
     
@@ -534,6 +601,14 @@ module GenomeAnnotation
     funcdef call_features_CDS_prodigal(genomeTO) returns (genomeTO);
     funcdef call_features_CDS_genemark(genomeTO) returns (genomeTO);
     funcdef call_features_CDS_phanotate(genomeTO) returns (genomeTO);
+    
+    typedef structure 
+    {
+	int minimum_contig_length;
+	float max_homopolymer_frequency;
+	float max_dna_in_translation;
+    } prune_invalid_CDS_features_parameters;
+    funcdef prune_invalid_CDS_features(genomeTO genome_in, prune_invalid_CDS_features_parameters params) returns (genomeTO genome_out);
 
     typedef structure
     {
@@ -559,6 +634,7 @@ module GenomeAnnotation
     typedef structure
     {
 	int min_gap_length;
+	int monopolymer_repeat_length;
     } assembly_gap_parameters;
 
     /*
@@ -575,9 +651,20 @@ module GenomeAnnotation
     
     typedef structure
     {
+	int tmp;
+    } split_gap_spanning_features_params;
+
+    funcdef split_gap_spanning_features(genomeTO genome_in, split_gap_spanning_features_params)
+    	    returns (genomeTO genome_out);
+
+    funcdef translate_untranslated_proteins(genomeTO genome_in) returns (genomeTO genome_out);
+
+    typedef structure
+    {
 	int annotate_hypothetical_only;
 	int annotate_null_only;
     } similarity_parameters;
+
     /*
      * Annotate based on similarity to annotation databases.
      */
@@ -652,6 +739,7 @@ module GenomeAnnotation
     funcdef annotate_special_proteins(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_families_figfam_v1(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_families_patric(genomeTO genome_in) returns (genomeTO genome_out);
+    funcdef annotate_families_patric_viral(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_null_to_hypothetical(genomeTO genome_in) returns (genomeTO genome_out);
 
     funcdef remove_genbank_features(genomeTO genome_in) returns (genomeTO genome_out);
