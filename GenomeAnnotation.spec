@@ -225,7 +225,6 @@ module GenomeAnnotation
     {
     float frameshift_error_rate;
     float sequence_error_rate;
-    mapping<string, string> checkm_data;
     structure {
         mapping<string, string> role_map;
         mapping<string, list<string>> role_fids;
@@ -234,7 +233,12 @@ module GenomeAnnotation
         int predicted_roles;
         int under_present;
         int over_present;
+        int consistency_checked;
+        int completeness_checked;
     } problematic_roles_report;
+    string eval_version;
+    bool hasSsuRRna;
+    string dna_md5;
     float coarse_consistency;
     float fine_consistency;
     float completeness;
