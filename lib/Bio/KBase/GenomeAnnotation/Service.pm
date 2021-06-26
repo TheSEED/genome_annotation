@@ -6,8 +6,11 @@ use Data::Dumper;
 use Moose;
 use POSIX;
 use JSON;
+use File::Temp;
+use File::Slurp;
 use Class::Load qw();
 use Config::Simple;
+
 my $get_time = sub { time, 0 };
 eval {
     require Time::HiRes;
@@ -16,6 +19,10 @@ eval {
 
 use P3AuthToken;
 use P3TokenValidator;
+
+my $g_hostname = `hostname`;
+chomp $g_hostname;
+$g_hostname ||= 'unknown-host';
 
 extends 'RPC::Any::Server::JSONRPC::PSGI';
 
@@ -35,6 +42,8 @@ our %return_counts = (
         'set_metadata' => 1,
         'add_contigs' => 1,
         'add_contigs_from_handle' => 1,
+        'import_sra_metadata' => 1,
+        'compute_sars2_variation' => 1,
         'add_features' => 1,
         'genomeTO_to_reconstructionTO' => 1,
         'genomeTO_to_feature_data' => 1,
@@ -50,16 +59,21 @@ our %return_counts = (
         'call_features_rRNA_SEED' => 1,
         'call_features_tRNA_trnascan' => 1,
         'call_RNAs' => 1,
+        'call_features_vigor4' => 1,
+        'call_features_vipr_mat_peptide' => 1,
         'call_features_CDS_glimmer3' => 1,
         'call_features_CDS_prodigal' => 1,
         'call_features_CDS_genemark' => 1,
         'call_features_CDS_phanotate' => 1,
+        'prune_invalid_CDS_features' => 1,
         'call_features_CDS_SEED_projection' => 1,
         'call_features_CDS_FragGeneScan' => 1,
         'call_features_repeat_region_SEED' => 1,
         'call_features_prophage_phispy' => 1,
         'call_features_scan_for_matches' => 1,
         'call_features_assembly_gap' => 1,
+        'split_gap_spanning_features' => 1,
+        'translate_untranslated_proteins' => 1,
         'annotate_proteins_similarity' => 1,
         'annotate_proteins_phage' => 1,
         'annotate_proteins_kmer_v1' => 1,
@@ -73,6 +87,7 @@ our %return_counts = (
         'annotate_special_proteins' => 1,
         'annotate_families_figfam_v1' => 1,
         'annotate_families_patric' => 1,
+        'annotate_families_patric_viral' => 1,
         'annotate_null_to_hypothetical' => 1,
         'remove_genbank_features' => 1,
         'annotate_strain_type_MLST' => 1,
@@ -115,6 +130,8 @@ our %method_authentication = (
         'set_metadata' => 'none',
         'add_contigs' => 'none',
         'add_contigs_from_handle' => 'none',
+        'import_sra_metadata' => 'none',
+        'compute_sars2_variation' => 'none',
         'add_features' => 'none',
         'genomeTO_to_reconstructionTO' => 'none',
         'genomeTO_to_feature_data' => 'none',
@@ -130,16 +147,21 @@ our %method_authentication = (
         'call_features_rRNA_SEED' => 'none',
         'call_features_tRNA_trnascan' => 'none',
         'call_RNAs' => 'none',
+        'call_features_vigor4' => 'none',
+        'call_features_vipr_mat_peptide' => 'none',
         'call_features_CDS_glimmer3' => 'none',
         'call_features_CDS_prodigal' => 'none',
         'call_features_CDS_genemark' => 'none',
         'call_features_CDS_phanotate' => 'none',
+        'prune_invalid_CDS_features' => 'none',
         'call_features_CDS_SEED_projection' => 'none',
         'call_features_CDS_FragGeneScan' => 'none',
         'call_features_repeat_region_SEED' => 'none',
         'call_features_prophage_phispy' => 'none',
         'call_features_scan_for_matches' => 'none',
         'call_features_assembly_gap' => 'none',
+        'split_gap_spanning_features' => 'none',
+        'translate_untranslated_proteins' => 'none',
         'annotate_proteins_similarity' => 'none',
         'annotate_proteins_phage' => 'none',
         'annotate_proteins_kmer_v1' => 'none',
@@ -153,6 +175,7 @@ our %method_authentication = (
         'annotate_special_proteins' => 'none',
         'annotate_families_figfam_v1' => 'none',
         'annotate_families_patric' => 'none',
+        'annotate_families_patric_viral' => 'none',
         'annotate_null_to_hypothetical' => 'none',
         'remove_genbank_features' => 'none',
         'annotate_strain_type_MLST' => 'none',
@@ -205,6 +228,8 @@ sub _build_valid_methods
         'set_metadata' => 1,
         'add_contigs' => 1,
         'add_contigs_from_handle' => 1,
+        'import_sra_metadata' => 1,
+        'compute_sars2_variation' => 1,
         'add_features' => 1,
         'genomeTO_to_reconstructionTO' => 1,
         'genomeTO_to_feature_data' => 1,
@@ -220,16 +245,21 @@ sub _build_valid_methods
         'call_features_rRNA_SEED' => 1,
         'call_features_tRNA_trnascan' => 1,
         'call_RNAs' => 1,
+        'call_features_vigor4' => 1,
+        'call_features_vipr_mat_peptide' => 1,
         'call_features_CDS_glimmer3' => 1,
         'call_features_CDS_prodigal' => 1,
         'call_features_CDS_genemark' => 1,
         'call_features_CDS_phanotate' => 1,
+        'prune_invalid_CDS_features' => 1,
         'call_features_CDS_SEED_projection' => 1,
         'call_features_CDS_FragGeneScan' => 1,
         'call_features_repeat_region_SEED' => 1,
         'call_features_prophage_phispy' => 1,
         'call_features_scan_for_matches' => 1,
         'call_features_assembly_gap' => 1,
+        'split_gap_spanning_features' => 1,
+        'translate_untranslated_proteins' => 1,
         'annotate_proteins_similarity' => 1,
         'annotate_proteins_phage' => 1,
         'annotate_proteins_kmer_v1' => 1,
@@ -243,6 +273,7 @@ sub _build_valid_methods
         'annotate_special_proteins' => 1,
         'annotate_families_figfam_v1' => 1,
         'annotate_families_patric' => 1,
+        'annotate_families_patric_viral' => 1,
         'annotate_null_to_hypothetical' => 1,
         'remove_genbank_features' => 1,
         'annotate_strain_type_MLST' => 1,
@@ -484,10 +515,7 @@ sub call_method {
 	my $tag = $self->_plack_req->header("Kbrpc-Tag");
 	if (!$tag)
 	{
-	    if (!$self->{hostname}) {
-		chomp($self->{hostname} = `hostname`);
-                $self->{hostname} ||= 'unknown-host';
-	    }
+	    $self->{hostname} ||= $g_hostname;
 
 	    my ($t, $us) = &$get_time();
 	    $us = sprintf("%06d", $us);
@@ -502,6 +530,13 @@ sub call_method {
 
 	my $stderr = Bio::KBase::GenomeAnnotation::ServiceStderrWrapper->new($ctx, $get_time);
 	$ctx->stderr($stderr);
+
+	#
+	# Set up environment for user-level error reporting.
+	#
+	my $user_error = File::Temp->new(UNLINK => 1);
+	close($user_error);
+	$ENV{P3_USER_ERROR_DESTINATION} = "$user_error";
 
         my $xFF = $self->_plack_req->header("X-Forwarded-For");
 	
@@ -525,6 +560,13 @@ sub call_method {
 	    my $str = "$err";
 	    my $msg = $str;
 	    $msg =~ s/ at [^\s]+.pm line \d+.\n$//;
+	    
+	    # If user-level error present, replace message with that
+	    if (-s "$user_error")
+	    {
+	        $msg = read_file("$user_error");
+		$str = $msg;
+	    }
 	    $nicerr =  {code => -32603, # perl error from RPC::Any::Exception
                             message => $msg,
                             data => $str,
@@ -630,10 +672,10 @@ sub new
     }
     
     my $self = {
+        hostname => $g_hostname,
         @opts,
     };
-    chomp($self->{hostname} = `hostname`);
-    $self->{hostname} ||= 'unknown-host';
+
     return bless $self, $class;
 }
 

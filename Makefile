@@ -60,7 +60,7 @@ TPAGE_ARGS = --define kb_top=$(TARGET) \
 	--define kser_load_threads=$(KSER_LOAD_THREADS) \
 	--define kser_kmer_threads=$(KSER_KMER_THREADS) \
 	--define kser_family_threads=$(KSER_FAMILY_THREADS) \
-	--define kser_inserter_threads=$(KSER_INSERTER_THREADS) 
+	--define kser_inserter_threads=$(KSER_INSERTER_THREADS)
 
 TESTS = $(wildcard t/client-tests/*.t)
 
@@ -89,6 +89,7 @@ compile-typespec: Makefile
 	touch lib/biokbase/$(SERVICE_NAME_PY)/__init__.py 
 	mkdir -p lib/javascript/$(SERVICE_NAME)
 	compile_typespec \
+		--no-typedocs \
 		--patric \
 		--psgi $(SERVICE_PSGI_FILE) \
 		--impl Bio::KBase::$(SERVICE_NAME)::%sImpl \
@@ -135,12 +136,20 @@ deploy-guts: deploy-dir
 	rm -f $(TARGET)/services/$(SERVICE)/bin/kmer_guts
 	cp $(BIN_DIR)/kmer_guts $(TARGET)/services/$(SERVICE)/bin/kmer_guts
 
-deploy-service: deploy-dir deploy-monit deploy-libs deploy-guts deploy-service-scripts
+deploy-service: deploy-dir deploy-monit deploy-libs deploy-guts deploy-service-scripts deploy-workflows
 	for templ in service/*.tt ; do \
 		base=`basename $$templ .tt` ; \
 		$(TPAGE) $(TPAGE_ARGS) $$templ > $(TARGET)/services/$(SERVICE)/$$base ; \
 		chmod +x $(TARGET)/services/$(SERVICE)/$$base ; \
 	done
+
+#
+# Workflows deploy into the lib/GenomeAnnotation/workflows directory
+#
+deploy-workflows:
+	rm -fr $(TARGET)/lib/GenomeAnnotation/workflows
+	mkdir -p $(TARGET)/lib/GenomeAnnotation
+	rsync -arv workflows $(TARGET)/lib/GenomeAnnotation
 
 deploy-service-scripts:
 	export KB_TOP=$(TARGET); \
