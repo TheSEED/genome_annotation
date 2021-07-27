@@ -293,6 +293,8 @@ sub new
 	
     $self->{kmer_v2_data_directory} = $dir;
 
+    $self->{website_url_base} = $cfg->setting("website-url-base");
+
     if (my $temp = $cfg->setting("tempdir"))
     {
 	$ENV{TEMPDIR} = $ENV{TMPDIR} = $temp;
@@ -6246,6 +6248,7 @@ sub evaluate_genome
     my @cmd = ("p3x-eval-gto",
 	       @ref,
 	       @eval,
+	       "--genomeBaseURL", "/view/Genome",
 	       "--deep",
 	       "--parallel", "1",
 	       "--template", $detail_template,
