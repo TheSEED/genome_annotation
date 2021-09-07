@@ -2434,7 +2434,7 @@ sub call_features_vipr_mat_peptide
     my @cmd = ("p3x-annotate-mat-peptide",
 	       "--input", $tmp_in,
 	       "--output", $tmp_out,
-	       ($params->{remove_existing} ? "--remove-existing" : ()),
+	       ($params->{remove_existing_features} ? "--remove-existing" : ()),
 	       );
     my $rc = system(@cmd);
     if ($rc != 0)
@@ -7156,8 +7156,20 @@ sub run_pipeline
 		      );
 
     my $cur = $genome_in;
+
+    my $json = JSON::XS->new->pretty->canonical;
+    my $snum = 0;
     for my $stage (@{$workflow->{stages}})
     {
+	$snum++;
+	if ($ENV{DEBUG_PIPELINE})
+	{
+	    if (open(my $fh, ">", "$ENV{DEBUG_PIPELINE}/stage-$snum.json"))
+	    {
+		print $fh $json->encode({ stage => $stage, genome => $cur});
+		close($fh);
+	    }
+	}
 	my $method = $stage->{name};
 	my $condition = $stage->{condition};
 	if ($condition)
@@ -7221,7 +7233,15 @@ sub run_pipeline
 	    die "Trying to call invalid method $method";
 	}
     }
-
+    if ($ENV{DEBUG_PIPELINE})
+    {
+	if (open(my $fh, ">", "$ENV{DEBUG_PIPELINE}/stage-END.json"))
+	{
+	    print $fh $json->encode({ stage => 'DONE', genome => $cur});
+	    close($fh);
+	}
+    }
+    
     chdir $here;
     $genome_out = $cur;
 
