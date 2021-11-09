@@ -6248,7 +6248,7 @@ sub evaluate_genome
     my @cmd = ("p3x-eval-gto",
 	       @ref,
 	       @eval,
-	       "--genomeBaseURL", "/view/Genome",
+	       "--genomeBaseUrl", "/view/Genome",
 	       "--deep",
 	       "--parallel", "1",
 	       "--template", $detail_template,

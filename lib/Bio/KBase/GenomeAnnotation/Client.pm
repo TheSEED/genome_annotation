@@ -406,6 +406,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -720,6 +721,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -1100,6 +1102,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -1424,6 +1427,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -1794,6 +1798,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -2108,6 +2113,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -2478,6 +2484,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -2792,6 +2799,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -3162,6 +3170,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -3476,6 +3485,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -3847,6 +3857,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -4172,6 +4183,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -4554,6 +4566,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -4869,6 +4882,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -5241,6 +5255,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -5556,6 +5571,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -5928,6 +5944,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -6242,6 +6259,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -6612,6 +6630,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -6926,6 +6945,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -7297,6 +7317,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -7618,6 +7639,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -7995,6 +8017,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -8329,6 +8352,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -8719,6 +8743,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -9042,6 +9067,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -9653,6 +9679,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -9967,6 +9994,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -10338,6 +10366,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -10652,6 +10681,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -11022,6 +11052,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -11336,6 +11367,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -11706,6 +11738,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -12020,6 +12053,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -12390,6 +12424,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -12704,6 +12739,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -13074,6 +13110,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -13388,6 +13425,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -13758,6 +13796,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -14072,6 +14111,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -14443,6 +14483,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -14759,6 +14800,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -15138,6 +15180,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -15452,6 +15495,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -15823,6 +15867,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -16137,6 +16182,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -16509,6 +16555,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -16827,6 +16874,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -17202,6 +17250,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -17519,6 +17568,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -17893,6 +17943,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -18210,6 +18261,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -18583,6 +18635,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -18897,6 +18950,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -19267,6 +19321,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -19581,6 +19636,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -19951,6 +20007,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -20265,6 +20322,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -20636,6 +20694,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -20955,6 +21014,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -21331,6 +21391,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -21650,6 +21711,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -22025,6 +22087,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -22339,6 +22402,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -22710,6 +22774,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -23028,6 +23093,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -23402,6 +23468,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -23716,6 +23783,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -24088,6 +24156,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -24404,6 +24473,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -24777,6 +24847,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -25095,6 +25166,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -25477,6 +25549,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -25794,6 +25867,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -26167,6 +26241,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -26481,6 +26556,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -26852,6 +26928,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -27170,6 +27247,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -27545,6 +27623,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -27863,6 +27942,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -28238,6 +28318,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -28566,6 +28647,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -28951,6 +29033,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -29273,6 +29356,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -29652,6 +29736,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -29969,6 +30054,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -30343,6 +30429,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -30660,6 +30747,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -31034,6 +31122,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -31362,6 +31451,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -31747,6 +31837,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -32069,6 +32160,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -32510,6 +32602,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -32833,6 +32926,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -33212,6 +33306,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -33526,6 +33621,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -33896,6 +33992,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -34210,6 +34307,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -34580,6 +34678,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -34894,6 +34993,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -35264,6 +35364,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -35578,6 +35679,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -35948,6 +36050,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -36262,6 +36365,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -36632,6 +36736,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -36946,6 +37051,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -37316,6 +37422,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -37630,6 +37737,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -38000,6 +38108,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -38331,6 +38440,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -38718,6 +38828,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -39032,6 +39143,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -39402,6 +39514,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -39716,6 +39829,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -40086,6 +40200,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -40400,6 +40515,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -40770,6 +40886,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -41084,6 +41201,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -41454,6 +41572,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -41768,6 +41887,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -42138,6 +42258,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -42452,6 +42573,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -42826,6 +42948,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -43144,6 +43267,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -43516,6 +43640,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -43830,6 +43955,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -44201,6 +44327,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -44515,6 +44642,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -44886,6 +45014,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -45203,6 +45332,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -45578,6 +45708,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -45894,6 +46025,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -46654,6 +46786,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -46968,6 +47101,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -47338,6 +47472,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -47652,6 +47787,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -48618,6 +48754,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -48972,6 +49109,7 @@ job_statistics is a reference to a hash where the following keys are defined:
 computed_variant is a reference to a hash where the following keys are defined:
 	tool has a value which is a string
 	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 	variants has a value which is a reference to a list where each element is a variant
 	lineage has a value which is a string
 	probability has a value which is a float
@@ -50842,6 +50980,7 @@ snps has a value which is a reference to a list where each element is a snp
 a reference to a hash where the following keys are defined:
 tool has a value which is a string
 tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 variants has a value which is a reference to a list where each element is a variant
 lineage has a value which is a string
 probability has a value which is a float
@@ -50857,6 +50996,7 @@ notes has a value which is a string
 a reference to a hash where the following keys are defined:
 tool has a value which is a string
 tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+tool_output has a value which is a reference to a hash where the key is a string and the value is a string
 variants has a value which is a reference to a list where each element is a variant
 lineage has a value which is a string
 probability has a value which is a float
