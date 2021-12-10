@@ -275,6 +275,58 @@ sub _ends_to_location
     }
 }
 
+sub _create_genome_from_genbank_impl
+{
+    my($self, $gb_data, $skip_contigs) = @_;
+    
+    #
+    # We need to parse the file into a list of entries first so that
+    # we may extract the taxon ID and allocate a genome ID. This way
+    # our initial feature set can be created with the appropriate identifiers.
+    #
+
+    print STDERR "GB: skip=$skip_contigs\n";
+    my @entries = parse_genbank({ skip_contigs => ($skip_contigs ? 1 : 0) },
+				ref($gb_data) ? $gb_data : \$gb_data);
+    
+    my $tax_id;
+    for my $entry (@entries)
+    {
+	my @sources = gjogenbank::features_of_type( $entry, 'source' );
+	my ( $src_taxid ) = map { /^taxon:(\S+)$/ ? $1 : () }
+		map { $_->[1]->{db_xref} ? @{$_->[1]->{db_xref}} : () }
+		@sources;
+	if ($src_taxid)
+	{
+	    $tax_id = $src_taxid;
+	    last;
+	}
+    }
+
+    if ($tax_id !~ /^\d+$/)
+    {
+	$tax_id = "6666666";
+    }
+    
+    my $genome_id = $self->{allocate_genome_id}->($tax_id);
+
+    my $genome = GenBankToGTO::new({ entry => \@entries, id => $genome_id });
+
+    #
+    # The current genbank code is creating features with type peg; remap them to CDS.
+    #
+
+    for my $feature ($genome->features)
+    {
+	if ($feature->{type} eq 'peg')
+	{
+	    $feature->{type} = 'CDS';
+	}
+    }
+
+    return $genome;
+}
+
 #END_HEADER
 
 sub new
@@ -675,49 +727,7 @@ sub create_genome_from_genbank
     my($genome);
     #BEGIN create_genome_from_genbank
 
-    #
-    # We need to parse the file into a list of entries first so that
-    # we may extract the taxon ID and allocate a genome ID. This way
-    # our initial feature set can be created with the appropriate identifiers.
-    #
-
-    my @entries = parse_genbank(\$gb_data);
-    
-    my $tax_id;
-    for my $entry (@entries)
-    {
-	my @sources = gjogenbank::features_of_type( $entry, 'source' );
-	my ( $src_taxid ) = map { /^taxon:(\S+)$/ ? $1 : () }
-		map { $_->[1]->{db_xref} ? @{$_->[1]->{db_xref}} : () }
-		@sources;
-	if ($src_taxid)
-	{
-	    $tax_id = $src_taxid;
-	    last;
-	}
-    }
-
-    if ($tax_id !~ /^\d+$/)
-    {
-	$tax_id = "6666666";
-    }
-    
-    my $genome_id = $self->{allocate_genome_id}->($tax_id);
-
-    $genome = GenBankToGTO::new({ entry => \@entries, id => $genome_id });
-
-    #
-    # The current genbank code is creating features with type peg; remap them to CDS.
-    #
-
-    for my $feature ($genome->features)
-    {
-	if ($feature->{type} eq 'peg')
-	{
-	    $feature->{type} = 'CDS';
-	}
-    }
-
+    $genome = $self->_create_genome_from_genbank_impl($gb_data);
     $genome->prepare_for_return();
 
     #END create_genome_from_genbank
