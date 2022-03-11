@@ -2376,7 +2376,7 @@ sub call_features_vigor4
 	       "--output", $tmp_out,
 	       @threads,
 	       ($params->{reference_name} ? ("--reference", $params->{reference_name}) : ()),
-	       ($params->{remove_existing} ? "--remove-existing" : ()),
+	       ($params->{remove_existing_features} ? "--remove-existing" : ()),
 	       );
     my $rc = system(@cmd);
     if ($rc != 0)
