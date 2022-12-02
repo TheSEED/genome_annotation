@@ -275,6 +275,58 @@ sub _ends_to_location
     }
 }
 
+sub _create_genome_from_genbank_impl
+{
+    my($self, $gb_data, $skip_contigs) = @_;
+    
+    #
+    # We need to parse the file into a list of entries first so that
+    # we may extract the taxon ID and allocate a genome ID. This way
+    # our initial feature set can be created with the appropriate identifiers.
+    #
+
+    print STDERR "GB: skip=$skip_contigs\n";
+    my @entries = parse_genbank({ skip_contigs => ($skip_contigs ? 1 : 0) },
+				ref($gb_data) ? $gb_data : \$gb_data);
+    
+    my $tax_id;
+    for my $entry (@entries)
+    {
+	my @sources = gjogenbank::features_of_type( $entry, 'source' );
+	my ( $src_taxid ) = map { /^taxon:(\S+)$/ ? $1 : () }
+		map { $_->[1]->{db_xref} ? @{$_->[1]->{db_xref}} : () }
+		@sources;
+	if ($src_taxid)
+	{
+	    $tax_id = $src_taxid;
+	    last;
+	}
+    }
+
+    if ($tax_id !~ /^\d+$/)
+    {
+	$tax_id = "6666666";
+    }
+    
+    my $genome_id = $self->{allocate_genome_id}->($tax_id);
+
+    my $genome = GenBankToGTO::new({ entry => \@entries, id => $genome_id });
+
+    #
+    # The current genbank code is creating features with type peg; remap them to CDS.
+    #
+
+    for my $feature ($genome->features)
+    {
+	if ($feature->{type} eq 'peg')
+	{
+	    $feature->{type} = 'CDS';
+	}
+    }
+
+    return $genome;
+}
+
 #END_HEADER
 
 sub new
@@ -292,6 +344,8 @@ sub new
     -d $dir or die "Directory $dir for kmer_v2_data_directory does not exist";
 	
     $self->{kmer_v2_data_directory} = $dir;
+
+    $self->{website_url_base} = $cfg->setting("website-url-base");
 
     if (my $temp = $cfg->setting("tempdir"))
     {
@@ -673,49 +727,7 @@ sub create_genome_from_genbank
     my($genome);
     #BEGIN create_genome_from_genbank
 
-    #
-    # We need to parse the file into a list of entries first so that
-    # we may extract the taxon ID and allocate a genome ID. This way
-    # our initial feature set can be created with the appropriate identifiers.
-    #
-
-    my @entries = parse_genbank(\$gb_data);
-    
-    my $tax_id;
-    for my $entry (@entries)
-    {
-	my @sources = gjogenbank::features_of_type( $entry, 'source' );
-	my ( $src_taxid ) = map { /^taxon:(\S+)$/ ? $1 : () }
-		map { $_->[1]->{db_xref} ? @{$_->[1]->{db_xref}} : () }
-		@sources;
-	if ($src_taxid)
-	{
-	    $tax_id = $src_taxid;
-	    last;
-	}
-    }
-
-    if ($tax_id !~ /^\d+$/)
-    {
-	$tax_id = "6666666";
-    }
-    
-    my $genome_id = $self->{allocate_genome_id}->($tax_id);
-
-    $genome = GenBankToGTO::new({ entry => \@entries, id => $genome_id });
-
-    #
-    # The current genbank code is creating features with type peg; remap them to CDS.
-    #
-
-    for my $feature ($genome->features)
-    {
-	if ($feature->{type} eq 'peg')
-	{
-	    $feature->{type} = 'CDS';
-	}
-    }
-
+    $genome = $self->_create_genome_from_genbank_impl($gb_data);
     $genome->prepare_for_return();
 
     #END create_genome_from_genbank
@@ -2364,7 +2376,7 @@ sub call_features_vigor4
 	       "--output", $tmp_out,
 	       @threads,
 	       ($params->{reference_name} ? ("--reference", $params->{reference_name}) : ()),
-	       ($params->{remove_existing} ? "--remove-existing" : ()),
+	       ($params->{remove_existing_features} ? "--remove-existing" : ()),
 	       );
     my $rc = system(@cmd);
     if ($rc != 0)
@@ -2432,7 +2444,7 @@ sub call_features_vipr_mat_peptide
     my @cmd = ("p3x-annotate-mat-peptide",
 	       "--input", $tmp_in,
 	       "--output", $tmp_out,
-	       ($params->{remove_existing} ? "--remove-existing" : ()),
+	       ($params->{remove_existing_features} ? "--remove-existing" : ()),
 	       );
     my $rc = system(@cmd);
     if ($rc != 0)
@@ -6246,6 +6258,7 @@ sub evaluate_genome
     my @cmd = ("p3x-eval-gto",
 	       @ref,
 	       @eval,
+	       "--genomeBaseUrl", "/view/Genome",
 	       "--deep",
 	       "--parallel", "1",
 	       "--template", $detail_template,
@@ -7153,8 +7166,20 @@ sub run_pipeline
 		      );
 
     my $cur = $genome_in;
+
+    my $json = JSON::XS->new->pretty->canonical;
+    my $snum = 0;
     for my $stage (@{$workflow->{stages}})
     {
+	$snum++;
+	if ($ENV{DEBUG_PIPELINE})
+	{
+	    if (open(my $fh, ">", "$ENV{DEBUG_PIPELINE}/stage-$snum.json"))
+	    {
+		print $fh $json->encode({ stage => $stage, genome => $cur});
+		close($fh);
+	    }
+	}
 	my $method = $stage->{name};
 	my $condition = $stage->{condition};
 	if ($condition)
@@ -7218,7 +7243,15 @@ sub run_pipeline
 	    die "Trying to call invalid method $method";
 	}
     }
-
+    if ($ENV{DEBUG_PIPELINE})
+    {
+	if (open(my $fh, ">", "$ENV{DEBUG_PIPELINE}/stage-END.json"))
+	{
+	    print $fh $json->encode({ stage => 'DONE', genome => $cur});
+	    close($fh);
+	}
+    }
+    
     chdir $here;
     $genome_out = $cur;
 

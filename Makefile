@@ -136,7 +136,7 @@ deploy-guts: deploy-dir
 	rm -f $(TARGET)/services/$(SERVICE)/bin/kmer_guts
 	cp $(BIN_DIR)/kmer_guts $(TARGET)/services/$(SERVICE)/bin/kmer_guts
 
-deploy-service: deploy-dir deploy-monit deploy-libs deploy-guts deploy-service-scripts deploy-workflows
+deploy-service: deploy-dir deploy-monit deploy-libs deploy-guts deploy-service-scripts-local deploy-workflows
 	for templ in service/*.tt ; do \
 		base=`basename $$templ .tt` ; \
 		$(TPAGE) $(TPAGE_ARGS) $$templ > $(TARGET)/services/$(SERVICE)/$$base ; \
@@ -151,7 +151,7 @@ deploy-workflows:
 	mkdir -p $(TARGET)/lib/GenomeAnnotation
 	rsync -arv workflows $(TARGET)/lib/GenomeAnnotation
 
-deploy-service-scripts:
+deploy-service-scripts-local:
 	export KB_TOP=$(TARGET); \
 	export KB_RUNTIME=$(DEPLOY_RUNTIME); \
 	export KB_PERL_PATH=$(TARGET)/lib ; \
@@ -179,11 +179,5 @@ deploy-dir:
 	if [ ! -d $(SERVICE_DIR) ] ; then mkdir $(SERVICE_DIR) ; fi
 	if [ ! -d $(SERVICE_DIR)/webroot ] ; then mkdir $(SERVICE_DIR)/webroot ; fi
 	if [ ! -d $(SERVICE_DIR)/bin ] ; then mkdir $(SERVICE_DIR)/bin ; fi
-
-$(BIN_DIR)/%: service-scripts/%.pl $(TOP_DIR)/user-env.sh
-	$(WRAP_PERL_SCRIPT) '$$KB_TOP/modules/$(CURRENT_DIR)/$<' $@
-
-$(BIN_DIR)/%: service-scripts/%.py $(TOP_DIR)/user-env.sh
-	$(WRAP_PYTHON_SCRIPT) '$$KB_TOP/modules/$(CURRENT_DIR)/$<' $@
 
 include $(TOP_DIR)/tools/Makefile.common.rules

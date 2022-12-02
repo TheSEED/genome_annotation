@@ -354,6 +354,7 @@ module GenomeAnnotation
 	typedef structure { 
 	    string tool;
 	    mapping<string, string> tool_metadata;
+	    mapping<string, string> tool_output;
 	    list<variant> variants;
 	    string lineage;
 	    float probability;
