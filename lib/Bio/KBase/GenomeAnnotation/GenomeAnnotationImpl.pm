@@ -6239,7 +6239,9 @@ sub evaluate_genome
     my $eval_version;
     if (-d $self->{genome_evaluation_data})
     {
-	@eval = ("--eval", $self->{genome_evaluation_data});
+	@eval = ("--eval", $self->{genome_evaluation_data},
+		 );
+
 	if (open(my $fh, "<", "$self->{genome_evaluation_data}/VERSION"))
 	{
 	    $eval_version = <$fh>;
@@ -6252,6 +6254,8 @@ sub evaluate_genome
     {
 	@eval = ("--predictors", $self->{genome_evaluation_predictors},
 		 "--checkDir", $self->{genome_evaluation_checkg},
+		 "--roleFile", "$self->{genome_evaluation_predictors}/../roles.in.subsystems",
+		 "--rolesToUse", "$self->{genome_evaluation_predictors}/../roles.to.use",
 		 );
     }
     
