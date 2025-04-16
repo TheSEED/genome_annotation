@@ -71,6 +71,9 @@ module GenomeAnnotation
     typedef tuple<string comment, string annotator, float annotation_time, analysis_event_id> annotation;
 
     typedef structure {
+	string feature_quality; /* "Good" or "Poor" */
+	list<string> feature_quality_flags;
+    	bool truncated;
 	bool truncated_begin;
 	bool truncated_end;
 	/* Is this a real feature? */
@@ -209,6 +212,10 @@ module GenomeAnnotation
 	bool complete;
 	genbank_locus genbank_locus;
 	string original_id;
+ 	/* Quality data */
+  	string contig_quality;
+  	list<string> contig_quality_flags;
+
     } contig;
 
     typedef structure {
