@@ -19,6 +19,8 @@ formation about an existing genome, or to create new annotations.
 
 #BEGIN_HEADER
 
+no warnings 'deprecated::smartmatch';
+
 use Cwd;
 use Safe;
 use File::Basename;
@@ -526,6 +528,10 @@ sub new
     $self->{awe_server} = $cfg->setting("awe-server");
     $self->{shock_server} = $cfg->setting("shock-server");
     $self->{genemark_home} = $cfg->setting("genemark-home");
+
+    $self->{application_backend_dir} = $cfg->setting("application_backend_dir");
+    $self->{specialty_genes_card} = $cfg->setting("specialty_genes_card");
+    $self->{specialty_genes_blast} = $cfg->setting("specialty_genes_blast");
 
     print STDERR "kmer_v2_data_directory = $self->{kmer_v2_data_directory}\n";
 
@@ -5010,66 +5016,57 @@ sub annotate_special_proteins
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($genome_out);
     #BEGIN annotate_special_proteins
+
+    #
+    # We run the following tools to characterize the special genes:
+    #
+    # p3x-compute-specialty-amrfinder
+    # p3x-compute-specialty-rgi
+    # p3x-compute-specialty-blast
+    #
+    # We store the various tabular files from each of the tools
+    # in the current directory so that users can see the detailed output.
+    #
+
+    my $threads = $ENV{P3_ALLOCATED_CPU} // 4;
     
-    $genome_in = GenomeTypeObject->initialize($genome_in);
+    my @cmd_amr = ("p3x-compute-specialty-amrfinder",
+		   "--text", "specialty-amrfinder.txt",
+		   "--parallel", $threads);
+
+    my @cmd_rgi = ("p3x-compute-specialty-rgi",
+		   "--json", "specialty-rgi.json",
+		   "--text", "specialty-rgi.txt",
+		   "--db-dir", $self->{specialty_genes_card},
+		   "--parallel", $threads);
     
-    my $dir = $self->{special_protein_dbdir};
-    
-    my $prots = File::Temp->new();
-    close($prots);
-    $genome_in->write_protein_translations_to_file($prots);
-    
-    my $out = File::Temp->new();
-    
-    my @opts;
-    push(@opts, "--parallel", $self->{special_protein_threads});
-    if ($self->{special_protein_cache_db})
+    my @cmd_blast = ("p3x-compute-specialty-blast",
+		     "--tabular", "specialty-blast.txt",
+		     "--text", "rgi.txt",
+		     "--report", "specialty-blast-alignments.txt",
+		     "--db-dir", $self->{specialty_genes_blast},
+		     "--program", "diamond",
+		     "--parallel", $threads);
+
+    print Dumper(\@cmd_amr, \@cmd_rgi, \@cmd_blast);
+    #
+    # We set this up as a pipeline to avoid writing intermediate files.
+    #
+
+    my $enc = encode_json($genome_in);
+
+    my $out;
+    my $ok = run(\@cmd_amr, "<", \$enc,
+#		 "|",
+#		 \@cmd_rgi,
+#		 "|",
+#		 \@cmd_blast,
+		 ">", \$out);
+    if (!$ok)
     {
-	push(@opts, "--cache-db", $self->{special_protein_cache_db});
-	push(@opts,
-	     $self->{special_protein_cache_dbhost} ? ("--cache-host", $self->{special_protein_cache_dbhost}) : (),
-	     $self->{special_protein_cache_dbuser} ? ("--cache-user", $self->{special_protein_cache_dbuser}) : (),
-	     $self->{special_protein_cache_dbpass} ? ("--cache-pass", $self->{special_protein_cache_dbpass}) : ());
+	die "Error running specialty genes \n";
     }
-    else
-    {
-	push(@opts, "--no-cache");
-    }
-    
-    my @cmd = ('rast_compute_specialty_genes',
-	       "--in", $prots,
-	       "--db-dir", $dir,
-	       @opts);
-    
-    $ctx->stderr->log_cmd(@cmd);
-    my $ok = run(\@cmd, '>', $out, $ctx->stderr->redirect);
-    close($out);
-    if ($ok)
-    {
-	if (open(my $fh, "<", $out))
-	{
-	    my $l = <$fh>;
-	    while (defined($l = <$fh>))
-	    {
-		chomp $l;
-		my($qid, $db, $sid, $qcov, $scov, $iden, $pvalue) = split(/\t/, $l);
-		
-		my $f = $genome_in->find_feature($qid);
-		if (ref($f))
-		{
-		    push(@{$f->{similarity_associations}}, [$db, $sid, $qcov, $scov, $iden, $pvalue]);
-		}
-	    }
-	    close($fh);
-	}
-    }
-    else
-    {
-	die "Error running rast_compute_specialty_genes ($?): @cmd\n" . $ctx->stderr->text_value;
-    }
-    
-    $genome_out = $genome_in;
-    $genome_out = $genome_out->prepare_for_return();
+    $genome_out = decode_json($out);
     
     #END annotate_special_proteins
     my @_bad_returns;

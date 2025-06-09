@@ -320,6 +320,20 @@ module GenomeAnnotation
     } classifier;
 
     typedef structure {
+	string antibiotic_name;
+	string model_antibiotic_name;
+	string evidence;
+	string computational_method;
+	string computational_method_performance;
+	string computational_method_version;
+
+	string resistant_phenotype;
+	string measurement_unit;
+	string measurement_value;
+	analysis_event_id event_id;
+    } amr_assertion;
+
+    typedef structure {
 	string role_id;
 	list<feature_id> features;
     } role_binding;
@@ -392,6 +406,7 @@ module GenomeAnnotation
 
 	list<strain_type> typing;
 	list<classifier> classifications;
+	list<amr_assertion> amr_assertions;
 
 	list<subsystem_data> subsystems;
 
