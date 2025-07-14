@@ -594,6 +594,13 @@ module GenomeAnnotation
 
     typedef structure
     {
+	bool remove_existing_features;
+    } lovan_parameters;
+    
+    funcdef call_features_lovan(genomeTO, lovan_parameters params) returns (genomeTO);
+    
+    typedef structure
+    {
 	string reference_name;
 	bool remove_existing_features;
     } vigor4_parameters;
