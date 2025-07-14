@@ -532,6 +532,7 @@ sub new
     $self->{application_backend_dir} = $cfg->setting("application_backend_dir");
     $self->{specialty_genes_card} = $cfg->setting("specialty_genes_card");
     $self->{specialty_genes_blast} = $cfg->setting("specialty_genes_blast");
+    $self->{amr_classifiers} = $cfg->setting("amr_classifiers");
 
     print STDERR "kmer_v2_data_directory = $self->{kmer_v2_data_directory}\n";
 
@@ -5117,13 +5118,11 @@ sub annotate_special_proteins
     
     my @cmd_blast = ("p3x-compute-specialty-blast",
 		     "--tabular", "specialty-blast.txt",
-		     "--text", "rgi.txt",
 		     "--report", "specialty-blast-alignments.txt",
 		     "--db-dir", $self->{specialty_genes_blast},
 		     "--program", "diamond",
 		     "--parallel", $threads);
 
-    print Dumper(\@cmd_amr, \@cmd_rgi, \@cmd_blast);
     #
     # We set this up as a pipeline to avoid writing intermediate files.
     #
@@ -5132,10 +5131,10 @@ sub annotate_special_proteins
 
     my $out;
     my $ok = run(\@cmd_amr, "<", \$enc,
-#		 "|",
-#		 \@cmd_rgi,
-#		 "|",
-#		 \@cmd_blast,
+		 "|",
+		 \@cmd_rgi,
+		 "|",
+		 \@cmd_blast,
 		 ">", \$out);
     if (!$ok)
     {
@@ -5597,54 +5596,26 @@ sub annotate_strain_type_MLST
     my($genome_out);
     #BEGIN annotate_strain_type_MLST
     
-    $genome_in = GenomeTypeObject->initialize($genome_in);
+    my $enc = encode_json($genome_in);
+
+    #
+    # Currently not parallel but leave the scaffolding in.
+    #
+    my $threads = $ENV{P3_ALLOCATED_CPU} // 1;
     
-    if (!defined($genome_in->{scientific_name}))
+    my @cmd = ("p3x-compute-mlst",
+	       "--parallel", $threads);
+
+    my $out;
+    my $ok = run(\@cmd,
+		 "<", \$enc,
+		 ">", \$out);
+    if (!$ok)
     {
-	warn "No scientific name defined in annotate_strain_type_MLST";
+	die "Error running MLST prediction \n";
     }
-    else
-    {
-	my $contigs = $genome_in->extract_contig_sequences_to_temp_file();
-	my $tmp_out = File::Temp->new();
-	
-	my $event = {
-	    tool_name => "assign_st_to_genome",
-	    execution_time => scalar gettimeofday,
-	    hostname => $self->{hostname},
-	};
-	my $event_id = $genome_in->add_analysis_event($event);
-	
-	my @cmd = ("assign_st_to_genome",
-		   "-s", 1, 
-		   "-m", $self->{patric_mlst_dbdir},
-		   "--org", $genome_in->{scientific_name});
-	$ctx->stderr->log_cmd(@cmd);
-	my $ok = run(\@cmd,
-		     "<", $contigs,
-		     ">", $tmp_out,
-		     $ctx->stderr->redirect);
-	
-	close($tmp_out);
-	unlink($contigs);
-	
-	if (open(my $fh, "<", $tmp_out))
-	{
-	    while (<$fh>)
-	    {
-		chomp;
-		my($org, $db, $sids, $type, $coords, $loci, $profile, $tag) = split(/\t/);
-		push(@{$genome_in->{typing}},
-		 {
-		     typing_method => 'MLST',
-		     database => $db,
-		     tag => $tag,
-		     event_id => $event_id,
-		 });
-	    }
-	}
-    }	
-    $genome_out = $genome_in->prepare_for_return();
+    $genome_out = decode_json($out);
+    
     
     #END annotate_strain_type_MLST
     my @_bad_returns;
@@ -6169,72 +6140,26 @@ sub classify_amr
     my($return);
     #BEGIN classify_amr
 
-    my $genome_in = GenomeTypeObject->initialize($genomeTO);
+    my $threads = $ENV{P3_ALLOCATED_CPU} // 4;
+    
+    my @cmd = ("p3x-compute-amr-classification",
+	       "--data-dir", $self->{amr_classifiers},
+	       "--mic-text", "amr-mic.txt",
+	       "--sir-text", "amr-sir.txt",
+	       "--parallel", $threads);
 
-    my $classifier = AdaboostClassify->new();
+    my $enc = encode_json($genomeTO);
 
-    my($genus, $species) = $genome_in->{scientific_name} =~ /^(\S+)\s+(\S+)/;
-    my $name = "$genus $species";
-    my $tmp = File::Temp->new();
-    $tmp->close();
-    $genome_in->write_contigs_to_file($tmp);
-    my $res = $classifier->classify($name, "$tmp");
-
-    my $idc = IDclient->new($genome_in);
-    my $event = {
-	tool_name => "AdaboostClassify",
-	execution_time => scalar gettimeofday,
-	parameters => [],
-	hostname => $self->{hostname},
-    };
-
-    my $event_id = $genome_in->add_analysis_event($event);
-
-    my $type = 'classifier_predicted_region';
-
-    for my $classification (@$res)
+    my $out;
+    my $ok = run(\@cmd,
+		 "<", \$enc,
+		 ">", \$out);
+    if (!$ok)
     {
-	my @flist;
-	for my $f (@{$classification->{features}})
-	{
-	    my($contig, $start, $stop, $alpha, $round, $classifier, $function) = @$f;
-
-	    my $len = $stop - $start + 1;
-	    my $loc = [[$contig, $start, "+", $len]];
-	    my $feat = $genome_in->add_feature({
-		-id_client 	     => $idc,
-		-id_prefix 	     => $genome_in->{id},
-		-type 	     => $type,
-		-location 	     => $loc,
-		-function 	     => $function,
-		-annotator => "$classifier classifier",
-		-annotation      => "Classification by $classifier classifier with alpha=$alpha round=$round",
-		-analysis_event_id 	     => $event_id,
-	    });
-	    push(@flist, [$feat->{id}, $alpha, $round, $function]);
-	}
-	my $cobj = {
-	    name => $classification->{classifier},
-	    comment => $classification->{comment},
-	    antibiotics =>  [ split(/,\s+/, $classification->{antibiotic}) ],
-	    accuracy => $classification->{accuracy},
-	    area_under_roc_curve => $classification->{area_under_roc_curve},
-	    f1_score => $classification->{f1_score},
-	    cumulative_adaboost_score => $classification->{cumulative_adaboost_score},
-	    sources => $classification->{sources},
-	    sensitivity => $classification->{sensitivity},
-	    event_id => $event_id,
-	    features => [@flist],
-	};
-	push(@{$genome_in->{classifications}}, $cobj);
+	die "Error running AMR classifiers \n";
     }
-
-    for my $f (<$tmp*>)
-    {
-	unlink($f);
-    }
-
-    $return = $genome_in->prepare_for_return();
+    $return = decode_json($out);
+    
     
     #END classify_amr
     my @_bad_returns;
