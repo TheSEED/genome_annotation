@@ -1,8 +1,8 @@
 {
    "stages" : [
       {
-         "name" : "call_features_lovan",
-         "lovan_parameters" : {
+         "name" : "call_features_lowvan",
+         "lowvan_parameters" : {
 	     "remove_existing_features": 1
 	    }	    
        },
