@@ -602,9 +602,9 @@ module GenomeAnnotation
     typedef structure
     {
 	bool remove_existing_features;
-    } lovan_parameters;
+    } lowvan_parameters;
     
-    funcdef call_features_lovan(genomeTO, lovan_parameters params) returns (genomeTO);
+    funcdef call_features_lowvan(genomeTO, lowvan_parameters params) returns (genomeTO);
     
     typedef structure
     {
