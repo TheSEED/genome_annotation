@@ -10,7 +10,12 @@ use File::Temp;
 use File::Slurp;
 use Class::Load qw();
 use Config::Simple;
-use Time::HiRes 'gettimeofday';
+
+my $get_time = sub { time, 0 };
+eval {
+    require Time::HiRes;
+    $get_time = sub { Time::HiRes::gettimeofday(); };
+};
 
 use P3AuthToken;
 use P3TokenValidator;
@@ -54,7 +59,7 @@ our %return_counts = (
         'call_features_rRNA_SEED' => 1,
         'call_features_tRNA_trnascan' => 1,
         'call_RNAs' => 1,
-        'call_features_lovan' => 1,
+        'call_features_lowvan' => 1,
         'call_features_vigor4' => 1,
         'call_features_vipr_mat_peptide' => 1,
         'call_features_CDS_glimmer3' => 1,
@@ -143,7 +148,7 @@ our %method_authentication = (
         'call_features_rRNA_SEED' => 'none',
         'call_features_tRNA_trnascan' => 'none',
         'call_RNAs' => 'none',
-        'call_features_lovan' => 'none',
+        'call_features_lowvan' => 'none',
         'call_features_vigor4' => 'none',
         'call_features_vipr_mat_peptide' => 'none',
         'call_features_CDS_glimmer3' => 'none',
@@ -242,7 +247,7 @@ sub _build_valid_methods
         'call_features_rRNA_SEED' => 1,
         'call_features_tRNA_trnascan' => 1,
         'call_RNAs' => 1,
-        'call_features_lovan' => 1,
+        'call_features_lowvan' => 1,
         'call_features_vigor4' => 1,
         'call_features_vipr_mat_peptide' => 1,
         'call_features_CDS_glimmer3' => 1,
@@ -515,7 +520,7 @@ sub call_method {
 	{
 	    $self->{hostname} ||= $g_hostname;
 
-	    my ($t, $us) = gettimeofday();
+	    my ($t, $us) = &$get_time();
 	    $us = sprintf("%06d", $us);
 	    my $ts = strftime("%Y-%m-%dT%H:%M:%S.${us}Z", gmtime $t);
 	    $tag = "S:$self->{hostname}:$$:$ts";
@@ -526,7 +531,7 @@ sub call_method {
 	local $ENV{KBRPC_METADATA} = $kb_metadata if $kb_metadata;
 	local $ENV{KBRPC_ERROR_DEST} = $kb_errordest if $kb_errordest;
 
-	my $stderr = Bio::KBase::GenomeAnnotation::ServiceStderrWrapper->new($ctx);
+	my $stderr = Bio::KBase::GenomeAnnotation::ServiceStderrWrapper->new($ctx, $get_time);
 	$ctx->stderr($stderr);
 
 	#
@@ -685,8 +690,9 @@ use Time::HiRes 'gettimeofday';
 
 sub new
 {
-    my($class, $ctx) = @_;
+    my($class, $ctx, $get_time) = @_;
     my $self = {
+	get_time => $get_time,
     };
     my $dest = $ENV{KBRPC_ERROR_DEST} if exists $ENV{KBRPC_ERROR_DEST};
     my $tag = $ENV{KBRPC_TAG} if exists $ENV{KBRPC_TAG};
@@ -769,7 +775,7 @@ sub redirect_both
 sub timestamp
 {
     my($self) = @_;
-    my ($t, $us) = gettimeofday();
+    my ($t, $us) = gettimeofday;
     $us = sprintf("%06d", $us);
     my $ts = strftime("%Y-%m-%dT%H:%M:%S.${us}Z", gmtime $t);
     return $ts;

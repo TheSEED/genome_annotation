@@ -426,8 +426,17 @@ module GenomeAnnotation
 
 	list<computed_variant> computed_variants;
 
-
-	    
+	structure {
+	    float job_start;
+	    float job_end;
+	    float job_elapsed;
+	    string hostname;
+	    string container;
+	    string slurm_jobname;
+	    int slurm_jobid;
+	    freeform workflow;
+	    freeform params;
+	} job_metadata;
 
     } genomeTO;
 

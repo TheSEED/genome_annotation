@@ -151,6 +151,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
 	sequence_error_rate has a value which is a float
@@ -241,6 +252,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -314,6 +327,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -478,6 +494,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
 	sequence_error_rate has a value which is a float
@@ -568,6 +595,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -641,6 +670,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -871,6 +903,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
 	sequence_error_rate has a value which is a float
@@ -961,6 +1004,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -1034,6 +1079,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -1208,6 +1256,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
 	sequence_error_rate has a value which is a float
@@ -1298,6 +1357,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -1371,6 +1432,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -1590,6 +1654,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -1681,6 +1756,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -1754,6 +1831,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -1917,6 +1997,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -2008,6 +2099,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -2081,6 +2174,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -2300,6 +2396,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -2391,6 +2498,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -2464,6 +2573,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -2627,6 +2739,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -2718,6 +2841,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -2791,6 +2916,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -3010,6 +3138,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -3101,6 +3240,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -3174,6 +3315,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -3337,6 +3481,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -3428,6 +3583,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -3501,6 +3658,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -3721,6 +3881,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -3812,6 +3983,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -3885,6 +4058,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -4059,6 +4235,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -4150,6 +4337,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -4223,6 +4412,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -4454,6 +4646,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -4545,6 +4748,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -4618,6 +4823,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -4782,6 +4990,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -4873,6 +5092,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -4946,6 +5167,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -5167,6 +5391,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -5258,6 +5493,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -5331,6 +5568,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -5495,6 +5735,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -5586,6 +5837,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -5659,6 +5912,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -5880,6 +6136,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -5971,6 +6238,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -6044,6 +6313,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -6207,6 +6479,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -6298,6 +6581,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -6371,6 +6656,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -6590,6 +6878,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -6681,6 +6980,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -6754,6 +7055,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -6917,6 +7221,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -7008,6 +7323,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -7081,6 +7398,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -7301,6 +7621,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -7392,6 +7723,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -7465,6 +7798,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -7635,6 +7971,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -7726,6 +8073,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -7799,6 +8148,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -8025,6 +8377,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -8116,6 +8479,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -8189,6 +8554,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -8372,6 +8740,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -8463,6 +8842,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -8536,6 +8917,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -8775,6 +9159,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -8866,6 +9261,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -8939,6 +9336,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -9111,6 +9511,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -9202,6 +9613,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -9275,6 +9688,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -9735,6 +10151,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -9826,6 +10253,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -9899,6 +10328,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -10062,6 +10494,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -10153,6 +10596,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -10226,6 +10671,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -10446,6 +10894,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -10537,6 +10996,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -10610,6 +11071,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -10773,6 +11237,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -10864,6 +11339,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -10937,6 +11414,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -11156,6 +11636,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -11247,6 +11738,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -11320,6 +11813,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -11483,6 +11979,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -11574,6 +12081,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -11647,6 +12156,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -11866,6 +12378,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -11957,6 +12480,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -12030,6 +12555,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -12193,6 +12721,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -12284,6 +12823,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -12357,6 +12898,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -12576,6 +13120,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -12667,6 +13222,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -12740,6 +13297,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -12903,6 +13463,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -12994,6 +13565,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -13067,6 +13640,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -13286,6 +13862,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -13377,6 +13964,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -13450,6 +14039,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -13613,6 +14205,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -13704,6 +14307,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -13777,6 +14382,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -13996,6 +14604,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -14087,6 +14706,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -14160,6 +14781,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -14323,6 +14947,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -14414,6 +15049,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -14487,6 +15124,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -14707,6 +15347,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -14798,6 +15449,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -14871,6 +15524,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -15036,6 +15692,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -15127,6 +15794,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -15200,6 +15869,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -15428,6 +16100,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -15519,6 +16202,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -15592,6 +16277,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -15755,6 +16443,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -15846,6 +16545,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -15919,6 +16620,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -16139,6 +16843,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -16230,6 +16945,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -16303,6 +17020,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -16466,6 +17186,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -16557,6 +17288,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -16630,6 +17363,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -16804,9 +17540,9 @@ sub call_RNAs
 
 
 
-=head2 call_features_lovan
+=head2 call_features_lowvan
 
-  $return = $obj->call_features_lovan($genomeTO, $params)
+  $return = $obj->call_features_lowvan($genomeTO, $params)
 
 =over 4
 
@@ -16816,7 +17552,7 @@ sub call_RNAs
 
 <pre>
 $genomeTO is a genomeTO
-$params is a lovan_parameters
+$params is a lowvan_parameters
 $return is a genomeTO
 genomeTO is a reference to a hash where the following keys are defined:
 	id has a value which is a genome_id
@@ -16851,6 +17587,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -16942,6 +17689,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -17015,6 +17764,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -17136,7 +17888,7 @@ snp is a reference to a hash where the following keys are defined:
 	ref_codon has a value which is a string
 	alt_aa has a value which is a string
 	alt_codon has a value which is a string
-lovan_parameters is a reference to a hash where the following keys are defined:
+lowvan_parameters is a reference to a hash where the following keys are defined:
 	remove_existing_features has a value which is a bool
 
 </pre>
@@ -17146,7 +17898,7 @@ lovan_parameters is a reference to a hash where the following keys are defined:
 =begin text
 
 $genomeTO is a genomeTO
-$params is a lovan_parameters
+$params is a lowvan_parameters
 $return is a genomeTO
 genomeTO is a reference to a hash where the following keys are defined:
 	id has a value which is a genome_id
@@ -17181,6 +17933,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -17272,6 +18035,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -17345,6 +18110,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -17466,7 +18234,7 @@ snp is a reference to a hash where the following keys are defined:
 	ref_codon has a value which is a string
 	alt_aa has a value which is a string
 	alt_codon has a value which is a string
-lovan_parameters is a reference to a hash where the following keys are defined:
+lowvan_parameters is a reference to a hash where the following keys are defined:
 	remove_existing_features has a value which is a bool
 
 
@@ -17480,7 +18248,7 @@ lovan_parameters is a reference to a hash where the following keys are defined:
 
 =cut
 
-sub call_features_lovan
+sub call_features_lowvan
 {
     my($self, @args) = @_;
 
@@ -17488,7 +18256,7 @@ sub call_features_lovan
 
     if ((my $n = @args) != 2)
     {
-        die "Invalid argument count for function call_features_lovan (received $n, expecting 2)";
+        die "Invalid argument count for function call_features_lowvan (received $n, expecting 2)";
     }
     {
 	my($genomeTO, $params) = @args;
@@ -17497,25 +18265,25 @@ sub call_features_lovan
         (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 1 \"genomeTO\" (value was \"$genomeTO\")");
         (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 2 \"params\" (value was \"$params\")");
         if (@_bad_arguments) {
-	    my $msg = "Invalid arguments passed to call_features_lovan:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	    my $msg = "Invalid arguments passed to call_features_lowvan:\n" . join("", map { "\t$_\n" } @_bad_arguments);
 	    die $msg;
 	}
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "GenomeAnnotation.call_features_lovan",
+	method => "GenomeAnnotation.call_features_lowvan",
 	params => \@args,
     });
     if ($result) {
 	if ($result->{error}) {
 	    my $msg = $result->{error}->{error} || $result->{error}->{message};
 	    $msg =  $self->{client}->json->encode($msg) if ref($msg);
-	    die "Error $result->{error}->{code} invoking call_features_lovan:\n$msg\n";
+	    die "Error $result->{error}->{code} invoking call_features_lowvan:\n$msg\n";
 	} else {
 	    return wantarray ? @{$result->{result}} : $result->{result}->[0];
 	}
     } else {
-	die "Error invoking method call_features_lovan: " .  $self->{client}->status_line;
+	die "Error invoking method call_features_lowvan: " .  $self->{client}->status_line;
     }
 }
 
@@ -17568,6 +18336,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -17659,6 +18438,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -17732,6 +18513,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -17899,6 +18683,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -17990,6 +18785,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -18063,6 +18860,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -18287,6 +19087,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -18378,6 +19189,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -18451,6 +19264,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -18617,6 +19433,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -18708,6 +19535,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -18781,6 +19610,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -19004,6 +19836,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -19095,6 +19938,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -19168,6 +20013,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -19334,6 +20182,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -19425,6 +20284,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -19498,6 +20359,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -19720,6 +20584,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -19811,6 +20686,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -19884,6 +20761,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -20047,6 +20927,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -20138,6 +21029,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -20211,6 +21104,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -20430,6 +21326,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -20521,6 +21428,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -20594,6 +21503,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -20757,6 +21669,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -20848,6 +21771,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -20921,6 +21846,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -21140,6 +22068,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -21231,6 +22170,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -21304,6 +22245,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -21467,6 +22411,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -21558,6 +22513,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -21631,6 +22588,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -21851,6 +22811,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -21942,6 +22913,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -22015,6 +22988,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -22183,6 +23159,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -22274,6 +23261,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -22347,6 +23336,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -22572,6 +23564,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -22663,6 +23666,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -22736,6 +23741,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -22904,6 +23912,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -22995,6 +24014,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -23068,6 +24089,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -23292,6 +24316,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -23383,6 +24418,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -23456,6 +24493,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -23619,6 +24659,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -23710,6 +24761,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -23783,6 +24836,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -24003,6 +25059,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -24094,6 +25161,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -24167,6 +25236,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -24334,6 +25406,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -24425,6 +25508,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -24498,6 +25583,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -24721,6 +25809,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -24812,6 +25911,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -24885,6 +25986,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -25048,6 +26152,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -25139,6 +26254,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -25212,6 +26329,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -25433,6 +26553,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -25524,6 +26655,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -25597,6 +26730,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -25762,6 +26898,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -25853,6 +27000,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -25926,6 +27075,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -26148,6 +27300,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -26239,6 +27402,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -26312,6 +27477,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -26479,6 +27647,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -26570,6 +27749,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -26643,6 +27824,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -26874,6 +28058,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -26965,6 +28160,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -27038,6 +28235,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -27204,6 +28404,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -27295,6 +28506,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -27368,6 +28581,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -27590,6 +28806,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -27681,6 +28908,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -27754,6 +28983,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -27917,6 +29149,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -28008,6 +29251,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -28081,6 +29326,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -28301,6 +29549,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -28392,6 +29651,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -28465,6 +29726,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -28632,6 +29896,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -28723,6 +29998,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -28796,6 +30073,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -29020,6 +30300,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -29111,6 +30402,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -29184,6 +30477,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -29351,6 +30647,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -29442,6 +30749,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -29515,6 +30824,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -29739,6 +31051,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -29830,6 +31153,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -29903,6 +31228,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -30080,6 +31408,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -30171,6 +31510,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -30244,6 +31585,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -30478,6 +31822,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -30569,6 +31924,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -30642,6 +31999,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -30813,6 +32173,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -30904,6 +32275,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -30977,6 +32350,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -31205,6 +32581,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -31296,6 +32683,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -31369,6 +32758,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -31535,6 +32927,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -31626,6 +33029,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -31699,6 +33104,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -31922,6 +33330,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -32013,6 +33432,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -32086,6 +33507,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -32252,6 +33676,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -32343,6 +33778,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -32416,6 +33853,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -32639,6 +34079,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -32730,6 +34181,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -32803,6 +34256,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -32980,6 +34436,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -33071,6 +34538,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -33144,6 +34613,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -33378,6 +34850,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -33469,6 +34952,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -33542,6 +35027,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -33713,6 +35201,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -33804,6 +35303,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -33877,6 +35378,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -34167,6 +35671,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -34258,6 +35773,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -34331,6 +35848,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -34503,6 +36023,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -34594,6 +36125,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -34667,6 +36200,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -34895,6 +36431,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -34986,6 +36533,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -35059,6 +36608,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -35222,6 +36774,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -35313,6 +36876,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -35386,6 +36951,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -35605,6 +37173,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -35696,6 +37275,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -35769,6 +37350,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -35932,6 +37516,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -36023,6 +37618,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -36096,6 +37693,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -36315,6 +37915,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -36406,6 +38017,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -36479,6 +38092,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -36642,6 +38258,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -36733,6 +38360,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -36806,6 +38435,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -37025,6 +38657,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -37116,6 +38759,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -37189,6 +38834,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -37352,6 +39000,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -37443,6 +39102,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -37516,6 +39177,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -37735,6 +39399,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -37826,6 +39501,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -37899,6 +39576,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -38062,6 +39742,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -38153,6 +39844,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -38226,6 +39919,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -38445,6 +40141,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -38536,6 +40243,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -38609,6 +40318,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -38772,6 +40484,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -38863,6 +40586,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -38936,6 +40661,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -39155,6 +40883,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -39246,6 +40985,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -39319,6 +41060,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -39482,6 +41226,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -39573,6 +41328,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -39646,6 +41403,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -39865,6 +41625,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -39956,6 +41727,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -40029,6 +41802,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -40209,6 +41985,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -40300,6 +42087,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -40373,6 +42162,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -40609,6 +42401,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -40700,6 +42503,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -40773,6 +42578,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -40936,6 +42744,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -41027,6 +42846,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -41100,6 +42921,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -41319,6 +43143,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -41410,6 +43245,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -41483,6 +43320,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -41646,6 +43486,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -41737,6 +43588,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -41810,6 +43663,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -42029,6 +43885,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -42120,6 +43987,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -42193,6 +44062,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -42356,6 +44228,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -42447,6 +44330,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -42520,6 +44405,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -42739,6 +44627,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -42830,6 +44729,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -42903,6 +44804,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -43066,6 +44970,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -43157,6 +45072,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -43230,6 +45147,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -43449,6 +45369,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -43540,6 +45471,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -43613,6 +45546,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -43776,6 +45712,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -43867,6 +45814,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -43940,6 +45889,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -44159,6 +46111,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -44250,6 +46213,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -44323,6 +46288,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -44486,6 +46454,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -44577,6 +46556,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -44650,6 +46631,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -44873,6 +46857,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -44964,6 +46959,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -45037,6 +47034,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -45204,6 +47204,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -45295,6 +47306,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -45368,6 +47381,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -45589,6 +47605,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -45680,6 +47707,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -45753,6 +47782,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -45916,6 +47948,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -46007,6 +48050,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -46080,6 +48125,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -46300,6 +48348,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -46391,6 +48450,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -46464,6 +48525,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -46627,6 +48691,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -46718,6 +48793,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -46791,6 +48868,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -47011,6 +49091,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -47102,6 +49193,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -47175,6 +49268,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -47341,6 +49437,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -47432,6 +49539,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -47505,6 +49614,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -47729,6 +49841,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -47820,6 +49943,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -47893,6 +50018,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -48058,6 +50186,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -48149,6 +50288,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -48222,6 +50363,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -48831,6 +50975,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -48922,6 +51077,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -48995,6 +51152,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -49158,6 +51318,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -49249,6 +51420,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -49322,6 +51495,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -49541,6 +51717,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -49632,6 +51819,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -49705,6 +51894,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -49868,6 +52060,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -49959,6 +52162,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -50032,6 +52237,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -50847,6 +53055,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -50938,6 +53157,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -51011,6 +53232,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -51214,6 +53438,17 @@ genomeTO is a reference to a hash where the following keys are defined:
 
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is an int
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
 genome_id is a string
 genome_quality_measure is a reference to a hash where the following keys are defined:
 	frameshift_error_rate has a value which is a float
@@ -51305,6 +53540,8 @@ contig is a reference to a hash where the following keys are defined:
 	complete has a value which is a bool
 	genbank_locus has a value which is a genbank_locus
 	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
 contig_id is a string
 bool is an int
 genbank_locus is a reference to a hash where the following keys are defined:
@@ -51378,6 +53615,9 @@ annotation is a reference to a list containing 4 items:
 	3: an analysis_event_id
 analysis_event_id is a string
 feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
 	truncated_begin has a value which is a bool
 	truncated_end has a value which is a bool
 	existence_confidence has a value which is a float
@@ -52436,6 +54676,9 @@ a reference to a list containing 4 items:
 
 <pre>
 a reference to a hash where the following keys are defined:
+feature_quality has a value which is a string
+feature_quality_flags has a value which is a reference to a list where each element is a string
+truncated has a value which is a bool
 truncated_begin has a value which is a bool
 truncated_end has a value which is a bool
 existence_confidence has a value which is a float
@@ -52455,6 +54698,9 @@ genemark_score has a value which is a float
 =begin text
 
 a reference to a hash where the following keys are defined:
+feature_quality has a value which is a string
+feature_quality_flags has a value which is a reference to a list where each element is a string
+truncated has a value which is a bool
 truncated_begin has a value which is a bool
 truncated_end has a value which is a bool
 existence_confidence has a value which is a float
@@ -52811,7 +55057,7 @@ pathways has a value which is a reference to a list where each element is a refe
 
 =item Description
 
-circular / linear
+Quality data
 
 
 =item Definition
@@ -52829,6 +55075,8 @@ replicon_geometry has a value which is a string
 complete has a value which is a bool
 genbank_locus has a value which is a genbank_locus
 original_id has a value which is a string
+contig_quality has a value which is a string
+contig_quality_flags has a value which is a reference to a list where each element is a string
 
 </pre>
 
@@ -52846,6 +55094,8 @@ replicon_geometry has a value which is a string
 complete has a value which is a bool
 genbank_locus has a value which is a genbank_locus
 original_id has a value which is a string
+contig_quality has a value which is a string
+contig_quality_flags has a value which is a reference to a list where each element is a string
 
 
 =end text
@@ -53480,6 +55730,17 @@ annotation has a value which is a job_statistics
 
 sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 computed_variants has a value which is a reference to a list where each element is a computed_variant
+job_metadata has a value which is a reference to a hash where the following keys are defined:
+job_start has a value which is a float
+job_end has a value which is a float
+job_elapsed has a value which is a float
+hostname has a value which is a string
+container has a value which is a string
+slurm_jobname has a value which is a string
+slurm_jobid has a value which is an int
+workflow has a value which is a freeform
+params has a value which is a freeform
+
 
 </pre>
 
@@ -53520,6 +55781,17 @@ annotation has a value which is a job_statistics
 
 sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 computed_variants has a value which is a reference to a list where each element is a computed_variant
+job_metadata has a value which is a reference to a hash where the following keys are defined:
+job_start has a value which is a float
+job_end has a value which is a float
+job_elapsed has a value which is a float
+hostname has a value which is a string
+container has a value which is a string
+slurm_jobname has a value which is a string
+slurm_jobid has a value which is an int
+workflow has a value which is a freeform
+params has a value which is a freeform
+
 
 
 =end text
@@ -54064,7 +56336,7 @@ a string
 
 
 
-=head2 lovan_parameters
+=head2 lowvan_parameters
 
 =over 4
 
