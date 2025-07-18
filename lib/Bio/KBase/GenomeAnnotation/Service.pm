@@ -775,7 +775,7 @@ sub redirect_both
 sub timestamp
 {
     my($self) = @_;
-    my ($t, $us) = gettimeofday;
+    my ($t, $us) = $self->{get_time}->();
     $us = sprintf("%06d", $us);
     my $ts = strftime("%Y-%m-%dT%H:%M:%S.${us}Z", gmtime $t);
     return $ts;
