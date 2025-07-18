@@ -2323,9 +2323,9 @@ sub call_RNAs
 }
 
 
-=head2 call_features_lovan
+=head2 call_features_lowvan
 
-  $return = $obj->call_features_lovan($genomeTO, $params)
+  $return = $obj->call_features_lowvan($genomeTO, $params)
 
 =over 4
 
@@ -2339,7 +2339,7 @@ sub call_RNAs
 
 =cut
 
-sub call_features_lovan
+sub call_features_lowvan
 {
     my $self = shift;
     my($genomeTO, $params) = @_;
@@ -2348,16 +2348,16 @@ sub call_features_lovan
     (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
     (ref($params) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"params\" (value was \"$params\")");
     if (@_bad_arguments) {
-	my $msg = "Invalid arguments passed to call_features_lovan:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	my $msg = "Invalid arguments passed to call_features_lowvan:\n" . join("", map { "\t$_\n" } @_bad_arguments);
 	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($return);
-    #BEGIN call_features_lovan
+    #BEGIN call_features_lowvan
 
     #
-    # Invoke p3x-annotate-lovan to annotate viral genome.
+    # Invoke p3x-annotate-lowvan to annotate viral genome.
     #
     my $coder = _get_coder();
     my $tmp_in = File::Temp->new();
@@ -2371,27 +2371,27 @@ sub call_features_lovan
 
     my $user_params = $ctx->{params};
     
-    my @cmd = ("p3x-annotate-lovan",
+    my @cmd = ("p3x-annotate-lowvan",
 	       "--in", $tmp_in,
 	       "--out", $tmp_out,
 	       "--parallel", $cpu,
 	       "--prefix", $user_params->{output_file},
 	       ($params->{remove_existing_features} ? ("--remove-existing") : ()),
-	       ($user_params->{lovan_min_contig_length} ? ("--min-contig-length", $user_params->{lovan_min_contig_length}) : ()),
-	       ($user_params->{lovan_max_contig_length} ? ("--max-contig-length", $user_params->{lovan_max_contig_length}) : ()),
+	       ($user_params->{lowvan_min_contig_length} ? ("--min-contig-length", $user_params->{lowvan_min_contig_length}) : ()),
+	       ($user_params->{lowvan_max_contig_length} ? ("--max-contig-length", $user_params->{lowvan_max_contig_length}) : ()),
 	       );
     my $rc = system(@cmd);
     if ($rc != 0)
     {
-	die "error calling p3x-annotate-lovan: $rc\non command @cmd";
+	die "error calling p3x-annotate-lowvan: $rc\non command @cmd";
     }
 
     $return = $coder->decode(scalar read_file("" . $tmp_out));
-    #END call_features_lovan
+    #END call_features_lowvan
     my @_bad_returns;
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
-	my $msg = "Invalid returns passed to call_features_lovan:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	my $msg = "Invalid returns passed to call_features_lowvan:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
     return($return);
@@ -7149,7 +7149,7 @@ sub run_pipeline
 		      annotate_proteins_kmer_v2 => 'kmer_v2_parameters',
 		      annotate_proteins_similarity => 'similarity_parameters',
 		      annotate_proteins_phage => 'phage_parameters',
-		      call_features_lovan => 'lovan_parameters',
+		      call_features_lowvan => 'lowvan_parameters',
 		      call_features_vigor4 => 'vigor4_parameters',
 		      call_features_vipr_mat_peptide => 'vipr_mat_peptide_parameters',
 		      call_features_assembly_gap => 'assembly_gap_parameters',
