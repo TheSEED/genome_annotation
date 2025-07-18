@@ -59,7 +59,7 @@ our %return_counts = (
         'call_features_rRNA_SEED' => 1,
         'call_features_tRNA_trnascan' => 1,
         'call_RNAs' => 1,
-        'call_features_lovan' => 1,
+        'call_features_lowvan' => 1,
         'call_features_vigor4' => 1,
         'call_features_vipr_mat_peptide' => 1,
         'call_features_CDS_glimmer3' => 1,
@@ -148,7 +148,7 @@ our %method_authentication = (
         'call_features_rRNA_SEED' => 'none',
         'call_features_tRNA_trnascan' => 'none',
         'call_RNAs' => 'none',
-        'call_features_lovan' => 'none',
+        'call_features_lowvan' => 'none',
         'call_features_vigor4' => 'none',
         'call_features_vipr_mat_peptide' => 'none',
         'call_features_CDS_glimmer3' => 'none',
@@ -247,7 +247,7 @@ sub _build_valid_methods
         'call_features_rRNA_SEED' => 1,
         'call_features_tRNA_trnascan' => 1,
         'call_RNAs' => 1,
-        'call_features_lovan' => 1,
+        'call_features_lowvan' => 1,
         'call_features_vigor4' => 1,
         'call_features_vipr_mat_peptide' => 1,
         'call_features_CDS_glimmer3' => 1,
@@ -775,7 +775,7 @@ sub redirect_both
 sub timestamp
 {
     my($self) = @_;
-    my ($t, $us) = $self->{get_time}->();
+    my ($t, $us) = gettimeofday;
     $us = sprintf("%06d", $us);
     my $ts = strftime("%Y-%m-%dT%H:%M:%S.${us}Z", gmtime $t);
     return $ts;
