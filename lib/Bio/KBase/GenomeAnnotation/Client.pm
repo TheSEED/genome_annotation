@@ -5,11 +5,7 @@ use strict;
 use Data::Dumper;
 use URI;
 
-my $get_time = sub { time, 0 };
-eval {
-    require Time::HiRes;
-    $get_time = sub { Time::HiRes::gettimeofday() };
-};
+use Time::HiRes qw(gettimeofday);
 
 use P3AuthToken;
 
@@ -59,7 +55,7 @@ sub new
     }
     else
     {
-	my ($t, $us) = &$get_time();
+	my ($t, $us) = gettimeofday;
 	$us = sprintf("%06d", $us);
 	my $ts = strftime("%Y-%m-%dT%H:%M:%S.${us}Z", gmtime $t);
 	$self->{kbrpc_tag} = "C:$0:$self->{hostname}:$$:$ts";
@@ -152,13 +148,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -495,13 +492,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -904,13 +902,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -1257,13 +1256,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -1655,13 +1655,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -1998,13 +1999,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -2397,13 +2399,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -2740,13 +2743,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -3139,13 +3143,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -3482,13 +3487,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -3882,13 +3888,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -4236,13 +4243,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -4647,13 +4655,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -4991,13 +5000,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -5392,13 +5402,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -5736,13 +5747,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -6137,13 +6149,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -6480,13 +6493,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -6879,13 +6893,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -7222,13 +7237,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -7622,13 +7638,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -7972,13 +7989,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -8378,13 +8396,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -8741,13 +8760,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -9160,13 +9180,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -9512,13 +9533,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -10152,13 +10174,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -10495,13 +10518,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -10895,13 +10919,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -11238,13 +11263,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -11637,13 +11663,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -11980,13 +12007,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -12379,13 +12407,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -12722,13 +12751,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -13121,13 +13151,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -13464,13 +13495,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -13863,13 +13895,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -14206,13 +14239,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -14605,13 +14639,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -14948,13 +14983,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -15348,13 +15384,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -15693,13 +15730,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -16101,13 +16139,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -16444,13 +16483,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -16844,13 +16884,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -17187,13 +17228,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -17588,13 +17630,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -17934,13 +17977,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -18337,13 +18381,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -18684,13 +18729,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -19088,13 +19134,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -19434,13 +19481,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -19837,13 +19885,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -20183,13 +20232,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -20585,13 +20635,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -20928,13 +20979,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -21327,13 +21379,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -21670,13 +21723,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -22069,13 +22123,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -22412,13 +22467,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -22812,13 +22868,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -23160,13 +23217,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -23565,13 +23623,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -23913,13 +23972,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -24317,13 +24377,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -24660,13 +24721,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -25060,13 +25122,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -25407,13 +25470,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -25810,13 +25874,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -26153,13 +26218,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -26554,13 +26620,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -26899,13 +26966,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -27301,13 +27369,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -27648,13 +27717,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -28059,13 +28129,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -28405,13 +28476,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -28807,13 +28879,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -29150,13 +29223,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -29550,13 +29624,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -29897,13 +29972,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -30301,13 +30377,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -30648,13 +30725,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -31052,13 +31130,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -31409,13 +31488,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -31823,13 +31903,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -32174,13 +32255,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -32582,13 +32664,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -32928,13 +33011,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -33331,13 +33415,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -33677,13 +33762,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -34080,13 +34166,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -34437,13 +34524,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -34851,13 +34939,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -35202,13 +35291,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -35672,13 +35762,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -36024,13 +36115,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -36432,13 +36524,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -36775,13 +36868,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -37174,13 +37268,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -37517,13 +37612,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -37916,13 +38012,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -38259,13 +38356,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -38658,13 +38756,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -39001,13 +39100,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -39400,13 +39500,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -39743,13 +39844,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -40142,13 +40244,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -40485,13 +40588,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -40884,13 +40988,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -41227,13 +41332,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -41626,13 +41732,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -41986,13 +42093,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -42402,13 +42510,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -42745,13 +42854,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -43144,13 +43254,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -43487,13 +43598,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -43886,13 +43998,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -44229,13 +44342,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -44628,13 +44742,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -44971,13 +45086,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -45370,13 +45486,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -45713,13 +45830,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -46112,13 +46230,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -46455,13 +46574,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -46858,13 +46978,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -47205,13 +47326,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -47606,13 +47728,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -47949,13 +48072,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -48349,13 +48473,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -48692,13 +48817,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -49092,13 +49218,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -49438,13 +49565,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -49842,13 +49970,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -50187,13 +50316,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -50976,13 +51106,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -51319,13 +51450,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -51718,13 +51850,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -52061,13 +52194,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -53056,13 +53190,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -53439,13 +53574,14 @@ genomeTO is a reference to a hash where the following keys are defined:
 	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 	computed_variants has a value which is a reference to a list where each element is a computed_variant
 	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
 	job_start has a value which is a float
 	job_end has a value which is a float
 	job_elapsed has a value which is a float
 	hostname has a value which is a string
 	container has a value which is a string
 	slurm_jobname has a value which is a string
-	slurm_jobid has a value which is an int
+	slurm_jobid has a value which is a string
 	workflow has a value which is a freeform
 	params has a value which is a freeform
 
@@ -55731,13 +55867,14 @@ annotation has a value which is a job_statistics
 sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 computed_variants has a value which is a reference to a list where each element is a computed_variant
 job_metadata has a value which is a reference to a hash where the following keys are defined:
+user has a value which is a string
 job_start has a value which is a float
 job_end has a value which is a float
 job_elapsed has a value which is a float
 hostname has a value which is a string
 container has a value which is a string
 slurm_jobname has a value which is a string
-slurm_jobid has a value which is an int
+slurm_jobid has a value which is a string
 workflow has a value which is a freeform
 params has a value which is a freeform
 
@@ -55782,13 +55919,14 @@ annotation has a value which is a job_statistics
 sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
 computed_variants has a value which is a reference to a list where each element is a computed_variant
 job_metadata has a value which is a reference to a hash where the following keys are defined:
+user has a value which is a string
 job_start has a value which is a float
 job_end has a value which is a float
 job_elapsed has a value which is a float
 hostname has a value which is a string
 container has a value which is a string
 slurm_jobname has a value which is a string
-slurm_jobid has a value which is an int
+slurm_jobid has a value which is a string
 workflow has a value which is a freeform
 params has a value which is a freeform
 

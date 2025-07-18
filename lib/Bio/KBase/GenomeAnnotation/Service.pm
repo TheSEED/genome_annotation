@@ -10,12 +10,8 @@ use File::Temp;
 use File::Slurp;
 use Class::Load qw();
 use Config::Simple;
+use Time::HiRes qw(gettimeofday);
 
-my $get_time = sub { time, 0 };
-eval {
-    require Time::HiRes;
-    $get_time = sub { Time::HiRes::gettimeofday(); };
-};
 
 use P3AuthToken;
 use P3TokenValidator;
@@ -520,7 +516,7 @@ sub call_method {
 	{
 	    $self->{hostname} ||= $g_hostname;
 
-	    my ($t, $us) = &$get_time();
+	    my ($t, $us) = gettimeofday;
 	    $us = sprintf("%06d", $us);
 	    my $ts = strftime("%Y-%m-%dT%H:%M:%S.${us}Z", gmtime $t);
 	    $tag = "S:$self->{hostname}:$$:$ts";
@@ -531,7 +527,7 @@ sub call_method {
 	local $ENV{KBRPC_METADATA} = $kb_metadata if $kb_metadata;
 	local $ENV{KBRPC_ERROR_DEST} = $kb_errordest if $kb_errordest;
 
-	my $stderr = Bio::KBase::GenomeAnnotation::ServiceStderrWrapper->new($ctx, $get_time);
+	my $stderr = Bio::KBase::GenomeAnnotation::ServiceStderrWrapper->new($ctx);
 	$ctx->stderr($stderr);
 
 	#
@@ -690,9 +686,8 @@ use Time::HiRes 'gettimeofday';
 
 sub new
 {
-    my($class, $ctx, $get_time) = @_;
+    my($class, $ctx) = @_;
     my $self = {
-	get_time => $get_time,
     };
     my $dest = $ENV{KBRPC_ERROR_DEST} if exists $ENV{KBRPC_ERROR_DEST};
     my $tag = $ENV{KBRPC_TAG} if exists $ENV{KBRPC_TAG};
