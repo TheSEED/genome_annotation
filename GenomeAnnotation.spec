@@ -433,6 +433,7 @@ module GenomeAnnotation
 	    float job_elapsed;
 	    string hostname;
 	    string container;
+	    string task_id;
 	    string slurm_jobname;
 	    string slurm_jobid;
 	    freeform workflow;
