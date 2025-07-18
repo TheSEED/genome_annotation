@@ -5,11 +5,7 @@ use strict;
 use Data::Dumper;
 use URI;
 
-my $get_time = sub { time, 0 };
-eval {
-    require Time::HiRes;
-    $get_time = sub { Time::HiRes::gettimeofday() };
-};
+use Time::HiRes qw(gettimeofday);
 
 use P3AuthToken;
 
@@ -59,7 +55,7 @@ sub new
     }
     else
     {
-	my ($t, $us) = &$get_time();
+	my ($t, $us) = gettimeofday;
 	$us = sprintf("%06d", $us);
 	my $ts = strftime("%Y-%m-%dT%H:%M:%S.${us}Z", gmtime $t);
 	$self->{kbrpc_tag} = "C:$0:$self->{hostname}:$$:$ts";
