@@ -778,6 +778,7 @@ module GenomeAnnotation
     funcdef compute_special_proteins(genomeTO genome_in, list<string> database_names) returns (list<special_protein_hit> results);
 
     funcdef annotate_special_proteins(genomeTO genome_in) returns (genomeTO genome_out);
+    funcdef annotate_special_proteins_v2(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_families_figfam_v1(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_families_patric(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_families_patric_viral(genomeTO genome_in) returns (genomeTO genome_out);
@@ -833,6 +834,7 @@ module GenomeAnnotation
      * Perform AMR classification.
      */
     funcdef classify_amr(genomeTO) returns (genomeTO);
+    funcdef classify_amr_v2(genomeTO) returns (genomeTO);
 
     typedef structure {
 	string reference_genome_id;

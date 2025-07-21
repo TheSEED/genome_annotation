@@ -5092,6 +5092,109 @@ sub annotate_special_proteins
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($genome_out);
     #BEGIN annotate_special_proteins
+    
+    $genome_in = GenomeTypeObject->initialize($genome_in);
+    
+    my $dir = $self->{special_protein_dbdir};
+    
+    my $prots = File::Temp->new();
+    close($prots);
+    $genome_in->write_protein_translations_to_file($prots);
+    
+    my $out = File::Temp->new();
+    
+    my @opts;
+    push(@opts, "--parallel", $self->{special_protein_threads});
+    if ($self->{special_protein_cache_db})
+    {
+	push(@opts, "--cache-db", $self->{special_protein_cache_db});
+	push(@opts,
+	     $self->{special_protein_cache_dbhost} ? ("--cache-host", $self->{special_protein_cache_dbhost}) : (),
+	     $self->{special_protein_cache_dbuser} ? ("--cache-user", $self->{special_protein_cache_dbuser}) : (),
+	     $self->{special_protein_cache_dbpass} ? ("--cache-pass", $self->{special_protein_cache_dbpass}) : ());
+    }
+    else
+    {
+	push(@opts, "--no-cache");
+    }
+    
+    my @cmd = ('rast_compute_specialty_genes',
+	       "--in", $prots,
+	       "--db-dir", $dir,
+	       @opts);
+    
+    $ctx->stderr->log_cmd(@cmd);
+    my $ok = run(\@cmd, '>', $out, $ctx->stderr->redirect);
+    close($out);
+    if ($ok)
+    {
+	if (open(my $fh, "<", $out))
+	{
+	    my $l = <$fh>;
+	    while (defined($l = <$fh>))
+	    {
+		chomp $l;
+		my($qid, $db, $sid, $qcov, $scov, $iden, $pvalue) = split(/\t/, $l);
+		
+		my $f = $genome_in->find_feature($qid);
+		if (ref($f))
+		{
+		    push(@{$f->{similarity_associations}}, [$db, $sid, $qcov, $scov, $iden, $pvalue]);
+		}
+	    }
+	    close($fh);
+	}
+    }
+    else
+    {
+	die "Error running rast_compute_specialty_genes ($?): @cmd\n" . $ctx->stderr->text_value;
+    }
+    
+    $genome_out = $genome_in;
+    $genome_out = $genome_out->prepare_for_return();
+    
+    #END annotate_special_proteins
+    my @_bad_returns;
+    (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
+    if (@_bad_returns) {
+	my $msg = "Invalid returns passed to annotate_special_proteins:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	die $msg;
+    }
+    return($genome_out);
+}
+
+
+=head2 annotate_special_proteins_v2
+
+  $genome_out = $obj->annotate_special_proteins_v2($genome_in)
+
+=over 4
+
+
+
+
+=item Description
+
+
+=back
+
+=cut
+
+sub annotate_special_proteins_v2
+{
+    my $self = shift;
+    my($genome_in) = @_;
+
+    my @_bad_arguments;
+    (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
+    if (@_bad_arguments) {
+	my $msg = "Invalid arguments passed to annotate_special_proteins_v2:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	die $msg;
+    }
+
+    my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
+    my($genome_out);
+    #BEGIN annotate_special_proteins_v2
 
     #
     # We run the following tools to characterize the special genes:
@@ -5142,11 +5245,11 @@ sub annotate_special_proteins
     }
     $genome_out = decode_json($out);
     
-    #END annotate_special_proteins
+    #END annotate_special_proteins_v2
     my @_bad_returns;
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
-	my $msg = "Invalid returns passed to annotate_special_proteins:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	my $msg = "Invalid returns passed to annotate_special_proteins_v2:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
     return($genome_out);
@@ -6140,6 +6243,115 @@ sub classify_amr
     my($return);
     #BEGIN classify_amr
 
+    my $genome_in = GenomeTypeObject->initialize($genomeTO);
+
+    my $classifier = AdaboostClassify->new();
+
+    my($genus, $species) = $genome_in->{scientific_name} =~ /^(\S+)\s+(\S+)/;
+    my $name = "$genus $species";
+    my $tmp = File::Temp->new();
+    $tmp->close();
+    $genome_in->write_contigs_to_file($tmp);
+    my $res = $classifier->classify($name, "$tmp");
+
+    my $idc = IDclient->new($genome_in);
+    my $event = {
+	tool_name => "AdaboostClassify",
+	execution_time => scalar gettimeofday,
+	parameters => [],
+	hostname => $self->{hostname},
+    };
+
+    my $event_id = $genome_in->add_analysis_event($event);
+
+    my $type = 'classifier_predicted_region';
+
+    for my $classification (@$res)
+    {
+	my @flist;
+	for my $f (@{$classification->{features}})
+	{
+	    my($contig, $start, $stop, $alpha, $round, $classifier, $function) = @$f;
+
+	    my $len = $stop - $start + 1;
+	    my $loc = [[$contig, $start, "+", $len]];
+	    my $feat = $genome_in->add_feature({
+		-id_client 	     => $idc,
+		-id_prefix 	     => $genome_in->{id},
+		-type 	     => $type,
+		-location 	     => $loc,
+		-function 	     => $function,
+		-annotator => "$classifier classifier",
+		-annotation      => "Classification by $classifier classifier with alpha=$alpha round=$round",
+		-analysis_event_id 	     => $event_id,
+	    });
+	    push(@flist, [$feat->{id}, $alpha, $round, $function]);
+	}
+	my $cobj = {
+	    name => $classification->{classifier},
+	    comment => $classification->{comment},
+	    antibiotics =>  [ split(/,\s+/, $classification->{antibiotic}) ],
+	    accuracy => $classification->{accuracy},
+	    area_under_roc_curve => $classification->{area_under_roc_curve},
+	    f1_score => $classification->{f1_score},
+	    cumulative_adaboost_score => $classification->{cumulative_adaboost_score},
+	    sources => $classification->{sources},
+	    sensitivity => $classification->{sensitivity},
+	    event_id => $event_id,
+	    features => [@flist],
+	};
+	push(@{$genome_in->{classifications}}, $cobj);
+    }
+
+    for my $f (<$tmp*>)
+    {
+	unlink($f);
+    }
+
+    $return = $genome_in->prepare_for_return();
+    #END classify_amr
+    my @_bad_returns;
+    (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
+    if (@_bad_returns) {
+	my $msg = "Invalid returns passed to classify_amr:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	die $msg;
+    }
+    return($return);
+}
+
+
+=head2 classify_amr_v2
+
+  $return = $obj->classify_amr_v2($genomeTO)
+
+=over 4
+
+
+
+
+=item Description
+
+
+=back
+
+=cut
+
+sub classify_amr_v2
+{
+    my $self = shift;
+    my($genomeTO) = @_;
+
+    my @_bad_arguments;
+    (ref($genomeTO) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genomeTO\" (value was \"$genomeTO\")");
+    if (@_bad_arguments) {
+	my $msg = "Invalid arguments passed to classify_amr_v2:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	die $msg;
+    }
+
+    my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
+    my($return);
+    #BEGIN classify_amr_v2
+
     my $threads = $ENV{P3_ALLOCATED_CPU} // 4;
     
     my @cmd = ("p3x-compute-amr-classification",
@@ -6161,11 +6373,11 @@ sub classify_amr
     $return = decode_json($out);
     
     
-    #END classify_amr
+    #END classify_amr_v2
     my @_bad_returns;
     (ref($return) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"return\" (value was \"$return\")");
     if (@_bad_returns) {
-	my $msg = "Invalid returns passed to classify_amr:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	my $msg = "Invalid returns passed to classify_amr_v2:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
     return($return);
@@ -6829,8 +7041,13 @@ sub default_workflow
 		    failure_is_not_fatal => 1,
 		    condition => 'scalar @{$genome->{contigs}} != grep { $_->{replicon_type} eq "plasmid" } @{$genome->{contigs}}'
 		},
+	      { name => 'classify_amr_v2',
+		    failure_is_not_fatal => 1,
+		    condition => 'scalar @{$genome->{contigs}} != grep { $_->{replicon_type} eq "plasmid" } @{$genome->{contigs}}'
+		},
 	      { name => 'renumber_features' },
               { name => 'annotate_special_proteins', failure_is_not_fatal => 1 },
+              { name => 'annotate_special_proteins_v2', failure_is_not_fatal => 1 },
 	      { name => 'annotate_families_figfam_v1', failure_is_not_fatal => 1 },
 	      { name => 'annotate_families_patric', failure_is_not_fatal => 1 },
 	      { name => 'annotate_null_to_hypothetical' },
