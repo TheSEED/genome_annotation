@@ -4424,7 +4424,6 @@ sub annotate_proteins_kmer_v2
     my $min_hits = 5;
     my $max_gap = 200;
 
-    print STDERR Dumper($params);
     if (defined($params->{min_hits}))
     {
 	$min_hits = $params->{min_hits};
