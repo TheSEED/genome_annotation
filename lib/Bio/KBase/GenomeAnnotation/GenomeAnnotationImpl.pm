@@ -5699,6 +5699,98 @@ sub annotate_strain_type_MLST
     my($genome_out);
     #BEGIN annotate_strain_type_MLST
     
+    $genome_in = GenomeTypeObject->initialize($genome_in);
+    
+    if (!defined($genome_in->{scientific_name}))
+    {
+	warn "No scientific name defined in annotate_strain_type_MLST";
+    }
+    else
+    {
+	my $contigs = $genome_in->extract_contig_sequences_to_temp_file();
+	my $tmp_out = File::Temp->new();
+	
+	my $event = {
+	    tool_name => "assign_st_to_genome",
+	    execution_time => scalar gettimeofday,
+	    hostname => $self->{hostname},
+	};
+	my $event_id = $genome_in->add_analysis_event($event);
+	
+	my @cmd = ("assign_st_to_genome",
+		   "-s", 1, 
+		   "-m", $self->{patric_mlst_dbdir},
+		   "--org", $genome_in->{scientific_name});
+	$ctx->stderr->log_cmd(@cmd);
+	my $ok = run(\@cmd,
+		     "<", $contigs,
+		     ">", $tmp_out,
+		     $ctx->stderr->redirect);
+	
+	close($tmp_out);
+	unlink($contigs);
+	
+	if (open(my $fh, "<", $tmp_out))
+	{
+	    while (<$fh>)
+	    {
+		chomp;
+		my($org, $db, $sids, $type, $coords, $loci, $profile, $tag) = split(/\t/);
+		push(@{$genome_in->{typing}},
+		 {
+		     typing_method => 'MLST',
+		     database => $db,
+		     tag => $tag,
+		     event_id => $event_id,
+		 });
+	    }
+	}
+    }	
+    $genome_out = $genome_in->prepare_for_return();
+    
+    #END annotate_strain_type_MLST
+    my @_bad_returns;
+    (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
+    if (@_bad_returns) {
+	my $msg = "Invalid returns passed to annotate_strain_type_MLST:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	die $msg;
+    }
+    return($genome_out);
+}
+
+
+=head2 annotate_strain_type_MLST_v2
+
+  $genome_out = $obj->annotate_strain_type_MLST_v2($genome_in)
+
+=over 4
+
+
+
+
+=item Description
+
+
+=back
+
+=cut
+
+sub annotate_strain_type_MLST_v2
+{
+    my $self = shift;
+    my($genome_in) = @_;
+
+    my @_bad_arguments;
+    (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
+    if (@_bad_arguments) {
+	my $msg = "Invalid arguments passed to annotate_strain_type_MLST_v2:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	die $msg;
+    }
+
+    my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
+    my($genome_out);
+    #BEGIN annotate_strain_type_MLST_v2
+    
     my $enc = encode_json($genome_in);
 
     #
@@ -5720,11 +5812,11 @@ sub annotate_strain_type_MLST
     $genome_out = decode_json($out);
     
     
-    #END annotate_strain_type_MLST
+    #END annotate_strain_type_MLST_v2
     my @_bad_returns;
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
-	my $msg = "Invalid returns passed to annotate_strain_type_MLST:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	my $msg = "Invalid returns passed to annotate_strain_type_MLST_v2:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
     return($genome_out);
@@ -7041,13 +7133,8 @@ sub default_workflow
 		    failure_is_not_fatal => 1,
 		    condition => 'scalar @{$genome->{contigs}} != grep { $_->{replicon_type} eq "plasmid" } @{$genome->{contigs}}'
 		},
-	      { name => 'classify_amr_v2',
-		    failure_is_not_fatal => 1,
-		    condition => 'scalar @{$genome->{contigs}} != grep { $_->{replicon_type} eq "plasmid" } @{$genome->{contigs}}'
-		},
 	      { name => 'renumber_features' },
               { name => 'annotate_special_proteins', failure_is_not_fatal => 1 },
-              { name => 'annotate_special_proteins_v2', failure_is_not_fatal => 1 },
 	      { name => 'annotate_families_figfam_v1', failure_is_not_fatal => 1 },
 	      { name => 'annotate_families_patric', failure_is_not_fatal => 1 },
 	      { name => 'annotate_null_to_hypothetical' },
