@@ -787,6 +787,7 @@ module GenomeAnnotation
     funcdef remove_genbank_features(genomeTO genome_in) returns (genomeTO genome_out);
 
     funcdef annotate_strain_type_MLST(genomeTO genome_in) returns (genomeTO genome_out);
+    funcdef annotate_strain_type_MLST_v2(genomeTO genome_in) returns (genomeTO genome_out);
 
     typedef tuple <
 	string protein_id,
