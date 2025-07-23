@@ -48,6 +48,9 @@
       {
          "failure_is_not_fatal" : 1,
          "name" : "annotate_strain_type_MLST"
+      },
+      {
+         "name" : "compute_genome_quality_control"
       }
    ]
 }
