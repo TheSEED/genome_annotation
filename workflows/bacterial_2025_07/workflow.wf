@@ -1,0 +1,107 @@
+{
+  "stages": [
+    {
+      "name": "call_features_rRNA_SEED"
+    },
+    {
+      "name": "call_features_tRNA_trnascan"
+    },
+    {
+      "repeat_region_SEED_parameters": {},
+      "name": "call_features_repeat_region_SEED"
+    },
+    {
+      "name": "call_selenoproteins",
+      "failure_is_not_fatal": 1
+    },
+    {
+      "name": "call_pyrrolysoproteins",
+      "failure_is_not_fatal": 1
+    },
+    {
+      "condition": "$genome->{scientific_name} =~ /^Streptococcus\\s/",
+      "name": "call_features_strep_suis_repeat"
+    },
+    {
+      "condition": "$genome->{scientific_name} =~ /^Streptococcus\\s/",
+      "name": "call_features_strep_pneumo_repeat"
+    },
+    {
+      "name": "call_features_crispr",
+      "failure_is_not_fatal": 1
+    },
+    {
+      "name": "call_features_CDS_prodigal"
+    },
+    {
+      "failure_is_not_fatal": 1,
+      "name": "call_features_CDS_glimmer3",
+      "glimmer3_parameters": {}
+    },
+    {
+      "name": "prune_invalid_CDS_features",
+      "prune_invalid_CDS_features_parameters": {
+        "max_homopolymer_frequency": 0.9,
+        "minimum_contig_length": 0
+      }
+    },
+    {
+      "kmer_v2_parameters": {},
+      "name": "annotate_proteins_kmer_v2"
+    },
+    {
+      "name": "annotate_proteins_phage",
+      "phage_parameters": {
+        "annotate_null_only": 1
+      }
+    },
+    {
+      "name": "annotate_proteins_similarity",
+      "similarity_parameters": {
+        "annotate_null_only": 1
+      }
+    },
+    {
+      "propagate_genbank_feature_metadata_parameters": {
+        "min_rna_pct_coverage": 90
+      },
+      "name": "propagate_genbank_feature_metadata"
+    },
+    {
+      "name": "resolve_overlapping_features",
+      "resolve_overlapping_features_parameters": {}
+    },
+    {
+      "failure_is_not_fatal": 1,
+      "condition": "scalar @{$genome->{contigs}} != grep { $_->{replicon_type} eq \"plasmid\" } @{$genome->{contigs}}",
+      "name": "classify_amr_v2"
+    },
+    {
+      "name": "renumber_features"
+    },
+    {
+      "name": "annotate_special_proteins_v2"
+    },
+    {
+      "name": "annotate_families_patric"
+    },
+    {
+      "name": "annotate_null_to_hypothetical"
+    },
+    {
+      "name": "project_subsystems",
+      "failure_is_not_fatal": 1
+    },
+    {
+      "name": "annotate_strain_type_MLST_v2"
+    },
+    {
+      "name": "compute_genome_quality_control"
+    },
+    {
+      "evaluate_genome_parameters": {},
+      "name": "evaluate_genome",
+      "failure_is_not_fatal": 1
+    }
+  ]
+}
