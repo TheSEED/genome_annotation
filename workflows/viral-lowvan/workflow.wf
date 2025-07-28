@@ -32,6 +32,10 @@
       },
       {
          "name" : "annotate_null_to_hypothetical"
+      },
+      {
+         "name" : "compute_genome_quality_control"
       }
+
   ]
 }
