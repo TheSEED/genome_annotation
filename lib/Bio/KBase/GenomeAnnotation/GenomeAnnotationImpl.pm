@@ -6454,13 +6454,15 @@ sub classify_amr_v2
 
     my $enc = encode_json($genomeTO);
 
+    print STDERR "Begin AMR classification: @cmd\n";
+
     my $out;
     my $ok = run(\@cmd,
 		 "<", \$enc,
 		 ">", \$out);
     if (!$ok)
     {
-	die "Error running AMR classifiers \n";
+	die "Error running AMR classifiers with @cmd\n";
     }
     $return = decode_json($out);
     
