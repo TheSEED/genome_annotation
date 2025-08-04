@@ -7277,60 +7277,45 @@ sub find_recipe
     #BEGIN find_recipe
 
     #
-    # Support default workflow.
+    # If we have a workflow directory configured, read from that.
     #
-    if ($id eq 'default')
+    my $dir = $self->{workflow_dir};
+    #
+    # Santize given workflow id to disallow loading from a path outside
+    # the workflow directory
+    #
+    $id =~ s,/,,g;
+    
+    $return = {};
+    
+    if ($dir && open(my $fh, "<", "$dir/$id/workflow.wf"))
     {
-	my $def = $self->default_workflow();
-	$return = {
-	    id => 'default',
-	    name => 'Default annotation',
-	    description => "Standard PATRIC annotation",
-	    workflow => $def,
-	}
-    }
-    else
-    {
-	#
-	# If we have a workflow directory configured, read from that.
-	#
-	my $dir = $self->{workflow_dir};
-	#
-	# Santize given workflow id to disallow loading from a path outside
-	# the workflow directory
-	#
-	$id =~ s,/,,g;
+	my $coder = _get_coder();
 	
-	$return = {};
-	
-	if (open(my $fh, "<", "$dir/$id/workflow.wf"))
+	my $data;
+	eval {
+	    my $txt = read_file($fh, err_mode => 'quiet');
+	    $data = $coder->decode($txt);
+	};
+	if ($@)
 	{
-	    my $coder = _get_coder();
-	    
-	    my $data;
-	    eval {
-		my $txt = read_file($fh, err_mode => 'quiet');
-		$data = $coder->decode($txt);
-	    };
-	    if ($@)
-	    {
-		warn "error reading $dir/$id: $@";
-	    }
-	    else
-	    {
-		my $name = read_file("$dir/$id/name.txt", err_mode => 'quiet');
-		chomp $name;
-		my $description = read_file("$dir/$id/description.txt", err_mode => 'quiet');
-		$return = {
-		    id => $id,
-		    name => $name,
-		    description => $description,
-		    workflow => $data,
-		};
-	    }
-	    close($fh);
+	    warn "error reading $dir/$id: $@";
 	}
+	else
+	{
+	    my $name = read_file("$dir/$id/name.txt", err_mode => 'quiet');
+	    chomp $name;
+	    my $description = read_file("$dir/$id/description.txt", err_mode => 'quiet');
+	    $return = {
+		id => $id,
+		name => $name,
+		description => $description,
+		workflow => $data,
+	    };
+	}
+	close($fh);
     }
+
 
     #END find_recipe
     my @_bad_returns;
