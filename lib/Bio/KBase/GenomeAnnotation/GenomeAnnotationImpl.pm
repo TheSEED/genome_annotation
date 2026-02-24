@@ -2088,7 +2088,6 @@ sub call_features_insertion_sequences
     #	fig|NC_002952.IS.2	NC_002952_2545636_2543556	IS_Unknown	Putative insertion sequence
 
     my $id_prefix = $genome_in->{id};
-    print($genome_in);
 
     while(<$res_fh>)
     {
