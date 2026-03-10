@@ -96,6 +96,9 @@
       "name": "annotate_strain_type_MLST_v2"
     },
     {
+      "name": "annotate_strain_type_cgMLST"
+    },
+    {
       "name": "compute_genome_quality_control"
     },
     {

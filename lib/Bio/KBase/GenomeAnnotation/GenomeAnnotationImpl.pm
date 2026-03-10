@@ -5823,6 +5823,66 @@ sub annotate_strain_type_MLST_v2
 }
 
 
+=head2 annotate_strain_type_cgMLST
+
+  $genome_out = $obj->annotate_strain_type_cgMLST($genome_in)
+
+=over 4
+
+
+
+
+=item Description
+
+
+=back
+
+=cut
+
+sub annotate_strain_type_cgMLST
+{
+    my $self = shift;
+    my($genome_in) = @_;
+
+    my @_bad_arguments;
+    (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
+    if (@_bad_arguments) {
+	my $msg = "Invalid arguments passed to annotate_strain_type_cgMLST:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	die $msg;
+    }
+
+    my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
+    my($genome_out);
+    #BEGIN annotate_strain_type_cgMLST
+    my $enc = encode_json($genome_in);
+
+    #
+    # Currently not parallel but leave the scaffolding in.
+    #
+    my $threads = $ENV{P3_ALLOCATED_CPU} // 1;
+    
+    my @cmd = ("p3x-compute-cgmlst");
+    my $out;
+    my $ok = run(\@cmd,
+		 "<", \$enc,
+		 ">", \$out);
+    
+    if (!$ok)
+    {
+	die "Error running cgMLST prediction \n";
+    }
+    $genome_out = decode_json($out);
+    #END annotate_strain_type_cgMLST
+    my @_bad_returns;
+    (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
+    if (@_bad_returns) {
+	my $msg = "Invalid returns passed to annotate_strain_type_cgMLST:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	die $msg;
+    }
+    return($genome_out);
+}
+
+
 =head2 compute_cdd
 
   $return = $obj->compute_cdd($genome_in)

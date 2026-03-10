@@ -21,7 +21,6 @@ module GenomeAnnotation
 	string remote_sha1;
     } Handle;
 
-
     typedef int bool;
     typedef string md5;
     typedef list<md5> md5s;
@@ -311,6 +310,14 @@ module GenomeAnnotation
 
     typedef structure
     {
+	string sequence_typing;
+	string database;
+	string tag;
+	analysis_event_id event_id;
+    } sequence_type;
+
+    typedef structure
+    {
 	string name;
 	string version;
 	string description;
@@ -412,6 +419,7 @@ module GenomeAnnotation
 	list <analysis_event> analysis_events;
 
 	list<strain_type> typing;
+    list<sequence_type> sequence_types;
 	list<classifier> classifications;
 	list<amr_assertion> amr_assertions;
 
@@ -788,6 +796,7 @@ module GenomeAnnotation
 
     funcdef annotate_strain_type_MLST(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_strain_type_MLST_v2(genomeTO genome_in) returns (genomeTO genome_out);
+    funcdef annotate_strain_type_cgMLST(genomeTO genome_in) returns (genomeTO genome_out);
 
     typedef tuple <
 	string protein_id,
