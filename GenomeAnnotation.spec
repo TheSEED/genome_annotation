@@ -311,9 +311,14 @@ module GenomeAnnotation
     typedef structure
     {
 	string sequence_typing;
-	string database;
-	string tag;
+    string schema_name;
+    int loci_total;
+    int loci_called;
+    int loci_missing;
+    float pct_called;
+    string qc;
 	analysis_event_id event_id;
+    list<tuple<string hc_level, int hc_val>> cgmlst_hc;
     } sequence_type;
 
     typedef structure
