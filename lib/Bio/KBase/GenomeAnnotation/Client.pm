@@ -138,8 +138,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -378,6 +380,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -408,6 +423,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -483,8 +511,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -723,6 +753,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -753,6 +796,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -894,8 +950,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -1134,6 +1192,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -1164,6 +1235,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -1249,8 +1333,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -1489,6 +1575,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -1519,6 +1618,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -1649,8 +1761,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -1890,6 +2004,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -1920,6 +2047,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -1994,8 +2134,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -2235,6 +2377,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -2265,6 +2420,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -2395,8 +2563,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -2636,6 +2806,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -2666,6 +2849,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -2740,8 +2936,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -2981,6 +3179,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -3011,6 +3222,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -3141,8 +3365,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -3382,6 +3608,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -3412,6 +3651,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -3486,8 +3738,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -3727,6 +3981,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -3757,6 +4024,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -3888,8 +4168,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -4129,6 +4411,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -4159,6 +4454,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -4244,8 +4552,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -4485,6 +4795,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -4515,6 +4838,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -4657,8 +4993,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -4898,6 +5236,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -4928,6 +5279,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -5003,8 +5367,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -5244,6 +5610,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -5274,6 +5653,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -5406,8 +5798,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -5647,6 +6041,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -5677,6 +6084,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -5752,8 +6172,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -5993,6 +6415,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -6023,6 +6458,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -6155,8 +6603,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -6396,6 +6846,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -6426,6 +6889,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -6500,8 +6976,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -6741,6 +7219,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -6771,6 +7262,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -6901,8 +7405,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -7142,6 +7648,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -7172,6 +7691,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -7246,8 +7778,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -7487,6 +8021,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -7517,6 +8064,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -7648,8 +8208,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -7889,6 +8451,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -7919,6 +8494,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -8000,8 +8588,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -8241,6 +8831,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -8271,6 +8874,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -8408,8 +9024,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -8649,6 +9267,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -8679,6 +9310,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -8773,8 +9417,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -9014,6 +9660,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -9044,6 +9703,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -9194,8 +9866,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -9435,6 +10109,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -9465,6 +10152,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -9548,8 +10248,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -9789,6 +10491,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -9819,6 +10534,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -10190,8 +10918,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -10431,6 +11161,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -10461,6 +11204,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -10535,8 +11291,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -10776,6 +11534,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -10806,6 +11577,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -10937,8 +11721,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -11178,6 +11964,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -11208,6 +12007,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -11282,8 +12094,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -11523,6 +12337,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -11553,6 +12380,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -11683,8 +12523,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -11924,6 +12766,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -11954,6 +12809,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -12028,8 +12896,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -12269,6 +13139,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -12299,6 +13182,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -12429,8 +13325,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -12670,6 +13568,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -12700,6 +13611,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -12774,8 +13698,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -13015,6 +13941,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -13045,6 +13984,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -13175,8 +14127,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -13416,6 +14370,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -13446,6 +14413,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -13520,8 +14500,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -13761,6 +14743,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -13791,6 +14786,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -13921,8 +14929,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -14162,6 +15172,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -14192,6 +15215,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -14266,8 +15302,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -14507,6 +15545,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -14537,6 +15588,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -14667,8 +15731,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -14908,6 +15974,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -14938,6 +16017,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -15012,8 +16104,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -15253,6 +16347,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -15283,6 +16390,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -15414,8 +16534,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -15655,6 +16777,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -15685,6 +16820,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -15761,8 +16909,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -16002,6 +17152,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -16032,6 +17195,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -16171,8 +17347,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -16412,6 +17590,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -16442,6 +17633,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -16516,8 +17720,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -16757,6 +17963,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -16787,6 +18006,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -16918,8 +18150,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -17159,6 +18393,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -17189,6 +18436,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -17263,8 +18523,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -17504,6 +18766,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -17534,6 +18809,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -17666,8 +18954,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -17907,6 +19197,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -17937,6 +19240,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -18014,8 +19330,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -18255,6 +19573,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -18285,6 +19616,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -18419,8 +19763,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -18660,6 +20006,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -18690,6 +20049,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -18768,8 +20140,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -19009,6 +20383,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -19039,6 +20426,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -19174,8 +20574,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -19415,6 +20817,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -19445,6 +20860,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -19522,8 +20950,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -19763,6 +21193,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -19793,6 +21236,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -19927,8 +21383,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -20168,6 +21626,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -20198,6 +21669,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -20275,8 +21759,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -20516,6 +22002,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -20546,6 +22045,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -20679,8 +22191,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -20920,6 +22434,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -20950,6 +22477,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -21024,8 +22564,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -21265,6 +22807,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -21295,6 +22850,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -21425,8 +22993,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -21666,6 +23236,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -21696,6 +23279,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -21770,8 +23366,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -22011,6 +23609,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -22041,6 +23652,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -22171,8 +23795,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -22412,6 +24038,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -22442,6 +24081,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -22516,8 +24168,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -22757,6 +24411,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -22787,6 +24454,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -22918,8 +24598,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -23159,6 +24841,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -23189,6 +24884,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -23268,8 +24976,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -23509,6 +25219,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -23539,6 +25262,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -23675,8 +25411,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -23916,6 +25654,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -23946,6 +25697,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -24025,8 +25789,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -24266,6 +26032,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -24296,6 +26075,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -24431,8 +26223,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -24672,6 +26466,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -24702,6 +26509,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -24776,8 +26596,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -25017,6 +26839,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -25047,6 +26882,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -25178,8 +27026,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -25419,6 +27269,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -25449,6 +27312,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -25527,8 +27403,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -25768,6 +27646,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -25798,6 +27689,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -25932,8 +27836,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -26173,6 +28079,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -26203,6 +28122,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -26277,8 +28209,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -26518,6 +28452,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -26548,6 +28495,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -26680,8 +28640,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -26921,6 +28883,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -26951,6 +28926,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -27027,8 +29015,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -27268,6 +29258,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -27298,6 +29301,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -27431,8 +29447,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -27672,6 +29690,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -27702,6 +29733,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -27780,8 +29824,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -28021,6 +30067,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -28051,6 +30110,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -28193,8 +30265,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -28434,6 +30508,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -28464,6 +30551,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -28541,8 +30641,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -28782,6 +30884,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -28812,6 +30927,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -28945,8 +31073,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -29186,6 +31316,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -29216,6 +31359,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -29290,8 +31446,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -29531,6 +31689,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -29561,6 +31732,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -29692,8 +31876,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -29933,6 +32119,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -29963,6 +32162,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -30041,8 +32253,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -30282,6 +32496,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -30312,6 +32539,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -30447,8 +32687,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -30688,6 +32930,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -30718,6 +32973,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -30796,8 +33064,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -31037,6 +33307,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -31067,6 +33350,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -31202,8 +33498,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -31443,6 +33741,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -31473,6 +33784,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -31561,8 +33885,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -31802,6 +34128,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -31832,6 +34171,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -31977,8 +34329,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -32218,6 +34572,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -32248,6 +34615,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -32330,8 +34710,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -32571,6 +34953,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -32601,6 +34996,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -32740,8 +35148,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -32981,6 +35391,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -33011,6 +35434,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -33088,8 +35524,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -33329,6 +35767,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -33359,6 +35810,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -33493,8 +35957,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -33734,6 +36200,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -33764,6 +36243,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -33841,8 +36333,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -34082,6 +36576,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -34112,6 +36619,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -34246,8 +36766,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -34487,6 +37009,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -34517,6 +37052,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -34605,8 +37153,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -34846,6 +37396,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -34876,6 +37439,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -35021,8 +37597,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -35262,6 +37840,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -35292,6 +37883,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -35374,8 +37978,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -35615,6 +38221,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -35645,6 +38264,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -35846,8 +38478,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -36087,6 +38721,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -36117,6 +38764,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -36200,8 +38860,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -36441,6 +39103,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -36471,6 +39146,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -36610,8 +39298,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -36851,6 +39541,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -36881,6 +39584,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -36955,8 +39671,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -37196,6 +39914,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -37226,6 +39957,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -37356,8 +40100,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -37597,6 +40343,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -37627,6 +40386,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -37701,8 +40473,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -37942,6 +40716,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -37972,6 +40759,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -38102,8 +40902,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -38343,6 +41145,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -38373,6 +41188,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -38447,8 +41275,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -38688,6 +41518,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -38718,6 +41561,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -38848,8 +41704,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -39089,6 +41947,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -39119,6 +41990,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -39193,8 +42077,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -39434,6 +42320,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -39464,6 +42363,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -39594,8 +42506,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -39835,6 +42749,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -39865,6 +42792,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -39939,8 +42879,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -40180,6 +43122,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -40210,6 +43165,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -40340,8 +43308,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -40581,6 +43551,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -40611,6 +43594,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -40685,8 +43681,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -40926,6 +43924,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -40956,6 +43967,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -41049,9 +44073,9 @@ sub annotate_null_to_hypothetical
 
 
 
-=head2 remove_genbank_features
+=head2 annotate_subspecies_classification
 
-  $genome_out = $obj->remove_genbank_features($genome_in)
+  $genome_out = $obj->annotate_subspecies_classification($genome_in)
 
 =over 4
 
@@ -41086,8 +44110,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -41327,6 +44353,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -41357,6 +44396,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -41431,8 +44483,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -41672,6 +44726,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -41702,6 +44769,1623 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
+subsystem_data is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	classification has a value which is a reference to a list containing 3 items:
+	0: (superclass) a string
+	1: (class) a string
+	2: (subclass) a string
+
+	variant_code has a value which is a string
+	role_bindings has a value which is a reference to a list where each element is a role_binding
+	event_id has a value which is an analysis_event_id
+role_binding is a reference to a hash where the following keys are defined:
+	role_id has a value which is a string
+	features has a value which is a reference to a list where each element is a feature_id
+job_statistics is a reference to a hash where the following keys are defined:
+	job_id has a value which is a string
+	start_time has a value which is a string
+	completion_time has a value which is a string
+	elapsed_time has a value which is a float
+	app_name has a value which is a string
+	parameters has a value which is a reference to a hash where the key is a string and the value is a string
+	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+computed_variant is a reference to a hash where the following keys are defined:
+	tool has a value which is a string
+	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
+	variants has a value which is a reference to a list where each element is a variant
+	lineage has a value which is a string
+	probability has a value which is a float
+	status has a value which is a string
+	notes has a value which is a string
+variant is a string
+snp is a reference to a hash where the following keys are defined:
+	pos has a value which is an int
+	ref has a value which is a string
+	alt has a value which is a string
+	freq has a value which is a float
+	feature_pos has a value which is a string
+	ref_aa has a value which is a string
+	ref_codon has a value which is a string
+	alt_aa has a value which is a string
+	alt_codon has a value which is a string
+
+
+=end text
+
+=item Description
+
+
+
+=back
+
+=cut
+
+sub annotate_subspecies_classification
+{
+    my($self, @args) = @_;
+
+# Authentication: none
+
+    if ((my $n = @args) != 1)
+    {
+        die "Invalid argument count for function annotate_subspecies_classification (received $n, expecting 1)";
+    }
+    {
+	my($genome_in) = @args;
+
+	my @_bad_arguments;
+        (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 1 \"genome_in\" (value was \"$genome_in\")");
+        if (@_bad_arguments) {
+	    my $msg = "Invalid arguments passed to annotate_subspecies_classification:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	    die $msg;
+	}
+    }
+
+    my $result = $self->{client}->call($self->{url}, $self->{headers}, {
+	method => "GenomeAnnotation.annotate_subspecies_classification",
+	params => \@args,
+    });
+    if ($result) {
+	if ($result->{error}) {
+	    my $msg = $result->{error}->{error} || $result->{error}->{message};
+	    $msg =  $self->{client}->json->encode($msg) if ref($msg);
+	    die "Error $result->{error}->{code} invoking annotate_subspecies_classification:\n$msg\n";
+	} else {
+	    return wantarray ? @{$result->{result}} : $result->{result}->[0];
+	}
+    } else {
+	die "Error invoking method annotate_subspecies_classification: " .  $self->{client}->status_line;
+    }
+}
+
+
+
+=head2 annotate_subclade
+
+  $genome_out = $obj->annotate_subclade($genome_in)
+
+=over 4
+
+=item Parameter and return types
+
+=begin html
+
+<pre>
+$genome_in is a genomeTO
+$genome_out is a genomeTO
+genomeTO is a reference to a hash where the following keys are defined:
+	id has a value which is a genome_id
+	scientific_name has a value which is a string
+	domain has a value which is a string
+	genetic_code has a value which is an int
+	source has a value which is a string
+	source_id has a value which is a string
+	taxonomy has a value which is a string
+	ncbi_taxonomy_id has a value which is an int
+	ncbi_lineage has a value which is a reference to a list where each element is a reference to a list containing 3 items:
+	0: (taxon_name) a string
+	1: (taxon_id) an int
+	2: (taxon_rank) a string
+
+	ncbi_genus has a value which is a string
+	ncbi_species has a value which is a string
+	owner has a value which is a string
+	quality has a value which is a genome_quality_measure
+	contigs has a value which is a reference to a list where each element is a contig
+	contigs_handle has a value which is a Handle
+	features has a value which is a reference to a list where each element is a feature
+	close_genomes has a value which is a reference to a list where each element is a close_genome
+	analysis_events has a value which is a reference to a list where each element is an analysis_event
+	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
+	classifications has a value which is a reference to a list where each element is a classifier
+	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
+	subsystems has a value which is a reference to a list where each element is a subsystem_data
+	job_data has a value which is a reference to a hash where the following keys are defined:
+	assembly has a value which is a job_statistics
+	annotation has a value which is a job_statistics
+
+	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	task_id has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is a string
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
+genome_id is a string
+genome_quality_measure is a reference to a hash where the following keys are defined:
+	frameshift_error_rate has a value which is a float
+	sequence_error_rate has a value which is a float
+	checkm_data has a value which is a reference to a hash where the key is a string and the value is a string
+	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
+	role_map has a value which is a reference to a hash where the key is a string and the value is a string
+	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+
+	coarse_consistency has a value which is a float
+	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
+	genome_metrics has a value which is a reference to a hash where the following keys are defined:
+	N50 has a value which is an int
+	N70 has a value which is an int
+	N90 has a value which is an int
+	L50 has a value which is an int
+	L70 has a value which is an int
+	L90 has a value which is an int
+	totlen has a value which is an int
+	complete has a value which is an int
+
+	genome_length has a value which is an int
+	gc_content has a value which is a float
+	chromosomes has a value which is an int
+	plasmids has a value which is an int
+	contigs has a value which is an int
+	contig_ambig_count has a value which is an int
+	contig_ambig_fraction has a value which is a float
+	contig_longest_ambig_run has a value which is an int
+	genome_status has a value which is a string
+	feature_summary has a value which is a reference to a hash where the following keys are defined:
+	cds has a value which is an int
+	partial_cds has a value which is an int
+	rRNA has a value which is an int
+	tRNA has a value which is an int
+	misc_RNA has a value which is an int
+	repeat_region has a value which is an int
+
+	protein_summary has a value which is a reference to a hash where the following keys are defined:
+	hypothetical has a value which is an int
+	function_assignment has a value which is an int
+	plfam_assignment has a value which is an int
+	pgfam_assignment has a value which is an int
+	ec_assignment has a value which is an int
+	go_assignment has a value which is an int
+	pathway_assignment has a value which is an int
+
+	specialty_gene_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	amr_genes has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (gene_name) a string
+	2: (function) a string
+	3: (amr_classification) a string
+
+	amr_gene_summary has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (amr_classification) a string
+	1: (gene_names) a reference to a list where each element is a string
+
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
+	cds_ratio has a value which is a float
+	hypothetical_cds_ratio has a value which is a float
+	partial_cds_ratio has a value which is a float
+	plfam_cds_ratio has a value which is a float
+	pgfam_cds_ratio has a value which is a float
+	genome_quality_flags has a value which is a reference to a list where each element is a string
+	genome_quality has a value which is a string
+feature_id is a string
+contig is a reference to a hash where the following keys are defined:
+	id has a value which is a contig_id
+	dna has a value which is a string
+	genetic_code has a value which is an int
+	cell_compartment has a value which is a string
+	replicon_type has a value which is a string
+	replicon_geometry has a value which is a string
+	complete has a value which is a bool
+	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
+contig_id is a string
+bool is an int
+genbank_locus is a reference to a hash where the following keys are defined:
+	accession has a value which is a reference to a list where each element is a string
+	comment has a value which is a reference to a list where each element is a string
+	date has a value which is a string
+	dblink has a value which is a reference to a list where each element is a string
+	dbsource has a value which is a reference to a list where each element is a string
+	definition has a value which is a string
+	division has a value which is a string
+	geometry has a value which is a string
+	gi has a value which is an int
+	keywords has a value which is a reference to a list where each element is a string
+	locus has a value which is a string
+	organism has a value which is a string
+	origin has a value which is a string
+	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	source has a value which is a string
+	taxonomy has a value which is a reference to a list where each element is a string
+	version has a value which is a reference to a list where each element is a string
+Handle is a reference to a hash where the following keys are defined:
+	file_name has a value which is a string
+	id has a value which is a string
+	type has a value which is a string
+	url has a value which is a string
+	remote_md5 has a value which is a string
+	remote_sha1 has a value which is a string
+feature is a reference to a hash where the following keys are defined:
+	id has a value which is a feature_id
+	location has a value which is a location
+	type has a value which is a feature_type
+	function has a value which is a string
+	function_id has a value which is a string
+	protein_translation has a value which is a string
+	aliases has a value which is a reference to a list where each element is a string
+	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (source) a string
+	1: (alias) a string
+
+	annotations has a value which is a reference to a list where each element is an annotation
+	quality has a value which is a feature_quality_measure
+	feature_creation_event has a value which is an analysis_event_id
+	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
+	similarity_associations has a value which is a reference to a list where each element is a similarity_association
+	proposed_functions has a value which is a reference to a list where each element is a proposed_function
+	genbank_type has a value which is a string
+	genbank_feature has a value which is a genbank_feature
+	ec_numbers has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	go_terms has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	pathways has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+location is a reference to a list where each element is a region_of_dna
+region_of_dna is a reference to a list containing 4 items:
+	0: a contig_id
+	1: (begin) an int
+	2: (strand) a string
+	3: (length) an int
+feature_type is a string
+annotation is a reference to a list containing 4 items:
+	0: (comment) a string
+	1: (annotator) a string
+	2: (annotation_time) a float
+	3: an analysis_event_id
+analysis_event_id is a string
+feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
+	truncated_begin has a value which is a bool
+	truncated_end has a value which is a bool
+	existence_confidence has a value which is a float
+	frameshifted has a value which is a bool
+	selenoprotein has a value which is a bool
+	pyrrolysylprotein has a value which is a bool
+	overlap_rules has a value which is a reference to a list where each element is a string
+	existence_priority has a value which is a float
+	hit_count has a value which is a float
+	weighted_hit_count has a value which is a float
+	genemark_score has a value which is a float
+protein_family_assignment is a reference to a list containing 4 items:
+	0: (db) a string
+	1: (id) a string
+	2: (function) a string
+	3: (db_version) a string
+similarity_association is a reference to a list containing 6 items:
+	0: (source) a string
+	1: (source_id) a string
+	2: (query_coverage) a float
+	3: (subject_coverage) a float
+	4: (identity) a float
+	5: (e_value) a float
+proposed_function is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	function has a value which is a string
+	user has a value which is a string
+	score has a value which is a float
+	event_id has a value which is an analysis_event_id
+	timestamp has a value which is an int
+genbank_feature is a reference to a hash where the following keys are defined:
+	genbank_type has a value which is a string
+	genbank_location has a value which is a string
+	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+close_genome is a reference to a hash where the following keys are defined:
+	genome has a value which is a genome_id
+	genome_name has a value which is a string
+	closeness_measure has a value which is a float
+	analysis_method has a value which is a string
+analysis_event is a reference to a hash where the following keys are defined:
+	id has a value which is an analysis_event_id
+	tool_name has a value which is a string
+	execution_time has a value which is a float
+	parameters has a value which is a reference to a list where each element is a string
+	hostname has a value which is a string
+strain_type is a reference to a hash where the following keys are defined:
+	typing_method has a value which is a string
+	database has a value which is a string
+	tag has a value which is a string
+	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
+classifier is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	version has a value which is a string
+	description has a value which is a string
+	comment has a value which is a string
+	antibiotics has a value which is a reference to a list where each element is a string
+	accuracy has a value which is a float
+	area_under_roc_curve has a value which is a float
+	f1_score has a value which is a float
+	sources has a value which is a string
+	cumulative_adaboost_value has a value which is a float
+	sensitivity has a value which is a string
+	event_id has a value which is an analysis_event_id
+	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (alpha) a float
+	2: (round) an int
+	3: (function) a string
+
+amr_assertion is a reference to a hash where the following keys are defined:
+	antibiotic_name has a value which is a string
+	model_antibiotic_name has a value which is a string
+	evidence has a value which is a string
+	computational_method has a value which is a string
+	computational_method_performance has a value which is a string
+	computational_method_version has a value which is a string
+	resistant_phenotype has a value which is a string
+	measurement_unit has a value which is a string
+	measurement_value has a value which is a string
+	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
+subsystem_data is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	classification has a value which is a reference to a list containing 3 items:
+	0: (superclass) a string
+	1: (class) a string
+	2: (subclass) a string
+
+	variant_code has a value which is a string
+	role_bindings has a value which is a reference to a list where each element is a role_binding
+	event_id has a value which is an analysis_event_id
+role_binding is a reference to a hash where the following keys are defined:
+	role_id has a value which is a string
+	features has a value which is a reference to a list where each element is a feature_id
+job_statistics is a reference to a hash where the following keys are defined:
+	job_id has a value which is a string
+	start_time has a value which is a string
+	completion_time has a value which is a string
+	elapsed_time has a value which is a float
+	app_name has a value which is a string
+	parameters has a value which is a reference to a hash where the key is a string and the value is a string
+	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+computed_variant is a reference to a hash where the following keys are defined:
+	tool has a value which is a string
+	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
+	variants has a value which is a reference to a list where each element is a variant
+	lineage has a value which is a string
+	probability has a value which is a float
+	status has a value which is a string
+	notes has a value which is a string
+variant is a string
+snp is a reference to a hash where the following keys are defined:
+	pos has a value which is an int
+	ref has a value which is a string
+	alt has a value which is a string
+	freq has a value which is a float
+	feature_pos has a value which is a string
+	ref_aa has a value which is a string
+	ref_codon has a value which is a string
+	alt_aa has a value which is a string
+	alt_codon has a value which is a string
+
+</pre>
+
+=end html
+
+=begin text
+
+$genome_in is a genomeTO
+$genome_out is a genomeTO
+genomeTO is a reference to a hash where the following keys are defined:
+	id has a value which is a genome_id
+	scientific_name has a value which is a string
+	domain has a value which is a string
+	genetic_code has a value which is an int
+	source has a value which is a string
+	source_id has a value which is a string
+	taxonomy has a value which is a string
+	ncbi_taxonomy_id has a value which is an int
+	ncbi_lineage has a value which is a reference to a list where each element is a reference to a list containing 3 items:
+	0: (taxon_name) a string
+	1: (taxon_id) an int
+	2: (taxon_rank) a string
+
+	ncbi_genus has a value which is a string
+	ncbi_species has a value which is a string
+	owner has a value which is a string
+	quality has a value which is a genome_quality_measure
+	contigs has a value which is a reference to a list where each element is a contig
+	contigs_handle has a value which is a Handle
+	features has a value which is a reference to a list where each element is a feature
+	close_genomes has a value which is a reference to a list where each element is a close_genome
+	analysis_events has a value which is a reference to a list where each element is an analysis_event
+	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
+	classifications has a value which is a reference to a list where each element is a classifier
+	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
+	subsystems has a value which is a reference to a list where each element is a subsystem_data
+	job_data has a value which is a reference to a hash where the following keys are defined:
+	assembly has a value which is a job_statistics
+	annotation has a value which is a job_statistics
+
+	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	task_id has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is a string
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
+genome_id is a string
+genome_quality_measure is a reference to a hash where the following keys are defined:
+	frameshift_error_rate has a value which is a float
+	sequence_error_rate has a value which is a float
+	checkm_data has a value which is a reference to a hash where the key is a string and the value is a string
+	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
+	role_map has a value which is a reference to a hash where the key is a string and the value is a string
+	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+
+	coarse_consistency has a value which is a float
+	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
+	genome_metrics has a value which is a reference to a hash where the following keys are defined:
+	N50 has a value which is an int
+	N70 has a value which is an int
+	N90 has a value which is an int
+	L50 has a value which is an int
+	L70 has a value which is an int
+	L90 has a value which is an int
+	totlen has a value which is an int
+	complete has a value which is an int
+
+	genome_length has a value which is an int
+	gc_content has a value which is a float
+	chromosomes has a value which is an int
+	plasmids has a value which is an int
+	contigs has a value which is an int
+	contig_ambig_count has a value which is an int
+	contig_ambig_fraction has a value which is a float
+	contig_longest_ambig_run has a value which is an int
+	genome_status has a value which is a string
+	feature_summary has a value which is a reference to a hash where the following keys are defined:
+	cds has a value which is an int
+	partial_cds has a value which is an int
+	rRNA has a value which is an int
+	tRNA has a value which is an int
+	misc_RNA has a value which is an int
+	repeat_region has a value which is an int
+
+	protein_summary has a value which is a reference to a hash where the following keys are defined:
+	hypothetical has a value which is an int
+	function_assignment has a value which is an int
+	plfam_assignment has a value which is an int
+	pgfam_assignment has a value which is an int
+	ec_assignment has a value which is an int
+	go_assignment has a value which is an int
+	pathway_assignment has a value which is an int
+
+	specialty_gene_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	amr_genes has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (gene_name) a string
+	2: (function) a string
+	3: (amr_classification) a string
+
+	amr_gene_summary has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (amr_classification) a string
+	1: (gene_names) a reference to a list where each element is a string
+
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
+	cds_ratio has a value which is a float
+	hypothetical_cds_ratio has a value which is a float
+	partial_cds_ratio has a value which is a float
+	plfam_cds_ratio has a value which is a float
+	pgfam_cds_ratio has a value which is a float
+	genome_quality_flags has a value which is a reference to a list where each element is a string
+	genome_quality has a value which is a string
+feature_id is a string
+contig is a reference to a hash where the following keys are defined:
+	id has a value which is a contig_id
+	dna has a value which is a string
+	genetic_code has a value which is an int
+	cell_compartment has a value which is a string
+	replicon_type has a value which is a string
+	replicon_geometry has a value which is a string
+	complete has a value which is a bool
+	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
+contig_id is a string
+bool is an int
+genbank_locus is a reference to a hash where the following keys are defined:
+	accession has a value which is a reference to a list where each element is a string
+	comment has a value which is a reference to a list where each element is a string
+	date has a value which is a string
+	dblink has a value which is a reference to a list where each element is a string
+	dbsource has a value which is a reference to a list where each element is a string
+	definition has a value which is a string
+	division has a value which is a string
+	geometry has a value which is a string
+	gi has a value which is an int
+	keywords has a value which is a reference to a list where each element is a string
+	locus has a value which is a string
+	organism has a value which is a string
+	origin has a value which is a string
+	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	source has a value which is a string
+	taxonomy has a value which is a reference to a list where each element is a string
+	version has a value which is a reference to a list where each element is a string
+Handle is a reference to a hash where the following keys are defined:
+	file_name has a value which is a string
+	id has a value which is a string
+	type has a value which is a string
+	url has a value which is a string
+	remote_md5 has a value which is a string
+	remote_sha1 has a value which is a string
+feature is a reference to a hash where the following keys are defined:
+	id has a value which is a feature_id
+	location has a value which is a location
+	type has a value which is a feature_type
+	function has a value which is a string
+	function_id has a value which is a string
+	protein_translation has a value which is a string
+	aliases has a value which is a reference to a list where each element is a string
+	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (source) a string
+	1: (alias) a string
+
+	annotations has a value which is a reference to a list where each element is an annotation
+	quality has a value which is a feature_quality_measure
+	feature_creation_event has a value which is an analysis_event_id
+	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
+	similarity_associations has a value which is a reference to a list where each element is a similarity_association
+	proposed_functions has a value which is a reference to a list where each element is a proposed_function
+	genbank_type has a value which is a string
+	genbank_feature has a value which is a genbank_feature
+	ec_numbers has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	go_terms has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	pathways has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+location is a reference to a list where each element is a region_of_dna
+region_of_dna is a reference to a list containing 4 items:
+	0: a contig_id
+	1: (begin) an int
+	2: (strand) a string
+	3: (length) an int
+feature_type is a string
+annotation is a reference to a list containing 4 items:
+	0: (comment) a string
+	1: (annotator) a string
+	2: (annotation_time) a float
+	3: an analysis_event_id
+analysis_event_id is a string
+feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
+	truncated_begin has a value which is a bool
+	truncated_end has a value which is a bool
+	existence_confidence has a value which is a float
+	frameshifted has a value which is a bool
+	selenoprotein has a value which is a bool
+	pyrrolysylprotein has a value which is a bool
+	overlap_rules has a value which is a reference to a list where each element is a string
+	existence_priority has a value which is a float
+	hit_count has a value which is a float
+	weighted_hit_count has a value which is a float
+	genemark_score has a value which is a float
+protein_family_assignment is a reference to a list containing 4 items:
+	0: (db) a string
+	1: (id) a string
+	2: (function) a string
+	3: (db_version) a string
+similarity_association is a reference to a list containing 6 items:
+	0: (source) a string
+	1: (source_id) a string
+	2: (query_coverage) a float
+	3: (subject_coverage) a float
+	4: (identity) a float
+	5: (e_value) a float
+proposed_function is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	function has a value which is a string
+	user has a value which is a string
+	score has a value which is a float
+	event_id has a value which is an analysis_event_id
+	timestamp has a value which is an int
+genbank_feature is a reference to a hash where the following keys are defined:
+	genbank_type has a value which is a string
+	genbank_location has a value which is a string
+	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+close_genome is a reference to a hash where the following keys are defined:
+	genome has a value which is a genome_id
+	genome_name has a value which is a string
+	closeness_measure has a value which is a float
+	analysis_method has a value which is a string
+analysis_event is a reference to a hash where the following keys are defined:
+	id has a value which is an analysis_event_id
+	tool_name has a value which is a string
+	execution_time has a value which is a float
+	parameters has a value which is a reference to a list where each element is a string
+	hostname has a value which is a string
+strain_type is a reference to a hash where the following keys are defined:
+	typing_method has a value which is a string
+	database has a value which is a string
+	tag has a value which is a string
+	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
+classifier is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	version has a value which is a string
+	description has a value which is a string
+	comment has a value which is a string
+	antibiotics has a value which is a reference to a list where each element is a string
+	accuracy has a value which is a float
+	area_under_roc_curve has a value which is a float
+	f1_score has a value which is a float
+	sources has a value which is a string
+	cumulative_adaboost_value has a value which is a float
+	sensitivity has a value which is a string
+	event_id has a value which is an analysis_event_id
+	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (alpha) a float
+	2: (round) an int
+	3: (function) a string
+
+amr_assertion is a reference to a hash where the following keys are defined:
+	antibiotic_name has a value which is a string
+	model_antibiotic_name has a value which is a string
+	evidence has a value which is a string
+	computational_method has a value which is a string
+	computational_method_performance has a value which is a string
+	computational_method_version has a value which is a string
+	resistant_phenotype has a value which is a string
+	measurement_unit has a value which is a string
+	measurement_value has a value which is a string
+	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
+subsystem_data is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	classification has a value which is a reference to a list containing 3 items:
+	0: (superclass) a string
+	1: (class) a string
+	2: (subclass) a string
+
+	variant_code has a value which is a string
+	role_bindings has a value which is a reference to a list where each element is a role_binding
+	event_id has a value which is an analysis_event_id
+role_binding is a reference to a hash where the following keys are defined:
+	role_id has a value which is a string
+	features has a value which is a reference to a list where each element is a feature_id
+job_statistics is a reference to a hash where the following keys are defined:
+	job_id has a value which is a string
+	start_time has a value which is a string
+	completion_time has a value which is a string
+	elapsed_time has a value which is a float
+	app_name has a value which is a string
+	parameters has a value which is a reference to a hash where the key is a string and the value is a string
+	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+computed_variant is a reference to a hash where the following keys are defined:
+	tool has a value which is a string
+	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
+	variants has a value which is a reference to a list where each element is a variant
+	lineage has a value which is a string
+	probability has a value which is a float
+	status has a value which is a string
+	notes has a value which is a string
+variant is a string
+snp is a reference to a hash where the following keys are defined:
+	pos has a value which is an int
+	ref has a value which is a string
+	alt has a value which is a string
+	freq has a value which is a float
+	feature_pos has a value which is a string
+	ref_aa has a value which is a string
+	ref_codon has a value which is a string
+	alt_aa has a value which is a string
+	alt_codon has a value which is a string
+
+
+=end text
+
+=item Description
+
+
+
+=back
+
+=cut
+
+sub annotate_subclade
+{
+    my($self, @args) = @_;
+
+# Authentication: none
+
+    if ((my $n = @args) != 1)
+    {
+        die "Invalid argument count for function annotate_subclade (received $n, expecting 1)";
+    }
+    {
+	my($genome_in) = @args;
+
+	my @_bad_arguments;
+        (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 1 \"genome_in\" (value was \"$genome_in\")");
+        if (@_bad_arguments) {
+	    my $msg = "Invalid arguments passed to annotate_subclade:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	    die $msg;
+	}
+    }
+
+    my $result = $self->{client}->call($self->{url}, $self->{headers}, {
+	method => "GenomeAnnotation.annotate_subclade",
+	params => \@args,
+    });
+    if ($result) {
+	if ($result->{error}) {
+	    my $msg = $result->{error}->{error} || $result->{error}->{message};
+	    $msg =  $self->{client}->json->encode($msg) if ref($msg);
+	    die "Error $result->{error}->{code} invoking annotate_subclade:\n$msg\n";
+	} else {
+	    return wantarray ? @{$result->{result}} : $result->{result}->[0];
+	}
+    } else {
+	die "Error invoking method annotate_subclade: " .  $self->{client}->status_line;
+    }
+}
+
+
+
+=head2 remove_genbank_features
+
+  $genome_out = $obj->remove_genbank_features($genome_in)
+
+=over 4
+
+=item Parameter and return types
+
+=begin html
+
+<pre>
+$genome_in is a genomeTO
+$genome_out is a genomeTO
+genomeTO is a reference to a hash where the following keys are defined:
+	id has a value which is a genome_id
+	scientific_name has a value which is a string
+	domain has a value which is a string
+	genetic_code has a value which is an int
+	source has a value which is a string
+	source_id has a value which is a string
+	taxonomy has a value which is a string
+	ncbi_taxonomy_id has a value which is an int
+	ncbi_lineage has a value which is a reference to a list where each element is a reference to a list containing 3 items:
+	0: (taxon_name) a string
+	1: (taxon_id) an int
+	2: (taxon_rank) a string
+
+	ncbi_genus has a value which is a string
+	ncbi_species has a value which is a string
+	owner has a value which is a string
+	quality has a value which is a genome_quality_measure
+	contigs has a value which is a reference to a list where each element is a contig
+	contigs_handle has a value which is a Handle
+	features has a value which is a reference to a list where each element is a feature
+	close_genomes has a value which is a reference to a list where each element is a close_genome
+	analysis_events has a value which is a reference to a list where each element is an analysis_event
+	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
+	classifications has a value which is a reference to a list where each element is a classifier
+	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
+	subsystems has a value which is a reference to a list where each element is a subsystem_data
+	job_data has a value which is a reference to a hash where the following keys are defined:
+	assembly has a value which is a job_statistics
+	annotation has a value which is a job_statistics
+
+	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	task_id has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is a string
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
+genome_id is a string
+genome_quality_measure is a reference to a hash where the following keys are defined:
+	frameshift_error_rate has a value which is a float
+	sequence_error_rate has a value which is a float
+	checkm_data has a value which is a reference to a hash where the key is a string and the value is a string
+	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
+	role_map has a value which is a reference to a hash where the key is a string and the value is a string
+	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+
+	coarse_consistency has a value which is a float
+	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
+	genome_metrics has a value which is a reference to a hash where the following keys are defined:
+	N50 has a value which is an int
+	N70 has a value which is an int
+	N90 has a value which is an int
+	L50 has a value which is an int
+	L70 has a value which is an int
+	L90 has a value which is an int
+	totlen has a value which is an int
+	complete has a value which is an int
+
+	genome_length has a value which is an int
+	gc_content has a value which is a float
+	chromosomes has a value which is an int
+	plasmids has a value which is an int
+	contigs has a value which is an int
+	contig_ambig_count has a value which is an int
+	contig_ambig_fraction has a value which is a float
+	contig_longest_ambig_run has a value which is an int
+	genome_status has a value which is a string
+	feature_summary has a value which is a reference to a hash where the following keys are defined:
+	cds has a value which is an int
+	partial_cds has a value which is an int
+	rRNA has a value which is an int
+	tRNA has a value which is an int
+	misc_RNA has a value which is an int
+	repeat_region has a value which is an int
+
+	protein_summary has a value which is a reference to a hash where the following keys are defined:
+	hypothetical has a value which is an int
+	function_assignment has a value which is an int
+	plfam_assignment has a value which is an int
+	pgfam_assignment has a value which is an int
+	ec_assignment has a value which is an int
+	go_assignment has a value which is an int
+	pathway_assignment has a value which is an int
+
+	specialty_gene_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	amr_genes has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (gene_name) a string
+	2: (function) a string
+	3: (amr_classification) a string
+
+	amr_gene_summary has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (amr_classification) a string
+	1: (gene_names) a reference to a list where each element is a string
+
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
+	cds_ratio has a value which is a float
+	hypothetical_cds_ratio has a value which is a float
+	partial_cds_ratio has a value which is a float
+	plfam_cds_ratio has a value which is a float
+	pgfam_cds_ratio has a value which is a float
+	genome_quality_flags has a value which is a reference to a list where each element is a string
+	genome_quality has a value which is a string
+feature_id is a string
+contig is a reference to a hash where the following keys are defined:
+	id has a value which is a contig_id
+	dna has a value which is a string
+	genetic_code has a value which is an int
+	cell_compartment has a value which is a string
+	replicon_type has a value which is a string
+	replicon_geometry has a value which is a string
+	complete has a value which is a bool
+	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
+contig_id is a string
+bool is an int
+genbank_locus is a reference to a hash where the following keys are defined:
+	accession has a value which is a reference to a list where each element is a string
+	comment has a value which is a reference to a list where each element is a string
+	date has a value which is a string
+	dblink has a value which is a reference to a list where each element is a string
+	dbsource has a value which is a reference to a list where each element is a string
+	definition has a value which is a string
+	division has a value which is a string
+	geometry has a value which is a string
+	gi has a value which is an int
+	keywords has a value which is a reference to a list where each element is a string
+	locus has a value which is a string
+	organism has a value which is a string
+	origin has a value which is a string
+	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	source has a value which is a string
+	taxonomy has a value which is a reference to a list where each element is a string
+	version has a value which is a reference to a list where each element is a string
+Handle is a reference to a hash where the following keys are defined:
+	file_name has a value which is a string
+	id has a value which is a string
+	type has a value which is a string
+	url has a value which is a string
+	remote_md5 has a value which is a string
+	remote_sha1 has a value which is a string
+feature is a reference to a hash where the following keys are defined:
+	id has a value which is a feature_id
+	location has a value which is a location
+	type has a value which is a feature_type
+	function has a value which is a string
+	function_id has a value which is a string
+	protein_translation has a value which is a string
+	aliases has a value which is a reference to a list where each element is a string
+	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (source) a string
+	1: (alias) a string
+
+	annotations has a value which is a reference to a list where each element is an annotation
+	quality has a value which is a feature_quality_measure
+	feature_creation_event has a value which is an analysis_event_id
+	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
+	similarity_associations has a value which is a reference to a list where each element is a similarity_association
+	proposed_functions has a value which is a reference to a list where each element is a proposed_function
+	genbank_type has a value which is a string
+	genbank_feature has a value which is a genbank_feature
+	ec_numbers has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	go_terms has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	pathways has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+location is a reference to a list where each element is a region_of_dna
+region_of_dna is a reference to a list containing 4 items:
+	0: a contig_id
+	1: (begin) an int
+	2: (strand) a string
+	3: (length) an int
+feature_type is a string
+annotation is a reference to a list containing 4 items:
+	0: (comment) a string
+	1: (annotator) a string
+	2: (annotation_time) a float
+	3: an analysis_event_id
+analysis_event_id is a string
+feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
+	truncated_begin has a value which is a bool
+	truncated_end has a value which is a bool
+	existence_confidence has a value which is a float
+	frameshifted has a value which is a bool
+	selenoprotein has a value which is a bool
+	pyrrolysylprotein has a value which is a bool
+	overlap_rules has a value which is a reference to a list where each element is a string
+	existence_priority has a value which is a float
+	hit_count has a value which is a float
+	weighted_hit_count has a value which is a float
+	genemark_score has a value which is a float
+protein_family_assignment is a reference to a list containing 4 items:
+	0: (db) a string
+	1: (id) a string
+	2: (function) a string
+	3: (db_version) a string
+similarity_association is a reference to a list containing 6 items:
+	0: (source) a string
+	1: (source_id) a string
+	2: (query_coverage) a float
+	3: (subject_coverage) a float
+	4: (identity) a float
+	5: (e_value) a float
+proposed_function is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	function has a value which is a string
+	user has a value which is a string
+	score has a value which is a float
+	event_id has a value which is an analysis_event_id
+	timestamp has a value which is an int
+genbank_feature is a reference to a hash where the following keys are defined:
+	genbank_type has a value which is a string
+	genbank_location has a value which is a string
+	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+close_genome is a reference to a hash where the following keys are defined:
+	genome has a value which is a genome_id
+	genome_name has a value which is a string
+	closeness_measure has a value which is a float
+	analysis_method has a value which is a string
+analysis_event is a reference to a hash where the following keys are defined:
+	id has a value which is an analysis_event_id
+	tool_name has a value which is a string
+	execution_time has a value which is a float
+	parameters has a value which is a reference to a list where each element is a string
+	hostname has a value which is a string
+strain_type is a reference to a hash where the following keys are defined:
+	typing_method has a value which is a string
+	database has a value which is a string
+	tag has a value which is a string
+	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
+classifier is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	version has a value which is a string
+	description has a value which is a string
+	comment has a value which is a string
+	antibiotics has a value which is a reference to a list where each element is a string
+	accuracy has a value which is a float
+	area_under_roc_curve has a value which is a float
+	f1_score has a value which is a float
+	sources has a value which is a string
+	cumulative_adaboost_value has a value which is a float
+	sensitivity has a value which is a string
+	event_id has a value which is an analysis_event_id
+	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (alpha) a float
+	2: (round) an int
+	3: (function) a string
+
+amr_assertion is a reference to a hash where the following keys are defined:
+	antibiotic_name has a value which is a string
+	model_antibiotic_name has a value which is a string
+	evidence has a value which is a string
+	computational_method has a value which is a string
+	computational_method_performance has a value which is a string
+	computational_method_version has a value which is a string
+	resistant_phenotype has a value which is a string
+	measurement_unit has a value which is a string
+	measurement_value has a value which is a string
+	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
+subsystem_data is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	classification has a value which is a reference to a list containing 3 items:
+	0: (superclass) a string
+	1: (class) a string
+	2: (subclass) a string
+
+	variant_code has a value which is a string
+	role_bindings has a value which is a reference to a list where each element is a role_binding
+	event_id has a value which is an analysis_event_id
+role_binding is a reference to a hash where the following keys are defined:
+	role_id has a value which is a string
+	features has a value which is a reference to a list where each element is a feature_id
+job_statistics is a reference to a hash where the following keys are defined:
+	job_id has a value which is a string
+	start_time has a value which is a string
+	completion_time has a value which is a string
+	elapsed_time has a value which is a float
+	app_name has a value which is a string
+	parameters has a value which is a reference to a hash where the key is a string and the value is a string
+	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+computed_variant is a reference to a hash where the following keys are defined:
+	tool has a value which is a string
+	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
+	variants has a value which is a reference to a list where each element is a variant
+	lineage has a value which is a string
+	probability has a value which is a float
+	status has a value which is a string
+	notes has a value which is a string
+variant is a string
+snp is a reference to a hash where the following keys are defined:
+	pos has a value which is an int
+	ref has a value which is a string
+	alt has a value which is a string
+	freq has a value which is a float
+	feature_pos has a value which is a string
+	ref_aa has a value which is a string
+	ref_codon has a value which is a string
+	alt_aa has a value which is a string
+	alt_codon has a value which is a string
+
+</pre>
+
+=end html
+
+=begin text
+
+$genome_in is a genomeTO
+$genome_out is a genomeTO
+genomeTO is a reference to a hash where the following keys are defined:
+	id has a value which is a genome_id
+	scientific_name has a value which is a string
+	domain has a value which is a string
+	genetic_code has a value which is an int
+	source has a value which is a string
+	source_id has a value which is a string
+	taxonomy has a value which is a string
+	ncbi_taxonomy_id has a value which is an int
+	ncbi_lineage has a value which is a reference to a list where each element is a reference to a list containing 3 items:
+	0: (taxon_name) a string
+	1: (taxon_id) an int
+	2: (taxon_rank) a string
+
+	ncbi_genus has a value which is a string
+	ncbi_species has a value which is a string
+	owner has a value which is a string
+	quality has a value which is a genome_quality_measure
+	contigs has a value which is a reference to a list where each element is a contig
+	contigs_handle has a value which is a Handle
+	features has a value which is a reference to a list where each element is a feature
+	close_genomes has a value which is a reference to a list where each element is a close_genome
+	analysis_events has a value which is a reference to a list where each element is an analysis_event
+	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
+	classifications has a value which is a reference to a list where each element is a classifier
+	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
+	subsystems has a value which is a reference to a list where each element is a subsystem_data
+	job_data has a value which is a reference to a hash where the following keys are defined:
+	assembly has a value which is a job_statistics
+	annotation has a value which is a job_statistics
+
+	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	task_id has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is a string
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
+genome_id is a string
+genome_quality_measure is a reference to a hash where the following keys are defined:
+	frameshift_error_rate has a value which is a float
+	sequence_error_rate has a value which is a float
+	checkm_data has a value which is a reference to a hash where the key is a string and the value is a string
+	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
+	role_map has a value which is a reference to a hash where the key is a string and the value is a string
+	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+
+	coarse_consistency has a value which is a float
+	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
+	genome_metrics has a value which is a reference to a hash where the following keys are defined:
+	N50 has a value which is an int
+	N70 has a value which is an int
+	N90 has a value which is an int
+	L50 has a value which is an int
+	L70 has a value which is an int
+	L90 has a value which is an int
+	totlen has a value which is an int
+	complete has a value which is an int
+
+	genome_length has a value which is an int
+	gc_content has a value which is a float
+	chromosomes has a value which is an int
+	plasmids has a value which is an int
+	contigs has a value which is an int
+	contig_ambig_count has a value which is an int
+	contig_ambig_fraction has a value which is a float
+	contig_longest_ambig_run has a value which is an int
+	genome_status has a value which is a string
+	feature_summary has a value which is a reference to a hash where the following keys are defined:
+	cds has a value which is an int
+	partial_cds has a value which is an int
+	rRNA has a value which is an int
+	tRNA has a value which is an int
+	misc_RNA has a value which is an int
+	repeat_region has a value which is an int
+
+	protein_summary has a value which is a reference to a hash where the following keys are defined:
+	hypothetical has a value which is an int
+	function_assignment has a value which is an int
+	plfam_assignment has a value which is an int
+	pgfam_assignment has a value which is an int
+	ec_assignment has a value which is an int
+	go_assignment has a value which is an int
+	pathway_assignment has a value which is an int
+
+	specialty_gene_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	amr_genes has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (gene_name) a string
+	2: (function) a string
+	3: (amr_classification) a string
+
+	amr_gene_summary has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (amr_classification) a string
+	1: (gene_names) a reference to a list where each element is a string
+
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
+	cds_ratio has a value which is a float
+	hypothetical_cds_ratio has a value which is a float
+	partial_cds_ratio has a value which is a float
+	plfam_cds_ratio has a value which is a float
+	pgfam_cds_ratio has a value which is a float
+	genome_quality_flags has a value which is a reference to a list where each element is a string
+	genome_quality has a value which is a string
+feature_id is a string
+contig is a reference to a hash where the following keys are defined:
+	id has a value which is a contig_id
+	dna has a value which is a string
+	genetic_code has a value which is an int
+	cell_compartment has a value which is a string
+	replicon_type has a value which is a string
+	replicon_geometry has a value which is a string
+	complete has a value which is a bool
+	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
+contig_id is a string
+bool is an int
+genbank_locus is a reference to a hash where the following keys are defined:
+	accession has a value which is a reference to a list where each element is a string
+	comment has a value which is a reference to a list where each element is a string
+	date has a value which is a string
+	dblink has a value which is a reference to a list where each element is a string
+	dbsource has a value which is a reference to a list where each element is a string
+	definition has a value which is a string
+	division has a value which is a string
+	geometry has a value which is a string
+	gi has a value which is an int
+	keywords has a value which is a reference to a list where each element is a string
+	locus has a value which is a string
+	organism has a value which is a string
+	origin has a value which is a string
+	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	source has a value which is a string
+	taxonomy has a value which is a reference to a list where each element is a string
+	version has a value which is a reference to a list where each element is a string
+Handle is a reference to a hash where the following keys are defined:
+	file_name has a value which is a string
+	id has a value which is a string
+	type has a value which is a string
+	url has a value which is a string
+	remote_md5 has a value which is a string
+	remote_sha1 has a value which is a string
+feature is a reference to a hash where the following keys are defined:
+	id has a value which is a feature_id
+	location has a value which is a location
+	type has a value which is a feature_type
+	function has a value which is a string
+	function_id has a value which is a string
+	protein_translation has a value which is a string
+	aliases has a value which is a reference to a list where each element is a string
+	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (source) a string
+	1: (alias) a string
+
+	annotations has a value which is a reference to a list where each element is an annotation
+	quality has a value which is a feature_quality_measure
+	feature_creation_event has a value which is an analysis_event_id
+	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
+	similarity_associations has a value which is a reference to a list where each element is a similarity_association
+	proposed_functions has a value which is a reference to a list where each element is a proposed_function
+	genbank_type has a value which is a string
+	genbank_feature has a value which is a genbank_feature
+	ec_numbers has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	go_terms has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	pathways has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+location is a reference to a list where each element is a region_of_dna
+region_of_dna is a reference to a list containing 4 items:
+	0: a contig_id
+	1: (begin) an int
+	2: (strand) a string
+	3: (length) an int
+feature_type is a string
+annotation is a reference to a list containing 4 items:
+	0: (comment) a string
+	1: (annotator) a string
+	2: (annotation_time) a float
+	3: an analysis_event_id
+analysis_event_id is a string
+feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
+	truncated_begin has a value which is a bool
+	truncated_end has a value which is a bool
+	existence_confidence has a value which is a float
+	frameshifted has a value which is a bool
+	selenoprotein has a value which is a bool
+	pyrrolysylprotein has a value which is a bool
+	overlap_rules has a value which is a reference to a list where each element is a string
+	existence_priority has a value which is a float
+	hit_count has a value which is a float
+	weighted_hit_count has a value which is a float
+	genemark_score has a value which is a float
+protein_family_assignment is a reference to a list containing 4 items:
+	0: (db) a string
+	1: (id) a string
+	2: (function) a string
+	3: (db_version) a string
+similarity_association is a reference to a list containing 6 items:
+	0: (source) a string
+	1: (source_id) a string
+	2: (query_coverage) a float
+	3: (subject_coverage) a float
+	4: (identity) a float
+	5: (e_value) a float
+proposed_function is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	function has a value which is a string
+	user has a value which is a string
+	score has a value which is a float
+	event_id has a value which is an analysis_event_id
+	timestamp has a value which is an int
+genbank_feature is a reference to a hash where the following keys are defined:
+	genbank_type has a value which is a string
+	genbank_location has a value which is a string
+	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+close_genome is a reference to a hash where the following keys are defined:
+	genome has a value which is a genome_id
+	genome_name has a value which is a string
+	closeness_measure has a value which is a float
+	analysis_method has a value which is a string
+analysis_event is a reference to a hash where the following keys are defined:
+	id has a value which is an analysis_event_id
+	tool_name has a value which is a string
+	execution_time has a value which is a float
+	parameters has a value which is a reference to a list where each element is a string
+	hostname has a value which is a string
+strain_type is a reference to a hash where the following keys are defined:
+	typing_method has a value which is a string
+	database has a value which is a string
+	tag has a value which is a string
+	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
+classifier is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	version has a value which is a string
+	description has a value which is a string
+	comment has a value which is a string
+	antibiotics has a value which is a reference to a list where each element is a string
+	accuracy has a value which is a float
+	area_under_roc_curve has a value which is a float
+	f1_score has a value which is a float
+	sources has a value which is a string
+	cumulative_adaboost_value has a value which is a float
+	sensitivity has a value which is a string
+	event_id has a value which is an analysis_event_id
+	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (alpha) a float
+	2: (round) an int
+	3: (function) a string
+
+amr_assertion is a reference to a hash where the following keys are defined:
+	antibiotic_name has a value which is a string
+	model_antibiotic_name has a value which is a string
+	evidence has a value which is a string
+	computational_method has a value which is a string
+	computational_method_performance has a value which is a string
+	computational_method_version has a value which is a string
+	resistant_phenotype has a value which is a string
+	measurement_unit has a value which is a string
+	measurement_value has a value which is a string
+	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -41832,8 +46516,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -42073,6 +46759,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -42103,6 +46802,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -42177,8 +46889,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -42418,6 +47132,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -42448,6 +47175,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -42578,8 +47318,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -42819,6 +47561,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -42849,6 +47604,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -42923,8 +47691,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -43164,6 +47934,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -43194,6 +47977,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -43287,9 +48083,9 @@ sub annotate_strain_type_MLST_v2
 
 
 
-=head2 compute_cdd
+=head2 annotate_strain_type_cgMLST
 
-  $return = $obj->compute_cdd($genome_in)
+  $genome_out = $obj->annotate_strain_type_cgMLST($genome_in)
 
 =over 4
 
@@ -43299,7 +48095,7 @@ sub annotate_strain_type_MLST_v2
 
 <pre>
 $genome_in is a genomeTO
-$return is a reference to a list where each element is a cdd_hit
+$genome_out is a genomeTO
 genomeTO is a reference to a hash where the following keys are defined:
 	id has a value which is a genome_id
 	scientific_name has a value which is a string
@@ -43324,8 +48120,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -43565,6 +48363,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -43595,6 +48406,821 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
+subsystem_data is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	classification has a value which is a reference to a list containing 3 items:
+	0: (superclass) a string
+	1: (class) a string
+	2: (subclass) a string
+
+	variant_code has a value which is a string
+	role_bindings has a value which is a reference to a list where each element is a role_binding
+	event_id has a value which is an analysis_event_id
+role_binding is a reference to a hash where the following keys are defined:
+	role_id has a value which is a string
+	features has a value which is a reference to a list where each element is a feature_id
+job_statistics is a reference to a hash where the following keys are defined:
+	job_id has a value which is a string
+	start_time has a value which is a string
+	completion_time has a value which is a string
+	elapsed_time has a value which is a float
+	app_name has a value which is a string
+	parameters has a value which is a reference to a hash where the key is a string and the value is a string
+	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+computed_variant is a reference to a hash where the following keys are defined:
+	tool has a value which is a string
+	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
+	variants has a value which is a reference to a list where each element is a variant
+	lineage has a value which is a string
+	probability has a value which is a float
+	status has a value which is a string
+	notes has a value which is a string
+variant is a string
+snp is a reference to a hash where the following keys are defined:
+	pos has a value which is an int
+	ref has a value which is a string
+	alt has a value which is a string
+	freq has a value which is a float
+	feature_pos has a value which is a string
+	ref_aa has a value which is a string
+	ref_codon has a value which is a string
+	alt_aa has a value which is a string
+	alt_codon has a value which is a string
+
+</pre>
+
+=end html
+
+=begin text
+
+$genome_in is a genomeTO
+$genome_out is a genomeTO
+genomeTO is a reference to a hash where the following keys are defined:
+	id has a value which is a genome_id
+	scientific_name has a value which is a string
+	domain has a value which is a string
+	genetic_code has a value which is an int
+	source has a value which is a string
+	source_id has a value which is a string
+	taxonomy has a value which is a string
+	ncbi_taxonomy_id has a value which is an int
+	ncbi_lineage has a value which is a reference to a list where each element is a reference to a list containing 3 items:
+	0: (taxon_name) a string
+	1: (taxon_id) an int
+	2: (taxon_rank) a string
+
+	ncbi_genus has a value which is a string
+	ncbi_species has a value which is a string
+	owner has a value which is a string
+	quality has a value which is a genome_quality_measure
+	contigs has a value which is a reference to a list where each element is a contig
+	contigs_handle has a value which is a Handle
+	features has a value which is a reference to a list where each element is a feature
+	close_genomes has a value which is a reference to a list where each element is a close_genome
+	analysis_events has a value which is a reference to a list where each element is an analysis_event
+	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
+	classifications has a value which is a reference to a list where each element is a classifier
+	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
+	subsystems has a value which is a reference to a list where each element is a subsystem_data
+	job_data has a value which is a reference to a hash where the following keys are defined:
+	assembly has a value which is a job_statistics
+	annotation has a value which is a job_statistics
+
+	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	task_id has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is a string
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
+genome_id is a string
+genome_quality_measure is a reference to a hash where the following keys are defined:
+	frameshift_error_rate has a value which is a float
+	sequence_error_rate has a value which is a float
+	checkm_data has a value which is a reference to a hash where the key is a string and the value is a string
+	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
+	role_map has a value which is a reference to a hash where the key is a string and the value is a string
+	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+
+	coarse_consistency has a value which is a float
+	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
+	genome_metrics has a value which is a reference to a hash where the following keys are defined:
+	N50 has a value which is an int
+	N70 has a value which is an int
+	N90 has a value which is an int
+	L50 has a value which is an int
+	L70 has a value which is an int
+	L90 has a value which is an int
+	totlen has a value which is an int
+	complete has a value which is an int
+
+	genome_length has a value which is an int
+	gc_content has a value which is a float
+	chromosomes has a value which is an int
+	plasmids has a value which is an int
+	contigs has a value which is an int
+	contig_ambig_count has a value which is an int
+	contig_ambig_fraction has a value which is a float
+	contig_longest_ambig_run has a value which is an int
+	genome_status has a value which is a string
+	feature_summary has a value which is a reference to a hash where the following keys are defined:
+	cds has a value which is an int
+	partial_cds has a value which is an int
+	rRNA has a value which is an int
+	tRNA has a value which is an int
+	misc_RNA has a value which is an int
+	repeat_region has a value which is an int
+
+	protein_summary has a value which is a reference to a hash where the following keys are defined:
+	hypothetical has a value which is an int
+	function_assignment has a value which is an int
+	plfam_assignment has a value which is an int
+	pgfam_assignment has a value which is an int
+	ec_assignment has a value which is an int
+	go_assignment has a value which is an int
+	pathway_assignment has a value which is an int
+
+	specialty_gene_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	amr_genes has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (gene_name) a string
+	2: (function) a string
+	3: (amr_classification) a string
+
+	amr_gene_summary has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (amr_classification) a string
+	1: (gene_names) a reference to a list where each element is a string
+
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
+	cds_ratio has a value which is a float
+	hypothetical_cds_ratio has a value which is a float
+	partial_cds_ratio has a value which is a float
+	plfam_cds_ratio has a value which is a float
+	pgfam_cds_ratio has a value which is a float
+	genome_quality_flags has a value which is a reference to a list where each element is a string
+	genome_quality has a value which is a string
+feature_id is a string
+contig is a reference to a hash where the following keys are defined:
+	id has a value which is a contig_id
+	dna has a value which is a string
+	genetic_code has a value which is an int
+	cell_compartment has a value which is a string
+	replicon_type has a value which is a string
+	replicon_geometry has a value which is a string
+	complete has a value which is a bool
+	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
+contig_id is a string
+bool is an int
+genbank_locus is a reference to a hash where the following keys are defined:
+	accession has a value which is a reference to a list where each element is a string
+	comment has a value which is a reference to a list where each element is a string
+	date has a value which is a string
+	dblink has a value which is a reference to a list where each element is a string
+	dbsource has a value which is a reference to a list where each element is a string
+	definition has a value which is a string
+	division has a value which is a string
+	geometry has a value which is a string
+	gi has a value which is an int
+	keywords has a value which is a reference to a list where each element is a string
+	locus has a value which is a string
+	organism has a value which is a string
+	origin has a value which is a string
+	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	source has a value which is a string
+	taxonomy has a value which is a reference to a list where each element is a string
+	version has a value which is a reference to a list where each element is a string
+Handle is a reference to a hash where the following keys are defined:
+	file_name has a value which is a string
+	id has a value which is a string
+	type has a value which is a string
+	url has a value which is a string
+	remote_md5 has a value which is a string
+	remote_sha1 has a value which is a string
+feature is a reference to a hash where the following keys are defined:
+	id has a value which is a feature_id
+	location has a value which is a location
+	type has a value which is a feature_type
+	function has a value which is a string
+	function_id has a value which is a string
+	protein_translation has a value which is a string
+	aliases has a value which is a reference to a list where each element is a string
+	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (source) a string
+	1: (alias) a string
+
+	annotations has a value which is a reference to a list where each element is an annotation
+	quality has a value which is a feature_quality_measure
+	feature_creation_event has a value which is an analysis_event_id
+	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
+	similarity_associations has a value which is a reference to a list where each element is a similarity_association
+	proposed_functions has a value which is a reference to a list where each element is a proposed_function
+	genbank_type has a value which is a string
+	genbank_feature has a value which is a genbank_feature
+	ec_numbers has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	go_terms has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	pathways has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+location is a reference to a list where each element is a region_of_dna
+region_of_dna is a reference to a list containing 4 items:
+	0: a contig_id
+	1: (begin) an int
+	2: (strand) a string
+	3: (length) an int
+feature_type is a string
+annotation is a reference to a list containing 4 items:
+	0: (comment) a string
+	1: (annotator) a string
+	2: (annotation_time) a float
+	3: an analysis_event_id
+analysis_event_id is a string
+feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
+	truncated_begin has a value which is a bool
+	truncated_end has a value which is a bool
+	existence_confidence has a value which is a float
+	frameshifted has a value which is a bool
+	selenoprotein has a value which is a bool
+	pyrrolysylprotein has a value which is a bool
+	overlap_rules has a value which is a reference to a list where each element is a string
+	existence_priority has a value which is a float
+	hit_count has a value which is a float
+	weighted_hit_count has a value which is a float
+	genemark_score has a value which is a float
+protein_family_assignment is a reference to a list containing 4 items:
+	0: (db) a string
+	1: (id) a string
+	2: (function) a string
+	3: (db_version) a string
+similarity_association is a reference to a list containing 6 items:
+	0: (source) a string
+	1: (source_id) a string
+	2: (query_coverage) a float
+	3: (subject_coverage) a float
+	4: (identity) a float
+	5: (e_value) a float
+proposed_function is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	function has a value which is a string
+	user has a value which is a string
+	score has a value which is a float
+	event_id has a value which is an analysis_event_id
+	timestamp has a value which is an int
+genbank_feature is a reference to a hash where the following keys are defined:
+	genbank_type has a value which is a string
+	genbank_location has a value which is a string
+	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+close_genome is a reference to a hash where the following keys are defined:
+	genome has a value which is a genome_id
+	genome_name has a value which is a string
+	closeness_measure has a value which is a float
+	analysis_method has a value which is a string
+analysis_event is a reference to a hash where the following keys are defined:
+	id has a value which is an analysis_event_id
+	tool_name has a value which is a string
+	execution_time has a value which is a float
+	parameters has a value which is a reference to a list where each element is a string
+	hostname has a value which is a string
+strain_type is a reference to a hash where the following keys are defined:
+	typing_method has a value which is a string
+	database has a value which is a string
+	tag has a value which is a string
+	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
+classifier is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	version has a value which is a string
+	description has a value which is a string
+	comment has a value which is a string
+	antibiotics has a value which is a reference to a list where each element is a string
+	accuracy has a value which is a float
+	area_under_roc_curve has a value which is a float
+	f1_score has a value which is a float
+	sources has a value which is a string
+	cumulative_adaboost_value has a value which is a float
+	sensitivity has a value which is a string
+	event_id has a value which is an analysis_event_id
+	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (alpha) a float
+	2: (round) an int
+	3: (function) a string
+
+amr_assertion is a reference to a hash where the following keys are defined:
+	antibiotic_name has a value which is a string
+	model_antibiotic_name has a value which is a string
+	evidence has a value which is a string
+	computational_method has a value which is a string
+	computational_method_performance has a value which is a string
+	computational_method_version has a value which is a string
+	resistant_phenotype has a value which is a string
+	measurement_unit has a value which is a string
+	measurement_value has a value which is a string
+	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
+subsystem_data is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	classification has a value which is a reference to a list containing 3 items:
+	0: (superclass) a string
+	1: (class) a string
+	2: (subclass) a string
+
+	variant_code has a value which is a string
+	role_bindings has a value which is a reference to a list where each element is a role_binding
+	event_id has a value which is an analysis_event_id
+role_binding is a reference to a hash where the following keys are defined:
+	role_id has a value which is a string
+	features has a value which is a reference to a list where each element is a feature_id
+job_statistics is a reference to a hash where the following keys are defined:
+	job_id has a value which is a string
+	start_time has a value which is a string
+	completion_time has a value which is a string
+	elapsed_time has a value which is a float
+	app_name has a value which is a string
+	parameters has a value which is a reference to a hash where the key is a string and the value is a string
+	attributes has a value which is a reference to a hash where the key is a string and the value is a string
+computed_variant is a reference to a hash where the following keys are defined:
+	tool has a value which is a string
+	tool_metadata has a value which is a reference to a hash where the key is a string and the value is a string
+	tool_output has a value which is a reference to a hash where the key is a string and the value is a string
+	variants has a value which is a reference to a list where each element is a variant
+	lineage has a value which is a string
+	probability has a value which is a float
+	status has a value which is a string
+	notes has a value which is a string
+variant is a string
+snp is a reference to a hash where the following keys are defined:
+	pos has a value which is an int
+	ref has a value which is a string
+	alt has a value which is a string
+	freq has a value which is a float
+	feature_pos has a value which is a string
+	ref_aa has a value which is a string
+	ref_codon has a value which is a string
+	alt_aa has a value which is a string
+	alt_codon has a value which is a string
+
+
+=end text
+
+=item Description
+
+
+
+=back
+
+=cut
+
+sub annotate_strain_type_cgMLST
+{
+    my($self, @args) = @_;
+
+# Authentication: none
+
+    if ((my $n = @args) != 1)
+    {
+        die "Invalid argument count for function annotate_strain_type_cgMLST (received $n, expecting 1)";
+    }
+    {
+	my($genome_in) = @args;
+
+	my @_bad_arguments;
+        (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument 1 \"genome_in\" (value was \"$genome_in\")");
+        if (@_bad_arguments) {
+	    my $msg = "Invalid arguments passed to annotate_strain_type_cgMLST:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	    die $msg;
+	}
+    }
+
+    my $result = $self->{client}->call($self->{url}, $self->{headers}, {
+	method => "GenomeAnnotation.annotate_strain_type_cgMLST",
+	params => \@args,
+    });
+    if ($result) {
+	if ($result->{error}) {
+	    my $msg = $result->{error}->{error} || $result->{error}->{message};
+	    $msg =  $self->{client}->json->encode($msg) if ref($msg);
+	    die "Error $result->{error}->{code} invoking annotate_strain_type_cgMLST:\n$msg\n";
+	} else {
+	    return wantarray ? @{$result->{result}} : $result->{result}->[0];
+	}
+    } else {
+	die "Error invoking method annotate_strain_type_cgMLST: " .  $self->{client}->status_line;
+    }
+}
+
+
+
+=head2 compute_cdd
+
+  $return = $obj->compute_cdd($genome_in)
+
+=over 4
+
+=item Parameter and return types
+
+=begin html
+
+<pre>
+$genome_in is a genomeTO
+$return is a reference to a list where each element is a cdd_hit
+genomeTO is a reference to a hash where the following keys are defined:
+	id has a value which is a genome_id
+	scientific_name has a value which is a string
+	domain has a value which is a string
+	genetic_code has a value which is an int
+	source has a value which is a string
+	source_id has a value which is a string
+	taxonomy has a value which is a string
+	ncbi_taxonomy_id has a value which is an int
+	ncbi_lineage has a value which is a reference to a list where each element is a reference to a list containing 3 items:
+	0: (taxon_name) a string
+	1: (taxon_id) an int
+	2: (taxon_rank) a string
+
+	ncbi_genus has a value which is a string
+	ncbi_species has a value which is a string
+	owner has a value which is a string
+	quality has a value which is a genome_quality_measure
+	contigs has a value which is a reference to a list where each element is a contig
+	contigs_handle has a value which is a Handle
+	features has a value which is a reference to a list where each element is a feature
+	close_genomes has a value which is a reference to a list where each element is a close_genome
+	analysis_events has a value which is a reference to a list where each element is an analysis_event
+	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
+	classifications has a value which is a reference to a list where each element is a classifier
+	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
+	subsystems has a value which is a reference to a list where each element is a subsystem_data
+	job_data has a value which is a reference to a hash where the following keys are defined:
+	assembly has a value which is a job_statistics
+	annotation has a value which is a job_statistics
+
+	sra_metadata has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	computed_variants has a value which is a reference to a list where each element is a computed_variant
+	job_metadata has a value which is a reference to a hash where the following keys are defined:
+	user has a value which is a string
+	job_start has a value which is a float
+	job_end has a value which is a float
+	job_elapsed has a value which is a float
+	hostname has a value which is a string
+	container has a value which is a string
+	task_id has a value which is a string
+	slurm_jobname has a value which is a string
+	slurm_jobid has a value which is a string
+	workflow has a value which is a freeform
+	params has a value which is a freeform
+
+genome_id is a string
+genome_quality_measure is a reference to a hash where the following keys are defined:
+	frameshift_error_rate has a value which is a float
+	sequence_error_rate has a value which is a float
+	checkm_data has a value which is a reference to a hash where the key is a string and the value is a string
+	problematic_roles_report has a value which is a reference to a hash where the following keys are defined:
+	role_map has a value which is a reference to a hash where the key is a string and the value is a string
+	role_fids has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+	consistency_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+	completeness_roles has a value which is a reference to a hash where the key is a string and the value is a reference to a list containing 2 items:
+	0: (predicted) an int
+	1: (actual) an int
+
+
+	coarse_consistency has a value which is a float
+	fine_consistency has a value which is a float
+	completeness has a value which is a float
+	contamination has a value which is a float
+	completeness_group has a value which is a string
+	genome_metrics has a value which is a reference to a hash where the following keys are defined:
+	N50 has a value which is an int
+	N70 has a value which is an int
+	N90 has a value which is an int
+	L50 has a value which is an int
+	L70 has a value which is an int
+	L90 has a value which is an int
+	totlen has a value which is an int
+	complete has a value which is an int
+
+	genome_length has a value which is an int
+	gc_content has a value which is a float
+	chromosomes has a value which is an int
+	plasmids has a value which is an int
+	contigs has a value which is an int
+	contig_ambig_count has a value which is an int
+	contig_ambig_fraction has a value which is a float
+	contig_longest_ambig_run has a value which is an int
+	genome_status has a value which is a string
+	feature_summary has a value which is a reference to a hash where the following keys are defined:
+	cds has a value which is an int
+	partial_cds has a value which is an int
+	rRNA has a value which is an int
+	tRNA has a value which is an int
+	misc_RNA has a value which is an int
+	repeat_region has a value which is an int
+
+	protein_summary has a value which is a reference to a hash where the following keys are defined:
+	hypothetical has a value which is an int
+	function_assignment has a value which is an int
+	plfam_assignment has a value which is an int
+	pgfam_assignment has a value which is an int
+	ec_assignment has a value which is an int
+	go_assignment has a value which is an int
+	pathway_assignment has a value which is an int
+
+	specialty_gene_summary has a value which is a reference to a hash where the key is a string and the value is an int
+	amr_genes has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (gene_name) a string
+	2: (function) a string
+	3: (amr_classification) a string
+
+	amr_gene_summary has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (amr_classification) a string
+	1: (gene_names) a reference to a list where each element is a string
+
+	subsystem_summary has a value which is a reference to a hash where the key is a string and the value is a reference to a hash where the following keys are defined:
+	genes has a value which is an int
+	subsystems has a value which is an int
+
+	cds_ratio has a value which is a float
+	hypothetical_cds_ratio has a value which is a float
+	partial_cds_ratio has a value which is a float
+	plfam_cds_ratio has a value which is a float
+	pgfam_cds_ratio has a value which is a float
+	genome_quality_flags has a value which is a reference to a list where each element is a string
+	genome_quality has a value which is a string
+feature_id is a string
+contig is a reference to a hash where the following keys are defined:
+	id has a value which is a contig_id
+	dna has a value which is a string
+	genetic_code has a value which is an int
+	cell_compartment has a value which is a string
+	replicon_type has a value which is a string
+	replicon_geometry has a value which is a string
+	complete has a value which is a bool
+	genbank_locus has a value which is a genbank_locus
+	original_id has a value which is a string
+	contig_quality has a value which is a string
+	contig_quality_flags has a value which is a reference to a list where each element is a string
+contig_id is a string
+bool is an int
+genbank_locus is a reference to a hash where the following keys are defined:
+	accession has a value which is a reference to a list where each element is a string
+	comment has a value which is a reference to a list where each element is a string
+	date has a value which is a string
+	dblink has a value which is a reference to a list where each element is a string
+	dbsource has a value which is a reference to a list where each element is a string
+	definition has a value which is a string
+	division has a value which is a string
+	geometry has a value which is a string
+	gi has a value which is an int
+	keywords has a value which is a reference to a list where each element is a string
+	locus has a value which is a string
+	organism has a value which is a string
+	origin has a value which is a string
+	references has a value which is a reference to a list where each element is a reference to a hash where the key is a string and the value is a string
+	source has a value which is a string
+	taxonomy has a value which is a reference to a list where each element is a string
+	version has a value which is a reference to a list where each element is a string
+Handle is a reference to a hash where the following keys are defined:
+	file_name has a value which is a string
+	id has a value which is a string
+	type has a value which is a string
+	url has a value which is a string
+	remote_md5 has a value which is a string
+	remote_sha1 has a value which is a string
+feature is a reference to a hash where the following keys are defined:
+	id has a value which is a feature_id
+	location has a value which is a location
+	type has a value which is a feature_type
+	function has a value which is a string
+	function_id has a value which is a string
+	protein_translation has a value which is a string
+	aliases has a value which is a reference to a list where each element is a string
+	alias_pairs has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (source) a string
+	1: (alias) a string
+
+	annotations has a value which is a reference to a list where each element is an annotation
+	quality has a value which is a feature_quality_measure
+	feature_creation_event has a value which is an analysis_event_id
+	family_assignments has a value which is a reference to a list where each element is a protein_family_assignment
+	similarity_associations has a value which is a reference to a list where each element is a similarity_association
+	proposed_functions has a value which is a reference to a list where each element is a proposed_function
+	genbank_type has a value which is a string
+	genbank_feature has a value which is a genbank_feature
+	ec_numbers has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	go_terms has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+	pathways has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (id) a string
+	1: (description) a string
+
+location is a reference to a list where each element is a region_of_dna
+region_of_dna is a reference to a list containing 4 items:
+	0: a contig_id
+	1: (begin) an int
+	2: (strand) a string
+	3: (length) an int
+feature_type is a string
+annotation is a reference to a list containing 4 items:
+	0: (comment) a string
+	1: (annotator) a string
+	2: (annotation_time) a float
+	3: an analysis_event_id
+analysis_event_id is a string
+feature_quality_measure is a reference to a hash where the following keys are defined:
+	feature_quality has a value which is a string
+	feature_quality_flags has a value which is a reference to a list where each element is a string
+	truncated has a value which is a bool
+	truncated_begin has a value which is a bool
+	truncated_end has a value which is a bool
+	existence_confidence has a value which is a float
+	frameshifted has a value which is a bool
+	selenoprotein has a value which is a bool
+	pyrrolysylprotein has a value which is a bool
+	overlap_rules has a value which is a reference to a list where each element is a string
+	existence_priority has a value which is a float
+	hit_count has a value which is a float
+	weighted_hit_count has a value which is a float
+	genemark_score has a value which is a float
+protein_family_assignment is a reference to a list containing 4 items:
+	0: (db) a string
+	1: (id) a string
+	2: (function) a string
+	3: (db_version) a string
+similarity_association is a reference to a list containing 6 items:
+	0: (source) a string
+	1: (source_id) a string
+	2: (query_coverage) a float
+	3: (subject_coverage) a float
+	4: (identity) a float
+	5: (e_value) a float
+proposed_function is a reference to a hash where the following keys are defined:
+	id has a value which is a string
+	function has a value which is a string
+	user has a value which is a string
+	score has a value which is a float
+	event_id has a value which is an analysis_event_id
+	timestamp has a value which is an int
+genbank_feature is a reference to a hash where the following keys are defined:
+	genbank_type has a value which is a string
+	genbank_location has a value which is a string
+	values has a value which is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
+close_genome is a reference to a hash where the following keys are defined:
+	genome has a value which is a genome_id
+	genome_name has a value which is a string
+	closeness_measure has a value which is a float
+	analysis_method has a value which is a string
+analysis_event is a reference to a hash where the following keys are defined:
+	id has a value which is an analysis_event_id
+	tool_name has a value which is a string
+	execution_time has a value which is a float
+	parameters has a value which is a reference to a list where each element is a string
+	hostname has a value which is a string
+strain_type is a reference to a hash where the following keys are defined:
+	typing_method has a value which is a string
+	database has a value which is a string
+	tag has a value which is a string
+	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
+classifier is a reference to a hash where the following keys are defined:
+	name has a value which is a string
+	version has a value which is a string
+	description has a value which is a string
+	comment has a value which is a string
+	antibiotics has a value which is a reference to a list where each element is a string
+	accuracy has a value which is a float
+	area_under_roc_curve has a value which is a float
+	f1_score has a value which is a float
+	sources has a value which is a string
+	cumulative_adaboost_value has a value which is a float
+	sensitivity has a value which is a string
+	event_id has a value which is an analysis_event_id
+	features has a value which is a reference to a list where each element is a reference to a list containing 4 items:
+	0: (id) a feature_id
+	1: (alpha) a float
+	2: (round) an int
+	3: (function) a string
+
+amr_assertion is a reference to a hash where the following keys are defined:
+	antibiotic_name has a value which is a string
+	model_antibiotic_name has a value which is a string
+	evidence has a value which is a string
+	computational_method has a value which is a string
+	computational_method_performance has a value which is a string
+	computational_method_version has a value which is a string
+	resistant_phenotype has a value which is a string
+	measurement_unit has a value which is a string
+	measurement_value has a value which is a string
+	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -43686,8 +49312,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -43927,6 +49555,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -43957,6 +49598,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -44104,8 +49758,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -44345,6 +50001,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -44375,6 +50044,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -44449,8 +50131,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -44690,6 +50374,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -44720,6 +50417,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -44850,8 +50560,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -45091,6 +50803,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -45121,6 +50846,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -45195,8 +50933,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -45436,6 +51176,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -45466,6 +51219,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -45596,8 +51362,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -45837,6 +51605,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -45867,6 +51648,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -45941,8 +51735,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -46182,6 +51978,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -46212,6 +52021,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -46342,8 +52164,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -46583,6 +52407,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -46613,6 +52450,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -46687,8 +52537,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -46928,6 +52780,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -46958,6 +52823,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -47088,8 +52966,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -47329,6 +53209,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -47359,6 +53252,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -47433,8 +53339,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -47674,6 +53582,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -47704,6 +53625,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -47834,8 +53768,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -48075,6 +54011,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -48105,6 +54054,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -48179,8 +54141,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -48420,6 +54384,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -48450,6 +54427,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -48584,8 +54574,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -48825,6 +54817,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -48855,6 +54860,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -48933,8 +54951,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -49174,6 +55194,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -49204,6 +55237,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -49336,8 +55382,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -49577,6 +55625,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -49607,6 +55668,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -49681,8 +55755,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -49922,6 +55998,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -49952,6 +56041,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -50083,8 +56185,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -50324,6 +56428,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -50354,6 +56471,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -50428,8 +56558,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -50669,6 +56801,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -50699,6 +56844,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -50829,8 +56987,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -51070,6 +57230,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -51100,6 +57273,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -51174,8 +57360,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -51415,6 +57603,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -51445,6 +57646,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -51576,8 +57790,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -51817,6 +58033,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -51847,6 +58076,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -51924,8 +58166,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -52165,6 +58409,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -52195,6 +58452,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -52330,8 +58600,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -52571,6 +58843,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -52601,6 +58886,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -52677,8 +58975,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -52918,6 +59218,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -52948,6 +59261,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -53468,8 +59794,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -53709,6 +60037,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -53739,6 +60080,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -53813,8 +60167,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -54054,6 +60410,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -54084,6 +60453,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -54214,8 +60596,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -54455,6 +60839,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -54485,6 +60882,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -54559,8 +60969,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -54800,6 +61212,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -54830,6 +61255,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -55556,8 +61994,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -55797,6 +62237,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -55827,6 +62280,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -55941,8 +62407,10 @@ genomeTO is a reference to a hash where the following keys are defined:
 	close_genomes has a value which is a reference to a list where each element is a close_genome
 	analysis_events has a value which is a reference to a list where each element is an analysis_event
 	typing has a value which is a reference to a list where each element is a strain_type
+	sequence_types has a value which is a reference to a list where each element is a sequence_type
 	classifications has a value which is a reference to a list where each element is a classifier
 	amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+	genometype_annotation has a value which is a genotype_annotation
 	subsystems has a value which is a reference to a list where each element is a subsystem_data
 	job_data has a value which is a reference to a hash where the following keys are defined:
 	assembly has a value which is a job_statistics
@@ -56182,6 +62650,19 @@ strain_type is a reference to a hash where the following keys are defined:
 	database has a value which is a string
 	tag has a value which is a string
 	event_id has a value which is an analysis_event_id
+sequence_type is a reference to a hash where the following keys are defined:
+	sequence_typing has a value which is a string
+	schema_name has a value which is a string
+	loci_total has a value which is an int
+	loci_called has a value which is an int
+	loci_missing has a value which is an int
+	pct_called has a value which is a float
+	qc has a value which is a string
+	event_id has a value which is an analysis_event_id
+	cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+	0: (hc_level) a string
+	1: (hc_val) an int
+
 classifier is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	version has a value which is a string
@@ -56212,6 +62693,19 @@ amr_assertion is a reference to a hash where the following keys are defined:
 	measurement_unit has a value which is a string
 	measurement_value has a value which is a string
 	event_id has a value which is an analysis_event_id
+genotype_annotation is a reference to a hash where the following keys are defined:
+	subtype has a value which is a string
+	h_type has a value which is a string
+	n_type has a value which is a string
+	h1_clade_global has a value which is a reference to a list where each element is a string
+	h1_clade_us has a value which is a reference to a list where each element is a string
+	h3_clade has a value which is a reference to a list where each element is a string
+	h5_clade has a value which is a reference to a list where each element is a string
+	ph1n1_like has a value which is a string
+	lineage has a value which is a string
+	clade has a value which is a string
+	subclade has a value which is a string
+	other_typing has a value which is a reference to a list where each element is a string
 subsystem_data is a reference to a hash where the following keys are defined:
 	name has a value which is a string
 	classification has a value which is a reference to a list containing 3 items:
@@ -57874,6 +64368,110 @@ event_id has a value which is an analysis_event_id
 
 
 
+=head2 genotype_annotation
+
+=over 4
+
+
+
+=item Definition
+
+=begin html
+
+<pre>
+a reference to a hash where the following keys are defined:
+subtype has a value which is a string
+h_type has a value which is a string
+n_type has a value which is a string
+h1_clade_global has a value which is a reference to a list where each element is a string
+h1_clade_us has a value which is a reference to a list where each element is a string
+h3_clade has a value which is a reference to a list where each element is a string
+h5_clade has a value which is a reference to a list where each element is a string
+ph1n1_like has a value which is a string
+lineage has a value which is a string
+clade has a value which is a string
+subclade has a value which is a string
+other_typing has a value which is a reference to a list where each element is a string
+
+</pre>
+
+=end html
+
+=begin text
+
+a reference to a hash where the following keys are defined:
+subtype has a value which is a string
+h_type has a value which is a string
+n_type has a value which is a string
+h1_clade_global has a value which is a reference to a list where each element is a string
+h1_clade_us has a value which is a reference to a list where each element is a string
+h3_clade has a value which is a reference to a list where each element is a string
+h5_clade has a value which is a reference to a list where each element is a string
+ph1n1_like has a value which is a string
+lineage has a value which is a string
+clade has a value which is a string
+subclade has a value which is a string
+other_typing has a value which is a reference to a list where each element is a string
+
+
+=end text
+
+=back
+
+
+
+=head2 sequence_type
+
+=over 4
+
+
+
+=item Definition
+
+=begin html
+
+<pre>
+a reference to a hash where the following keys are defined:
+sequence_typing has a value which is a string
+schema_name has a value which is a string
+loci_total has a value which is an int
+loci_called has a value which is an int
+loci_missing has a value which is an int
+pct_called has a value which is a float
+qc has a value which is a string
+event_id has a value which is an analysis_event_id
+cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+0: (hc_level) a string
+1: (hc_val) an int
+
+
+</pre>
+
+=end html
+
+=begin text
+
+a reference to a hash where the following keys are defined:
+sequence_typing has a value which is a string
+schema_name has a value which is a string
+loci_total has a value which is an int
+loci_called has a value which is an int
+loci_missing has a value which is an int
+pct_called has a value which is a float
+qc has a value which is a string
+event_id has a value which is an analysis_event_id
+cgmlst_hc has a value which is a reference to a list where each element is a reference to a list containing 2 items:
+0: (hc_level) a string
+1: (hc_val) an int
+
+
+
+=end text
+
+=back
+
+
+
 =head2 classifier
 
 =over 4
@@ -58235,8 +64833,10 @@ features has a value which is a reference to a list where each element is a feat
 close_genomes has a value which is a reference to a list where each element is a close_genome
 analysis_events has a value which is a reference to a list where each element is an analysis_event
 typing has a value which is a reference to a list where each element is a strain_type
+sequence_types has a value which is a reference to a list where each element is a sequence_type
 classifications has a value which is a reference to a list where each element is a classifier
 amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+genometype_annotation has a value which is a genotype_annotation
 subsystems has a value which is a reference to a list where each element is a subsystem_data
 job_data has a value which is a reference to a hash where the following keys are defined:
 assembly has a value which is a job_statistics
@@ -58288,8 +64888,10 @@ features has a value which is a reference to a list where each element is a feat
 close_genomes has a value which is a reference to a list where each element is a close_genome
 analysis_events has a value which is a reference to a list where each element is an analysis_event
 typing has a value which is a reference to a list where each element is a strain_type
+sequence_types has a value which is a reference to a list where each element is a sequence_type
 classifications has a value which is a reference to a list where each element is a classifier
 amr_assertions has a value which is a reference to a list where each element is an amr_assertion
+genometype_annotation has a value which is a genotype_annotation
 subsystems has a value which is a reference to a list where each element is a subsystem_data
 job_data has a value which is a reference to a hash where the following keys are defined:
 assembly has a value which is a job_statistics

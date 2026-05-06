@@ -45,11 +45,11 @@
          "name" : "compute_genome_quality_control"
       },
       {
-         "name" : "annotate_compute_subspecies_classification",
+         "name" : "annotate_subspecies_classification",
          "failure_is_not_fatal" : 1
       },
       {
-         "name" : "annotate_compute_subclade",
+         "name" : "annotate_subclade",
          "failure_is_not_fatal" : 1
       }
    ]

@@ -310,15 +310,31 @@ module GenomeAnnotation
 
     typedef structure
     {
+	string subtype;
+	string h_type;
+	string n_type;
+	list<string> h1_clade_global;
+	list<string> h1_clade_us;
+	list<string> h3_clade;
+	list<string> h5_clade;
+	string ph1n1_like;
+	string lineage;
+	string clade;
+	string subclade;
+	list<string> other_typing;
+    } genotype_annotation;
+
+    typedef structure
+    {
 	string sequence_typing;
-    string schema_name;
-    int loci_total;
-    int loci_called;
-    int loci_missing;
-    float pct_called;
-    string qc;
+	string schema_name;
+	int loci_total;
+	int loci_called;
+	int loci_missing;
+	float pct_called;
+	string qc;
 	analysis_event_id event_id;
-    list<tuple<string hc_level, int hc_val>> cgmlst_hc;
+	list<tuple<string hc_level, int hc_val>> cgmlst_hc;
     } sequence_type;
 
     typedef structure
@@ -424,9 +440,11 @@ module GenomeAnnotation
 	list <analysis_event> analysis_events;
 
 	list<strain_type> typing;
-    list<sequence_type> sequence_types;
+	list<sequence_type> sequence_types;
 	list<classifier> classifications;
 	list<amr_assertion> amr_assertions;
+
+	genotype_annotation genometype_annotation;
 
 	list<subsystem_data> subsystems;
 
@@ -796,8 +814,8 @@ module GenomeAnnotation
     funcdef annotate_families_patric(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_families_patric_viral(genomeTO genome_in) returns (genomeTO genome_out);
     funcdef annotate_null_to_hypothetical(genomeTO genome_in) returns (genomeTO genome_out);
-    funcdef annotate_compute_subspecies_classification(genomeTO genome_in) returns (genomeTO genome_out);
-    funcdef annotate_compute_subclade(genomeTO genome_in) returns (genomeTO genome_out);
+    funcdef annotate_subspecies_classification(genomeTO genome_in) returns (genomeTO genome_out);
+    funcdef annotate_subclade(genomeTO genome_in) returns (genomeTO genome_out);
 
     funcdef remove_genbank_features(genomeTO genome_in) returns (genomeTO genome_out);
 

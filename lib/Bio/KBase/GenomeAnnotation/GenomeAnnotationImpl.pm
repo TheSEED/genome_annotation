@@ -5601,9 +5601,9 @@ sub annotate_null_to_hypothetical
 }
 
 
-=head2 annotate_compute_subspecies_classification
+=head2 annotate_subspecies_classification
 
-  $genome_out = $obj->annotate_compute_subspecies_classification($genome_in)
+  $genome_out = $obj->annotate_subspecies_classification($genome_in)
 
 =over 4
 
@@ -5617,7 +5617,7 @@ sub annotate_null_to_hypothetical
 
 =cut
 
-sub annotate_compute_subspecies_classification
+sub annotate_subspecies_classification
 {
     my $self = shift;
     my($genome_in) = @_;
@@ -5625,13 +5625,13 @@ sub annotate_compute_subspecies_classification
     my @_bad_arguments;
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
-	my $msg = "Invalid arguments passed to annotate_compute_subspecies_classification:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	my $msg = "Invalid arguments passed to annotate_subspecies_classification:\n" . join("", map { "\t$_\n" } @_bad_arguments);
 	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($genome_out);
-    #BEGIN annotate_compute_subspecies_classification
+    #BEGIN annotate_subspecies_classification
     my $enc = encode_json($genome_in);
 
     #
@@ -5650,20 +5650,20 @@ sub annotate_compute_subspecies_classification
 	die "Error running subspecies classification prediction \n";
     }
     $genome_out = decode_json($out);
-    #END annotate_compute_subspecies_classification
+    #END annotate_subspecies_classification
     my @_bad_returns;
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
-	my $msg = "Invalid returns passed to annotate_compute_subspecies_classification:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	my $msg = "Invalid returns passed to annotate_subspecies_classification:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
     return($genome_out);
 }
 
 
-=head2 annotate_compute_subclade
+=head2 annotate_subclade
 
-  $genome_out = $obj->annotate_compute_subclade($genome_in)
+  $genome_out = $obj->annotate_subclade($genome_in)
 
 =over 4
 
@@ -5677,7 +5677,7 @@ sub annotate_compute_subspecies_classification
 
 =cut
 
-sub annotate_compute_subclade
+sub annotate_subclade
 {
     my $self = shift;
     my($genome_in) = @_;
@@ -5685,13 +5685,13 @@ sub annotate_compute_subclade
     my @_bad_arguments;
     (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
     if (@_bad_arguments) {
-	my $msg = "Invalid arguments passed to annotate_compute_subclade:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	my $msg = "Invalid arguments passed to annotate_subclade:\n" . join("", map { "\t$_\n" } @_bad_arguments);
 	die $msg;
     }
 
     my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
     my($genome_out);
-    #BEGIN annotate_compute_subclade
+    #BEGIN annotate_subclade
     my $enc = encode_json($genome_in);
 
     #
@@ -5710,11 +5710,11 @@ sub annotate_compute_subclade
 	die "Error running compute subclade prediction \n";
     }
     $genome_out = decode_json($out);
-    #END annotate_compute_subclade
+    #END annotate_subclade
     my @_bad_returns;
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
-	my $msg = "Invalid returns passed to annotate_compute_subclade:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	my $msg = "Invalid returns passed to annotate_subclade:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
     return($genome_out);
