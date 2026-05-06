@@ -346,7 +346,6 @@ sub new
     -d $dir or die "Directory $dir for kmer_v2_data_directory does not exist";
 	
     $self->{kmer_v2_data_directory} = $dir;
-
     $self->{website_url_base} = $cfg->setting("website-url-base");
 
     if (my $temp = $cfg->setting("tempdir"))
@@ -5596,6 +5595,126 @@ sub annotate_null_to_hypothetical
     (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
     if (@_bad_returns) {
 	my $msg = "Invalid returns passed to annotate_null_to_hypothetical:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	die $msg;
+    }
+    return($genome_out);
+}
+
+
+=head2 annotate_compute_subspecies_classification
+
+  $genome_out = $obj->annotate_compute_subspecies_classification($genome_in)
+
+=over 4
+
+
+
+
+=item Description
+
+
+=back
+
+=cut
+
+sub annotate_compute_subspecies_classification
+{
+    my $self = shift;
+    my($genome_in) = @_;
+
+    my @_bad_arguments;
+    (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
+    if (@_bad_arguments) {
+	my $msg = "Invalid arguments passed to annotate_compute_subspecies_classification:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	die $msg;
+    }
+
+    my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
+    my($genome_out);
+    #BEGIN annotate_compute_subspecies_classification
+    my $enc = encode_json($genome_in);
+
+    #
+    # Currently not parallel but leave the scaffolding in.
+    #
+    my $threads = $ENV{P3_ALLOCATED_CPU} // 1;
+    
+    my @cmd = ("p3x-compute-subspecies-classification");
+    my $out;
+    my $ok = run(\@cmd,
+		 "<", \$enc,
+		 ">", \$out);
+    
+    if (!$ok)
+    {
+	die "Error running subspecies classification prediction \n";
+    }
+    $genome_out = decode_json($out);
+    #END annotate_compute_subspecies_classification
+    my @_bad_returns;
+    (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
+    if (@_bad_returns) {
+	my $msg = "Invalid returns passed to annotate_compute_subspecies_classification:\n" . join("", map { "\t$_\n" } @_bad_returns);
+	die $msg;
+    }
+    return($genome_out);
+}
+
+
+=head2 annotate_compute_subclade
+
+  $genome_out = $obj->annotate_compute_subclade($genome_in)
+
+=over 4
+
+
+
+
+=item Description
+
+
+=back
+
+=cut
+
+sub annotate_compute_subclade
+{
+    my $self = shift;
+    my($genome_in) = @_;
+
+    my @_bad_arguments;
+    (ref($genome_in) eq 'HASH') or push(@_bad_arguments, "Invalid type for argument \"genome_in\" (value was \"$genome_in\")");
+    if (@_bad_arguments) {
+	my $msg = "Invalid arguments passed to annotate_compute_subclade:\n" . join("", map { "\t$_\n" } @_bad_arguments);
+	die $msg;
+    }
+
+    my $ctx = $Bio::KBase::GenomeAnnotation::Service::CallContext;
+    my($genome_out);
+    #BEGIN annotate_compute_subclade
+    my $enc = encode_json($genome_in);
+
+    #
+    # Currently not parallel but leave the scaffolding in.
+    #
+    my $threads = $ENV{P3_ALLOCATED_CPU} // 1;
+    
+    my @cmd = ("p3x-compute-subclade");
+    my $out;
+    my $ok = run(\@cmd,
+		 "<", \$enc,
+		 ">", \$out);
+    
+    if (!$ok)
+    {
+	die "Error running compute subclade prediction \n";
+    }
+    $genome_out = decode_json($out);
+    #END annotate_compute_subclade
+    my @_bad_returns;
+    (ref($genome_out) eq 'HASH') or push(@_bad_returns, "Invalid type for return variable \"genome_out\" (value was \"$genome_out\")");
+    if (@_bad_returns) {
+	my $msg = "Invalid returns passed to annotate_compute_subclade:\n" . join("", map { "\t$_\n" } @_bad_returns);
 	die $msg;
     }
     return($genome_out);

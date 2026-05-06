@@ -103,6 +103,8 @@ my %FUNCDEFS = (
     'annotate_strain_type_MLST_v2'      => { params => undef, desc => 'Perform MLST strain typing v2' },
     'annotate_strain_type_cgMLST'       => { params => undef, desc => 'Perform cgMLST strain typing' },
     'annotate_proteins'                 => { params => undef, desc => 'Annotate all proteins' },
+    'annotate_compute_subspecies_classification' => { params => undef, desc => 'Compute subpecies classification' },
+    'annotate_compute_subclade'         => { params => undef, desc => 'Compute subclade' },
     'find_close_neighbors'              => { params => undef, desc => 'Find closely related genomes' },
     'renumber_features'                 => { params => undef, desc => 'Renumber feature IDs' },
     'classify_amr'                      => { params => undef, desc => 'Classify AMR genes' },
