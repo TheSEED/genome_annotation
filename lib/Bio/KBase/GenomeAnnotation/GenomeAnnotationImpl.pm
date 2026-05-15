@@ -7648,6 +7648,7 @@ sub run_pipeline
 	{
 	    if (open(my $fh, ">", "$ENV{DEBUG_PIPELINE}/stage-$snum.json"))
 	    {
+		print STDERR "Saving stage input to $ENV{DEBUG_PIPELINE}/stage-$snum.json\n";
 		print $fh $json->encode({ stage => $stage, genome => $cur});
 		close($fh);
 	    }
@@ -7686,11 +7687,21 @@ sub run_pipeline
 		$out = $self->$method($cur, @params);
 	    };
 
-	    if ($@)
+	    my $res = $@;
+	    if ($ENV{DEBUG_PIPELINE})
+	    {
+		if (open(my $fh, ">", "$ENV{DEBUG_PIPELINE}/stage-out-$snum.json"))
+		{
+		    print STDERR "Saving stage output to $ENV{DEBUG_PIPELINE}/stage-out-$snum.json\n";
+		    print $fh $json->encode({ stage => $stage, genome => $out, err => $res});
+		    close($fh);
+		}
+	    }
+	    if ($res)
 	    {
 		if ($stage->{failure_is_not_fatal})
 		{
-		    warn "Error invoking method $method: $@\nContinuing because failure_is_not_fatal flag is set";
+		    warn "Error invoking method $method: $res\nContinuing because failure_is_not_fatal flag is set";
 		    if (ref($cur) && ref($cur) ne 'HASH')
 		    {
 			$cur = $cur->prepare_for_return;
@@ -7699,7 +7710,7 @@ sub run_pipeline
 		else
 		{
 		    chdir $here;
-		    die "Error invoking method $method: $@";
+		    die "Error invoking method $method: $res";
 		}
 	    }
 	    else

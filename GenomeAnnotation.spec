@@ -55,6 +55,7 @@ module GenomeAnnotation
 	float execution_time;
 	list<string> parameters;
 	string hostname;
+	string tool_version;
     } analysis_event;
 
     typedef structure {
