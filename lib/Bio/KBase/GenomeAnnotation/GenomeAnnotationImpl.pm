@@ -2369,16 +2369,19 @@ sub call_features_lowvan
     my $cpu = $ENV{P3_ALLOCATED_CPU} // 1;
 
     my $user_params = $ctx->{params};
-    
+
     my @cmd = ("p3x-annotate-lowvan",
 	       "--in", $tmp_in,
 	       "--out", $tmp_out,
 	       "--parallel", $cpu,
 	       "--prefix", $user_params->{output_file},
 	       ($params->{remove_existing_features} ? ("--remove-existing") : ()),
-	       ($user_params->{lowvan_min_contig_length} ? ("--min-contig-length", $user_params->{lowvan_min_contig_length}) : ()),
-	       ($user_params->{lowvan_max_contig_length} ? ("--max-contig-length", $user_params->{lowvan_max_contig_length}) : ()),
+	       (defined($user_params->{lowvan_min_contig_length}) ? ("--min-contig-length", 0 + $user_params->{lowvan_min_contig_length}) : ()),
+	       (defined($user_params->{lowvan_max_contig_length}) ? ("--max-contig-length", 0 + $user_params->{lowvan_max_contig_length}) : ()),
+	       (defined($user_params->{lowvan_min_contig_bit}) ? ("--min-contig-bit", 0 + $user_params->{lowvan_min_contig_bit}) : ()),
+	       ($user_params->{lowvan_fallback_viral_taxon} ? ("--fallback-viral-taxon") : ()),
 	       );
+    print STDERR "Execute lowvan: @cmd\n";
     my $rc = system(@cmd);
     if ($rc != 0)
     {

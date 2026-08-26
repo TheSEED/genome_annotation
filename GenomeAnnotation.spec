@@ -56,6 +56,8 @@ module GenomeAnnotation
 	list<string> parameters;
 	string hostname;
 	string tool_version;
+	int success;
+	mapping<string, string> metadata;
     } analysis_event;
 
     typedef structure {
@@ -428,6 +430,9 @@ module GenomeAnnotation
 	string ncbi_genus;
 	string ncbi_species;
 	string owner;
+
+	/* This is the viral family assigned by the LowVan viral annotation system. */
+	string viral_family;
 
 	genome_quality_measure quality;
 	
