@@ -7,6 +7,14 @@
 	    }	    
        },
       {
+      "condition": "!(grep($_->{tool_name} eq 'LowVan Annotate', @{$g->{genome}->{analysis_events}}))[0]->{success}",
+         "name" : "call_features_vigor4",
+         "vigor4_parameters" : {
+  	     "reference_name": "",
+	     "remove_existing_features": 1
+	    }	    
+       },
+      {
          "phage_parameters" : {
             "annotate_null_only" : 1
          },
