@@ -10,6 +10,7 @@
       {
          "name" : "call_features_vipr_mat_peptide",
          "failure_is_not_fatal" : 1,
+         "condition": "!grep { $_->{metadata} && $_->{metadata}->{mat_peptide_called} } @{$genome->{analysis_events}}",
          "vipr_mat_peptide_parameters": {
 	     "remove_existing_features": 1
 	    }	    

@@ -2385,7 +2385,17 @@ sub call_features_lowvan
     my $rc = system(@cmd);
     if ($rc != 0)
     {
-	die "error calling p3x-annotate-lowvan: $rc\non command @cmd";
+	#
+	# system() returns the raw wait status, not the exit code: the exit code is the high
+	# byte and the signal that killed the process is the low seven bits. Reporting $rc as
+	# it stands turns a SIGPIPE death into a bare "13", a number that reads like an exit
+	# code p3x-annotate-lowvan does not define -- which is how the two signal deaths of
+	# the 5,000-genome rerun of 2026-08-27 were misreported.
+	#
+	my $why = $rc == -1     ? "failed to execute: $!"
+	        : ($rc & 127)   ? "killed by signal " . ($rc & 127) . (($rc & 128) ? " (core dumped)" : "")
+	        :                 "exited with status " . ($rc >> 8);
+	die "error calling p3x-annotate-lowvan: $why\non command @cmd";
     }
 
     $return = $coder->decode(scalar read_file("" . $tmp_out));
