@@ -4,6 +4,7 @@ use POSIX;
 use strict;
 use Data::Dumper;
 use URI;
+use P3ClientUA;
 
 use Time::HiRes qw(gettimeofday);
 
@@ -92,7 +93,7 @@ sub new
     my $ua = $self->{client}->ua;	 
     my $timeout = $ENV{CDMI_TIMEOUT} || (30 * 60);	 
     $ua->timeout($timeout);
-    $ua->agent("Bio::KBase::GenomeAnnotation::Client UserAgent");
+    $ua->agent(P3ClientUA::user_agent_string());
     bless $self, $class;
     return $self;
 }
@@ -66322,6 +66323,7 @@ package Bio::KBase::GenomeAnnotation::Client::RpcClient;
 use POSIX;
 use strict;
 use LWP::UserAgent;
+use P3ClientUA;
 use JSON::XS;
 
 BEGIN {
@@ -66339,7 +66341,7 @@ sub new
 {
     my($class) = @_;
 
-    my $ua = LWP::UserAgent->new();
+    my $ua = P3ClientUA::new_ua();
     my $json = JSON::XS->new->allow_nonref->utf8;
     
     my $self = {
