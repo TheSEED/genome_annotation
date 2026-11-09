@@ -7220,7 +7220,7 @@ sub run_pipeline
 
 	    if ($@)
 	    {
-		if ($stage->{failure_is_not_fatal})
+		if ($stage->{failure_is_not_fatal} || $method eq 'evaluate_genome')
 		{
 		    warn "Error invoking method $method: $@\nContinuing because failure_is_not_fatal flag is set";
 		    if (ref($cur) && ref($cur) ne 'HASH')
